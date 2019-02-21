@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5142D2325929E234439D3E1E /* Pods_EventsApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14362051047C402913B017BC /* Pods_EventsApplication.framework */; };
 		570162169F153985AC3320B2 /* Pods_EventsApplicationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A050619A96C1E69E44BAFD /* Pods_EventsApplicationUITests.framework */; };
+		9B11D179221EDB2500BFEBD4 /* NetworkServiceRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11D177221EDB2500BFEBD4 /* NetworkServiceRx.swift */; };
+		9B11D17A221EDB2500BFEBD4 /* UrlRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11D178221EDB2500BFEBD4 /* UrlRouter.swift */; };
 		9B966236221EB959008C512D /* SignInContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B966235221EB959008C512D /* SignInContract.swift */; };
 		9B966238221EBA72008C512D /* SignInCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B966237221EBA72008C512D /* SignInCreator.swift */; };
 		9B96623A221EBC0C008C512D /* SignInPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B966239221EBC0C008C512D /* SignInPresenterImpl.swift */; };
@@ -47,6 +49,8 @@
 		7217D7A0F1336E9DF306A817 /* Pods-EventsApplicationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApplicationUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventsApplicationUITests/Pods-EventsApplicationUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		75A050619A96C1E69E44BAFD /* Pods_EventsApplicationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventsApplicationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AF8D32657C52DF2A24C8AA6 /* Pods-EventsApplicationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApplicationUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventsApplicationUITests/Pods-EventsApplicationUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9B11D177221EDB2500BFEBD4 /* NetworkServiceRx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceRx.swift; sourceTree = "<group>"; };
+		9B11D178221EDB2500BFEBD4 /* UrlRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlRouter.swift; sourceTree = "<group>"; };
 		9B966235221EB959008C512D /* SignInContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInContract.swift; sourceTree = "<group>"; };
 		9B966237221EBA72008C512D /* SignInCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCreator.swift; sourceTree = "<group>"; };
 		9B966239221EBC0C008C512D /* SignInPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenterImpl.swift; sourceTree = "<group>"; };
@@ -96,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B11D172221ED98900BFEBD4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9B11D177221EDB2500BFEBD4 /* NetworkServiceRx.swift */,
+				9B11D178221EDB2500BFEBD4 /* UrlRouter.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		9B9661EC221E9050008C512D /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +120,8 @@
 		9B9661EE221E9227008C512D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				9B11D172221ED98900BFEBD4 /* Network */,
+				9B966245221ED5AA008C512D /* Router */,
 				9B966242221ED542008C512D /* Base */,
 				9B966209221E929F008C512D /* SignIn */,
 			);
@@ -116,7 +131,6 @@
 		9B966209221E929F008C512D /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
-				9B966245221ED5AA008C512D /* Router */,
 				9B96623D221ED426008C512D /* View */,
 				9B96620A221E929F008C512D /* Creator */,
 				9B96620C221E929F008C512D /* Contract */,
@@ -471,6 +485,8 @@
 				9B96623F221ED446008C512D /* SignInViewController.swift in Sources */,
 				9B96623C221EBC52008C512D /* SignInInteractorImpl.swift in Sources */,
 				9BEB17F8221C05CE003F8C9A /* AppDelegate.swift in Sources */,
+				9B11D179221EDB2500BFEBD4 /* NetworkServiceRx.swift in Sources */,
+				9B11D17A221EDB2500BFEBD4 /* UrlRouter.swift in Sources */,
 				9B966236221EB959008C512D /* SignInContract.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
