@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		5142D2325929E234439D3E1E /* Pods_EventsApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14362051047C402913B017BC /* Pods_EventsApplication.framework */; };
 		570162169F153985AC3320B2 /* Pods_EventsApplicationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A050619A96C1E69E44BAFD /* Pods_EventsApplicationUITests.framework */; };
-		9B9661F2221E9286008C512D /* BaseContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9661F1221E9286008C512D /* BaseContract.swift */; };
-		9B966230221E935A008C512D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96622F221E935A008C512D /* Router.swift */; };
-		9B966232221EB867008C512D /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B966231221EB867008C512D /* SignIn.storyboard */; };
-		9B966234221EB8C7008C512D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B966233221EB8C7008C512D /* SignInViewController.swift */; };
 		9B966236221EB959008C512D /* SignInContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B966235221EB959008C512D /* SignInContract.swift */; };
 		9B966238221EBA72008C512D /* SignInCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B966237221EBA72008C512D /* SignInCreator.swift */; };
 		9B96623A221EBC0C008C512D /* SignInPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B966239221EBC0C008C512D /* SignInPresenterImpl.swift */; };
 		9B96623C221EBC52008C512D /* SignInInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96623B221EBC52008C512D /* SignInInteractorImpl.swift */; };
+		9B96623F221ED446008C512D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96623E221ED446008C512D /* SignInViewController.swift */; };
+		9B966241221ED4A6008C512D /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B966240221ED4A6008C512D /* SignIn.storyboard */; };
+		9B966244221ED556008C512D /* BaseCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B966243221ED556008C512D /* BaseCreator.swift */; };
+		9B966247221ED5B7008C512D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B966246221ED5B7008C512D /* Router.swift */; };
 		9BEB17F8221C05CE003F8C9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEB17F7221C05CE003F8C9A /* AppDelegate.swift */; };
 		9BEB17FF221C05CF003F8C9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BEB17FE221C05CF003F8C9A /* Assets.xcassets */; };
 		9BEB1802221C05CF003F8C9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BEB1800221C05CF003F8C9A /* LaunchScreen.storyboard */; };
@@ -47,14 +47,14 @@
 		7217D7A0F1336E9DF306A817 /* Pods-EventsApplicationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApplicationUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventsApplicationUITests/Pods-EventsApplicationUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		75A050619A96C1E69E44BAFD /* Pods_EventsApplicationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventsApplicationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AF8D32657C52DF2A24C8AA6 /* Pods-EventsApplicationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApplicationUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventsApplicationUITests/Pods-EventsApplicationUITests.release.xcconfig"; sourceTree = "<group>"; };
-		9B9661F1221E9286008C512D /* BaseContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseContract.swift; sourceTree = "<group>"; };
-		9B96622F221E935A008C512D /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		9B966231221EB867008C512D /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
-		9B966233221EB8C7008C512D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		9B966235221EB959008C512D /* SignInContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInContract.swift; sourceTree = "<group>"; };
 		9B966237221EBA72008C512D /* SignInCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCreator.swift; sourceTree = "<group>"; };
 		9B966239221EBC0C008C512D /* SignInPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenterImpl.swift; sourceTree = "<group>"; };
 		9B96623B221EBC52008C512D /* SignInInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractorImpl.swift; sourceTree = "<group>"; };
+		9B96623E221ED446008C512D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		9B966240221ED4A6008C512D /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		9B966243221ED556008C512D /* BaseCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCreator.swift; sourceTree = "<group>"; };
+		9B966246221ED5B7008C512D /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		9BEB17F4221C05CE003F8C9A /* EventsApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventsApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BEB17F7221C05CE003F8C9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BEB17FE221C05CF003F8C9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,35 +104,20 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		9B9661ED221E921C008C512D /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		9B9661EE221E9227008C512D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				9B9661F0221E9286008C512D /* Base */,
+				9B966242221ED542008C512D /* Base */,
 				9B966209221E929F008C512D /* SignIn */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		9B9661F0221E9286008C512D /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				9B9661F1221E9286008C512D /* BaseContract.swift */,
-			);
-			name = Base;
-			path = ../../../ABapplication/ABProject/Modules/Base;
-			sourceTree = "<group>";
-		};
 		9B966209221E929F008C512D /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
-				9B966223221E9301008C512D /* View */,
+				9B966245221ED5AA008C512D /* Router */,
+				9B96623D221ED426008C512D /* View */,
 				9B96620A221E929F008C512D /* Creator */,
 				9B96620C221E929F008C512D /* Contract */,
 				9B96620E221E929F008C512D /* Presenter */,
@@ -173,23 +158,29 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		9B966223221E9301008C512D /* View */ = {
+		9B96623D221ED426008C512D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9B966231221EB867008C512D /* SignIn.storyboard */,
-				9B966233221EB8C7008C512D /* SignInViewController.swift */,
+				9B96623E221ED446008C512D /* SignInViewController.swift */,
+				9B966240221ED4A6008C512D /* SignIn.storyboard */,
 			);
-			name = View;
-			path = ../../../../ABapplication/ABProject/Modules/Detail/View;
+			path = View;
 			sourceTree = "<group>";
 		};
-		9B96622E221E935A008C512D /* Router */ = {
+		9B966242221ED542008C512D /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				9B96622F221E935A008C512D /* Router.swift */,
+				9B966243221ED556008C512D /* BaseCreator.swift */,
 			);
-			name = Router;
-			path = ../../ABapplication/ABProject/Router;
+			path = Base;
+			sourceTree = "<group>";
+		};
+		9B966245221ED5AA008C512D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				9B966246221ED5B7008C512D /* Router.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		9BEB17EB221C05CE003F8C9A = {
@@ -217,8 +208,6 @@
 		9BEB17F6221C05CE003F8C9A /* EventsApplication */ = {
 			isa = PBXGroup;
 			children = (
-				9B96622E221E935A008C512D /* Router */,
-				9B9661ED221E921C008C512D /* Models */,
 				9B9661EE221E9227008C512D /* Modules */,
 				9B9661EC221E9050008C512D /* Application */,
 				9BEB17FE221C05CF003F8C9A /* Assets.xcassets */,
@@ -374,7 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BEB1802221C05CF003F8C9A /* LaunchScreen.storyboard in Resources */,
-				9B966232221EB867008C512D /* SignIn.storyboard in Resources */,
+				9B966241221ED4A6008C512D /* SignIn.storyboard in Resources */,
 				9BEB17FF221C05CF003F8C9A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,14 +464,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B966247221ED5B7008C512D /* Router.swift in Sources */,
 				9B96623A221EBC0C008C512D /* SignInPresenterImpl.swift in Sources */,
+				9B966244221ED556008C512D /* BaseCreator.swift in Sources */,
 				9B966238221EBA72008C512D /* SignInCreator.swift in Sources */,
+				9B96623F221ED446008C512D /* SignInViewController.swift in Sources */,
 				9B96623C221EBC52008C512D /* SignInInteractorImpl.swift in Sources */,
-				9B966234221EB8C7008C512D /* SignInViewController.swift in Sources */,
 				9BEB17F8221C05CE003F8C9A /* AppDelegate.swift in Sources */,
 				9B966236221EB959008C512D /* SignInContract.swift in Sources */,
-				9B966230221E935A008C512D /* Router.swift in Sources */,
-				9B9661F2221E9286008C512D /* BaseContract.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
