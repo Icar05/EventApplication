@@ -120,8 +120,6 @@
 		9B9661EE221E9227008C512D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				9B11D172221ED98900BFEBD4 /* Network */,
-				9B966245221ED5AA008C512D /* Router */,
 				9B966242221ED542008C512D /* Base */,
 				9B966209221E929F008C512D /* SignIn */,
 			);
@@ -222,6 +220,8 @@
 		9BEB17F6221C05CE003F8C9A /* EventsApplication */ = {
 			isa = PBXGroup;
 			children = (
+				9B11D172221ED98900BFEBD4 /* Network */,
+				9B966245221ED5AA008C512D /* Router */,
 				9B9661EE221E9227008C512D /* Modules */,
 				9B9661EC221E9050008C512D /* Application */,
 				9BEB17FE221C05CF003F8C9A /* Assets.xcassets */,
