@@ -92,15 +92,15 @@ class NetworkServiceRx {
     
     
     
-    private func constructRequest(url: URL) -> URLRequest {
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = HTTPMethod.put.rawValue
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        if let token = Token.shared.accessToken {
-            request.setValue("Token \(token)", forHTTPHeaderField: "Authorization")
-        }
-        return request
-    }
+//    private func constructRequest(url: URL) -> URLRequest {
+//        
+//        var request = URLRequest(url: url)
+//        request.httpMethod = HTTPMethod.put.rawValue
+//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//        if let token = Token.shared.accessToken {
+//            request.setValue("Token \(token)", forHTTPHeaderField: "Authorization")
+//        }
+//        return request
+//    }
     
 }
