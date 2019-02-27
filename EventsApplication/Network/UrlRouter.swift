@@ -6,44 +6,71 @@ import Alamofire
 
 enum UrlRouter: URLRequestConvertible {
     
-    static let baseURLString = "https:google_apple/api/"
+    static let apiKey = "FF1SpQGmTkz7NyQYWYbU8p2z4zgAES2G"
     
+    static let baseUrl = "https://app.ticketmaster.com/discovery/"
     
-    case signIn(String, String)
-    case signOut
+
+
+    
+    case searchEventByKeyword(String)
+    case searchEventsByCity(String)
+    case searchEventByCityAndName(String, String)
     
     
     var method: HTTPMethod {
         switch self {
-        case .signIn: return .post
-        case .signOut: return .post
-        }
+                case .searchEventsByCity: return .get
+                case .searchEventByKeyword: return .get
+                case .searchEventByCityAndName: return .get
+            }
     }
     
     var encoding: ParameterEncoding {
         switch self {
-        case .signIn: return JSONEncoding.default
-        case .signOut: return JSONEncoding.default
+            case .searchEventsByCity: return JSONEncoding.default
+            case .searchEventByKeyword : return JSONEncoding.default
+            case .searchEventByCityAndName: return JSONEncoding.default
         }
     }
     
     func asURLRequest() throws -> URLRequest {
         
+        //     attractionId & countryCode
+        //     "https://app.ticketmaster.com/discovery/v2/events.json?attractionId=K8vZ917Gku7&countryCode=CA&apikey=FF1SpQGmTkz7NyQYWYbU8p2z4zgAES2G"
+        //
+        //
+        //        countrycode
+        //    https://app.ticketmaster.com/discovery/v2/events.json?
+        //       countryCode=US&apikey=FF1SpQGmTkz7NyQYWYbU8p2z4zgAES2G
+        //
+        //        Search for events sourced by Universe in the United States with keyword “devjam”
+        //    https://app.ticketmaster.com/discovery/v2/events.json?keyword=devjam&source=universe&countryCode=US&apikey=FF1SpQGmTkz7NyQYWYbU8p2z4zgAES2G
+        //
+        //        Search for music events in the Los Angeles area
+        //    https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&dmaId=324&apikey=FF1SpQGmTkz7NyQYWYbU8p2z4zgAES2G
+        //
+        
+        
         let result: (path: String, parameters: Parameters?) = {
             switch self {
-            case .signIn(let email, let password):
-                return ("auth/login",["username": email, "password": password])
-            case .signOut:
-                return ("Auth/Logout", [:])
+                
+            case .searchEventsByCity(let city):
+                return ("v2/events.json?", ["city": city, "apikey": UrlRouter.apiKey])
+                
+            case .searchEventByKeyword(let keyword):
+                 return ("v2/events.json?", ["keyword": keyword, "apikey": UrlRouter.apiKey])
+                
+            case .searchEventByCityAndName(let cityName, let keyword):
+                return ("v2/events.json?", ["city": cityName, "keyword": keyword, "apikey": UrlRouter.apiKey])
             }
+           
         }()
         
-        let url = try UrlRouter.baseURLString.asURL()
-        var urlRequest = URLRequest(url: url.appendingPathComponent(result.path))
-        urlRequest.httpMethod = method.rawValue
-//        if let token = Token.shared.accessToken {
-//            urlRequest.setValue("Token \(token)", forHTTPHeaderField: "Authorization")
-//        }
+            let url = try UrlRouter.baseUrl.asURL()
+            var urlRequest = URLRequest(url: url.appendingPathComponent(result.path))
+            urlRequest.httpMethod = method.rawValue
+        
         return try encoding.encode(urlRequest, with: result.parameters)
     }
 }

@@ -16,7 +16,36 @@ class NetworkServiceRx {
         configuration.timeoutIntervalForRequest = 20.0
         self.sessionManager = Alamofire.SessionManager(configuration: configuration)
     }
-//
+
+    
+    
+    func searchEventByKeyword(keyword: String) -> Observable<Bool>{
+        return Observable<Bool>.create({[weak self] (observer) -> Disposable in
+            let request = self?.sessionManager.request(UrlRouter.searchEventByKeyword(keyword))
+                .validate()
+                .responseJSON { (response) in
+                    switch response.result {
+                    case .success(let value):
+                         observer.onNext(true)
+                         observer.onCompleted()
+                        
+//                        if let session = Session(json: JSON(value)) {
+//                            observer.onNext(session)
+//                            observer.onCompleted()
+//                        } else {
+//                            observer.onError(NetworkManagerError.invalidJSON)
+//                        }
+                    case .failure(let error):
+                        print("Signed in failed with error \(error.localizedDescription)")
+                        observer.onError(error)
+                    }
+            }
+            return Disposables.create {
+                request?.cancel()
+            }
+        })
+    }
+    
 //    func signIn(email: String, password: String) -> Observable<Session> {
 //
 //        return Observable<Session>.create({[weak self] (observer) -> Disposable in

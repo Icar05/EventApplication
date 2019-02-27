@@ -43,6 +43,8 @@ class SignInViewController: UIViewController {
                 DispatchQueue.main.async {
                     if success {
                         print("Success !!!!")
+                        
+                        MockNetworkTester().testSearchEventByKeyword()
                     } else {
                         print("Error  !!!!")
                     }
