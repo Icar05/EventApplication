@@ -6,65 +6,61 @@ import Alamofire
 
 enum UrlRouter: URLRequestConvertible {
     
-    static let apiKey = "FF1SpQGmTkz7NyQYWYbU8p2z4zgAES2G"
+    static let apiKey = "956a81e3ea184cb7b8f2a6b3a4ea0c33"
     
-    static let baseUrl = "https://app.ticketmaster.com/discovery/"
+    static let baseUrl = "https://newsapi.org/v2/"
+    
+    
+    case getDefaultHeadlines()
+    case getHeadlinesByCountry(String)
+    case getHeadlinesByCategory(String)
+    case getEverythingByQuery(String)
+    case getEverythingByLanguage(String)
+    case getSourcesByCategory(String)
     
 
-
-    
-    case searchEventByKeyword(String)
-    case searchEventsByCity(String)
-    case searchEventByCityAndName(String, String)
-    
     
     var method: HTTPMethod {
         switch self {
-                case .searchEventsByCity: return .get
-                case .searchEventByKeyword: return .get
-                case .searchEventByCityAndName: return .get
+                case .getDefaultHeadlines: return .get
+                case .getHeadlinesByCountry: return .get
+                case .getHeadlinesByCategory: return .get
+                case .getEverythingByQuery: return .get
+                case .getEverythingByLanguage: return .get
+                case .getSourcesByCategory: return .get
             }
     }
     
     var encoding: ParameterEncoding {
         switch self {
-            case .searchEventsByCity: return JSONEncoding.default
-            case .searchEventByKeyword : return JSONEncoding.default
-            case .searchEventByCityAndName: return JSONEncoding.default
+            case .getDefaultHeadlines: return URLEncoding.default
+            case .getHeadlinesByCountry: return URLEncoding.default
+            case .getHeadlinesByCategory: return URLEncoding.default
+            case .getEverythingByQuery: return URLEncoding.default
+            case .getEverythingByLanguage: return URLEncoding.default
+            case .getSourcesByCategory: return URLEncoding.default
         }
     }
     
     func asURLRequest() throws -> URLRequest {
         
-        //     attractionId & countryCode
-        //     "https://app.ticketmaster.com/discovery/v2/events.json?attractionId=K8vZ917Gku7&countryCode=CA&apikey=FF1SpQGmTkz7NyQYWYbU8p2z4zgAES2G"
-        //
-        //
-        //        countrycode
-        //    https://app.ticketmaster.com/discovery/v2/events.json?
-        //       countryCode=US&apikey=FF1SpQGmTkz7NyQYWYbU8p2z4zgAES2G
-        //
-        //        Search for events sourced by Universe in the United States with keyword “devjam”
-        //    https://app.ticketmaster.com/discovery/v2/events.json?keyword=devjam&source=universe&countryCode=US&apikey=FF1SpQGmTkz7NyQYWYbU8p2z4zgAES2G
-        //
-        //        Search for music events in the Los Angeles area
-        //    https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&dmaId=324&apikey=FF1SpQGmTkz7NyQYWYbU8p2z4zgAES2G
-        //
-        
-        
         let result: (path: String, parameters: Parameters?) = {
             switch self {
                 
-            case .searchEventsByCity(let city):
-                return ("v2/events.json?", ["city": city, "apikey": UrlRouter.apiKey])
-                
-            case .searchEventByKeyword(let keyword):
-                 return ("v2/events.json?", ["keyword": keyword, "apikey": UrlRouter.apiKey])
-                
-            case .searchEventByCityAndName(let cityName, let keyword):
-                return ("v2/events.json?", ["city": cityName, "keyword": keyword, "apikey": UrlRouter.apiKey])
+            case .getDefaultHeadlines():
+                return ("v2/top-headlines?", ["country": "ua", "apikey": UrlRouter.apiKey])
+            case .getHeadlinesByCountry(let country):
+                return ("v2/top-headlines?", ["country": country, "apikey": UrlRouter.apiKey])
+            case .getHeadlinesByCategory(let category):
+                return ("v2/top-headlines?", ["category": category, "apikey": UrlRouter.apiKey])
+            case .getEverythingByQuery(let query):
+                return ("v2/everything?", ["q": query, "apikey": UrlRouter.apiKey])
+            case .getEverythingByLanguage(let language):
+                return ("v2/everything?", ["language": language, "apikey": UrlRouter.apiKey])
+            case .getSourcesByCategory(let category):
+                 return ("v2/everything?", ["category": category, "apikey": UrlRouter.apiKey])
             }
-           
+                
         }()
         
             let url = try UrlRouter.baseUrl.asURL()

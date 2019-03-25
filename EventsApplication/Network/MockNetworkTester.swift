@@ -14,30 +14,30 @@ class MockNetworkTester{
    let disposibleBag = DisposeBag()
     
     
-    func testSearchEventByKeyword(){
-            NetworkServiceRx.shared
-                .searchEventByKeyword(keyword: "oktoberfest")
-                .observeOn(MainScheduler.instance)
-                .subscribe(
-                   onNext: { (n) in
-                    print("-------------- On NEXT ")
-                }, onError: { (error) in
-                    print("-------------- On onError ")
-                }, onCompleted: {
-                    print("-------------- On onCompleted ")
-                }, onDisposed: {
-                    print("-------------- On onDisposed ")
-                }).disposed(by: disposibleBag)
-        
-    }
-    
-    func searchEventsByCity(){
-        
-    }
-    
-    func searchEventByCityAndName(){
-        
-    }
+//    func testSearchEventByKeyword(){
+//            NetworkServiceRx.shared
+//                .searchEventByKeyword(keyword: "oktoberfest")
+//                .observeOn(MainScheduler.instance)
+//                .subscribe(
+//                   onNext: { (n) in
+//                    print("-------------- On NEXT ")
+//                }, onError: { (error) in
+//                    print("-------------- On onError ")
+//                }, onCompleted: {
+//                    print("-------------- On onCompleted ")
+//                }, onDisposed: {
+//                    print("-------------- On onDisposed ")
+//                }).disposed(by: disposibleBag)
+//        
+//    }
+//    
+//    func searchEventsByCity(){
+//        
+//    }
+//    
+//    func searchEventByCityAndName(){
+//        
+//    }
     
     
     

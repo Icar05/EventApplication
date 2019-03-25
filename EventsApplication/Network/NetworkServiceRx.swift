@@ -4,12 +4,15 @@
 import UIKit
 import RxSwift
 import Alamofire
-//import SwiftyJSON
 
 class NetworkServiceRx {
 
+    
+    
     static let shared = NetworkServiceRx()
     let sessionManager: SessionManager // = Alamofire.SessionManager.default
+    
+    
     
     private init(){
         let configuration = URLSessionConfiguration.default
@@ -19,25 +22,41 @@ class NetworkServiceRx {
 
     
     
-    func searchEventByKeyword(keyword: String) -> Observable<Bool>{
-        return Observable<Bool>.create({[weak self] (observer) -> Disposable in
-            let request = self?.sessionManager.request(UrlRouter.searchEventByKeyword(keyword))
+    //  all new headers
+    func getDefaultHeadlines() -> Observable<String>{
+        return Observable<String>.create({[weak self] (observer) -> Disposable in
+                    let request = self?.sessionManager.request(UrlRouter.getDefaultHeadlines())
+                        .validate()
+                        .responseJSON { (response) in
+                            switch response.result {
+                            case .success(let value):
+                                    observer.onNext("value: \(value)")
+                                    observer.onCompleted()
+                            case .failure(let error):
+                                    self?.debug(value: "getDefaultHeadlines: \(error.localizedDescription)")
+                                    observer.onError(error.localizedDescription as! Error)
+                            }
+                    }
+                    return Disposables.create {
+                        request?.cancel()
+                    }
+                })
+    }
+    
+    
+    //  headers by country. get values from selector
+    func getHeadlinesByCountry(country: String) -> Observable<String>{
+        return Observable<String>.create({[weak self] (observer) -> Disposable in
+            let request = self?.sessionManager.request(UrlRouter.getHeadlinesByCountry(country))
                 .validate()
                 .responseJSON { (response) in
                     switch response.result {
                     case .success(let value):
-                         observer.onNext(true)
-                         observer.onCompleted()
-                        
-//                        if let session = Session(json: JSON(value)) {
-//                            observer.onNext(session)
-//                            observer.onCompleted()
-//                        } else {
-//                            observer.onError(NetworkManagerError.invalidJSON)
-//                        }
+                        observer.onNext("value: \(value)")
+                        observer.onCompleted()
                     case .failure(let error):
-                        print("Signed in failed with error \(error.localizedDescription)")
-                        observer.onError(error)
+                        self?.debug(value: "getHeadlinesByCountry: \(error.localizedDescription)")
+                        observer.onError(error.localizedDescription as! Error)
                     }
             }
             return Disposables.create {
@@ -46,90 +65,99 @@ class NetworkServiceRx {
         })
     }
     
-//    func signIn(email: String, password: String) -> Observable<Session> {
-//
-//        return Observable<Session>.create({[weak self] (observer) -> Disposable in
-//            let request = self?.sessionManager.request(FCRouter.signIn(email, password))
-//                .validate()
-//                .responseJSON { (response) in
-//                    switch response.result {
-//                    case .success(let value):
-//                        if let session = Session(json: JSON(value)) {
-//                            observer.onNext(session)
-//                            observer.onCompleted()
-//                        } else {
-//                            observer.onError(NetworkManagerError.invalidJSON)
-//                        }
-//                    case .failure(let error):
-//                        print("Signed in failed with error \(error.localizedDescription)")
-//                        observer.onError(NetworkManagerError.commonError)
-//                    }
-//            }
-//            return Disposables.create {
-//                request?.cancel()
-//            }
-//        })
-//    }
-//
-//    func logout() -> Observable<Bool> {
-//        return Observable.create({[weak self] (observer) -> Disposable in
-//            let request = self?.sessionManager.request(FCRouter.signOut)
-//            .validate()
-//                .responseJSON(completionHandler: { (response) in
-//                    switch response.result {
-//                    case .success(_):
-//                        observer.onNext(true)
-//                        observer.onCompleted()
-//                    case .failure(let error):
-//                        observer.onError(NetworkManagerError.invalidJSON)
-//                        print("Signed out failed with error \(error.localizedDescription)")
-//                    }
-//                })
-//            return Disposables.create {
-//                request?.cancel()
-//            }
-//        })
-//    }
-//
     
-  
-   
     
-   
-    
-//    func getX() -> Observable<[X]> {
-//        return Observable<[X]>.create({(observer) -> Disposable in
-//            let request = self.sessionManager.request(UrlRouter.login)
-//                .validate()
-//                .responseJSON(completionHandler: { (response) in
-//                    switch response.result {
-//                    case .success(let value):
-//                        let json = JSON(value).arrayValue
-//                        let buildings = json.flatMap({ X(json: $0) })
-//                        observer.onNext(buildings)
-//                        observer.onCompleted()
-//                    case .failure(let error):
-//                        observer.onError(NetworkManagerError.invalidJSON)
-//                        print("Fetch x failed with error \(error.localizedDescription)")
-//                    }
-//                })
-//            return Disposables.create {
-//                request.cancel()
-//            }
-//        })
-//    }
+    //  headers by category. get values from selector
+    func getHeadlinesByCategory(category: String) -> Observable<String>{
+        return Observable<String>.create({[weak self] (observer) -> Disposable in
+            let request = self?.sessionManager.request(UrlRouter.getHeadlinesByCategory(category))
+                .validate()
+                .responseJSON { (response) in
+                    switch response.result {
+                    case .success(let value):
+                        observer.onNext("value: \(value)")
+                        observer.onCompleted()
+                    case .failure(let error):
+                        self?.debug(value: "getHeadlinesByCategory: \(error.localizedDescription)")
+                        observer.onError(error.localizedDescription as! Error)
+                    }
+            }
+            return Disposables.create {
+                request?.cancel()
+            }
+        })
+    }
     
     
     
-//    private func constructRequest(url: URL) -> URLRequest {
-//        
-//        var request = URLRequest(url: url)
-//        request.httpMethod = HTTPMethod.put.rawValue
-//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//        if let token = Token.shared.accessToken {
-//            request.setValue("Token \(token)", forHTTPHeaderField: "Authorization")
-//        }
-//        return request
-//    }
+    //  everything by query
+    func getEverythingByQuery(query: String) -> Observable<String>{
+        return Observable<String>.create({[weak self] (observer) -> Disposable in
+            let request = self?.sessionManager.request(UrlRouter.getEverythingByQuery(query))
+                .validate()
+                .responseJSON { (response) in
+                    switch response.result {
+                    case .success(let value):
+                        observer.onNext("value: \(value)")
+                        observer.onCompleted()
+                    case .failure(let error):
+                        self?.debug(value: "getEverythingByQuery: \(error.localizedDescription)")
+                        observer.onError(error.localizedDescription as! Error)
+                    }
+            }
+            return Disposables.create {
+                request?.cancel()
+            }
+        })
+    }
+    
+    
+    // everything by language
+    func getEverythingByLanguage(lang: String) -> Observable<String>{
+        return Observable<String>.create({[weak self] (observer) -> Disposable in
+            let request = self?.sessionManager.request(UrlRouter.getEverythingByLanguage(lang))
+                .validate()
+                .responseJSON { (response) in
+                    switch response.result {
+                    case .success(let value):
+                        observer.onNext("value: \(value)")
+                        observer.onCompleted()
+                    case .failure(let error):
+                        self?.debug(value: "getEverythingByLanguage: \(error.localizedDescription)")
+                        observer.onError(error.localizedDescription as! Error)
+                    }
+            }
+            return Disposables.create {
+                request?.cancel()
+            }
+        })
+    }
+    
+    //get sources. categories from selector
+    func getSourcesByCategory(category: String) -> Observable<String>{
+        return Observable<String>.create({[weak self] (observer) -> Disposable in
+            let request = self?.sessionManager.request(UrlRouter.getSourcesByCategory(category))
+                .validate()
+                .responseJSON { (response) in
+                    switch response.result {
+                    case .success(let value):
+                        observer.onNext("value: \(value)")
+                        observer.onCompleted()
+                    case .failure(let error):
+                        self?.debug(value: "getSourcesByCategory: \(error.localizedDescription)")
+                        observer.onError(error.localizedDescription as! Error)
+                    }
+            }
+            return Disposables.create {
+                request?.cancel()
+            }
+        })
+    }
+ 
+    
+    
+    func debug(value: String){
+        print("NetworkServiceRx: \(value)")
+    }
     
 }
