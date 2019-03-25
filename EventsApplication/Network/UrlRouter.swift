@@ -8,14 +8,14 @@ enum UrlRouter: URLRequestConvertible {
     
     static let apiKey = "956a81e3ea184cb7b8f2a6b3a4ea0c33"
     
-    static let baseUrl = "https://newsapi.org/v2/"
+    static let baseUrl = "https://newsapi.org/"
     
     
     case getDefaultHeadlines()
     case getHeadlinesByCountry(String)
     case getHeadlinesByCategory(String)
     case getEverythingByQuery(String)
-    case getEverythingByLanguage(String)
+    case getEverythingByLanguage(String, String)
     case getSourcesByCategory(String)
     
 
@@ -47,19 +47,33 @@ enum UrlRouter: URLRequestConvertible {
         let result: (path: String, parameters: Parameters?) = {
             switch self {
                 
-            case .getDefaultHeadlines():
-                return ("v2/top-headlines?", ["country": "ua", "apikey": UrlRouter.apiKey])
-            case .getHeadlinesByCountry(let country):
-                return ("v2/top-headlines?", ["country": country, "apikey": UrlRouter.apiKey])
-            case .getHeadlinesByCategory(let category):
-                return ("v2/top-headlines?", ["category": category, "apikey": UrlRouter.apiKey])
-            case .getEverythingByQuery(let query):
-                return ("v2/everything?", ["q": query, "apikey": UrlRouter.apiKey])
-            case .getEverythingByLanguage(let language):
-                return ("v2/everything?", ["language": language, "apikey": UrlRouter.apiKey])
-            case .getSourcesByCategory(let category):
-                 return ("v2/everything?", ["category": category, "apikey": UrlRouter.apiKey])
-            }
+                case .getDefaultHeadlines():
+                    return ("v2/top-headlines", ["apiKey": UrlRouter.apiKey,
+                                                 "country": ValueForSelector.defaultCountry])
+                
+                case .getHeadlinesByCountry(let country):
+                    return ("v2/top-headlines", ["apiKey": UrlRouter.apiKey,
+                                                 "country": country])
+                
+                case .getHeadlinesByCategory(let category):
+                    return ("v2/top-headlines", ["apiKey": UrlRouter.apiKey,
+                                                 "category": category,
+                                                 "country": ValueForSelector.defaultCountry])
+                
+                case .getEverythingByQuery(let query):
+                    return ("v2/everything",    ["apiKey": UrlRouter.apiKey,
+                                                 "page": 1,
+                                                 "q": query])
+                
+                case .getEverythingByLanguage(let query, let language):
+                    return ("v2/everything",    ["apiKey": UrlRouter.apiKey,
+                                                 "q": query,
+                                                 "language": language])
+                
+                case .getSourcesByCategory(let category):
+                     return ("v2/sources",   ["apiKey": UrlRouter.apiKey,
+                                                 "category": category])
+                }
                 
         }()
         

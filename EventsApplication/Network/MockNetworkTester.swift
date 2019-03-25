@@ -14,7 +14,7 @@ class MockNetworkTester{
    let disposibleBag = DisposeBag()
     
 
-    
+    // done
     func testGetDefaultHeadlines(){
             NetworkServiceRx.shared
                 .getDefaultHeadlines()
@@ -33,7 +33,7 @@ class MockNetworkTester{
     }
 
     
-    
+    //done
     func testGetHeadlinesByCountry(country: String){
         NetworkServiceRx.shared
             .getHeadlinesByCountry(country: country)
@@ -52,7 +52,7 @@ class MockNetworkTester{
     }
     
     
-    
+    //done
     func testGetHeadlinesByCategory(category: String){
         NetworkServiceRx.shared
             .getHeadlinesByCategory(category: category)
@@ -92,9 +92,9 @@ class MockNetworkTester{
     
     
     
-    func testGetEverythingByLanguage(language: String){
+    func testGetEverythingByLanguage(query: String, language: String){
         NetworkServiceRx.shared
-            .getEverythingByLanguage(lang: language)
+            .getEverythingByLanguage(query: query, language: language)
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { (n) in

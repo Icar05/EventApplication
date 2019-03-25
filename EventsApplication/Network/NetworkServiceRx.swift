@@ -34,7 +34,7 @@ class NetworkServiceRx {
                                     observer.onCompleted()
                             case .failure(let error):
                                     self?.debug(value: "getDefaultHeadlines: \(error.localizedDescription)")
-                                    observer.onError(error.localizedDescription as! Error)
+                                    observer.onError(error)
                             }
                     }
                     return Disposables.create {
@@ -56,7 +56,7 @@ class NetworkServiceRx {
                         observer.onCompleted()
                     case .failure(let error):
                         self?.debug(value: "getHeadlinesByCountry: \(error.localizedDescription)")
-                        observer.onError(error.localizedDescription as! Error)
+                        observer.onError(error)
                     }
             }
             return Disposables.create {
@@ -79,7 +79,7 @@ class NetworkServiceRx {
                         observer.onCompleted()
                     case .failure(let error):
                         self?.debug(value: "getHeadlinesByCategory: \(error.localizedDescription)")
-                        observer.onError(error.localizedDescription as! Error)
+                        observer.onError(error)
                     }
             }
             return Disposables.create {
@@ -102,7 +102,7 @@ class NetworkServiceRx {
                         observer.onCompleted()
                     case .failure(let error):
                         self?.debug(value: "getEverythingByQuery: \(error.localizedDescription)")
-                        observer.onError(error.localizedDescription as! Error)
+                        observer.onError(error)
                     }
             }
             return Disposables.create {
@@ -113,9 +113,9 @@ class NetworkServiceRx {
     
     
     // everything by language
-    func getEverythingByLanguage(lang: String) -> Observable<String>{
+    func getEverythingByLanguage(query: String, language: String) -> Observable<String>{
         return Observable<String>.create({[weak self] (observer) -> Disposable in
-            let request = self?.sessionManager.request(UrlRouter.getEverythingByLanguage(lang))
+            let request = self?.sessionManager.request(UrlRouter.getEverythingByLanguage(query, language))
                 .validate()
                 .responseJSON { (response) in
                     switch response.result {
@@ -124,7 +124,7 @@ class NetworkServiceRx {
                         observer.onCompleted()
                     case .failure(let error):
                         self?.debug(value: "getEverythingByLanguage: \(error.localizedDescription)")
-                        observer.onError(error.localizedDescription as! Error)
+                        observer.onError(error)
                     }
             }
             return Disposables.create {
@@ -145,7 +145,7 @@ class NetworkServiceRx {
                         observer.onCompleted()
                     case .failure(let error):
                         self?.debug(value: "getSourcesByCategory: \(error.localizedDescription)")
-                        observer.onError(error.localizedDescription as! Error)
+                        observer.onError(error)
                     }
             }
             return Disposables.create {

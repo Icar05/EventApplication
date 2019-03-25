@@ -22,7 +22,12 @@ class SignInViewController: UIViewController {
     
     
     func test(){
-        MockNetworkTester().testGetDefaultHeadlines()
+//         MockNetworkTester().testGetDefaultHeadlines()
+//         MockNetworkTester().testGetHeadlinesByCountry(country: "ua")
+//         MockNetworkTester().testGetHeadlinesByCategory(category: ValueForSelector().categories[0])
+//         MockNetworkTester().testtGetEverythingByQuery(query: "Порошенко")
+//         MockNetworkTester().testGetEverythingByLanguage(query: "Apple iOS" , language: "en")
+//         MockNetworkTester().testGetSourcesByCategory(category: ValueForSelector().categories[0])
     }
     
 }
