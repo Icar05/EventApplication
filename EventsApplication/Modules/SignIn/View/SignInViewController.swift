@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import LocalAuthentication
 
 class SignInViewController: UIViewController {
     
@@ -15,44 +14,15 @@ class SignInViewController: UIViewController {
     
     var presenter: SignInPresenter!
     
-    let context = LAContext()
-    
-    var error: NSError?
-
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        startAuth()
+        test()
     }
     
     
-
-    
-    
-    func startAuth(){
-        
-        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            let reason = "Identify yourself!"
-            
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
-                [unowned self] (success, authenticationError) in
-                
-                DispatchQueue.main.async {
-                    if success {
-                        print("Success !!!!")
-                        
-                        MockNetworkTester().testSearchEventByKeyword()
-                    } else {
-                        print("Error  !!!!")
-                    }
-                }
-            }
-        } else {
-            // no biometry
-        }
+    func test(){
+        MockNetworkTester().testGetDefaultHeadlines()
     }
     
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A918BAC224971C400D34DCE /* ValueForSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A918BAB224971C400D34DCE /* ValueForSelector.swift */; };
+		1A918BAF22497E8D00D34DCE /* AuthUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A918BAE22497E8D00D34DCE /* AuthUtil.swift */; };
 		1AF3B80A2226D911004FA784 /* MockNetworkTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3B8092226D911004FA784 /* MockNetworkTester.swift */; };
 		1AF63CBC2226FCD700CB7466 /* to read.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF63CBB2226FCD700CB7466 /* to read.swift */; };
 		5142D2325929E234439D3E1E /* Pods_EventsApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14362051047C402913B017BC /* Pods_EventsApplication.framework */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		14362051047C402913B017BC /* Pods_EventsApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventsApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A918BAB224971C400D34DCE /* ValueForSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueForSelector.swift; sourceTree = "<group>"; };
+		1A918BAE22497E8D00D34DCE /* AuthUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUtil.swift; sourceTree = "<group>"; };
 		1AF3B8092226D911004FA784 /* MockNetworkTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkTester.swift; sourceTree = "<group>"; };
 		1AF63CBB2226FCD700CB7466 /* to read.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "to read.swift"; sourceTree = "<group>"; };
 		690FACA11737355C05F058FD /* Pods-EventsApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApplication.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventsApplication/Pods-EventsApplication.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +108,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A918BAD22497E7C00D34DCE /* util */ = {
+			isa = PBXGroup;
+			children = (
+				1A918BAE22497E8D00D34DCE /* AuthUtil.swift */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
 		1A935067222440110004FCEE /* Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +246,7 @@
 		9BEB17F6221C05CE003F8C9A /* EventsApplication */ = {
 			isa = PBXGroup;
 			children = (
+				1A918BAD22497E7C00D34DCE /* util */,
 				1A935067222440110004FCEE /* Repository */,
 				9B11D172221ED98900BFEBD4 /* Network */,
 				9B966245221ED5AA008C512D /* Router */,
@@ -508,6 +519,7 @@
 				9B11D179221EDB2500BFEBD4 /* NetworkServiceRx.swift in Sources */,
 				9B11D17A221EDB2500BFEBD4 /* UrlRouter.swift in Sources */,
 				1AF3B80A2226D911004FA784 /* MockNetworkTester.swift in Sources */,
+				1A918BAF22497E8D00D34DCE /* AuthUtil.swift in Sources */,
 				9B966236221EB959008C512D /* SignInContract.swift in Sources */,
 				1AF63CBC2226FCD700CB7466 /* to read.swift in Sources */,
 			);

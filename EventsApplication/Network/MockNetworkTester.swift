@@ -13,32 +13,124 @@ class MockNetworkTester{
   
    let disposibleBag = DisposeBag()
     
+
     
-//    func testSearchEventByKeyword(){
-//            NetworkServiceRx.shared
-//                .searchEventByKeyword(keyword: "oktoberfest")
-//                .observeOn(MainScheduler.instance)
-//                .subscribe(
-//                   onNext: { (n) in
-//                    print("-------------- On NEXT ")
-//                }, onError: { (error) in
-//                    print("-------------- On onError ")
-//                }, onCompleted: {
-//                    print("-------------- On onCompleted ")
-//                }, onDisposed: {
-//                    print("-------------- On onDisposed ")
-//                }).disposed(by: disposibleBag)
-//        
-//    }
-//    
-//    func searchEventsByCity(){
-//        
-//    }
-//    
-//    func searchEventByCityAndName(){
-//        
-//    }
+    func testGetDefaultHeadlines(){
+            NetworkServiceRx.shared
+                .getDefaultHeadlines()
+                .observeOn(MainScheduler.instance)
+                .subscribe(
+                   onNext: { (n) in
+                    self.debug(value: "-------------- On NEXT \(n)")
+                }, onError: { (error) in
+                    self.debug(value: "-------------- On onError ")
+                }, onCompleted: {
+                    self.debug(value: "-------------- On onCompleted ")
+                }, onDisposed: {
+                    self.debug(value: "-------------- On onDisposed ")
+                }).disposed(by: disposibleBag)
+        
+    }
+
     
     
+    func testGetHeadlinesByCountry(country: String){
+        NetworkServiceRx.shared
+            .getHeadlinesByCountry(country: country)
+            .observeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: { (n) in
+                  self.debug(value: "-------------- On NEXT \(n)")
+            }, onError: { (error) in
+                  self.debug(value: "-------------- On onError ")
+            }, onCompleted: {
+                  self.debug(value: "-------------- On onCompleted ")
+            }, onDisposed: {
+                  self.debug(value: "-------------- On onDisposed ")
+            }).disposed(by: disposibleBag)
+        
+    }
+    
+    
+    
+    func testGetHeadlinesByCategory(category: String){
+        NetworkServiceRx.shared
+            .getHeadlinesByCategory(category: category)
+            .observeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: { (n) in
+                self.debug(value: "-------------- On NEXT \(n)")
+            }, onError: { (error) in
+                self.debug(value: "-------------- On onError ")
+            }, onCompleted: {
+                self.debug(value: "-------------- On onCompleted ")
+            }, onDisposed: {
+                self.debug(value: "-------------- On onDisposed ")
+            }).disposed(by: disposibleBag)
+        
+    }
+    
+    
+    
+    func testtGetEverythingByQuery(query: String){
+        NetworkServiceRx.shared
+            .getEverythingByQuery(query: query)
+            .observeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: { (n) in
+                self.debug(value: "-------------- On NEXT \(n)")
+            }, onError: { (error) in
+                self.debug(value: "-------------- On onError ")
+            }, onCompleted: {
+                self.debug(value: "-------------- On onCompleted ")
+            }, onDisposed: {
+                self.debug(value: "-------------- On onDisposed ")
+            }).disposed(by: disposibleBag)
+        
+    }
+    
+    
+    
+    
+    func testGetEverythingByLanguage(language: String){
+        NetworkServiceRx.shared
+            .getEverythingByLanguage(lang: language)
+            .observeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: { (n) in
+                self.debug(value: "-------------- On NEXT \(n)")
+            }, onError: { (error) in
+                self.debug(value: "-------------- On onError ")
+            }, onCompleted: {
+                self.debug(value: "-------------- On onCompleted ")
+            }, onDisposed: {
+                self.debug(value: "-------------- On onDisposed ")
+            }).disposed(by: disposibleBag)
+        
+    }
+    
+    
+    
+    func testGetSourcesByCategory(category: String){
+        NetworkServiceRx.shared
+            .getSourcesByCategory(category: category)
+            .observeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: { (n) in
+                self.debug(value: "-------------- On NEXT \(n)")
+            }, onError: { (error) in
+                self.debug(value: "-------------- On onError ")
+            }, onCompleted: {
+                self.debug(value: "-------------- On onCompleted ")
+            }, onDisposed: {
+                self.debug(value: "-------------- On onDisposed ")
+            }).disposed(by: disposibleBag)
+        
+    }
+    
+    
+    func debug(value: String){
+        print("MockNetworkTester: \(value)")
+    }
     
 }
