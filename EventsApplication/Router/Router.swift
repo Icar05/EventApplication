@@ -7,11 +7,12 @@ class Router {
     
     
     static func presentRootScreen(in window: UIWindow!){
-        window.makeKeyAndVisible()
         window.rootViewController = RootCreator.assembleModule()
+        window.makeKeyAndVisible()
     }
     
-
+    
+    // if we sould go to root screen directly
     static func presentRootScreen(current: UIViewController?) {
         let rootController = RootCreator.assembleModule()
         current?.navigationController?.present(rootController, animated: true)

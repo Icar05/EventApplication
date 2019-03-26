@@ -17,20 +17,7 @@
                     <view key="view" contentMode="scaleToFill" id="oED-oe-m3F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUO-dd-kud">
-                                <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="moveNext:" destination="cL6-Q0-O12" eventType="touchUpInside" id="Yw8-aF-Vwk"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="aUO-dd-kud" firstAttribute="centerY" secondItem="oED-oe-m3F" secondAttribute="centerY" id="W8l-5g-4NL"/>
-                            <constraint firstItem="aUO-dd-kud" firstAttribute="centerX" secondItem="oED-oe-m3F" secondAttribute="centerX" id="XFH-nl-gPg"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="v41-Mx-bZO"/>
                     </view>
                 </viewController>
