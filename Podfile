@@ -15,7 +15,7 @@ target 'EventsApplication' do
     pod 'RxSwift',    '~> 4.0'
     pod 'RxCocoa',    '~> 4.0'
     pod 'Alamofire',  '~> 4.7'
-    pod 'AlamofireNetworkActivityLogger', '~> 2.0'  
+#    pod 'AlamofireNetworkActivityLogger', '~> 2.0'  
 
 
   target 'EventsApplicationUITests' do
