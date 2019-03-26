@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		17EEA6E68486C94B3FF50A04 /* Pods_EventsApplicationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A050619A96C1E69E44BAFD /* Pods_EventsApplicationUITests.framework */; };
+		1A611C0B224ADF7C008E9D14 /* Sources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A611C0A224ADF7C008E9D14 /* Sources.swift */; };
+		1A611C0D224ADFCD008E9D14 /* Json4Swift_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A611C0C224ADFCD008E9D14 /* Json4Swift_Base.swift */; };
+		1A611C0F224ADFEF008E9D14 /* Articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A611C0E224ADFEF008E9D14 /* Articles.swift */; };
+		1A611C11224AE08B008E9D14 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A611C10224AE08B008E9D14 /* Source.swift */; };
 		1A918BAC224971C400D34DCE /* ValueForSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A918BAB224971C400D34DCE /* ValueForSelector.swift */; };
 		1A918BAF22497E8D00D34DCE /* AuthUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A918BAE22497E8D00D34DCE /* AuthUtil.swift */; };
 		1AF3B80A2226D911004FA784 /* MockNetworkTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3B8092226D911004FA784 /* MockNetworkTester.swift */; };
@@ -55,6 +59,10 @@
 
 /* Begin PBXFileReference section */
 		14362051047C402913B017BC /* Pods_EventsApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventsApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A611C0A224ADF7C008E9D14 /* Sources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources.swift; sourceTree = "<group>"; };
+		1A611C0C224ADFCD008E9D14 /* Json4Swift_Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json4Swift_Base.swift; sourceTree = "<group>"; };
+		1A611C0E224ADFEF008E9D14 /* Articles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Articles.swift; sourceTree = "<group>"; };
+		1A611C10224AE08B008E9D14 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		1A918BAB224971C400D34DCE /* ValueForSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueForSelector.swift; sourceTree = "<group>"; };
 		1A918BAE22497E8D00D34DCE /* AuthUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUtil.swift; sourceTree = "<group>"; };
 		1AF3B8092226D911004FA784 /* MockNetworkTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkTester.swift; sourceTree = "<group>"; };
@@ -120,6 +128,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A611C09224ADF1A008E9D14 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1A611C0A224ADF7C008E9D14 /* Sources.swift */,
+				1A611C0C224ADFCD008E9D14 /* Json4Swift_Base.swift */,
+				1A611C0E224ADFEF008E9D14 /* Articles.swift */,
+				1A611C10224AE08B008E9D14 /* Source.swift */,
+			);
+			name = Model;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		1A918BAD22497E7C00D34DCE /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				9BEB1803221C05CF003F8C9A /* Info.plist */,
+				1A611C09224ADF1A008E9D14 /* Model */,
 				1A918BB12249824E00D34DCE /* application sources */,
 				1A918BAD22497E7C00D34DCE /* Util */,
 				9B11D172221ED98900BFEBD4 /* Network */,
@@ -578,6 +599,7 @@
 				9B966244221ED556008C512D /* BaseCreator.swift in Sources */,
 				9B78808B224A13F600F7231A /* RootInteractorImpl.swift in Sources */,
 				9B966238221EBA72008C512D /* SignInCreator.swift in Sources */,
+				1A611C0D224ADFCD008E9D14 /* Json4Swift_Base.swift in Sources */,
 				1A918BAC224971C400D34DCE /* ValueForSelector.swift in Sources */,
 				9B788091224A149500F7231A /* RootCreator.swift in Sources */,
 				9B96623F221ED446008C512D /* SignInViewController.swift in Sources */,
@@ -589,8 +611,11 @@
 				9B11D179221EDB2500BFEBD4 /* NetworkServiceRx.swift in Sources */,
 				9B11D17A221EDB2500BFEBD4 /* UrlRouter.swift in Sources */,
 				1AF3B80A2226D911004FA784 /* MockNetworkTester.swift in Sources */,
+				1A611C11224AE08B008E9D14 /* Source.swift in Sources */,
+				1A611C0B224ADF7C008E9D14 /* Sources.swift in Sources */,
 				1A918BAF22497E8D00D34DCE /* AuthUtil.swift in Sources */,
 				9B966236221EB959008C512D /* SignInContract.swift in Sources */,
+				1A611C0F224ADFEF008E9D14 /* Articles.swift in Sources */,
 				1AF63CBC2226FCD700CB7466 /* to read.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

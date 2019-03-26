@@ -18,6 +18,7 @@ class RootViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewControllers = getDataSource()
+        MockNetworkTester().testGetDefaultHeadlines()
     }
     
 }
@@ -38,8 +39,13 @@ extension RootViewController : RootView{
             vc2.tabBarItem.title = "Purple"
             vc2.tabBarItem.image = UIImage(named: "star")
         
+        let vc3 = UIViewController()
+            vc3.view.backgroundColor = UIColor.green
+            vc3.tabBarItem.title = "Green"
+            vc3.tabBarItem.image = UIImage(named: "star")
+        
         // Set up the Tab Bar Controller to have two tabs
-        return [vc1, vc2]
+        return [vc1, vc2, vc3]
     }
 }
 
