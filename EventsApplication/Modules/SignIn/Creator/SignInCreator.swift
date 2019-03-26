@@ -31,22 +31,12 @@ class SignInCreator: BaseCreator {
         let presenter = SignInPresenterImpl()
         let interactor = SignInInteractorImpl()
         
-        let navigation = UINavigationController(rootViewController: view)
-        navigation.navigationBar.tintColor = UIColor.red
+            presenter.view = view
+            presenter.interactor = interactor
         
+            view.presenter = presenter
         
-        let backButton = UIBarButtonItem()
-        backButton.title = "Назад"
-        navigation.navigationBar.topItem!.backBarButtonItem = backButton
-        
-        
-        presenter.view = view
-        presenter.interactor = interactor
-        
-        view.presenter = presenter
-        
-        
-        return navigation
+        return view
     }
    
 }
