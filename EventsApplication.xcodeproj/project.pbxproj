@@ -128,16 +128,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1A611C09224ADF1A008E9D14 /* Model */ = {
+		1A611C12224AE371008E9D14 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1A611C0A224ADF7C008E9D14 /* Sources.swift */,
-				1A611C0C224ADFCD008E9D14 /* Json4Swift_Base.swift */,
-				1A611C0E224ADFEF008E9D14 /* Articles.swift */,
 				1A611C10224AE08B008E9D14 /* Source.swift */,
+				1A611C0E224ADFEF008E9D14 /* Articles.swift */,
+				1A611C0C224ADFCD008E9D14 /* Json4Swift_Base.swift */,
+				1A611C0A224ADF7C008E9D14 /* Sources.swift */,
 			);
-			name = Model;
-			path = "New Group";
+			path = Models;
 			sourceTree = "<group>";
 		};
 		1A918BAD22497E7C00D34DCE /* Util */ = {
@@ -334,8 +333,8 @@
 		9BEB17F6221C05CE003F8C9A /* EventsApplication */ = {
 			isa = PBXGroup;
 			children = (
+				1A611C12224AE371008E9D14 /* Models */,
 				9BEB1803221C05CF003F8C9A /* Info.plist */,
-				1A611C09224ADF1A008E9D14 /* Model */,
 				1A918BB12249824E00D34DCE /* application sources */,
 				1A918BAD22497E7C00D34DCE /* Util */,
 				9B11D172221ED98900BFEBD4 /* Network */,
