@@ -24,7 +24,6 @@
 		9B56313B224B6CD6005B41A6 /* Headers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B56313A224B6CD6005B41A6 /* Headers.storyboard */; };
 		9B56313D224B6D11005B41A6 /* Everything.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B56313C224B6D11005B41A6 /* Everything.storyboard */; };
 		9B56313F224B6D32005B41A6 /* Sources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B56313E224B6D32005B41A6 /* Sources.storyboard */; };
-		9B563144224B72AC005B41A6 /* HeaderCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563143224B72AC005B41A6 /* HeaderCreator.swift */; };
 		9B563146224B73BA005B41A6 /* EverythingCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563145224B73BA005B41A6 /* EverythingCreator.swift */; };
 		9B563148224B73EE005B41A6 /* SourcesCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563147224B73EE005B41A6 /* SourcesCreator.swift */; };
 		9B56314A224B7435005B41A6 /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563149224B7435005B41A6 /* HeaderViewController.swift */; };
@@ -37,6 +36,7 @@
 		9B563158224B7672005B41A6 /* SourcesContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563157224B7672005B41A6 /* SourcesContract.swift */; };
 		9B56315A224B769E005B41A6 /* SourcesPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563159224B769E005B41A6 /* SourcesPresenterImpl.swift */; };
 		9B56315C224B76C4005B41A6 /* SourcesInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56315B224B76C4005B41A6 /* SourcesInteractorImpl.swift */; };
+		9B56315F224B7C95005B41A6 /* HeaderCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56315E224B7C95005B41A6 /* HeaderCreator.swift */; };
 		9B78808B224A13F600F7231A /* RootInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78808A224A13F600F7231A /* RootInteractorImpl.swift */; };
 		9B78808E224A144700F7231A /* RootPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78808D224A144700F7231A /* RootPresenterImpl.swift */; };
 		9B788091224A149500F7231A /* RootCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B788090224A149500F7231A /* RootCreator.swift */; };
@@ -95,7 +95,6 @@
 		9B56313A224B6CD6005B41A6 /* Headers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Headers.storyboard; sourceTree = "<group>"; };
 		9B56313C224B6D11005B41A6 /* Everything.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Everything.storyboard; sourceTree = "<group>"; };
 		9B56313E224B6D32005B41A6 /* Sources.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sources.storyboard; sourceTree = "<group>"; };
-		9B563143224B72AC005B41A6 /* HeaderCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCreator.swift; sourceTree = "<group>"; };
 		9B563145224B73BA005B41A6 /* EverythingCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingCreator.swift; sourceTree = "<group>"; };
 		9B563147224B73EE005B41A6 /* SourcesCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesCreator.swift; sourceTree = "<group>"; };
 		9B563149224B7435005B41A6 /* HeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +107,7 @@
 		9B563157224B7672005B41A6 /* SourcesContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesContract.swift; sourceTree = "<group>"; };
 		9B563159224B769E005B41A6 /* SourcesPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesPresenterImpl.swift; sourceTree = "<group>"; };
 		9B56315B224B76C4005B41A6 /* SourcesInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesInteractorImpl.swift; sourceTree = "<group>"; };
+		9B56315E224B7C95005B41A6 /* HeaderCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCreator.swift; sourceTree = "<group>"; };
 		9B78808A224A13F600F7231A /* RootInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractorImpl.swift; sourceTree = "<group>"; };
 		9B78808D224A144700F7231A /* RootPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresenterImpl.swift; sourceTree = "<group>"; };
 		9B788090224A149500F7231A /* RootCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCreator.swift; sourceTree = "<group>"; };
@@ -208,7 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				9B563111224B61DE005B41A6 /* View */,
-				9B563112224B61E6005B41A6 /* Creator */,
+				9B56315D224B7C64005B41A6 /* Creator */,
 				9B563113224B61F0005B41A6 /* Contract */,
 				9B563114224B61F8005B41A6 /* Presenter */,
 				9B563115224B6200005B41A6 /* Interactor */,
@@ -247,14 +247,6 @@
 				9B563149224B7435005B41A6 /* HeaderViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		9B563112224B61E6005B41A6 /* Creator */ = {
-			isa = PBXGroup;
-			children = (
-				9B563143224B72AC005B41A6 /* HeaderCreator.swift */,
-			);
-			path = Creator;
 			sourceTree = "<group>";
 		};
 		9B563113224B61F0005B41A6 /* Contract */ = {
@@ -361,6 +353,14 @@
 				9B56314F224B7579005B41A6 /* EverythingPresenterImpl.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9B56315D224B7C64005B41A6 /* Creator */ = {
+			isa = PBXGroup;
+			children = (
+				9B56315E224B7C95005B41A6 /* HeaderCreator.swift */,
+			);
+			path = Creator;
 			sourceTree = "<group>";
 		};
 		9B788088224A13AB00F7231A /* Root */ = {
@@ -807,7 +807,6 @@
 				9B563148224B73EE005B41A6 /* SourcesCreator.swift in Sources */,
 				9B563156224B764B005B41A6 /* SourceViewController.swift in Sources */,
 				1A918BAC224971C400D34DCE /* ValueForSelector.swift in Sources */,
-				9B563144224B72AC005B41A6 /* HeaderCreator.swift in Sources */,
 				9B788091224A149500F7231A /* RootCreator.swift in Sources */,
 				9B563152224B75BB005B41A6 /* EverythingContract.swift in Sources */,
 				9B96623F221ED446008C512D /* SignInViewController.swift in Sources */,
@@ -822,6 +821,7 @@
 				9B56314C224B74A3005B41A6 /* HeadersInteractorImpl.swift in Sources */,
 				9B78808E224A144700F7231A /* RootPresenterImpl.swift in Sources */,
 				9BEB17F8221C05CE003F8C9A /* AppDelegate.swift in Sources */,
+				9B56315F224B7C95005B41A6 /* HeaderCreator.swift in Sources */,
 				9B11D179221EDB2500BFEBD4 /* NetworkServiceRx.swift in Sources */,
 				9B11D17A221EDB2500BFEBD4 /* UrlRouter.swift in Sources */,
 				1AF3B80A2226D911004FA784 /* MockNetworkTester.swift in Sources */,
