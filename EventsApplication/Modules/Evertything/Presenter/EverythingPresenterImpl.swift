@@ -12,9 +12,10 @@ class EverythingPresenterImpl: EverythingPresenter {
     
     var view: EverythingView?
     
-    var interactor: EveryThingInteractor!
+    var interactor: EverythingInteractor!
     
     func onViewDidLoad() {
         
     }
 }
+

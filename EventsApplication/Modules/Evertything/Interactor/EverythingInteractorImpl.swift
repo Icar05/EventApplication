@@ -2,12 +2,12 @@
 //  EverythingInteractorImpl.swift
 //  EventsApplication
 //
-//  Created by Eddson on 3/26/19.
+//  Created by Eddson on 3/27/19.
 //  Copyright © 2019 ipinguin_linuxoid. All rights reserved.
 //
 
 import Foundation
 
-class EverythingInteractorImpl: EvertythingInteractor {
+class EverythingInteractorImpl: EverythingInteractor {
     
 }

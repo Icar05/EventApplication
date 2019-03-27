@@ -1,5 +1,5 @@
 //
-//  SourcesInteractorImpl.swift
+//  HeadersInteractorImpl.swift
 //  EventsApplication
 //
 //  Created by Eddson on 3/27/19.
@@ -8,6 +8,8 @@
 
 import Foundation
 
-class SourcesInteractorImpl: SourcesInteractor {
+import Foundation
+
+class HeadersInteractorImpl: HeadersInteractor {
     
 }

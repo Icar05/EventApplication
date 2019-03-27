@@ -28,24 +28,25 @@ extension RootViewController : RootView{
     
     func getDataSource() -> [UIViewController]{
         
-        let vc1 = SignInCreator.assembleModule()
-            vc1.view.backgroundColor = UIColor.orange
-            vc1.tabBarItem.title = "Orange"
-            vc1.tabBarItem.image = UIImage(named: "heart")
         
-        // Set up the second View Controller
-        let vc2 = UIViewController()
-            vc2.view.backgroundColor = UIColor.purple
-            vc2.tabBarItem.title = "Purple"
-            vc2.tabBarItem.image = UIImage(named: "star")
+        let headerVC = HeaderCreator.assembleModule()
+            headerVC.view.backgroundColor = UIColor.red
+            headerVC.tabBarItem.title = "Red"
+            headerVC.tabBarItem.image = UIImage(named: "heart")
         
-        let vc3 = UIViewController()
-            vc3.view.backgroundColor = UIColor.green
-            vc3.tabBarItem.title = "Green"
-            vc3.tabBarItem.image = UIImage(named: "star")
         
-        // Set up the Tab Bar Controller to have two tabs
-        return [vc1, vc2, vc3]
+        let everythingVC = EverythingCreator.assembleModule()
+            everythingVC.view.backgroundColor = UIColor.yellow
+            everythingVC.tabBarItem.title = "Yellow"
+            everythingVC.tabBarItem.image = UIImage(named: "star")
+        
+        let sourcesVC = SourcesCreator.assembleModule()
+            sourcesVC.view.backgroundColor = UIColor.green
+            sourcesVC.tabBarItem.title = "Green"
+            sourcesVC.tabBarItem.image = UIImage(named: "star")
+        
+        
+        return [headerVC, everythingVC, sourcesVC]
     }
 }
 

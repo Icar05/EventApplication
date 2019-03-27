@@ -12,7 +12,7 @@ class HeaderPresenterImpl: HeaderPresenter {
     
     var view: HeaderView?
     
-    var interactor: HeaderInteractor!
+    var interactor: HeadersInteractor!
     
     func onViewDidLoad() {
         

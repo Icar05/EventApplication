@@ -1,5 +1,5 @@
 //
-//  HeaderContract.swift
+//  EverythingContract.swift
 //  EventsApplication
 //
 //  Created by Eddson on 3/27/19.
@@ -20,3 +20,4 @@ protocol EverythingInteractor: class {}
 protocol EverythingView: class {
     var presenter: EverythingPresenter! { get set }
 }
+

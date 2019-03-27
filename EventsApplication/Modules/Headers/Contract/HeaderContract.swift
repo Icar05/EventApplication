@@ -10,11 +10,11 @@ import Foundation
 
 protocol HeaderPresenter: class {
     var view: HeaderView? { get set }
-    var interactor: HeaderInteractor! { get set }
+    var interactor: HeadersInteractor! { get set }
     func onViewDidLoad()
 }
 
-protocol HeaderInteractor: class {}
+protocol HeadersInteractor: class {}
 
 protocol HeaderView: class {
     var presenter: HeaderPresenter! { get set }

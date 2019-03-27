@@ -21,6 +21,22 @@
 		9B11D17A221EDB2500BFEBD4 /* UrlRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11D178221EDB2500BFEBD4 /* UrlRouter.swift */; };
 		9B56312B224B62FB005B41A6 /* HeaderContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56312A224B62FB005B41A6 /* HeaderContract.swift */; };
 		9B56312F224B64B9005B41A6 /* HeaderPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56312E224B64B9005B41A6 /* HeaderPresenterImpl.swift */; };
+		9B56313B224B6CD6005B41A6 /* Headers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B56313A224B6CD6005B41A6 /* Headers.storyboard */; };
+		9B56313D224B6D11005B41A6 /* Everything.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B56313C224B6D11005B41A6 /* Everything.storyboard */; };
+		9B56313F224B6D32005B41A6 /* Sources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B56313E224B6D32005B41A6 /* Sources.storyboard */; };
+		9B563144224B72AC005B41A6 /* HeaderCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563143224B72AC005B41A6 /* HeaderCreator.swift */; };
+		9B563146224B73BA005B41A6 /* EverythingCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563145224B73BA005B41A6 /* EverythingCreator.swift */; };
+		9B563148224B73EE005B41A6 /* SourcesCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563147224B73EE005B41A6 /* SourcesCreator.swift */; };
+		9B56314A224B7435005B41A6 /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563149224B7435005B41A6 /* HeaderViewController.swift */; };
+		9B56314C224B74A3005B41A6 /* HeadersInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56314B224B74A3005B41A6 /* HeadersInteractorImpl.swift */; };
+		9B56314E224B7512005B41A6 /* EverythingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56314D224B7512005B41A6 /* EverythingViewController.swift */; };
+		9B563150224B7579005B41A6 /* EverythingPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56314F224B7579005B41A6 /* EverythingPresenterImpl.swift */; };
+		9B563152224B75BB005B41A6 /* EverythingContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563151224B75BB005B41A6 /* EverythingContract.swift */; };
+		9B563154224B75F5005B41A6 /* EverythingInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563153224B75F5005B41A6 /* EverythingInteractorImpl.swift */; };
+		9B563156224B764B005B41A6 /* SourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563155224B764B005B41A6 /* SourceViewController.swift */; };
+		9B563158224B7672005B41A6 /* SourcesContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563157224B7672005B41A6 /* SourcesContract.swift */; };
+		9B56315A224B769E005B41A6 /* SourcesPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563159224B769E005B41A6 /* SourcesPresenterImpl.swift */; };
+		9B56315C224B76C4005B41A6 /* SourcesInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56315B224B76C4005B41A6 /* SourcesInteractorImpl.swift */; };
 		9B78808B224A13F600F7231A /* RootInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78808A224A13F600F7231A /* RootInteractorImpl.swift */; };
 		9B78808E224A144700F7231A /* RootPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78808D224A144700F7231A /* RootPresenterImpl.swift */; };
 		9B788091224A149500F7231A /* RootCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B788090224A149500F7231A /* RootCreator.swift */; };
@@ -75,14 +91,23 @@
 		9B11D177221EDB2500BFEBD4 /* NetworkServiceRx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceRx.swift; sourceTree = "<group>"; };
 		9B11D178221EDB2500BFEBD4 /* UrlRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlRouter.swift; sourceTree = "<group>"; };
 		9B56312A224B62FB005B41A6 /* HeaderContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderContract.swift; sourceTree = "<group>"; };
-		9B56312C224B634B005B41A6 /* EverythingContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingContract.swift; sourceTree = "<group>"; };
-		9B56312D224B643F005B41A6 /* SourcesContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesContract.swift; sourceTree = "<group>"; };
 		9B56312E224B64B9005B41A6 /* HeaderPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderPresenterImpl.swift; sourceTree = "<group>"; };
-		9B563130224B64F2005B41A6 /* EverythingPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingPresenterImpl.swift; sourceTree = "<group>"; };
-		9B563131224B653E005B41A6 /* SourcesPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesPresenterImpl.swift; sourceTree = "<group>"; };
-		9B563132224B6A46005B41A6 /* HeaderInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderInteractorImpl.swift; sourceTree = "<group>"; };
-		9B563133224B6A4A005B41A6 /* EverythingInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingInteractorImpl.swift; sourceTree = "<group>"; };
-		9B563136224B6B15005B41A6 /* SourcesInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesInteractorImpl.swift; sourceTree = "<group>"; };
+		9B56313A224B6CD6005B41A6 /* Headers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Headers.storyboard; sourceTree = "<group>"; };
+		9B56313C224B6D11005B41A6 /* Everything.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Everything.storyboard; sourceTree = "<group>"; };
+		9B56313E224B6D32005B41A6 /* Sources.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sources.storyboard; sourceTree = "<group>"; };
+		9B563143224B72AC005B41A6 /* HeaderCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCreator.swift; sourceTree = "<group>"; };
+		9B563145224B73BA005B41A6 /* EverythingCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingCreator.swift; sourceTree = "<group>"; };
+		9B563147224B73EE005B41A6 /* SourcesCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesCreator.swift; sourceTree = "<group>"; };
+		9B563149224B7435005B41A6 /* HeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
+		9B56314B224B74A3005B41A6 /* HeadersInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadersInteractorImpl.swift; sourceTree = "<group>"; };
+		9B56314D224B7512005B41A6 /* EverythingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingViewController.swift; sourceTree = "<group>"; };
+		9B56314F224B7579005B41A6 /* EverythingPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingPresenterImpl.swift; sourceTree = "<group>"; };
+		9B563151224B75BB005B41A6 /* EverythingContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingContract.swift; sourceTree = "<group>"; };
+		9B563153224B75F5005B41A6 /* EverythingInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingInteractorImpl.swift; sourceTree = "<group>"; };
+		9B563155224B764B005B41A6 /* SourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceViewController.swift; sourceTree = "<group>"; };
+		9B563157224B7672005B41A6 /* SourcesContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesContract.swift; sourceTree = "<group>"; };
+		9B563159224B769E005B41A6 /* SourcesPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesPresenterImpl.swift; sourceTree = "<group>"; };
+		9B56315B224B76C4005B41A6 /* SourcesInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesInteractorImpl.swift; sourceTree = "<group>"; };
 		9B78808A224A13F600F7231A /* RootInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractorImpl.swift; sourceTree = "<group>"; };
 		9B78808D224A144700F7231A /* RootPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresenterImpl.swift; sourceTree = "<group>"; };
 		9B788090224A149500F7231A /* RootCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCreator.swift; sourceTree = "<group>"; };
@@ -218,6 +243,8 @@
 		9B563111224B61DE005B41A6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9B56313A224B6CD6005B41A6 /* Headers.storyboard */,
+				9B563149224B7435005B41A6 /* HeaderViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -225,6 +252,7 @@
 		9B563112224B61E6005B41A6 /* Creator */ = {
 			isa = PBXGroup;
 			children = (
+				9B563143224B72AC005B41A6 /* HeaderCreator.swift */,
 			);
 			path = Creator;
 			sourceTree = "<group>";
@@ -248,7 +276,7 @@
 		9B563115224B6200005B41A6 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				9B563132224B6A46005B41A6 /* HeaderInteractorImpl.swift */,
+				9B56314B224B74A3005B41A6 /* HeadersInteractorImpl.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -256,7 +284,7 @@
 		9B563116224B624D005B41A6 /* Contract */ = {
 			isa = PBXGroup;
 			children = (
-				9B56312D224B643F005B41A6 /* SourcesContract.swift */,
+				9B563157224B7672005B41A6 /* SourcesContract.swift */,
 			);
 			path = Contract;
 			sourceTree = "<group>";
@@ -264,7 +292,7 @@
 		9B563117224B624D005B41A6 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				9B563131224B653E005B41A6 /* SourcesPresenterImpl.swift */,
+				9B563159224B769E005B41A6 /* SourcesPresenterImpl.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -272,6 +300,8 @@
 		9B563118224B624D005B41A6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9B56313E224B6D32005B41A6 /* Sources.storyboard */,
+				9B563155224B764B005B41A6 /* SourceViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -279,7 +309,7 @@
 		9B563119224B624D005B41A6 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				9B563136224B6B15005B41A6 /* SourcesInteractorImpl.swift */,
+				9B56315B224B76C4005B41A6 /* SourcesInteractorImpl.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -287,6 +317,7 @@
 		9B56311A224B624D005B41A6 /* Creator */ = {
 			isa = PBXGroup;
 			children = (
+				9B563147224B73EE005B41A6 /* SourcesCreator.swift */,
 			);
 			path = Creator;
 			sourceTree = "<group>";
@@ -294,6 +325,8 @@
 		9B563125224B62B4005B41A6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9B56313C224B6D11005B41A6 /* Everything.storyboard */,
+				9B56314D224B7512005B41A6 /* EverythingViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -301,6 +334,7 @@
 		9B563126224B62B4005B41A6 /* Creator */ = {
 			isa = PBXGroup;
 			children = (
+				9B563145224B73BA005B41A6 /* EverythingCreator.swift */,
 			);
 			path = Creator;
 			sourceTree = "<group>";
@@ -308,7 +342,7 @@
 		9B563127224B62B4005B41A6 /* Contract */ = {
 			isa = PBXGroup;
 			children = (
-				9B56312C224B634B005B41A6 /* EverythingContract.swift */,
+				9B563151224B75BB005B41A6 /* EverythingContract.swift */,
 			);
 			path = Contract;
 			sourceTree = "<group>";
@@ -316,7 +350,7 @@
 		9B563128224B62B4005B41A6 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				9B563133224B6A4A005B41A6 /* EverythingInteractorImpl.swift */,
+				9B563153224B75F5005B41A6 /* EverythingInteractorImpl.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -324,7 +358,7 @@
 		9B563129224B62B4005B41A6 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				9B563130224B64F2005B41A6 /* EverythingPresenterImpl.swift */,
+				9B56314F224B7579005B41A6 /* EverythingPresenterImpl.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -655,8 +689,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BEB1802221C05CF003F8C9A /* LaunchScreen.storyboard in Resources */,
+				9B56313D224B6D11005B41A6 /* Everything.storyboard in Resources */,
+				9B56313F224B6D32005B41A6 /* Sources.storyboard in Resources */,
 				9B966241221ED4A6008C512D /* SignIn.storyboard in Resources */,
 				9B788099224A151000F7231A /* Root.storyboard in Resources */,
+				9B56313B224B6CD6005B41A6 /* Headers.storyboard in Resources */,
 				9BEB17FF221C05CF003F8C9A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -758,18 +795,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B966247221ED5B7008C512D /* Router.swift in Sources */,
+				9B563154224B75F5005B41A6 /* EverythingInteractorImpl.swift in Sources */,
 				9B96623A221EBC0C008C512D /* SignInPresenterImpl.swift in Sources */,
 				9B966244221ED556008C512D /* BaseCreator.swift in Sources */,
+				9B563146224B73BA005B41A6 /* EverythingCreator.swift in Sources */,
 				9B78808B224A13F600F7231A /* RootInteractorImpl.swift in Sources */,
 				9B966238221EBA72008C512D /* SignInCreator.swift in Sources */,
+				9B56315A224B769E005B41A6 /* SourcesPresenterImpl.swift in Sources */,
 				1A611C0D224ADFCD008E9D14 /* Json4Swift_Base.swift in Sources */,
+				9B563150224B7579005B41A6 /* EverythingPresenterImpl.swift in Sources */,
+				9B563148224B73EE005B41A6 /* SourcesCreator.swift in Sources */,
+				9B563156224B764B005B41A6 /* SourceViewController.swift in Sources */,
 				1A918BAC224971C400D34DCE /* ValueForSelector.swift in Sources */,
+				9B563144224B72AC005B41A6 /* HeaderCreator.swift in Sources */,
 				9B788091224A149500F7231A /* RootCreator.swift in Sources */,
+				9B563152224B75BB005B41A6 /* EverythingContract.swift in Sources */,
 				9B96623F221ED446008C512D /* SignInViewController.swift in Sources */,
 				9B788097224A14F000F7231A /* RootViewController.swift in Sources */,
+				9B56314A224B7435005B41A6 /* HeaderViewController.swift in Sources */,
+				9B563158224B7672005B41A6 /* SourcesContract.swift in Sources */,
 				9B96623C221EBC52008C512D /* SignInInteractorImpl.swift in Sources */,
+				9B56315C224B76C4005B41A6 /* SourcesInteractorImpl.swift in Sources */,
 				9B788094224A14C600F7231A /* RootContract.swift in Sources */,
 				9B56312F224B64B9005B41A6 /* HeaderPresenterImpl.swift in Sources */,
+				9B56314E224B7512005B41A6 /* EverythingViewController.swift in Sources */,
+				9B56314C224B74A3005B41A6 /* HeadersInteractorImpl.swift in Sources */,
 				9B78808E224A144700F7231A /* RootPresenterImpl.swift in Sources */,
 				9BEB17F8221C05CE003F8C9A /* AppDelegate.swift in Sources */,
 				9B11D179221EDB2500BFEBD4 /* NetworkServiceRx.swift in Sources */,

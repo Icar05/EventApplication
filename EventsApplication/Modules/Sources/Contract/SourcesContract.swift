@@ -1,5 +1,5 @@
 //
-//  HeaderContract.swift
+//  SourcesContract.swift
 //  EventsApplication
 //
 //  Created by Eddson on 3/27/19.
