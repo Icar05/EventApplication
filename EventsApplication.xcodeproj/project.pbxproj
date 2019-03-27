@@ -80,6 +80,9 @@
 		9B56312E224B64B9005B41A6 /* HeaderPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderPresenterImpl.swift; sourceTree = "<group>"; };
 		9B563130224B64F2005B41A6 /* EverythingPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingPresenterImpl.swift; sourceTree = "<group>"; };
 		9B563131224B653E005B41A6 /* SourcesPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesPresenterImpl.swift; sourceTree = "<group>"; };
+		9B563132224B6A46005B41A6 /* HeaderInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderInteractorImpl.swift; sourceTree = "<group>"; };
+		9B563133224B6A4A005B41A6 /* EverythingInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingInteractorImpl.swift; sourceTree = "<group>"; };
+		9B563136224B6B15005B41A6 /* SourcesInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesInteractorImpl.swift; sourceTree = "<group>"; };
 		9B78808A224A13F600F7231A /* RootInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractorImpl.swift; sourceTree = "<group>"; };
 		9B78808D224A144700F7231A /* RootPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresenterImpl.swift; sourceTree = "<group>"; };
 		9B788090224A149500F7231A /* RootCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCreator.swift; sourceTree = "<group>"; };
@@ -245,6 +248,7 @@
 		9B563115224B6200005B41A6 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				9B563132224B6A46005B41A6 /* HeaderInteractorImpl.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -275,6 +279,7 @@
 		9B563119224B624D005B41A6 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				9B563136224B6B15005B41A6 /* SourcesInteractorImpl.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 		9B563128224B62B4005B41A6 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				9B563133224B6A4A005B41A6 /* EverythingInteractorImpl.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
