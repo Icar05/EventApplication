@@ -19,6 +19,7 @@
 		5142D2325929E234439D3E1E /* Pods_EventsApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14362051047C402913B017BC /* Pods_EventsApplication.framework */; };
 		9B11D179221EDB2500BFEBD4 /* NetworkServiceRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11D177221EDB2500BFEBD4 /* NetworkServiceRx.swift */; };
 		9B11D17A221EDB2500BFEBD4 /* UrlRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11D178221EDB2500BFEBD4 /* UrlRouter.swift */; };
+		9B56312B224B62FB005B41A6 /* HeaderContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56312A224B62FB005B41A6 /* HeaderContract.swift */; };
 		9B78808B224A13F600F7231A /* RootInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78808A224A13F600F7231A /* RootInteractorImpl.swift */; };
 		9B78808E224A144700F7231A /* RootPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78808D224A144700F7231A /* RootPresenterImpl.swift */; };
 		9B788091224A149500F7231A /* RootCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B788090224A149500F7231A /* RootCreator.swift */; };
@@ -72,6 +73,8 @@
 		75A050619A96C1E69E44BAFD /* Pods_EventsApplicationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventsApplicationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B11D177221EDB2500BFEBD4 /* NetworkServiceRx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceRx.swift; sourceTree = "<group>"; };
 		9B11D178221EDB2500BFEBD4 /* UrlRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlRouter.swift; sourceTree = "<group>"; };
+		9B56312A224B62FB005B41A6 /* HeaderContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderContract.swift; sourceTree = "<group>"; };
+		9B56312C224B634B005B41A6 /* EverythingContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingContract.swift; sourceTree = "<group>"; };
 		9B78808A224A13F600F7231A /* RootInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractorImpl.swift; sourceTree = "<group>"; };
 		9B78808D224A144700F7231A /* RootPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresenterImpl.swift; sourceTree = "<group>"; };
 		9B788090224A149500F7231A /* RootCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCreator.swift; sourceTree = "<group>"; };
@@ -168,6 +171,149 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		9B56310E224B61AD005B41A6 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				9B563111224B61DE005B41A6 /* View */,
+				9B563112224B61E6005B41A6 /* Creator */,
+				9B563113224B61F0005B41A6 /* Contract */,
+				9B563114224B61F8005B41A6 /* Presenter */,
+				9B563115224B6200005B41A6 /* Interactor */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		9B56310F224B61BE005B41A6 /* Evertything */ = {
+			isa = PBXGroup;
+			children = (
+				9B563125224B62B4005B41A6 /* View */,
+				9B563126224B62B4005B41A6 /* Creator */,
+				9B563127224B62B4005B41A6 /* Contract */,
+				9B563129224B62B4005B41A6 /* Presenter */,
+				9B563128224B62B4005B41A6 /* Interactor */,
+			);
+			path = Evertything;
+			sourceTree = "<group>";
+		};
+		9B563110224B61CA005B41A6 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9B563118224B624D005B41A6 /* View */,
+				9B56311A224B624D005B41A6 /* Creator */,
+				9B563116224B624D005B41A6 /* Contract */,
+				9B563117224B624D005B41A6 /* Presenter */,
+				9B563119224B624D005B41A6 /* Interactor */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		9B563111224B61DE005B41A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9B563112224B61E6005B41A6 /* Creator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Creator;
+			sourceTree = "<group>";
+		};
+		9B563113224B61F0005B41A6 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				9B56312A224B62FB005B41A6 /* HeaderContract.swift */,
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
+		9B563114224B61F8005B41A6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9B563115224B6200005B41A6 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		9B563116224B624D005B41A6 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
+		9B563117224B624D005B41A6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9B563118224B624D005B41A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9B563119224B624D005B41A6 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		9B56311A224B624D005B41A6 /* Creator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Creator;
+			sourceTree = "<group>";
+		};
+		9B563125224B62B4005B41A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9B563126224B62B4005B41A6 /* Creator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Creator;
+			sourceTree = "<group>";
+		};
+		9B563127224B62B4005B41A6 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				9B56312C224B634B005B41A6 /* EverythingContract.swift */,
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
+		9B563128224B62B4005B41A6 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		9B563129224B62B4005B41A6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		9B788088224A13AB00F7231A /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +378,9 @@
 		9B9661EE221E9227008C512D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				9B563110224B61CA005B41A6 /* Sources */,
+				9B56310F224B61BE005B41A6 /* Evertything */,
+				9B56310E224B61AD005B41A6 /* Headers */,
 				9B788088224A13AB00F7231A /* Root */,
 				9B966242221ED542008C512D /* Base */,
 				9B966209221E929F008C512D /* SignIn */,
@@ -615,6 +764,7 @@
 				1A918BAF22497E8D00D34DCE /* AuthUtil.swift in Sources */,
 				9B966236221EB959008C512D /* SignInContract.swift in Sources */,
 				1A611C0F224ADFEF008E9D14 /* Articles.swift in Sources */,
+				9B56312B224B62FB005B41A6 /* HeaderContract.swift in Sources */,
 				1AF63CBC2226FCD700CB7466 /* to read.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
