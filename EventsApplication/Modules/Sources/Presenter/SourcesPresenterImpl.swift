@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import RxSwift
 
-class SourcesPresenterImpl: SourcesPresenter {
+class SourcesPresenterImpl {
+    
+    let disposeBag = DisposeBag()
     
     var view: SourcesView?
     
@@ -17,4 +20,24 @@ class SourcesPresenterImpl: SourcesPresenter {
     func onViewDidLoad() {
         
     }
+}
+extension SourcesPresenterImpl: SourcesPresenter{
+    
+    func getSourcesByCategory(category: String) {
+        NetworkServiceRx.shared
+            .getSourcesByCategory(category: category)
+            .observeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: { (sources) in
+//                    self.debug(value: "-------------- On NEXT ")
+//                    self.debugSources(sources: sources)
+            }, onError: { (error) in
+//                self.debug(value: "-------------- On onError \(error.localizedDescription)")
+            }, onCompleted: {
+//                self.debug(value: "-------------- On onCompleted ")
+            }, onDisposed: {
+//                self.debug(value: "-------------- On onDisposed ")
+            }).disposed(by: disposeBag)
+    }
+    
 }

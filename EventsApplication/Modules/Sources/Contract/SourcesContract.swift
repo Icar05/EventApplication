@@ -7,15 +7,19 @@
 //
 
 import Foundation
-
+import RxSwift
 
 protocol SourcesPresenter: class {
     var view: SourcesView? { get set }
     var interactor: SourcesInteractor! { get set }
     func onViewDidLoad()
+    
+    func getSourcesByCategory(category: String)
 }
 
-protocol SourcesInteractor: class {}
+protocol SourcesInteractor: class {
+     func getSourcesByCategory(category: String) -> Observable<[Sources]>
+}
 
 protocol SourcesView: class {
     var presenter: SourcesPresenter! { get set }

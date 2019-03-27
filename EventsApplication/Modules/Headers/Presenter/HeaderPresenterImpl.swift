@@ -7,8 +7,13 @@
 //
 
 import Foundation
+import RxSwift
 
-class HeaderPresenterImpl: HeaderPresenter {
+
+
+class HeaderPresenterImpl {
+    
+    let disposeBag = DisposeBag()
     
     var view: HeaderView?
     
@@ -18,3 +23,60 @@ class HeaderPresenterImpl: HeaderPresenter {
         
     }
 }
+
+extension HeaderPresenterImpl : HeaderPresenter{
+    
+    func getDefaultHeadlines() {
+        NetworkServiceRx.shared
+            .getDefaultHeadlines()
+            .observeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: { (articles) in
+//                    self.debug(value: "-------------- On NEXT ")
+//                    self.debugArticles(articles: articles)
+            }, onError: { (error) in
+//                self.debug(value: "-------------- On onError \(error.localizedDescription)")
+            }, onCompleted: {
+//                self.debug(value: "-------------- On onCompleted ")
+            }, onDisposed: {
+//                self.debug(value: "-------------- On onDisposed ")
+            }).disposed(by: disposeBag)
+    }
+    
+    func getHeadlinesByCountry(country: String) {
+        NetworkServiceRx.shared
+            .getHeadlinesByCountry(country: country)
+            .observeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: { (articles) in
+//                    self.debug(value: "-------------- On NEXT ")
+//                    self.debugArticles(articles: articles)
+            }, onError: { (error) in
+//                self.debug(value: "-------------- On onError \(error.localizedDescription)")
+            }, onCompleted: {
+//                self.debug(value: "-------------- On onCompleted ")
+            }, onDisposed: {
+//                self.debug(value: "-------------- On onDisposed ")
+            }).disposed(by: disposeBag)
+    }
+    
+    func getHeadlinesByCategory(category: String) {
+        NetworkServiceRx.shared
+            .getHeadlinesByCategory(category: category)
+            .observeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: { (articles) in
+//                    self.debug(value: "-------------- On NEXT ")
+//                    self.debugArticles(articles: articles)
+            }, onError: { (error) in
+//                self.debug(value: "-------------- On onError \(error.localizedDescription)")
+            }, onCompleted: {
+//                self.debug(value: "-------------- On onCompleted ")
+            }, onDisposed: {
+//                self.debug(value: "-------------- On onDisposed ")
+            }).disposed(by: disposeBag)
+    }
+    
+    
+}
+

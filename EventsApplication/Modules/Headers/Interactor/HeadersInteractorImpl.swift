@@ -7,9 +7,20 @@
 //
 
 import Foundation
-
-import Foundation
+import RxSwift
 
 class HeadersInteractorImpl: HeadersInteractor {
+    
+    func getDefaultHeadlines() -> Observable<[Articles]> {
+        return NetworkServiceRx.shared.getDefaultHeadlines()
+    }
+    
+    func getHeadlinesByCountry(country: String) -> Observable<[Articles]> {
+        return NetworkServiceRx.shared.getHeadlinesByCountry(country:country)
+    }
+    
+    func getHeadlinesByCategory(category: String) -> Observable<[Articles]> {
+        return NetworkServiceRx.shared.getHeadlinesByCategory(category:category)
+    }
     
 }
