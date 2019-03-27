@@ -8,4 +8,14 @@
 
 import Foundation
 
-ç
+protocol RootPresenter: class {
+    var view: RootView? { get set }
+    var interactor: RootInteractor! { get set }
+    func onViewDidLoad()
+}
+
+protocol RootInteractor: class {}
+
+protocol RootView: class {
+    var presenter: RootPresenter! { get set }
+}

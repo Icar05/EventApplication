@@ -20,6 +20,7 @@
 		9B11D179221EDB2500BFEBD4 /* NetworkServiceRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11D177221EDB2500BFEBD4 /* NetworkServiceRx.swift */; };
 		9B11D17A221EDB2500BFEBD4 /* UrlRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11D178221EDB2500BFEBD4 /* UrlRouter.swift */; };
 		9B56312B224B62FB005B41A6 /* HeaderContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56312A224B62FB005B41A6 /* HeaderContract.swift */; };
+		9B56312F224B64B9005B41A6 /* HeaderPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56312E224B64B9005B41A6 /* HeaderPresenterImpl.swift */; };
 		9B78808B224A13F600F7231A /* RootInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78808A224A13F600F7231A /* RootInteractorImpl.swift */; };
 		9B78808E224A144700F7231A /* RootPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78808D224A144700F7231A /* RootPresenterImpl.swift */; };
 		9B788091224A149500F7231A /* RootCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B788090224A149500F7231A /* RootCreator.swift */; };
@@ -75,6 +76,10 @@
 		9B11D178221EDB2500BFEBD4 /* UrlRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlRouter.swift; sourceTree = "<group>"; };
 		9B56312A224B62FB005B41A6 /* HeaderContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderContract.swift; sourceTree = "<group>"; };
 		9B56312C224B634B005B41A6 /* EverythingContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingContract.swift; sourceTree = "<group>"; };
+		9B56312D224B643F005B41A6 /* SourcesContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesContract.swift; sourceTree = "<group>"; };
+		9B56312E224B64B9005B41A6 /* HeaderPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderPresenterImpl.swift; sourceTree = "<group>"; };
+		9B563130224B64F2005B41A6 /* EverythingPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingPresenterImpl.swift; sourceTree = "<group>"; };
+		9B563131224B653E005B41A6 /* SourcesPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesPresenterImpl.swift; sourceTree = "<group>"; };
 		9B78808A224A13F600F7231A /* RootInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractorImpl.swift; sourceTree = "<group>"; };
 		9B78808D224A144700F7231A /* RootPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresenterImpl.swift; sourceTree = "<group>"; };
 		9B788090224A149500F7231A /* RootCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCreator.swift; sourceTree = "<group>"; };
@@ -232,6 +237,7 @@
 		9B563114224B61F8005B41A6 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				9B56312E224B64B9005B41A6 /* HeaderPresenterImpl.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -246,6 +252,7 @@
 		9B563116224B624D005B41A6 /* Contract */ = {
 			isa = PBXGroup;
 			children = (
+				9B56312D224B643F005B41A6 /* SourcesContract.swift */,
 			);
 			path = Contract;
 			sourceTree = "<group>";
@@ -253,6 +260,7 @@
 		9B563117224B624D005B41A6 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				9B563131224B653E005B41A6 /* SourcesPresenterImpl.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -310,6 +318,7 @@
 		9B563129224B62B4005B41A6 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				9B563130224B64F2005B41A6 /* EverythingPresenterImpl.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -754,6 +763,7 @@
 				9B788097224A14F000F7231A /* RootViewController.swift in Sources */,
 				9B96623C221EBC52008C512D /* SignInInteractorImpl.swift in Sources */,
 				9B788094224A14C600F7231A /* RootContract.swift in Sources */,
+				9B56312F224B64B9005B41A6 /* HeaderPresenterImpl.swift in Sources */,
 				9B78808E224A144700F7231A /* RootPresenterImpl.swift in Sources */,
 				9BEB17F8221C05CE003F8C9A /* AppDelegate.swift in Sources */,
 				9B11D179221EDB2500BFEBD4 /* NetworkServiceRx.swift in Sources */,
