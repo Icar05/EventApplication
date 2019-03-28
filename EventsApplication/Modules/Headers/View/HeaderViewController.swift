@@ -25,6 +25,7 @@ class HeadersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.register(UINib(nibName: "ArticleCell", bundle: nil), forCellReuseIdentifier: cellIndifier)    
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.presenter.getDefaultHeadlines()
