@@ -32,5 +32,10 @@ class Router {
         current?.navigationController?.pushViewController(articleDetailViewController, animated: true)
     }
     
-    
+    static func presentSourcesDetailController(current: UIViewController?, sources: Sources) {
+        let sourcesDetailViewController : SourcesDetailViewController = SourcesDetailCreator.assembleModule()
+            as! SourcesDetailViewController
+        sourcesDetailViewController.sources = sources
+        current?.navigationController?.pushViewController(sourcesDetailViewController, animated: true)
+    }
 }
