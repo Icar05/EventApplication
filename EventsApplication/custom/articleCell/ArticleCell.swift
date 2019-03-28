@@ -25,7 +25,8 @@ class ArticleCell: UITableViewCell {
         self.subtitle.text = article.description
         self.date.text = article.publishedAt
         self.loadIcon(input: article.urlToImage)
-        
+        self.icon.layer.borderColor = UIColor.lightGray.cgColor
+        self.icon.layer.borderWidth = 2.0
     }
     
     

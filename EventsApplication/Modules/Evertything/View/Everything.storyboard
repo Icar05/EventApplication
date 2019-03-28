@@ -17,13 +17,28 @@
                     <view key="view" contentMode="scaleToFill" id="sWu-Fb-N58">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="118" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JwR-3j-lbh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JwR-3j-lbh" firstAttribute="top" secondItem="sWu-Fb-N58" secondAttribute="top" id="830-Ka-mP9"/>
+                            <constraint firstItem="JwR-3j-lbh" firstAttribute="leading" secondItem="1eW-8j-OB1" secondAttribute="leading" id="PsB-UT-eaG"/>
+                            <constraint firstItem="JwR-3j-lbh" firstAttribute="bottom" secondItem="1eW-8j-OB1" secondAttribute="bottom" id="XlQ-lG-xku"/>
+                            <constraint firstItem="JwR-3j-lbh" firstAttribute="trailing" secondItem="1eW-8j-OB1" secondAttribute="trailing" id="qbz-ZY-TDF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1eW-8j-OB1"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="JwR-3j-lbh" id="Ymd-CR-6fN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gTf-lq-1S2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="111" y="70"/>
+            <point key="canvasLocation" x="109.59999999999999" y="69.715142428785612"/>
         </scene>
     </scenes>
 </document>

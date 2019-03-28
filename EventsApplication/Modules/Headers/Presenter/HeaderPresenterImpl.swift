@@ -44,14 +44,9 @@ extension HeaderPresenterImpl : HeaderPresenter{
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { (articles) in
-//                    self.debug(value: "-------------- On NEXT ")
-//                    self.debugArticles(articles: articles)
+                self.view?.updateTableView(articles: articles)
             }, onError: { (error) in
-//                self.debug(value: "-------------- On onError \(error.localizedDescription)")
-            }, onCompleted: {
-//                self.debug(value: "-------------- On onCompleted ")
-            }, onDisposed: {
-//                self.debug(value: "-------------- On onDisposed ")
+                self.view?.handleError(error: error)
             }).disposed(by: disposeBag)
     }
     
@@ -61,14 +56,9 @@ extension HeaderPresenterImpl : HeaderPresenter{
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { (articles) in
-//                    self.debug(value: "-------------- On NEXT ")
-//                    self.debugArticles(articles: articles)
+                self.view?.updateTableView(articles: articles)
             }, onError: { (error) in
-//                self.debug(value: "-------------- On onError \(error.localizedDescription)")
-            }, onCompleted: {
-//                self.debug(value: "-------------- On onCompleted ")
-            }, onDisposed: {
-//                self.debug(value: "-------------- On onDisposed ")
+                self.view?.handleError(error: error)
             }).disposed(by: disposeBag)
     }
     

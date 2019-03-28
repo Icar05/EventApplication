@@ -31,5 +31,9 @@ protocol EverythingInteractor: class {
 
 protocol EverythingView: class {
     var presenter: EverythingPresenter! { get set }
+    
+    func handleError(error: Error)
+    
+    func updateTableView(articles: [Articles])
 }
 
