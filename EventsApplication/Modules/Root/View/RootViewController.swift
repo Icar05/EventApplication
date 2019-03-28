@@ -30,18 +30,18 @@ extension RootViewController : RootView{
         
         let headerVC = HeaderCreator.assembleModule()
             headerVC.view.backgroundColor = UIColor.red
-            headerVC.tabBarItem.title = "Red"
-            headerVC.tabBarItem.image = UIImage(named: "heart")
+            headerVC.tabBarItem.title = "Headers"
+            headerVC.tabBarItem.image = UIImage(named: "headers")
         
         
         let everythingVC = EverythingCreator.assembleModule()
             everythingVC.view.backgroundColor = UIColor.yellow
-            everythingVC.tabBarItem.title = "Yellow"
+            everythingVC.tabBarItem.title = "Everything"
             everythingVC.tabBarItem.image = UIImage(named: "star")
         
         let sourcesVC = SourcesCreator.assembleModule()
             sourcesVC.view.backgroundColor = UIColor.green
-            sourcesVC.tabBarItem.title = "Green"
+            sourcesVC.tabBarItem.title = "Sources"
             sourcesVC.tabBarItem.image = UIImage(named: "star")
         
         
