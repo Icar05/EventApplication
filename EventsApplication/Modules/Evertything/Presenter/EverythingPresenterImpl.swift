@@ -25,7 +25,7 @@ class EverythingPresenterImpl {
 extension EverythingPresenterImpl : EverythingPresenter{
     
     func getEverythingByQuery(query: String) {
-        NetworkServiceRx.shared
+        self.interactor
             .getEverythingByQuery(query: query)
             .observeOn(MainScheduler.instance)
             .subscribe(
@@ -37,7 +37,7 @@ extension EverythingPresenterImpl : EverythingPresenter{
     }
     
     func getEverythingByLanguage(query: String, language: String) {
-        NetworkServiceRx.shared
+        self.interactor
             .getEverythingByLanguage(query: query, language: language)
             .observeOn(MainScheduler.instance)
             .subscribe(

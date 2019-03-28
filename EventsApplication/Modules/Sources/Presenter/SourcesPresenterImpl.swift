@@ -24,19 +24,14 @@ class SourcesPresenterImpl {
 extension SourcesPresenterImpl: SourcesPresenter{
     
     func getSourcesByCategory(category: String) {
-        NetworkServiceRx.shared
+        self.interactor
             .getSourcesByCategory(category: category)
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { (sources) in
-//                    self.debug(value: "-------------- On NEXT ")
-//                    self.debugSources(sources: sources)
+                self.view?.updateTableView(sources: sources)
             }, onError: { (error) in
-//                self.debug(value: "-------------- On onError \(error.localizedDescription)")
-            }, onCompleted: {
-//                self.debug(value: "-------------- On onCompleted ")
-            }, onDisposed: {
-//                self.debug(value: "-------------- On onDisposed ")
+                self.view?.handleError(error: error)
             }).disposed(by: disposeBag)
     }
     

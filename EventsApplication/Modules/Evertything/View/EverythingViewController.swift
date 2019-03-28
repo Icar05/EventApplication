@@ -22,8 +22,7 @@ class EverythingViewController: BaseArticleController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.register(
-            UINib(nibName: "ArticleCell", bundle: nil),
+        self.tableView.register(UINib(nibName: cellIndifier, bundle: nil),
             forCellReuseIdentifier: cellIndifier)
         
         self.tableView.delegate = self

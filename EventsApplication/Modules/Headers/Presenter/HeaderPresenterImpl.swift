@@ -27,7 +27,7 @@ class HeaderPresenterImpl {
 extension HeaderPresenterImpl : HeaderPresenter{
     
     func getDefaultHeadlines() {
-        NetworkServiceRx.shared
+       self.interactor
             .getDefaultHeadlines()
             .observeOn(MainScheduler.instance)
             .subscribe(
@@ -39,7 +39,7 @@ extension HeaderPresenterImpl : HeaderPresenter{
     }
     
     func getHeadlinesByCountry(country: String) {
-        NetworkServiceRx.shared
+        self.interactor
             .getHeadlinesByCountry(country: country)
             .observeOn(MainScheduler.instance)
             .subscribe(
@@ -51,7 +51,7 @@ extension HeaderPresenterImpl : HeaderPresenter{
     }
     
     func getHeadlinesByCategory(category: String) {
-        NetworkServiceRx.shared
+        self.interactor
             .getHeadlinesByCategory(category: category)
             .observeOn(MainScheduler.instance)
             .subscribe(

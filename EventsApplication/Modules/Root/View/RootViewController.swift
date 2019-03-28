@@ -18,7 +18,6 @@ class RootViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewControllers = getDataSource()
-        MockNetworkTester().testGetDefaultHeadlines()
     }
     
 }

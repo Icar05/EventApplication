@@ -23,4 +23,8 @@ protocol SourcesInteractor: class {
 
 protocol SourcesView: class {
     var presenter: SourcesPresenter! { get set }
+    
+    func handleError(error: Error)
+    
+    func updateTableView(sources: [Sources])
 }

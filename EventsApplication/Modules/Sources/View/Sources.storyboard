@@ -17,13 +17,28 @@
                     <view key="view" contentMode="scaleToFill" id="iHu-vg-3Oy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="118" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kX9-3k-uZK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kX9-3k-uZK" firstAttribute="bottom" secondItem="iOS-iX-Grv" secondAttribute="bottom" id="NL6-sH-6Q6"/>
+                            <constraint firstItem="kX9-3k-uZK" firstAttribute="leading" secondItem="iOS-iX-Grv" secondAttribute="leading" id="Pb0-NL-dcg"/>
+                            <constraint firstItem="kX9-3k-uZK" firstAttribute="top" secondItem="iHu-vg-3Oy" secondAttribute="top" id="b6g-lb-Oy4"/>
+                            <constraint firstItem="kX9-3k-uZK" firstAttribute="trailing" secondItem="iOS-iX-Grv" secondAttribute="trailing" id="bXy-QV-yTP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iOS-iX-Grv"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="kX9-3k-uZK" id="jgU-pS-OOS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YfS-Ns-VbD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="105" y="-13"/>
+            <point key="canvasLocation" x="104.8" y="-13.043478260869566"/>
         </scene>
     </scenes>
 </document>
