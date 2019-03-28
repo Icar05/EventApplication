@@ -12,6 +12,8 @@
 		1A611C0D224ADFCD008E9D14 /* Json4Swift_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A611C0C224ADFCD008E9D14 /* Json4Swift_Base.swift */; };
 		1A611C0F224ADFEF008E9D14 /* Articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A611C0E224ADFEF008E9D14 /* Articles.swift */; };
 		1A611C11224AE08B008E9D14 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A611C10224AE08B008E9D14 /* Source.swift */; };
+		1A75A84D224C3BC70033C852 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75A84C224C3BC70033C852 /* ArticleCell.swift */; };
+		1A75A84F224C45890033C852 /* DialogHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75A84E224C45890033C852 /* DialogHelper.swift */; };
 		1A918BAC224971C400D34DCE /* ValueForSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A918BAB224971C400D34DCE /* ValueForSelector.swift */; };
 		1A918BAF22497E8D00D34DCE /* AuthUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A918BAE22497E8D00D34DCE /* AuthUtil.swift */; };
 		1AF3B80A2226D911004FA784 /* MockNetworkTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3B8092226D911004FA784 /* MockNetworkTester.swift */; };
@@ -81,6 +83,8 @@
 		1A611C0C224ADFCD008E9D14 /* Json4Swift_Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json4Swift_Base.swift; sourceTree = "<group>"; };
 		1A611C0E224ADFEF008E9D14 /* Articles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Articles.swift; sourceTree = "<group>"; };
 		1A611C10224AE08B008E9D14 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
+		1A75A84C224C3BC70033C852 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
+		1A75A84E224C45890033C852 /* DialogHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogHelper.swift; sourceTree = "<group>"; };
 		1A918BAB224971C400D34DCE /* ValueForSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueForSelector.swift; sourceTree = "<group>"; };
 		1A918BAE22497E8D00D34DCE /* AuthUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUtil.swift; sourceTree = "<group>"; };
 		1AF3B8092226D911004FA784 /* MockNetworkTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkTester.swift; sourceTree = "<group>"; };
@@ -175,10 +179,19 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		1A75A84B224C3BA60033C852 /* custom */ = {
+			isa = PBXGroup;
+			children = (
+				1A75A84C224C3BC70033C852 /* ArticleCell.swift */,
+			);
+			path = custom;
+			sourceTree = "<group>";
+		};
 		1A918BAD22497E7C00D34DCE /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				1A918BAE22497E8D00D34DCE /* AuthUtil.swift */,
+				1A75A84E224C45890033C852 /* DialogHelper.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -531,6 +544,7 @@
 		9BEB17F6221C05CE003F8C9A /* EventsApplication */ = {
 			isa = PBXGroup;
 			children = (
+				1A75A84B224C3BA60033C852 /* custom */,
 				1A611C12224AE371008E9D14 /* Models */,
 				9BEB1803221C05CF003F8C9A /* Info.plist */,
 				1A918BB12249824E00D34DCE /* application sources */,
@@ -814,6 +828,7 @@
 				9B56314A224B7435005B41A6 /* HeaderViewController.swift in Sources */,
 				9B563158224B7672005B41A6 /* SourcesContract.swift in Sources */,
 				9B96623C221EBC52008C512D /* SignInInteractorImpl.swift in Sources */,
+				1A75A84D224C3BC70033C852 /* ArticleCell.swift in Sources */,
 				9B56315C224B76C4005B41A6 /* SourcesInteractorImpl.swift in Sources */,
 				9B788094224A14C600F7231A /* RootContract.swift in Sources */,
 				9B56312F224B64B9005B41A6 /* HeaderPresenterImpl.swift in Sources */,
@@ -830,6 +845,7 @@
 				1A918BAF22497E8D00D34DCE /* AuthUtil.swift in Sources */,
 				9B966236221EB959008C512D /* SignInContract.swift in Sources */,
 				1A611C0F224ADFEF008E9D14 /* Articles.swift in Sources */,
+				1A75A84F224C45890033C852 /* DialogHelper.swift in Sources */,
 				9B56312B224B62FB005B41A6 /* HeaderContract.swift in Sources */,
 				1AF63CBC2226FCD700CB7466 /* to read.swift in Sources */,
 			);

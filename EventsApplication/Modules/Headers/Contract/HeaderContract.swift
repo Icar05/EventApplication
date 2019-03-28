@@ -31,5 +31,10 @@ protocol HeadersInteractor: class {
 }
 
 protocol HeaderView: class {
+    
     var presenter: HeaderPresenter! { get set }
+    
+    func handleError(error: Error)
+    
+    func updateTableView(articles: [Articles])
 }
