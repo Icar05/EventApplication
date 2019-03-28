@@ -25,5 +25,12 @@ class Router {
         current?.navigationController?.pushViewController(secondController, animated: true)
     }
     
+    static func presentArticleDetailController(current: UIViewController?, article: Articles) {
+        let articleDetailViewController : ArticleDetailViewController = ArticleDetailCreator.assembleModule()
+            as! ArticleDetailViewController
+                articleDetailViewController.article = article
+        current?.navigationController?.pushViewController(articleDetailViewController, animated: true)
+    }
+    
     
 }

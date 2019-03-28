@@ -45,6 +45,12 @@
 		9B788094224A14C600F7231A /* RootContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B788093224A14C600F7231A /* RootContract.swift */; };
 		9B788097224A14F000F7231A /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B788096224A14F000F7231A /* RootViewController.swift */; };
 		9B788099224A151000F7231A /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B788098224A151000F7231A /* Root.storyboard */; };
+		9B84A4FB224CC3EC00E747FC /* ArticleDetailContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B84A4FA224CC3EC00E747FC /* ArticleDetailContract.swift */; };
+		9B84A4FD224CC4A400E747FC /* ArticleDetailInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B84A4FC224CC4A400E747FC /* ArticleDetailInteractorImpl.swift */; };
+		9B84A4FF224CC4EA00E747FC /* ArticleDetailPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B84A4FE224CC4EA00E747FC /* ArticleDetailPresenterImpl.swift */; };
+		9B84A501224CC55500E747FC /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B84A500224CC55500E747FC /* ArticleDetailViewController.swift */; };
+		9B84A503224CC63C00E747FC /* ArticleDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B84A502224CC63C00E747FC /* ArticleDetail.storyboard */; };
+		9B84A505224CC6A000E747FC /* ArticleDetailCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B84A504224CC6A000E747FC /* ArticleDetailCreator.swift */; };
 		9B966236221EB959008C512D /* SignInContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B966235221EB959008C512D /* SignInContract.swift */; };
 		9B966238221EBA72008C512D /* SignInCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B966237221EBA72008C512D /* SignInCreator.swift */; };
 		9B96623A221EBC0C008C512D /* SignInPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B966239221EBC0C008C512D /* SignInPresenterImpl.swift */; };
@@ -118,6 +124,12 @@
 		9B788093224A14C600F7231A /* RootContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootContract.swift; sourceTree = "<group>"; };
 		9B788096224A14F000F7231A /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		9B788098224A151000F7231A /* Root.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
+		9B84A4FA224CC3EC00E747FC /* ArticleDetailContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailContract.swift; sourceTree = "<group>"; };
+		9B84A4FC224CC4A400E747FC /* ArticleDetailInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailInteractorImpl.swift; sourceTree = "<group>"; };
+		9B84A4FE224CC4EA00E747FC /* ArticleDetailPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailPresenterImpl.swift; sourceTree = "<group>"; };
+		9B84A500224CC55500E747FC /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
+		9B84A502224CC63C00E747FC /* ArticleDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArticleDetail.storyboard; sourceTree = "<group>"; };
+		9B84A504224CC6A000E747FC /* ArticleDetailCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailCreator.swift; sourceTree = "<group>"; };
 		9B966235221EB959008C512D /* SignInContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInContract.swift; sourceTree = "<group>"; };
 		9B966237221EBA72008C512D /* SignInCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCreator.swift; sourceTree = "<group>"; };
 		9B966239221EBC0C008C512D /* SignInPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenterImpl.swift; sourceTree = "<group>"; };
@@ -429,6 +441,59 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		9B84A4F4224CC36500E747FC /* ArticleDetail */ = {
+			isa = PBXGroup;
+			children = (
+				9B84A4F5224CC37A00E747FC /* View */,
+				9B84A4F6224CC38100E747FC /* Creator */,
+				9B84A4F7224CC38B00E747FC /* Contract */,
+				9B84A4F8224CC39200E747FC /* Presenter */,
+				9B84A4F9224CC39A00E747FC /* Interactor */,
+			);
+			path = ArticleDetail;
+			sourceTree = "<group>";
+		};
+		9B84A4F5224CC37A00E747FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9B84A500224CC55500E747FC /* ArticleDetailViewController.swift */,
+				9B84A502224CC63C00E747FC /* ArticleDetail.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9B84A4F6224CC38100E747FC /* Creator */ = {
+			isa = PBXGroup;
+			children = (
+				9B84A504224CC6A000E747FC /* ArticleDetailCreator.swift */,
+			);
+			path = Creator;
+			sourceTree = "<group>";
+		};
+		9B84A4F7224CC38B00E747FC /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				9B84A4FA224CC3EC00E747FC /* ArticleDetailContract.swift */,
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
+		9B84A4F8224CC39200E747FC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9B84A4FE224CC4EA00E747FC /* ArticleDetailPresenterImpl.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9B84A4F9224CC39A00E747FC /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				9B84A4FC224CC4A400E747FC /* ArticleDetailInteractorImpl.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		9B9661EC221E9050008C512D /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,6 +505,7 @@
 		9B9661EE221E9227008C512D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				9B84A4F4224CC36500E747FC /* ArticleDetail */,
 				9B563110224B61CA005B41A6 /* Sources */,
 				9B56310F224B61BE005B41A6 /* Evertything */,
 				9B56310E224B61AD005B41A6 /* Headers */,
@@ -708,6 +774,7 @@
 				9B966241221ED4A6008C512D /* SignIn.storyboard in Resources */,
 				9B788099224A151000F7231A /* Root.storyboard in Resources */,
 				9B56313B224B6CD6005B41A6 /* Headers.storyboard in Resources */,
+				9B84A503224CC63C00E747FC /* ArticleDetail.storyboard in Resources */,
 				9BEB17FF221C05CF003F8C9A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -818,6 +885,7 @@
 				9B56315A224B769E005B41A6 /* SourcesPresenterImpl.swift in Sources */,
 				1A611C0D224ADFCD008E9D14 /* Json4Swift_Base.swift in Sources */,
 				9B563150224B7579005B41A6 /* EverythingPresenterImpl.swift in Sources */,
+				9B84A501224CC55500E747FC /* ArticleDetailViewController.swift in Sources */,
 				9B563148224B73EE005B41A6 /* SourcesCreator.swift in Sources */,
 				9B563156224B764B005B41A6 /* SourceViewController.swift in Sources */,
 				1A918BAC224971C400D34DCE /* ValueForSelector.swift in Sources */,
@@ -828,9 +896,12 @@
 				9B56314A224B7435005B41A6 /* HeaderViewController.swift in Sources */,
 				9B563158224B7672005B41A6 /* SourcesContract.swift in Sources */,
 				9B96623C221EBC52008C512D /* SignInInteractorImpl.swift in Sources */,
+				9B84A4FB224CC3EC00E747FC /* ArticleDetailContract.swift in Sources */,
 				1A75A84D224C3BC70033C852 /* ArticleCell.swift in Sources */,
 				9B56315C224B76C4005B41A6 /* SourcesInteractorImpl.swift in Sources */,
+				9B84A4FF224CC4EA00E747FC /* ArticleDetailPresenterImpl.swift in Sources */,
 				9B788094224A14C600F7231A /* RootContract.swift in Sources */,
+				9B84A505224CC6A000E747FC /* ArticleDetailCreator.swift in Sources */,
 				9B56312F224B64B9005B41A6 /* HeaderPresenterImpl.swift in Sources */,
 				9B56314E224B7512005B41A6 /* EverythingViewController.swift in Sources */,
 				9B56314C224B74A3005B41A6 /* HeadersInteractorImpl.swift in Sources */,
@@ -842,6 +913,7 @@
 				1AF3B80A2226D911004FA784 /* MockNetworkTester.swift in Sources */,
 				1A611C11224AE08B008E9D14 /* Source.swift in Sources */,
 				1A611C0B224ADF7C008E9D14 /* Sources.swift in Sources */,
+				9B84A4FD224CC4A400E747FC /* ArticleDetailInteractorImpl.swift in Sources */,
 				1A918BAF22497E8D00D34DCE /* AuthUtil.swift in Sources */,
 				9B966236221EB959008C512D /* SignInContract.swift in Sources */,
 				1A611C0F224ADFEF008E9D14 /* Articles.swift in Sources */,

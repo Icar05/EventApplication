@@ -25,6 +25,7 @@ class HeadersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.delegate = self
         self.tableView.dataSource = self
         self.presenter.getDefaultHeadlines()
         
@@ -40,8 +41,7 @@ class HeadersViewController: UIViewController {
     
     @objc private func refresh(_ sender: Any) {
    
-        
-        
+        //todo refresh code
         self.refreshControl.endRefreshing()
     }
     
@@ -68,6 +68,14 @@ extension HeadersViewController : HeaderView{
     
     
 }
+
+extension HeadersViewController: UITableViewDelegate{
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        Router.presentArticleDetailController(current: self, article: datasource[indexPath.row])
+    }
+}
+
 
 extension HeadersViewController: UITableViewDataSource{
     
