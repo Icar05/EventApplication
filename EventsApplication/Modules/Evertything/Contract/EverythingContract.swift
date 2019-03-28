@@ -35,5 +35,9 @@ protocol EverythingView: class {
     func handleError(error: Error)
     
     func updateTableView(articles: [Articles])
+    
+    func showLoading()
+    
+    func hideLoading()
 }
 

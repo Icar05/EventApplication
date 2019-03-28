@@ -14,6 +14,8 @@ class HeadersViewController: BaseArticleController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var emptyView: EmptyView!
+    
     var presenter: HeaderPresenter!
     
   
@@ -49,6 +51,15 @@ class HeadersViewController: BaseArticleController {
 
 extension HeadersViewController : HeaderView{
     
+    func showLoading() {
+        self.emptyView?.showLoading()
+    }
+    
+    func hideLoading() {
+        self.emptyView?.hideLoading()
+    }
+    
+    
     func handleError(error: Error) {
         DispatchQueue.main.async {
             DialogHelper.presentErrorDialog(error: error, viewController: self)
@@ -57,10 +68,18 @@ extension HeadersViewController : HeaderView{
     
     func updateTableView(articles: [Articles]) {
         DispatchQueue.main.async {
-            self.datasource = articles
-            self.tableView.reloadData()
+            articles.count > 0 ?
+                self.refillTableView(articles: articles) :
+                self.emptyView.showEmptyView()
         }
     }
+    
+    
+    func refillTableView(articles: [Articles]){
+        self.datasource = articles
+        self.tableView.reloadData()
+    }
+    
 }
 
 

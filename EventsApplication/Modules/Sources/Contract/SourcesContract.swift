@@ -27,4 +27,8 @@ protocol SourcesView: class {
     func handleError(error: Error)
     
     func updateTableView(sources: [Sources])
+    
+    func showLoading()
+    
+    func hideLoading()
 }

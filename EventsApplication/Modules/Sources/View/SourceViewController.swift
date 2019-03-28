@@ -12,6 +12,7 @@ import UIKit
 class SourcesViewController: BaseSourcesViewController {
     
     
+    @IBOutlet weak var emptyView: EmptyView!
     @IBOutlet weak var tableView: UITableView!
     
     var presenter: SourcesPresenter!
@@ -51,6 +52,15 @@ class SourcesViewController: BaseSourcesViewController {
 
 extension SourcesViewController : SourcesView{
     
+    func showLoading() {
+        self.emptyView.showLoading()
+    }
+    
+    func hideLoading() {
+        self.emptyView.hideLoading()
+    }
+    
+    
     func handleError(error: Error) {
         DispatchQueue.main.async {
             DialogHelper.presentErrorDialog(error: error, viewController: self)
@@ -59,9 +69,15 @@ extension SourcesViewController : SourcesView{
     
     func updateTableView(sources: [Sources]) {
         DispatchQueue.main.async {
-            self.datasource = sources
-            self.tableView.reloadData()
+            sources.count > 0 ?
+                self.refillTableView(sources: sources) :
+                self.emptyView.showEmptyView()
         }
+    }
+    
+    func refillTableView(sources: [Sources]){
+        self.datasource = sources
+        self.tableView.reloadData()
     }
     
 }

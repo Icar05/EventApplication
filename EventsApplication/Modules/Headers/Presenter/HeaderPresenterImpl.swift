@@ -27,37 +27,46 @@ class HeaderPresenterImpl {
 extension HeaderPresenterImpl : HeaderPresenter{
     
     func getDefaultHeadlines() {
+       self.view?.showLoading()
        self.interactor
             .getDefaultHeadlines()
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { (articles) in
+                    self.view?.hideLoading()
                     self.view?.updateTableView(articles: articles)
             }, onError: { (error) in
+                    self.view?.hideLoading()
                     self.view?.handleError(error: error)
             }).disposed(by: disposeBag)
     }
     
     func getHeadlinesByCountry(country: String) {
+        self.view?.showLoading()
         self.interactor
             .getHeadlinesByCountry(country: country)
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { (articles) in
+                self.view?.hideLoading()
                 self.view?.updateTableView(articles: articles)
             }, onError: { (error) in
+                self.view?.hideLoading()
                 self.view?.handleError(error: error)
             }).disposed(by: disposeBag)
     }
     
     func getHeadlinesByCategory(category: String) {
+        self.view?.showLoading()
         self.interactor
             .getHeadlinesByCategory(category: category)
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { (articles) in
+                self.view?.hideLoading()
                 self.view?.updateTableView(articles: articles)
             }, onError: { (error) in
+                self.view?.hideLoading()
                 self.view?.handleError(error: error)
             }).disposed(by: disposeBag)
     }

@@ -22,17 +22,26 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="67Z-vX-mv4" customClass="EmptyView" customModule="EventsApplication" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="UXX-qA-hfe" firstAttribute="top" secondItem="2a8-cM-ol9" secondAttribute="top" id="Hfg-T1-4Of"/>
+                            <constraint firstItem="67Z-vX-mv4" firstAttribute="top" secondItem="2a8-cM-ol9" secondAttribute="top" id="KJc-Sa-QXD"/>
                             <constraint firstItem="UXX-qA-hfe" firstAttribute="trailing" secondItem="S9h-rl-ZO5" secondAttribute="trailing" id="ODt-hp-Zfu"/>
+                            <constraint firstItem="67Z-vX-mv4" firstAttribute="trailing" secondItem="S9h-rl-ZO5" secondAttribute="trailing" id="PIh-IK-THd"/>
                             <constraint firstItem="UXX-qA-hfe" firstAttribute="leading" secondItem="S9h-rl-ZO5" secondAttribute="leading" id="T3r-hg-bTe"/>
+                            <constraint firstItem="67Z-vX-mv4" firstAttribute="leading" secondItem="S9h-rl-ZO5" secondAttribute="leading" id="Tsu-Vx-4Fr"/>
                             <constraint firstItem="UXX-qA-hfe" firstAttribute="bottom" secondItem="S9h-rl-ZO5" secondAttribute="bottom" id="aUo-9j-qgd"/>
+                            <constraint firstItem="67Z-vX-mv4" firstAttribute="bottom" secondItem="S9h-rl-ZO5" secondAttribute="bottom" id="vc5-nR-5rJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="S9h-rl-ZO5"/>
                     </view>
                     <connections>
+                        <outlet property="emptyView" destination="67Z-vX-mv4" id="zyo-rA-Ep4"/>
                         <outlet property="tableView" destination="UXX-qA-hfe" id="T05-Qe-wrq"/>
                     </connections>
                 </viewController>

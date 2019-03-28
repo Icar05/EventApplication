@@ -14,6 +14,7 @@ class EverythingViewController: BaseArticleController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var emptyView: EmptyView!
     var presenter: EverythingPresenter!
     
     
@@ -51,6 +52,16 @@ class EverythingViewController: BaseArticleController {
 
 extension EverythingViewController : EverythingView{
     
+    
+    func showLoading() {
+        self.emptyView.showLoading()
+    }
+    
+    func hideLoading() {
+        self.emptyView.hideLoading()
+    }
+    
+    
     func handleError(error: Error) {
         DispatchQueue.main.async {
             DialogHelper.presentErrorDialog(error: error, viewController: self)
@@ -59,10 +70,14 @@ extension EverythingViewController : EverythingView{
     
     func updateTableView(articles: [Articles]) {
         DispatchQueue.main.async {
-            self.datasource = articles
-            self.tableView.reloadData()
-        }
+            articles.count > 0 ?
+                self.refillTableView(articles: articles) :
+                self.emptyView.showEmptyView()        }
     }
     
+    func refillTableView(articles: [Articles]){
+        self.datasource = articles
+        self.tableView.reloadData()
+    }
     
 }

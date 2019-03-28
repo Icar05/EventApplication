@@ -31,7 +31,7 @@ class SourcesDetailCreator: BaseCreator {
     }
     
     static func getStoryBoardName() -> String {
-        return "SourcesDetailViewController"
+        return "SourcesDetail"
     }
     
     

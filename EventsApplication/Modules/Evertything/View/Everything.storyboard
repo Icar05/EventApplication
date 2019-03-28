@@ -22,17 +22,26 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z5R-It-d8J" customClass="EmptyView" customModule="EventsApplication" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="JwR-3j-lbh" firstAttribute="top" secondItem="sWu-Fb-N58" secondAttribute="top" id="830-Ka-mP9"/>
+                            <constraint firstItem="Z5R-It-d8J" firstAttribute="bottom" secondItem="1eW-8j-OB1" secondAttribute="bottom" id="LJT-nr-3P3"/>
                             <constraint firstItem="JwR-3j-lbh" firstAttribute="leading" secondItem="1eW-8j-OB1" secondAttribute="leading" id="PsB-UT-eaG"/>
                             <constraint firstItem="JwR-3j-lbh" firstAttribute="bottom" secondItem="1eW-8j-OB1" secondAttribute="bottom" id="XlQ-lG-xku"/>
+                            <constraint firstItem="Z5R-It-d8J" firstAttribute="top" secondItem="sWu-Fb-N58" secondAttribute="top" id="bAt-xy-o11"/>
                             <constraint firstItem="JwR-3j-lbh" firstAttribute="trailing" secondItem="1eW-8j-OB1" secondAttribute="trailing" id="qbz-ZY-TDF"/>
+                            <constraint firstItem="Z5R-It-d8J" firstAttribute="leading" secondItem="1eW-8j-OB1" secondAttribute="leading" id="tpQ-y1-Mma"/>
+                            <constraint firstItem="Z5R-It-d8J" firstAttribute="trailing" secondItem="1eW-8j-OB1" secondAttribute="trailing" id="wAg-2F-c5z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1eW-8j-OB1"/>
                     </view>
                     <connections>
+                        <outlet property="emptyView" destination="Z5R-It-d8J" id="inK-Uu-ZiK"/>
                         <outlet property="tableView" destination="JwR-3j-lbh" id="Ymd-CR-6fN"/>
                     </connections>
                 </viewController>

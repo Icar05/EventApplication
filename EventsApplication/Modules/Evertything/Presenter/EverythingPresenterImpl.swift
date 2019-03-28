@@ -25,25 +25,31 @@ class EverythingPresenterImpl {
 extension EverythingPresenterImpl : EverythingPresenter{
     
     func getEverythingByQuery(query: String) {
+        self.view?.showLoading()
         self.interactor
             .getEverythingByQuery(query: query)
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { (articles) in
+                self.view?.hideLoading()
                 self.view?.updateTableView(articles: articles)
             }, onError: { (error) in
+                self.view?.hideLoading()
                 self.view?.handleError(error: error)
             }).disposed(by: disposeBag)
     }
     
     func getEverythingByLanguage(query: String, language: String) {
+        self.view?.showLoading()
         self.interactor
             .getEverythingByLanguage(query: query, language: language)
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { (articles) in
+                self.view?.hideLoading()
                 self.view?.updateTableView(articles: articles)
             }, onError: { (error) in
+                self.view?.hideLoading()
                 self.view?.handleError(error: error)
             }).disposed(by: disposeBag)
         
