@@ -19,7 +19,7 @@ class HeadersViewController: UIViewController {
     
     var presenter: HeaderPresenter!
     
-    
+    private let refreshControl = UIRefreshControl()
     
     
     override func viewDidLoad() {
@@ -27,8 +27,23 @@ class HeadersViewController: UIViewController {
         
         self.tableView.dataSource = self
         self.presenter.getDefaultHeadlines()
+        
+        if #available(iOS 10.0, *) {
+            self.tableView.refreshControl = refreshControl
+        } else {
+            self.tableView.addSubview(refreshControl)
+        }
+        
+        self.refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
     }
     
+    
+    @objc private func refresh(_ sender: Any) {
+   
+        
+        
+        self.refreshControl.endRefreshing()
+    }
     
 }
 
