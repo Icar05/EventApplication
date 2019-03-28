@@ -29,6 +29,7 @@ class HeadersViewController: BaseArticleController {
         self.tableView.dataSource = self
         self.presenter.getDefaultHeadlines()
         self.refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        self.addRefresh()
     }
     
     

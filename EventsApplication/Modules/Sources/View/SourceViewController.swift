@@ -30,6 +30,7 @@ class SourcesViewController: BaseSourcesViewController {
         self.tableView.dataSource = self
         self.presenter.getSourcesByCategory(category: ValueForSelector.categories[6] )
         self.refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        self.addRefresh()
     }
     
     @objc private func refresh(_ sender: Any) {
