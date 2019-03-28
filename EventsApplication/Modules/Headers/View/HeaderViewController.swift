@@ -62,6 +62,7 @@ extension HeadersViewController : HeaderView{
     
     
     func handleError(error: Error) {
+        self.emptyView.showEmptyView()
         DispatchQueue.main.async {
             DialogHelper.presentErrorDialog(error: error, viewController: self)
         }

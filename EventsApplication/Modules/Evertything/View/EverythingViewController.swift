@@ -64,6 +64,7 @@ extension EverythingViewController : EverythingView{
     
     
     func handleError(error: Error) {
+        self.emptyView.showEmptyView()
         DispatchQueue.main.async {
             DialogHelper.presentErrorDialog(error: error, viewController: self)
         }
@@ -73,7 +74,8 @@ extension EverythingViewController : EverythingView{
         DispatchQueue.main.async {
             articles.count > 0 ?
                 self.refillTableView(articles: articles) :
-                self.emptyView.showEmptyView()        }
+                self.emptyView.showEmptyView()
+        }
     }
     
     func refillTableView(articles: [Articles]){
