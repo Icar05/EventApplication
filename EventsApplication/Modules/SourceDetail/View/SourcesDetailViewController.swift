@@ -14,9 +14,25 @@ class SourcesDetailViewController: UIViewController {
     var presenter: SourceDetailPresenter!
     var sources: Sources?
     
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var desc: UILabel!
+    @IBOutlet weak var category: UILabel!
+    @IBOutlet weak var language: UILabel!
+    
+    @IBOutlet weak var country: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        fillSource()
+    }
+    
+    
+    func fillSource(){
+        name.text = sources?.name
+        desc.text = sources?.description
+        category.text = sources?.category
+        language.text = sources?.language
+        country.text = sources?.country
     }
 }
 extension SourcesDetailViewController: SourceDetailView{
