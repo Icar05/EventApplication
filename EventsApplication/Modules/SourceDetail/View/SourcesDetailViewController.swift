@@ -21,6 +21,7 @@ class SourcesDetailViewController: UIViewController {
     
     @IBOutlet weak var country: UILabel!
     
+    @IBOutlet weak var url: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         fillSource()
@@ -33,6 +34,7 @@ class SourcesDetailViewController: UIViewController {
         category.text = sources?.category
         language.text = sources?.language
         country.text = sources?.country
+        url.text = sources?.url
     }
 }
 extension SourcesDetailViewController: SourceDetailView{

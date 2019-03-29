@@ -55,6 +55,12 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="url" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehp-bH-8b7">
+                                                <rect key="frame" x="8" y="171" width="359" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                                <color key="textColor" red="1" green="0.1145923266" blue="0.18719284059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -68,8 +74,11 @@
                                             <constraint firstItem="VMY-76-dc7" firstAttribute="top" secondItem="BL1-G9-PCM" secondAttribute="topMargin" id="Ikx-ZX-GoJ"/>
                                             <constraint firstItem="b02-s7-IF2" firstAttribute="leading" secondItem="BL1-G9-PCM" secondAttribute="leading" constant="8" id="JS1-fa-Ttg"/>
                                             <constraint firstAttribute="trailing" secondItem="b02-s7-IF2" secondAttribute="trailing" constant="8" id="OEy-Jr-8bs"/>
+                                            <constraint firstItem="ehp-bH-8b7" firstAttribute="leading" secondItem="BL1-G9-PCM" secondAttribute="leading" constant="8" id="TqD-hn-12W"/>
+                                            <constraint firstAttribute="trailing" secondItem="ehp-bH-8b7" secondAttribute="trailing" constant="8" id="W5e-3o-Aii"/>
                                             <constraint firstItem="b02-s7-IF2" firstAttribute="top" secondItem="NSn-jD-jxF" secondAttribute="bottom" constant="8" id="avD-Gj-iOK"/>
                                             <constraint firstAttribute="trailing" secondItem="UyQ-Rs-qyO" secondAttribute="trailing" constant="8" id="dBA-T5-OHP"/>
+                                            <constraint firstItem="ehp-bH-8b7" firstAttribute="top" secondItem="b02-s7-IF2" secondAttribute="bottom" constant="8" id="lnl-FY-RB2"/>
                                             <constraint firstItem="NSn-jD-jxF" firstAttribute="leading" secondItem="BL1-G9-PCM" secondAttribute="leading" constant="8" id="oWZ-C9-U7k"/>
                                             <constraint firstItem="VMY-76-dc7" firstAttribute="trailing" secondItem="Z8h-5w-8DA" secondAttribute="trailing" id="qAZ-Qh-RhM"/>
                                             <constraint firstItem="UyQ-Rs-qyO" firstAttribute="leading" secondItem="BL1-G9-PCM" secondAttribute="leading" constant="8" id="yzj-pZ-6qf"/>
@@ -105,6 +114,7 @@
                         <outlet property="desc" destination="Z8h-5w-8DA" id="XZx-Yx-oZk"/>
                         <outlet property="language" destination="NSn-jD-jxF" id="nz4-0a-SUo"/>
                         <outlet property="name" destination="VMY-76-dc7" id="kfD-QJ-4QJ"/>
+                        <outlet property="url" destination="ehp-bH-8b7" id="hJg-Vj-3lw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zpj-IN-S5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
