@@ -16,15 +16,12 @@ class SourcesCell: UITableViewCell {
     
     @IBOutlet weak var desc: UILabel!
     
-    @IBOutlet weak var url: UILabel!
-    
     @IBOutlet weak var category: UILabel!
     
     
     func fillCell(sources: Sources){
         self.title.text = sources.name
         self.desc.text = sources.description
-        self.url.text = sources.url
         self.category.text = sources.category
     }
     
