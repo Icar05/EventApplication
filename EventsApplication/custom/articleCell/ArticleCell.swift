@@ -57,7 +57,7 @@ class ArticleCell: UITableViewCell {
      func convertDateString(dateString : String!) -> String {
         
         let sourceFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'";
-        let desFormat = "dd/MM/YYYY - HH:mm:ss"
+        let desFormat = "dd.MM.YYYY"
         
         let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = sourceFormat
