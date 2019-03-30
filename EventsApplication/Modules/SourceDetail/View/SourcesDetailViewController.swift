@@ -34,13 +34,8 @@ class SourcesDetailViewController: UIViewController {
         category.text = sources?.category
         language.text = "Language: "+(sources?.language!)!
         country.text = "Country: "+(sources?.country!)!
-        url.attributedText = getLink(link: (sources?.url)!)
-    }
-    
-    
-    func getLink(link: String) -> NSMutableAttributedString{
-        return  NSMutableAttributedString(string: (link),
-                attributes:[NSAttributedString.Key.link: URL(string: (link))!])
+        url.attributedText = LinkUtil.getLink(link: (sources?.url)!)
+        url.text = sources?.url
     }
 
 }

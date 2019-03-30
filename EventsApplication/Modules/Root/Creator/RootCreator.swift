@@ -29,7 +29,7 @@ class RootCreator: BaseCreator {
         let interactor = RootInteractorImpl()
         
         let navigation = UINavigationController(rootViewController: view)
-            navigation.navigationBar.tintColor = UIColor.red
+            navigation.navigationBar.tintColor = UIColor.black
         
         
         let backButton = UIBarButtonItem()

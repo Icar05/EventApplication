@@ -31,7 +31,7 @@ class ArticleCell: UITableViewCell {
     func fillCell(article: Articles){
         self.title.text = article.title
         self.subtitle.text = article.description
-        self.date.text = convertDateString(dateString: article.publishedAt)
+        self.date.text = DateTimeUtil.convertDateString(dateString: article.publishedAt)
         self.loadIcon(input: article.urlToImage)
         self.icon.layer.borderColor = UIColor.lightGray.cgColor
         self.icon.layer.borderWidth = 2.0
@@ -54,18 +54,5 @@ class ArticleCell: UITableViewCell {
     }
     
     
-     func convertDateString(dateString : String!) -> String {
-        
-        let sourceFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'";
-        let desFormat = "dd.MM.YYYY"
-        
-        let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = sourceFormat
-            dateFormatter.locale = .current
-        
-        let date = dateFormatter.date(from: dateString)
-            dateFormatter.dateFormat = desFormat
-        
-        return dateFormatter.string(from: date!)
-    }
+     
 }
