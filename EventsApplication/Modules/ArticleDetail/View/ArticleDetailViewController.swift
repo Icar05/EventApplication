@@ -17,7 +17,6 @@ class ArticleDetailViewController: UIViewController {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var desc: UILabel!
-    @IBOutlet weak var content: UILabel!
     @IBOutlet weak var url: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var autor: UILabel!
@@ -35,7 +34,6 @@ class ArticleDetailViewController: UIViewController {
     func fillArticleData(){
         self.name.text = article?.title
         self.desc.text = article?.description
-        self.content.text = article?.content
         self.url.text = article?.url
         self.date.text = convertDateString(dateString: article?.publishedAt)
         self.autor.text = article?.author
