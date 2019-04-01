@@ -51,9 +51,12 @@ class Router {
             current?.present(customAlert, animated: true, completion: nil)
     }
     
-    static func presentSelectionDialog(current: UIViewController?) {
+    typealias selectDialogComplateion = (String)->Void
+    static func presentSelectionDialog(current: UIViewController?, completion: @escaping
+        selectDialogComplateion) {
         let dialogStoryboard = UIStoryboard(name: "SelectionDialog", bundle: nil)
         let customAlert = dialogStoryboard.instantiateViewController(withIdentifier: "UISelectionDialog") as! UISelectionDialog
+            customAlert.setCompletion(completion: completion)
             customAlert.providesPresentationContextTransitionStyle = true
             customAlert.definesPresentationContext = true
             customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext

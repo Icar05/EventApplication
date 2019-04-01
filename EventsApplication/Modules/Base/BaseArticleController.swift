@@ -43,7 +43,7 @@ extension BaseArticleController: UITableViewDelegate{
         
         
 //        Router.presentSelectionDialog(current: self)
-        Router.presentSearchDialog(current: self, completion: {value  in
+        Router.presentSelectionDialog(current: self, completion: { value  in
             print("Stirng is :  "+value)
         } )
         

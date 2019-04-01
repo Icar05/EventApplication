@@ -23,14 +23,26 @@ class UISelectionDialog: UIViewController {
     
     @IBOutlet weak var okBtn: UIButton!
     
+    
+    
+    typealias selectDialogComplateion = (String)->Void
+    var completion: selectDialogComplateion?
+    
     @IBAction func cancelClick(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func okClick(_ sender: UIButton) {
+        self.completion?(value == "" ? pickerDataSource[0] : value)
         self.dismiss(animated: true, completion: nil)
     }
-    let pickerDataSource = ["business", "entertainment", "general", "health", "science", "sports", "technology" ]
     
+    
+    let pickerDataSource = ValueForSelector.categories
+    var value: String = ""
+    
+    func setCompletion(completion: @escaping selectDialogComplateion){
+        self.completion = completion
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,6 +97,7 @@ extension UISelectionDialog : UIPickerViewDelegate, UIPickerViewDataSource{
     }
     
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        value = pickerDataSource[row]
         print("picker : \(pickerDataSource[row])")
     }
    
