@@ -23,7 +23,7 @@ class UISelectionDialog: UIViewController {
     
     @IBOutlet weak var okBtn: UIButton!
     
-    
+   
     
     typealias selectDialogComplateion = (String)->Void
     var completion: selectDialogComplateion?
@@ -37,8 +37,13 @@ class UISelectionDialog: UIViewController {
     }
     
     
-    let pickerDataSource = ValueForSelector.categories
+    var pickerDataSource: [String] = []
     var value: String = ""
+    
+    
+    func setDatasource(value: [String]){
+        self.pickerDataSource = value
+    }
     
     func setCompletion(completion: @escaping selectDialogComplateion){
         self.completion = completion
@@ -97,7 +102,7 @@ extension UISelectionDialog : UIPickerViewDelegate, UIPickerViewDataSource{
     }
     
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        value = pickerDataSource[row]
+        self.value = pickerDataSource[row]
         print("picker : \(pickerDataSource[row])")
     }
    
