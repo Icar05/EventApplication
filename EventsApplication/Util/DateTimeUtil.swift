@@ -16,13 +16,15 @@ class DateTimeUtil{
         let desFormat = "dd.MM.YYYY"
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = sourceFormat
-        dateFormatter.locale = .current
-        
+            dateFormatter.dateFormat = sourceFormat
+            dateFormatter.locale = .current
+    
+    
         let date = dateFormatter.date(from: dateString)
+    
+        guard date !=  nil else {return ""}
+    
         dateFormatter.dateFormat = desFormat
-        
         return dateFormatter.string(from: date!)
     }
-    
 }
