@@ -65,10 +65,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAl-p2-Vya">
                                         <rect key="frame" x="8" y="303" width="128" height="30"/>
                                         <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelClick:" destination="GbG-cf-qeI" eventType="touchUpInside" id="6vW-dC-zf1"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IbI-v3-8PF">
                                         <rect key="frame" x="153" y="303" width="127" height="30"/>
                                         <state key="normal" title="Ok"/>
+                                        <connections>
+                                            <action selector="okClick:" destination="GbG-cf-qeI" eventType="touchUpInside" id="zXQ-9e-waa"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ApJ-zK-iKJ" userLabel="button separator">
                                         <rect key="frame" x="144" y="297" width="1" height="46"/>
@@ -115,7 +121,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.256769317" green="0.67345369170000002" blue="0.6424805441" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="d3M-SO-HL5" firstAttribute="centerY" secondItem="dZg-MQ-6HN" secondAttribute="centerY" id="9gT-IF-K33"/>
                             <constraint firstItem="d3M-SO-HL5" firstAttribute="centerY" secondItem="dZg-MQ-6HN" secondAttribute="centerY" id="fjo-rT-T2C"/>

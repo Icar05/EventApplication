@@ -23,6 +23,12 @@ class UISelectionDialog: UIViewController {
     
     @IBOutlet weak var okBtn: UIButton!
     
+    @IBAction func cancelClick(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func okClick(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     let pickerDataSource = ["business", "entertainment", "general", "health", "science", "sports", "technology" ]
     
     
