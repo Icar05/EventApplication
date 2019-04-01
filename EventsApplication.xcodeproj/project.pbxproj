@@ -74,6 +74,8 @@
 		9B966241221ED4A6008C512D /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B966240221ED4A6008C512D /* SignIn.storyboard */; };
 		9B966244221ED556008C512D /* BaseCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B966243221ED556008C512D /* BaseCreator.swift */; };
 		9B966247221ED5B7008C512D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B966246221ED5B7008C512D /* Router.swift */; };
+		9B9EB5A12251E93900570C37 /* SelectionDialog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B9EB5A02251E93900570C37 /* SelectionDialog.storyboard */; };
+		9B9EB5A32251E94A00570C37 /* UISelectionDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9EB5A22251E94A00570C37 /* UISelectionDialog.swift */; };
 		9BEB17F8221C05CE003F8C9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEB17F7221C05CE003F8C9A /* AppDelegate.swift */; };
 		9BEB17FF221C05CF003F8C9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BEB17FE221C05CF003F8C9A /* Assets.xcassets */; };
 		9BEB1802221C05CF003F8C9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BEB1800221C05CF003F8C9A /* LaunchScreen.storyboard */; };
@@ -168,6 +170,8 @@
 		9B966240221ED4A6008C512D /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		9B966243221ED556008C512D /* BaseCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCreator.swift; sourceTree = "<group>"; };
 		9B966246221ED5B7008C512D /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		9B9EB5A02251E93900570C37 /* SelectionDialog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectionDialog.storyboard; sourceTree = "<group>"; };
+		9B9EB5A22251E94A00570C37 /* UISelectionDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISelectionDialog.swift; sourceTree = "<group>"; };
 		9BEB17F4221C05CE003F8C9A /* EventsApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventsApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BEB17F7221C05CE003F8C9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BEB17FE221C05CF003F8C9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -312,6 +316,7 @@
 		1A75A84B224C3BA60033C852 /* custom */ = {
 			isa = PBXGroup;
 			children = (
+				9B9EB59E2251E90F00570C37 /* dialogs */,
 				1A3F1A1A224D410D008B1486 /* emptyView */,
 				1A3F1A13224D34DC008B1486 /* sourcesCell */,
 				1A3F1A12224D345F008B1486 /* articleCell */,
@@ -322,6 +327,7 @@
 		1A918BAD22497E7C00D34DCE /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				1A918BAB224971C400D34DCE /* ValueForSelector.swift */,
 				1A918BAE22497E8D00D34DCE /* AuthUtil.swift */,
 				1A75A84E224C45890033C852 /* DialogHelper.swift */,
 				1A69B9C3224F65EA00DD811C /* DateTimeUtil.swift */,
@@ -346,7 +352,6 @@
 				9B11D178221EDB2500BFEBD4 /* UrlRouter.swift */,
 				1AF3B8092226D911004FA784 /* MockNetworkTester.swift */,
 				1AF63CBB2226FCD700CB7466 /* to read.swift */,
-				1A918BAB224971C400D34DCE /* ValueForSelector.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -702,6 +707,23 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		9B9EB59E2251E90F00570C37 /* dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				9B9EB59F2251E92300570C37 /* selectionDialog */,
+			);
+			path = dialogs;
+			sourceTree = "<group>";
+		};
+		9B9EB59F2251E92300570C37 /* selectionDialog */ = {
+			isa = PBXGroup;
+			children = (
+				9B9EB5A22251E94A00570C37 /* UISelectionDialog.swift */,
+				9B9EB5A02251E93900570C37 /* SelectionDialog.storyboard */,
+			);
+			path = selectionDialog;
+			sourceTree = "<group>";
+		};
 		9BEB17EB221C05CE003F8C9A = {
 			isa = PBXGroup;
 			children = (
@@ -888,6 +910,7 @@
 				1A3F1A09224D19A5008B1486 /* SourcesDetail.storyboard in Resources */,
 				1A3F1A15224D34F9008B1486 /* SourcesCell.xib in Resources */,
 				9BEB1802221C05CF003F8C9A /* LaunchScreen.storyboard in Resources */,
+				9B9EB5A12251E93900570C37 /* SelectionDialog.storyboard in Resources */,
 				9B56313D224B6D11005B41A6 /* Everything.storyboard in Resources */,
 				1A3F1A1C224D412A008B1486 /* EmptyView.xib in Resources */,
 				9B56313F224B6D32005B41A6 /* Sources.storyboard in Resources */,
@@ -1006,6 +1029,7 @@
 				9B966244221ED556008C512D /* BaseCreator.swift in Sources */,
 				1A3F1A07224D1943008B1486 /* SourcesDetailViewController.swift in Sources */,
 				9B563146224B73BA005B41A6 /* EverythingCreator.swift in Sources */,
+				9B9EB5A32251E94A00570C37 /* UISelectionDialog.swift in Sources */,
 				9B78808B224A13F600F7231A /* RootInteractorImpl.swift in Sources */,
 				1A3F1A1E224D413B008B1486 /* EmptyView.swift in Sources */,
 				9B966238221EBA72008C512D /* SignInCreator.swift in Sources */,

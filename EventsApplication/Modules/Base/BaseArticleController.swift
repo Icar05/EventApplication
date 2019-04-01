@@ -39,6 +39,26 @@ extension BaseArticleController: UITableViewDataSource{
 extension BaseArticleController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        Router.presentArticleDetailController(current: self, article: datasource[indexPath.row])
+//        Router.presentArticleDetailController(current: self, article: datasource[indexPath.row])
+        
+        
+//        MyModalViewController *modalViewController = [[MyModalViewController alloc] init];
+//        modalViewController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+//        [self presentViewController:modalViewController animated:YES completion:nil];
+        
+        
+        
+        let dialogStoryboard = UIStoryboard(name: "SelectionDialog", bundle: nil)
+        let customAlert = dialogStoryboard.instantiateViewController(withIdentifier: "UISelectionDialog") as! UISelectionDialog
+        
+//          let customAlert = UISelectionDialog()
+            customAlert.providesPresentationContextTransitionStyle = true
+            customAlert.definesPresentationContext = true
+            customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+            customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+//        customAlert.delegate = self
+            self.present(customAlert, animated: true, completion: nil)
+//        current?.navigationController?.pushViewController(sourcesDetailViewController, animated: true)
+        
     }
 }
