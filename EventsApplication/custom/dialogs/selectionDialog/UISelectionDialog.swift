@@ -114,7 +114,7 @@ extension UISelectionDialog : UIPickerViewDelegate, UIPickerViewDataSource{
         return pickerDataSource[row]
     }
     
-    func pickerView( pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print("picker : \(pickerDataSource[row])")
     }
    

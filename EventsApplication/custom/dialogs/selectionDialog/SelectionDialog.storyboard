@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3M-SO-HL5" userLabel="Content View">
-                                <rect key="frame" x="16" y="71" width="288" height="338"/>
+                                <rect key="frame" x="16" y="73" width="288" height="334"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHr-gc-gJ7">
                                         <rect key="frame" x="8" y="31" width="272" height="21"/>
@@ -41,7 +41,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8QV-b9-AWN">
-                                        <rect key="frame" x="0.0" y="107" width="288" height="190"/>
+                                        <rect key="frame" x="0.0" y="89" width="288" height="190"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="190" id="Tvq-9u-huK"/>
@@ -49,37 +49,38 @@
                                         </constraints>
                                     </pickerView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0NP-lg-V3L" userLabel="bottom separator">
-                                        <rect key="frame" x="0.0" y="297" width="320" height="1"/>
+                                        <rect key="frame" x="0.0" y="279" width="320" height="1"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Cm8-Va-waj"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fFX-Nu-EF8" userLabel="top separator">
-                                        <rect key="frame" x="0.0" y="107" width="320" height="1"/>
+                                        <rect key="frame" x="0.0" y="89" width="320" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="kcD-GI-sVI"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAl-p2-Vya">
-                                        <rect key="frame" x="8" y="303" width="128" height="30"/>
+                                        <rect key="frame" x="8" y="285" width="128" height="44"/>
                                         <state key="normal" title="Cancel"/>
                                         <connections>
                                             <action selector="cancelClick:" destination="GbG-cf-qeI" eventType="touchUpInside" id="6vW-dC-zf1"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IbI-v3-8PF">
-                                        <rect key="frame" x="153" y="303" width="127" height="30"/>
+                                        <rect key="frame" x="153" y="285" width="127" height="44"/>
                                         <state key="normal" title="Ok"/>
                                         <connections>
                                             <action selector="okClick:" destination="GbG-cf-qeI" eventType="touchUpInside" id="zXQ-9e-waa"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ApJ-zK-iKJ" userLabel="button separator">
-                                        <rect key="frame" x="144" y="297" width="1" height="46"/>
+                                        <rect key="frame" x="144" y="279" width="1" height="60"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="5vU-EB-0C6"/>
                                             <constraint firstAttribute="width" constant="1" id="RRM-ra-WAA"/>
                                         </constraints>
                                     </view>
@@ -109,7 +110,7 @@
                                     <constraint firstItem="xHr-gc-gJ7" firstAttribute="top" secondItem="d3M-SO-HL5" secondAttribute="top" constant="31" id="cbZ-bw-qcE"/>
                                     <constraint firstItem="rA4-s4-MOw" firstAttribute="leading" secondItem="d3M-SO-HL5" secondAttribute="leading" constant="8" id="dQH-DQ-Z3R"/>
                                     <constraint firstItem="8QV-b9-AWN" firstAttribute="top" secondItem="fFX-Nu-EF8" secondAttribute="top" id="eEj-38-PeT"/>
-                                    <constraint firstItem="fFX-Nu-EF8" firstAttribute="top" secondItem="rA4-s4-MOw" secondAttribute="bottom" constant="26" id="eLp-52-U3w"/>
+                                    <constraint firstItem="fFX-Nu-EF8" firstAttribute="top" secondItem="rA4-s4-MOw" secondAttribute="bottom" constant="8" id="eLp-52-U3w"/>
                                     <constraint firstAttribute="trailing" secondItem="0NP-lg-V3L" secondAttribute="trailing" constant="-32" id="gh5-UY-369"/>
                                     <constraint firstItem="xHr-gc-gJ7" firstAttribute="leading" secondItem="d3M-SO-HL5" secondAttribute="leadingMargin" id="jHb-eu-e0t"/>
                                     <constraint firstAttribute="bottom" secondItem="IbI-v3-8PF" secondAttribute="bottom" constant="5" id="lGW-YN-rOf"/>

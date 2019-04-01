@@ -42,15 +42,10 @@ extension BaseArticleController: UITableViewDelegate{
 //        Router.presentArticleDetailController(current: self, article: datasource[indexPath.row])
         
         
-//        MyModalViewController *modalViewController = [[MyModalViewController alloc] init];
-//        modalViewController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-//        [self presentViewController:modalViewController animated:YES completion:nil];
-        
-        
         
         let dialogStoryboard = UIStoryboard(name: "SelectionDialog", bundle: nil)
         let customAlert = dialogStoryboard.instantiateViewController(withIdentifier: "UISelectionDialog") as! UISelectionDialog
-        
+
 //          let customAlert = UISelectionDialog()
             customAlert.providesPresentationContextTransitionStyle = true
             customAlert.definesPresentationContext = true
