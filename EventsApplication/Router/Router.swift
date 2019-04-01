@@ -39,9 +39,11 @@ class Router {
         current?.navigationController?.pushViewController(sourcesDetailViewController, animated: true)
     }
     
-    static func presentSearchDialog(current: UIViewController?) {
+    typealias searchDialogComplateion = (String)->Void
+    static func presentSearchDialog(current: UIViewController?, completion: @escaping searchDialogComplateion) {
         let dialogStoryboard = UIStoryboard(name: "SearchDialog", bundle: nil)
         let customAlert = dialogStoryboard.instantiateViewController(withIdentifier: "UISearchDialog") as! UISearchDialog
+            customAlert.setCompletion(completion: completion)
             customAlert.providesPresentationContextTransitionStyle = true
             customAlert.definesPresentationContext = true
             customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext

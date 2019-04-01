@@ -20,16 +20,28 @@ class UISearchDialog: UIViewController{
     
     
     @IBAction func cancelClick(_ sender: UIButton) {
+        self.completion = nil
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func okClick(_ sender: UIButton) {
+        self.completion?(self.searchField.text ?? "")
+        self.completion = nil
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBOutlet weak var alertView: UIView!
     
     
+    
+    typealias searchDialogComplateion = (String)->Void
+    var completion: searchDialogComplateion?
+    
+    
+    
+    func setCompletion(completion: @escaping searchDialogComplateion){
+        self.completion = completion
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
