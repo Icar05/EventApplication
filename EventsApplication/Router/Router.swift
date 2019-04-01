@@ -38,4 +38,24 @@ class Router {
         sourcesDetailViewController.sources = sources
         current?.navigationController?.pushViewController(sourcesDetailViewController, animated: true)
     }
+    
+    static func presentSearchDialog(current: UIViewController?) {
+        let dialogStoryboard = UIStoryboard(name: "SearchDialog", bundle: nil)
+        let customAlert = dialogStoryboard.instantiateViewController(withIdentifier: "UISearchDialog") as! UISearchDialog
+            customAlert.providesPresentationContextTransitionStyle = true
+            customAlert.definesPresentationContext = true
+            customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+            customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+            current?.present(customAlert, animated: true, completion: nil)
+    }
+    
+    static func presentSelectionDialog(current: UIViewController?) {
+        let dialogStoryboard = UIStoryboard(name: "SelectionDialog", bundle: nil)
+        let customAlert = dialogStoryboard.instantiateViewController(withIdentifier: "UISelectionDialog") as! UISelectionDialog
+            customAlert.providesPresentationContextTransitionStyle = true
+            customAlert.definesPresentationContext = true
+            customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+            customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+            current?.present(customAlert, animated: true, completion: nil)
+    }
 }

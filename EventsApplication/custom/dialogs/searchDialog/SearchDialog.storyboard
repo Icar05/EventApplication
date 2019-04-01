@@ -67,10 +67,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axG-LQ-ZSb">
                                         <rect key="frame" x="8" y="151" width="174.66666666666666" height="44"/>
                                         <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelClick:" destination="bJ3-Qq-QbC" eventType="touchUpInside" id="UzH-hb-41o"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WrU-Q0-a8I">
                                         <rect key="frame" x="199.66666666666663" y="151" width="174.33333333333337" height="44"/>
                                         <state key="normal" title="Ok"/>
+                                        <connections>
+                                            <action selector="okClick:" destination="bJ3-Qq-QbC" eventType="touchUpInside" id="mYH-fk-R8I"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -117,6 +123,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Km-Cy-Df9"/>
                     </view>
+                    <connections>
+                        <outlet property="alertView" destination="d3M-SO-HL5" id="JzW-7R-vyJ"/>
+                        <outlet property="dialogSubtitle" destination="aco-LE-8if" id="rnC-E4-uqP"/>
+                        <outlet property="dialogTitle" destination="xHr-gc-gJ7" id="QtN-Fj-q1l"/>
+                        <outlet property="searchField" destination="bpN-xl-erB" id="8RZ-GS-l8Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ou9-ft-11v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
