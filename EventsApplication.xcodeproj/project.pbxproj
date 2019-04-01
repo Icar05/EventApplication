@@ -38,6 +38,7 @@
 		5142D2325929E234439D3E1E /* Pods_EventsApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14362051047C402913B017BC /* Pods_EventsApplication.framework */; };
 		9B11D179221EDB2500BFEBD4 /* NetworkServiceRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11D177221EDB2500BFEBD4 /* NetworkServiceRx.swift */; };
 		9B11D17A221EDB2500BFEBD4 /* UrlRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11D178221EDB2500BFEBD4 /* UrlRouter.swift */; };
+		9B50C465225231F100C720E7 /* UISearchDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B50C464225231F100C720E7 /* UISearchDialog.swift */; };
 		9B56312B224B62FB005B41A6 /* HeaderContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56312A224B62FB005B41A6 /* HeaderContract.swift */; };
 		9B56312F224B64B9005B41A6 /* HeaderPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56312E224B64B9005B41A6 /* HeaderPresenterImpl.swift */; };
 		9B56313B224B6CD6005B41A6 /* Headers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B56313A224B6CD6005B41A6 /* Headers.storyboard */; };
@@ -76,6 +77,7 @@
 		9B966247221ED5B7008C512D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B966246221ED5B7008C512D /* Router.swift */; };
 		9B9EB5A12251E93900570C37 /* SelectionDialog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B9EB5A02251E93900570C37 /* SelectionDialog.storyboard */; };
 		9B9EB5A32251E94A00570C37 /* UISelectionDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9EB5A22251E94A00570C37 /* UISelectionDialog.swift */; };
+		9BBB4DED225232DD00C5FCA6 /* SearchDialog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BBB4DEC225232DD00C5FCA6 /* SearchDialog.storyboard */; };
 		9BEB17F8221C05CE003F8C9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEB17F7221C05CE003F8C9A /* AppDelegate.swift */; };
 		9BEB17FF221C05CF003F8C9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BEB17FE221C05CF003F8C9A /* Assets.xcassets */; };
 		9BEB1802221C05CF003F8C9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BEB1800221C05CF003F8C9A /* LaunchScreen.storyboard */; };
@@ -134,6 +136,7 @@
 		75A050619A96C1E69E44BAFD /* Pods_EventsApplicationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventsApplicationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B11D177221EDB2500BFEBD4 /* NetworkServiceRx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceRx.swift; sourceTree = "<group>"; };
 		9B11D178221EDB2500BFEBD4 /* UrlRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlRouter.swift; sourceTree = "<group>"; };
+		9B50C464225231F100C720E7 /* UISearchDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchDialog.swift; sourceTree = "<group>"; };
 		9B56312A224B62FB005B41A6 /* HeaderContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderContract.swift; sourceTree = "<group>"; };
 		9B56312E224B64B9005B41A6 /* HeaderPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderPresenterImpl.swift; sourceTree = "<group>"; };
 		9B56313A224B6CD6005B41A6 /* Headers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Headers.storyboard; sourceTree = "<group>"; };
@@ -172,6 +175,7 @@
 		9B966246221ED5B7008C512D /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		9B9EB5A02251E93900570C37 /* SelectionDialog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectionDialog.storyboard; sourceTree = "<group>"; };
 		9B9EB5A22251E94A00570C37 /* UISelectionDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISelectionDialog.swift; sourceTree = "<group>"; };
+		9BBB4DEC225232DD00C5FCA6 /* SearchDialog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchDialog.storyboard; sourceTree = "<group>"; };
 		9BEB17F4221C05CE003F8C9A /* EventsApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventsApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BEB17F7221C05CE003F8C9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BEB17FE221C05CF003F8C9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -354,6 +358,15 @@
 				1AF63CBB2226FCD700CB7466 /* to read.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		9B50C461225231B300C720E7 /* searchDialog */ = {
+			isa = PBXGroup;
+			children = (
+				9B50C464225231F100C720E7 /* UISearchDialog.swift */,
+				9BBB4DEC225232DD00C5FCA6 /* SearchDialog.storyboard */,
+			);
+			path = searchDialog;
 			sourceTree = "<group>";
 		};
 		9B56310E224B61AD005B41A6 /* Headers */ = {
@@ -710,6 +723,7 @@
 		9B9EB59E2251E90F00570C37 /* dialogs */ = {
 			isa = PBXGroup;
 			children = (
+				9B50C461225231B300C720E7 /* searchDialog */,
 				9B9EB59F2251E92300570C37 /* selectionDialog */,
 			);
 			path = dialogs;
@@ -911,6 +925,7 @@
 				1A3F1A15224D34F9008B1486 /* SourcesCell.xib in Resources */,
 				9BEB1802221C05CF003F8C9A /* LaunchScreen.storyboard in Resources */,
 				9B9EB5A12251E93900570C37 /* SelectionDialog.storyboard in Resources */,
+				9BBB4DED225232DD00C5FCA6 /* SearchDialog.storyboard in Resources */,
 				9B56313D224B6D11005B41A6 /* Everything.storyboard in Resources */,
 				1A3F1A1C224D412A008B1486 /* EmptyView.xib in Resources */,
 				9B56313F224B6D32005B41A6 /* Sources.storyboard in Resources */,
@@ -1026,6 +1041,7 @@
 				9B96623A221EBC0C008C512D /* SignInPresenterImpl.swift in Sources */,
 				1A69B9C4224F65EA00DD811C /* DateTimeUtil.swift in Sources */,
 				1A3F19F7224D13AE008B1486 /* ArticleDetailContract.swift in Sources */,
+				9B50C465225231F100C720E7 /* UISearchDialog.swift in Sources */,
 				9B966244221ED556008C512D /* BaseCreator.swift in Sources */,
 				1A3F1A07224D1943008B1486 /* SourcesDetailViewController.swift in Sources */,
 				9B563146224B73BA005B41A6 /* EverythingCreator.swift in Sources */,
