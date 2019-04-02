@@ -67,25 +67,19 @@ extension RootViewController: UITabBarControllerDelegate {
         self.navigationItem.leftBarButtonItem = nil
         
         switch id {
-            case 0: self.navigationItem.rightBarButtonItem =
-                    self.createNavItem(title: "Country",selector: "selectCountry")
-            
-                    self.navigationItem.leftBarButtonItem =
-                    self.createNavItem(title: "Category",selector: "selectCategory")
-            
+            case 0: addButtonsToNavbar(
+                    right: self.createNavItem(title: "Country",selector: "selectCountry"),
+                    left: self.createNavItem(title: "Category",selector: "selectCategory"))
                     break
             
-            case 1: self.navigationItem.rightBarButtonItem =
-                    self.createNavItem(title: "Query", selector: "selectQuery")
-            
-                    self.navigationItem.leftBarButtonItem =
-                    self.createNavItem(title: "Language", selector: "selectLanguage")
-            
+            case 1: addButtonsToNavbar(
+                    right: self.createNavItem(title: "Query", selector: "selectQuery"),
+                    left: self.createNavItem(title: "Lang", selector: "selectLanguage"))
                     break
             
-            case 2: self.navigationItem.leftBarButtonItem =
-                    self.createNavItem(title: "Category",selector: "selectCategory")
-            
+            case 2: addButtonsToNavbar(
+                    right: self.createNavItem(title: "Category", selector:"selectCategory"),
+                    left: nil)
                     break
             
             default: break
@@ -94,11 +88,14 @@ extension RootViewController: UITabBarControllerDelegate {
     }
     
     
+    func addButtonsToNavbar(right: UIBarButtonItem?, left: UIBarButtonItem?){
+        self.navigationItem.rightBarButtonItem = right
+        self.navigationItem.leftBarButtonItem = left
+    }
     
     func getCurrentViewController() -> UIViewController?{
         return self.viewControllers?[selectedIndex]
     }
-    
     
     func createNavItem(title: String, selector: String) -> UIBarButtonItem{
         return UIBarButtonItem(title: title, style: .plain, target: self,
@@ -106,7 +103,9 @@ extension RootViewController: UITabBarControllerDelegate {
     }
 
 
-    
+    /*
+        handle selection on navigation
+     */
     @objc func selectCategory(){
         if let target: HasCategory = getCurrentViewController() as? HasCategory {
             ApplicationNavigator.presentSelectionDialog(current: self, datasource: ValueForSelector.categories, completion: { category in
