@@ -18,8 +18,6 @@ class SourcesViewController: BaseSourcesViewController {
     var presenter: SourcesPresenter!
     
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -84,3 +82,9 @@ extension SourcesViewController : SourcesView{
     
 }
 
+extension SourcesViewController: HasCategory{
+    
+    func categoryDidChanged(category: String) {
+        print("QueryChange -> source vc, category: \(category)")
+    }
+}

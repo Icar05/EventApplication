@@ -84,3 +84,15 @@ extension EverythingViewController : EverythingView{
     }
     
 }
+
+extension EverythingViewController : HasQuery, HasLanguage{
+    
+    func queryDidChanged(query: String) {
+         print("QueryChange -> everything vc, query: \(query)")
+    }
+    
+    func languageDidChanged(language: String) {
+         print("QueryChange -> everything vc, lang: \(language)")
+    }
+    
+}

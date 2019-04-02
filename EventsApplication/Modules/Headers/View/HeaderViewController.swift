@@ -84,6 +84,18 @@ extension HeadersViewController : HeaderView{
     
 }
 
+extension HeadersViewController: HasCategory, HasCountry{
+    
+    func categoryDidChanged(category: String) {
+        print("QueryChange -> header vc, category: \(category)")
+    }
+    
+    func countryDidChanged(country: String) {
+        print("QueryChange -> header vc, country: \(country)")
+    }
+
+}
+
 
 
 

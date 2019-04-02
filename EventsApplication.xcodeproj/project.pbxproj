@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		17EEA6E68486C94B3FF50A04 /* Pods_EventsApplicationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A050619A96C1E69E44BAFD /* Pods_EventsApplicationUITests.framework */; };
+		1A3266DA2254054D004F35A0 /* RequestKeysProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3266D92254054D004F35A0 /* RequestKeysProtocol.swift */; };
 		1A3F19F7224D13AE008B1486 /* ArticleDetailContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F19F6224D13AE008B1486 /* ArticleDetailContract.swift */; };
 		1A3F19F9224D1695008B1486 /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F19F8224D1695008B1486 /* ArticleDetailViewController.swift */; };
 		1A3F1A01224D17E5008B1486 /* SourceDetailContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F1A00224D17E5008B1486 /* SourceDetailContract.swift */; };
@@ -104,6 +105,7 @@
 
 /* Begin PBXFileReference section */
 		14362051047C402913B017BC /* Pods_EventsApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventsApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A3266D92254054D004F35A0 /* RequestKeysProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestKeysProtocol.swift; sourceTree = "<group>"; };
 		1A3F19F6224D13AE008B1486 /* ArticleDetailContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailContract.swift; sourceTree = "<group>"; };
 		1A3F19F8224D1695008B1486 /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		1A3F1A00224D17E5008B1486 /* SourceDetailContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceDetailContract.swift; sourceTree = "<group>"; };
@@ -708,6 +710,7 @@
 				9B966243221ED556008C512D /* BaseCreator.swift */,
 				1A3F1A10224D2B77008B1486 /* BaseArticleController.swift */,
 				1A3F1A18224D3827008B1486 /* BaseSourcesViewController.swift */,
+				1A3266D92254054D004F35A0 /* RequestKeysProtocol.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1067,6 +1070,7 @@
 				9B56315C224B76C4005B41A6 /* SourcesInteractorImpl.swift in Sources */,
 				9B84A4FF224CC4EA00E747FC /* ArticleDetailPresenterImpl.swift in Sources */,
 				1A3F1A17224D3690008B1486 /* SourcesCell.swift in Sources */,
+				1A3266DA2254054D004F35A0 /* RequestKeysProtocol.swift in Sources */,
 				9B788094224A14C600F7231A /* RootContract.swift in Sources */,
 				9B84A505224CC6A000E747FC /* ArticleDetailCreator.swift in Sources */,
 				9B56312F224B64B9005B41A6 /* HeaderPresenterImpl.swift in Sources */,
