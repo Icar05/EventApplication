@@ -18,6 +18,8 @@ class RootViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewControllers = getDataSource()
+        self.delegate = self
+        self.title = viewControllers?[0].tabBarItem.title
     }
     
 }
@@ -26,6 +28,8 @@ class RootViewController: UITabBarController {
 extension RootViewController : RootView{
     
     func getDataSource() -> [UIViewController]{
+        
+        
         
         
         let headerVC = HeaderCreator.assembleModule()
@@ -44,11 +48,20 @@ extension RootViewController : RootView{
             sourcesVC.tabBarItem.title = "Sources"
             sourcesVC.tabBarItem.image = UIImage(named: "star")
         
+
         
         return [headerVC, everythingVC, sourcesVC]
     }
 }
 
 extension RootViewController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        self.title = self.viewControllers?[tabBarController.selectedIndex].tabBarItem.title
+    }
+}
+extension RootViewController{
     
+    func debugParent(){
+        print("debugParent -> this is the parent view controller!")
+    }
 }
