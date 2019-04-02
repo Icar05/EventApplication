@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        NetworkActivityLogger.shared.startLogging()
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        Router.presentRootScreen(in: window!)
+        ApplicationNavigator.presentRootScreen(in: window!)
         
         
         

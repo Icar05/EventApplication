@@ -39,7 +39,7 @@ extension BaseArticleController: UITableViewDataSource{
 extension BaseArticleController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        Router.presentArticleDetailController(current: self, article: datasource[indexPath.row])
+        ApplicationNavigator.presentArticleDetailController(current: self, article: datasource[indexPath.row])
     }
 }
 

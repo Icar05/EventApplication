@@ -3,7 +3,7 @@
 import Foundation
 import UIKit
 
-class Router {
+class ApplicationNavigator {
     
     
     static func presentRootScreen(in window: UIWindow!){
@@ -12,12 +12,8 @@ class Router {
     }
     
     
-
-    
-    
     static func presentSingInController(current: UIViewController?, data: NSObject?) {
         let secondController : SignInViewController = SignInCreator.assembleModule() as! SignInViewController
-//        secondController.data = data
         current?.navigationController?.pushViewController(secondController, animated: true)
     }
     
@@ -40,11 +36,8 @@ class Router {
         let dialogStoryboard = UIStoryboard(name: "SearchDialog", bundle: nil)
         let customAlert = dialogStoryboard.instantiateViewController(withIdentifier: "UISearchDialog") as! UISearchDialog
             customAlert.setCompletion(completion: completion)
-            customAlert.providesPresentationContextTransitionStyle = true
-            customAlert.definesPresentationContext = true
-            customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-            customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-            current?.present(customAlert, animated: true, completion: nil)
+            current?.present(customizeDialog(customAlert: customAlert),
+                             animated: true, completion: nil)
     }
     
     typealias selectDialogComplateion = (String)->Void
@@ -54,10 +47,16 @@ class Router {
         let customAlert = dialogStoryboard.instantiateViewController(withIdentifier: "UISelectionDialog") as! UISelectionDialog
             customAlert.setCompletion(completion: completion)
             customAlert.setDatasource(value: datasource)
-            customAlert.providesPresentationContextTransitionStyle = true
-            customAlert.definesPresentationContext = true
-            customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-            customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-            current?.present(customAlert, animated: true, completion: nil)
+            current?.present(customizeDialog(customAlert: customAlert),
+                             animated: true, completion: nil)
+    }
+    
+    
+    private static func customizeDialog(customAlert: UIViewController) -> UIViewController{
+        customAlert.providesPresentationContextTransitionStyle = true
+        customAlert.definesPresentationContext = true
+        customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        return customAlert
     }
 }

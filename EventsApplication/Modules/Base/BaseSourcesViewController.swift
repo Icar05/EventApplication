@@ -37,6 +37,6 @@ extension BaseSourcesViewController: UITableViewDataSource{
 extension BaseSourcesViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        Router.presentSourcesDetailController(current: self, sources: datasource[indexPath.row])
+        ApplicationNavigator.presentSourcesDetailController(current: self, sources: datasource[indexPath.row])
     }
 }
