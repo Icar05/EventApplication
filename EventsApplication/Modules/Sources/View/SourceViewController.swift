@@ -82,9 +82,17 @@ extension SourcesViewController : SourcesView{
     
 }
 
-extension SourcesViewController: HasCategory{
+extension SourcesViewController: TabItem{
     
-    func categoryDidChanged(category: String) {
-        print("QueryChange -> source vc, category: \(category)")
+    func getNavBarButtons() -> [UIBarButtonItem?] {
+        return [createNavItem(title: "Category", selector: "selectCategory"),
+                nil]
     }
+    
+    @objc func selectCategory(){
+        ApplicationNavigator.presentSelectionDialog(current: self, datasource: ValueForSelector.categories, completion: { category in
+            print("QueryChange -> source vc, category: \(category)")
+        })
+    }
+   
 }

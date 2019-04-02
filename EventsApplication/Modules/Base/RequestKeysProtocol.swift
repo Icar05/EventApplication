@@ -7,19 +7,15 @@
 //
 
 import Foundation
+import UIKit
 
-protocol HasCategory {
-    func categoryDidChanged(category: String)
+
+protocol TabItem {
+    func getNavBarButtons() -> [UIBarButtonItem?]
 }
-
-protocol HasLanguage {
-    func languageDidChanged(language: String)
-}
-
-protocol HasQuery {
-    func queryDidChanged(query: String)
-}
-
-protocol HasCountry {
-    func countryDidChanged(country: String)
+extension TabItem{
+    func createNavItem(title: String, selector: String) -> UIBarButtonItem{
+        return UIBarButtonItem(title: title, style: .plain, target: self,
+                               action: Selector((selector)))
+    }
 }

@@ -66,77 +66,15 @@ extension RootViewController: UITabBarControllerDelegate {
         self.navigationItem.rightBarButtonItem = nil
         self.navigationItem.leftBarButtonItem = nil
         
-        switch id {
-            case 0: addButtonsToNavbar(
-                    right: self.createNavItem(title: "Country",selector: "selectCountry"),
-                    left: self.createNavItem(title: "Category",selector: "selectCategory"))
-                    break
-            
-            case 1: addButtonsToNavbar(
-                    right: self.createNavItem(title: "Query", selector: "selectQuery"),
-                    left: self.createNavItem(title: "Lang", selector: "selectLanguage"))
-                    break
-            
-            case 2: addButtonsToNavbar(
-                    right: self.createNavItem(title: "Category", selector:"selectCategory"),
-                    left: nil)
-                    break
-            
-            default: break
-            
-        }
+        let current = self.viewControllers?[selectedIndex] as! TabItem
+        let buttons: [UIBarButtonItem?] = current.getNavBarButtons()
+        self.addButtonsToNavbar(right: buttons[0], left: buttons[1])
     }
     
     
     func addButtonsToNavbar(right: UIBarButtonItem?, left: UIBarButtonItem?){
         self.navigationItem.rightBarButtonItem = right
         self.navigationItem.leftBarButtonItem = left
-    }
-    
-    func getCurrentViewController() -> UIViewController?{
-        return self.viewControllers?[selectedIndex]
-    }
-    
-    func createNavItem(title: String, selector: String) -> UIBarButtonItem{
-        return UIBarButtonItem(title: title, style: .plain, target: self,
-                               action: Selector((selector)))
-    }
-
-
-    /*
-        handle selection on navigation
-     */
-    @objc func selectCategory(){
-        if let target: HasCategory = getCurrentViewController() as? HasCategory {
-            ApplicationNavigator.presentSelectionDialog(current: self, datasource: ValueForSelector.categories, completion: { category in
-                target.categoryDidChanged(category: category)
-            })
-        }
-    }
-    
-    @objc func selectCountry(){
-       if let target: HasCountry = getCurrentViewController() as? HasCountry {
-            ApplicationNavigator.presentSelectionDialog(current: self, datasource: ValueForSelector.languages, completion: { country in
-                target.countryDidChanged(country: country)
-            })
-        }
-    }
-    
-    @objc func selectLanguage(){
-        if let target: HasLanguage = getCurrentViewController() as? HasLanguage {
-            ApplicationNavigator.presentSelectionDialog(current: self, datasource: ValueForSelector.languages, completion: { language in
-                target.languageDidChanged(language: language)
-            })
-        }
-    }
-    
-    @objc func selectQuery(){
-           if let target: HasQuery = getCurrentViewController() as? HasQuery {
-                ApplicationNavigator.presentSearchDialog(current: self,
-                    completion: { search in
-                        target.queryDidChanged(query: search)
-                })
-            }
     }
 
 }

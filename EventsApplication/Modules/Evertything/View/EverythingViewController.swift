@@ -84,15 +84,29 @@ extension EverythingViewController : EverythingView{
     }
     
 }
-
-extension EverythingViewController : HasQuery, HasLanguage{
+extension EverythingViewController : TabItem{
     
-    func queryDidChanged(query: String) {
-         print("QueryChange -> everything vc, query: \(query)")
+    func getNavBarButtons() -> [UIBarButtonItem?] {
+        return [createNavItem(title: "Lang", selector: "selectLanguage"),
+                createNavItem(title: "Query", selector: "selectQuery")]
     }
     
-    func languageDidChanged(language: String) {
-         print("QueryChange -> everything vc, lang: \(language)")
+    
+    @objc func selectLanguage(){
+       
+            ApplicationNavigator.presentSelectionDialog(current: self, datasource: ValueForSelector.languages, completion: { language in
+                print("QueryChange -> everything vc, language: \(language)")
+            })
+        
+    }
+    
+    @objc func selectQuery(){
+        
+            ApplicationNavigator.presentSearchDialog(current: self,
+                                                     completion: { search in
+                      print("QueryChange -> everything vc, search: \(search)")
+            })
+        
     }
     
 }

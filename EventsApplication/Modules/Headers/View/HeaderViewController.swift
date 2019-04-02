@@ -84,17 +84,32 @@ extension HeadersViewController : HeaderView{
     
 }
 
-extension HeadersViewController: HasCategory, HasCountry{
+extension HeadersViewController: TabItem{
     
-    func categoryDidChanged(category: String) {
-        print("QueryChange -> header vc, category: \(category)")
-    }
     
-    func countryDidChanged(country: String) {
-        print("QueryChange -> header vc, country: \(country)")
+    func getNavBarButtons() -> [UIBarButtonItem?] {
+        return [createNavItem(title: "Category", selector: "selectCategory"),
+                createNavItem(title: "Country", selector: "selectCountry")]
     }
 
+    
+    
+    @objc func selectCategory(){
+            ApplicationNavigator.presentSelectionDialog(current: self, datasource: ValueForSelector.categories, completion: { category in
+                   print("QueryChange -> header vc, category: \(category)")
+            })
+    }
+    
+    
+    @objc func selectCountry(){
+            ApplicationNavigator.presentSelectionDialog(current: self, datasource: ValueForSelector.languages, completion: { country in
+                    print("QueryChange -> header vc, country: \(country)")
+            })
+    }
+    
 }
+
+
 
 
 
