@@ -58,7 +58,7 @@ enum UrlRouter: URLRequestConvertible {
                 case .getHeadlinesByCategory(let category):
                     return ("v2/top-headlines", ["apiKey": UrlRouter.apiKey,
                                                  "category": category,
-                                                 "country": ValueForSelector.defaultCountry])
+                                                 "country": getDefaultCountry()])
                 
                 case .getEverythingByQuery(let query):
                     return ("v2/everything",    ["apiKey": UrlRouter.apiKey,

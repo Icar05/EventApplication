@@ -17,7 +17,5 @@ class ValueForSelector {
     
     static let categories = ["business", "entertainment", "general", "health", "science", "sports", "technology" ]
     
-    static let defaultCountry = "ua"
-    
     let newsApiAds = "https://newsapi.org/"
 }

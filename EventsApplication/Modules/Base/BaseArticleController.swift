@@ -39,13 +39,7 @@ extension BaseArticleController: UITableViewDataSource{
 extension BaseArticleController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-//        Router.presentArticleDetailController(current: self, article: datasource[indexPath.row])
-                
-
-        Router.presentSelectionDialog(current: self, datasource: ValueForSelector.languages, completion: { value  in
-            print("Stirng is :  "+value)
-        } )
-        
+        Router.presentArticleDetailController(current: self, article: datasource[indexPath.row])
     }
 }
 
