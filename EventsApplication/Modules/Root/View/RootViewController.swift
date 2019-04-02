@@ -20,6 +20,24 @@ class RootViewController: UITabBarController {
         self.viewControllers = getDataSource()
         self.delegate = self
         self.title = viewControllers?[0].tabBarItem.title
+//          self.test()
+    
+    }
+    
+    
+    func test(){
+        let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+        let play = UIBarButtonItem(title: "Play", style: .plain, target: self, action: #selector(playTapped))
+        
+        navigationItem.rightBarButtonItems = [add, play]
+    }
+    
+    @objc func addTapped(){
+        navigationItem.rightBarButtonItem  = nil
+    }
+    
+    @objc func playTapped(){
+        navigationItem.rightBarButtonItem  = nil
     }
     
 }
@@ -33,18 +51,15 @@ extension RootViewController : RootView{
         
         
         let headerVC = HeaderCreator.assembleModule()
-            headerVC.view.backgroundColor = UIColor.red
             headerVC.tabBarItem.title = "Headers"
             headerVC.tabBarItem.image = UIImage(named: "headers")
         
         
         let everythingVC = EverythingCreator.assembleModule()
-            everythingVC.view.backgroundColor = UIColor.yellow
             everythingVC.tabBarItem.title = "Everything"
             everythingVC.tabBarItem.image = UIImage(named: "star")
         
         let sourcesVC = SourcesCreator.assembleModule()
-            sourcesVC.view.backgroundColor = UIColor.green
             sourcesVC.tabBarItem.title = "Sources"
             sourcesVC.tabBarItem.image = UIImage(named: "star")
         

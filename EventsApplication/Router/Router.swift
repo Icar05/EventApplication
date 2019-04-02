@@ -12,11 +12,7 @@ class Router {
     }
     
     
-    // if we sould go to root screen directly
-    static func presentRootScreen(current: UIViewController?) {
-        let rootController = RootCreator.assembleModule()
-        current?.navigationController?.present(rootController, animated: true)
-    }
+
     
     
     static func presentSingInController(current: UIViewController?, data: NSObject?) {
