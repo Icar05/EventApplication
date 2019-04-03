@@ -14,17 +14,39 @@ import RxSwift
 class HeaderPresenterImpl {
     
     let disposeBag = DisposeBag()
-    
     var view: HeaderView?
-    
     var interactor: HeadersInteractor!
+    var category = ""
+    var country = ""
+    
+    
     
     func onViewDidLoad() {
-        
+            if(!country.isEmpty){
+                self.getHeadlines(country: country)
+            }else if(!category.isEmpty){
+                self.getHeadlines(category: category)
+            }else{
+                self.getHeadlines()
+            }
     }
 }
 
 extension HeaderPresenterImpl : HeaderPresenter{
+    
+    
+    func setCategory(category: String) {
+        self.category = category
+        self.country = ""
+        self.getHeadlines(category: category)
+    }
+    
+    func setCountry(country: String) {
+        self.country = country
+        self.category = ""
+        self.getHeadlines(country: country)
+    }
+    
     
     func getHeadlines() {
        self.view?.showLoading()

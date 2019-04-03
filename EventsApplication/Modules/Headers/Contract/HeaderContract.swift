@@ -14,11 +14,8 @@ protocol HeaderPresenter: class {
     var interactor: HeadersInteractor! { get set }
     func onViewDidLoad()
     
-    func getHeadlines()
-    
-    func getHeadlines(country: String)
-    
-    func getHeadlines(category: String)
+    func setCategory(category: String)
+    func setCountry(country: String)
 }
 
 protocol HeadersInteractor: class {

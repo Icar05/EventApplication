@@ -18,13 +18,8 @@ class HeadersViewController: BaseArticleController {
     
     var presenter: HeaderPresenter!
     
-    var category = ""
-    
-    var country = ""
-    
-    
-    
-  
+   
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,24 +28,16 @@ class HeadersViewController: BaseArticleController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.fetchData()
         self.refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
         self.addRefresh(tableView: tableView)
+        self.presenter.onViewDidLoad()
     }
     
     
-    private func fetchData(){
-        if(!country.isEmpty){
-            self.presenter.getHeadlines(country: country)
-        }else if(!category.isEmpty){
-            self.presenter.getHeadlines(category: category)
-        }else{
-            self.presenter.getHeadlines()
-        }
-    }
+   
     
     @objc private func refresh(_ sender: Any) {
-        self.fetchData()
+        self.viewDidLoad()
         self.refreshControl.endRefreshing()
     }
     
@@ -69,8 +56,8 @@ extension HeadersViewController : HeaderView{
     
     
     func handleError(error: Error) {
-        self.emptyView.showEmptyView()
         DispatchQueue.main.async {
+            self.emptyView.showEmptyView()
             DialogHelper.presentErrorDialog(error: error, viewController: self)
         }
     }
@@ -102,21 +89,15 @@ extension HeadersViewController: TabItem{
     
     
     @objc func selectCategory(){
-        ApplicationNavigator.presentSelectionDialog(current: self, datasource: ValueForSelector.categories,
-                                                    completion: { category in
-                   self.category = category
-                   self.country = ""
-                   self.fetchData()
+        ApplicationNavigator.presentSelectionDialog(current: self, datasource: ValueForSelector.categories,completion: { category in
+                self.presenter.setCategory(category: category)
             })
     }
     
     
     @objc func selectCountry(){
-            ApplicationNavigator.presentSelectionDialog(current: self, datasource: ValueForSelector.languages,
-                                                        completion: { country in
-                   self.country = country
-                   self.category = ""
-                   self.fetchData()
+            ApplicationNavigator.presentSelectionDialog(current: self, datasource: ValueForSelector.languages,completion: { country in
+                self.presenter.setCountry(country: country)
             })
     }
     
