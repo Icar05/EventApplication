@@ -26,7 +26,7 @@ class HeaderPresenterImpl {
 
 extension HeaderPresenterImpl : HeaderPresenter{
     
-    func getDefaultHeadlines() {
+    func getHeadlines() {
        self.view?.showLoading()
        self.interactor
             .getDefaultHeadlines()
@@ -41,7 +41,7 @@ extension HeaderPresenterImpl : HeaderPresenter{
             }).disposed(by: disposeBag)
     }
     
-    func getHeadlinesByCountry(country: String) {
+    func getHeadlines(country: String) {
         self.view?.showLoading()
         self.interactor
             .getHeadlinesByCountry(country: country)
@@ -56,7 +56,7 @@ extension HeaderPresenterImpl : HeaderPresenter{
             }).disposed(by: disposeBag)
     }
     
-    func getHeadlinesByCategory(category: String) {
+    func getHeadlines(category: String) {
         self.view?.showLoading()
         self.interactor
             .getHeadlinesByCategory(category: category)
