@@ -28,6 +28,7 @@ class EverythingViewController: BaseArticleController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.tableFooterView = UIView()
         self.refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
         self.addRefresh(tableView: tableView)
         self.presenter.onViewDidLoad()
