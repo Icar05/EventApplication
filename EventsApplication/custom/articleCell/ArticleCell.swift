@@ -32,13 +32,18 @@ class ArticleCell: UITableViewCell {
         self.title.text = article.title
         self.subtitle.text = article.description
         self.date.text = DateTimeUtil.convertDateString(dateString: article.publishedAt)
-        self.loadIcon(input: article.urlToImage)
+        
         self.icon.layer.borderColor = UIColor.lightGray.cgColor
         self.icon.layer.borderWidth = 2.0
+        self.icon.image = UIImage(named: "empty")
+        self.loadIcon(input: article.urlToImage)
     }
     
     
     func loadIcon(input: String?){
+        
+        
+        
         if (input != nil){
             let url = URL(string: input!)
             

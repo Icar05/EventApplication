@@ -38,7 +38,7 @@ class ArticleDetailViewController: UIViewController {
         self.url.text = article?.url
         self.date.text = DateTimeUtil.convertDateString(dateString: article?.publishedAt)
         self.autor.text = article?.author
-        self.loadIcon(input: article?.urlToImage)
+        self.image.image = UIImage(named: "empty")
         self.image.layer.borderColor = UIColor.lightGray.cgColor
         self.image.layer.borderWidth = 2.0
         
@@ -47,6 +47,7 @@ class ArticleDetailViewController: UIViewController {
             action: #selector(self.openLink))
         
         self.url.addGestureRecognizer(tap)
+        self.loadIcon(input: article?.urlToImage)
     }
     
     
