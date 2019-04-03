@@ -89,6 +89,7 @@ extension SourcesViewController: TabItem{
     @objc func selectCategory(){
         ApplicationNavigator.presentSelectionDialog(current: self, datasource: ValueForSelector.categories, completion: { category in
             self.category = category
+            self.fetchData()
         })
     }
    

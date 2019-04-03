@@ -42,14 +42,17 @@ class ArticleCell: UITableViewCell {
         if (input != nil){
             let url = URL(string: input!)
             
-            DispatchQueue.global().async {
-                if let data = try? Data(contentsOf: url!){
-                    DispatchQueue.main.async {
-                        self.icon.image = UIImage(data: data)
+                if(url != nil){
+                    DispatchQueue.global().async {
+                        if let data = try? Data(contentsOf: url!){
+                            DispatchQueue.main.async {
+                                self.icon.image = UIImage(data: data)
+                            }
+                        }
                     }
                 }
-                
-            }
+            
+            
         }
     }
     

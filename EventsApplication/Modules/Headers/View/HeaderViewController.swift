@@ -106,6 +106,7 @@ extension HeadersViewController: TabItem{
                                                     completion: { category in
                    self.category = category
                    self.country = ""
+                   self.fetchData()
             })
     }
     
@@ -115,6 +116,7 @@ extension HeadersViewController: TabItem{
                                                         completion: { country in
                    self.country = country
                    self.category = ""
+                   self.fetchData()
             })
     }
     

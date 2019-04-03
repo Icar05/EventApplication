@@ -93,6 +93,7 @@ extension EverythingViewController : TabItem{
     @objc func selectLanguage(){
        ApplicationNavigator.presentSelectionDialog(current: self, datasource: ValueForSelector.languages, completion: { language in
             self.language = language
+            self.fetchData()
         })
     }
     
@@ -100,6 +101,7 @@ extension EverythingViewController : TabItem{
         ApplicationNavigator.presentSearchDialog(
             current: self, completion: { search in
                 self.query = search.isEmpty ? ValueForSelector.defaultQuery: search
+                self.fetchData()
         })
     }
     

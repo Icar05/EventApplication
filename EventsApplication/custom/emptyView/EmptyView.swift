@@ -50,7 +50,7 @@ class EmptyView: UIView {
         self.isHidden = false
         loading.stopAnimating()
         loading.isHidden = true
-        label.isHidden = true
+        label.isHidden = false
     }
     
     
