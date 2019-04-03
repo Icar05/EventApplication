@@ -13,16 +13,35 @@ import RxSwift
 class EverythingPresenterImpl {
     
     let disposeBag = DisposeBag()
-    
     var view: EverythingView?
-    
     var interactor: EverythingInteractor!
+    var query: String = ValueForSelector.defaultQuery
+    var language: String? = nil
+    
+    
+    
     
     func onViewDidLoad() {
-        
+        self.language == nil ?
+        self.getEverything(query: query) :
+        self.getEverything(query: query, language: language!)
     }
 }
 extension EverythingPresenterImpl : EverythingPresenter{
+    
+    
+    func setLanguage(language: String) {
+        self.language = language
+        self.query = ValueForSelector.defaultQuery
+        self.getEverything(query: query, language: language)
+    }
+    
+    func setQuery(query: String) {
+        self.query = query.isEmpty ? ValueForSelector.defaultQuery: query
+        self.language = nil
+        self.getEverything(query: query)
+    }
+    
     
     func getEverything(query: String) {
         self.view?.showLoading()

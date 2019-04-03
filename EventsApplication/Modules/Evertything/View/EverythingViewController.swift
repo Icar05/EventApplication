@@ -17,9 +17,7 @@ class EverythingViewController: BaseArticleController {
     @IBOutlet weak var emptyView: EmptyView!
     var presenter: EverythingPresenter!
     
-    var query: String = ValueForSelector.defaultQuery
     
-    var language: String? = nil
     
     
     override func viewDidLoad() {
@@ -30,20 +28,14 @@ class EverythingViewController: BaseArticleController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.fetchData()
         self.refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
         self.addRefresh(tableView: tableView)
+        self.presenter.onViewDidLoad()
     }
     
     @objc private func refresh(_ sender: Any) {
-        self.fetchData()
+        self.presenter.onViewDidLoad()
         self.refreshControl.endRefreshing()
-    }
-
-    private func fetchData(){
-        self.language == nil ?
-            self.presenter.getEverything(query: query):
-            self.presenter.getEverything(query: query, language: language!)
     }
     
 }
@@ -62,8 +54,8 @@ extension EverythingViewController : EverythingView{
     
     
     func handleError(error: Error) {
-        self.emptyView.showEmptyView()
         DispatchQueue.main.async {
+            self.emptyView.showEmptyView()
             DialogHelper.presentErrorDialog(error: error, viewController: self)
         }
     }
@@ -92,16 +84,14 @@ extension EverythingViewController : TabItem{
     
     @objc func selectLanguage(){
        ApplicationNavigator.presentSelectionDialog(current: self, datasource: ValueForSelector.languages, completion: { language in
-            self.language = language
-            self.fetchData()
+                self.presenter.setLanguage(language: language)
         })
     }
     
     @objc func selectQuery(){
         ApplicationNavigator.presentSearchDialog(
             current: self, completion: { search in
-                self.query = search.isEmpty ? ValueForSelector.defaultQuery: search
-                self.fetchData()
+               self.presenter.setQuery(query: search)
         })
     }
     
