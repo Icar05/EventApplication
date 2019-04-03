@@ -52,8 +52,8 @@ extension SourcesViewController : SourcesView{
     
     
     func handleError(error: Error) {
-        self.emptyView.showEmptyView()
         DispatchQueue.main.async {
+            self.emptyView.showEmptyView()
             DialogHelper.presentErrorDialog(error: error, viewController: self)
         }
     }
