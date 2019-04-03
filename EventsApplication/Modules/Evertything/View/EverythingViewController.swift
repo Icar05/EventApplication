@@ -30,23 +30,15 @@ class EverythingViewController: BaseArticleController {
         self.tableView.dataSource = self
         self.presenter.getEverythingByQuery(query: "Apple")
         self.refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
-        self.addRefresh()
+        self.addRefresh(tableView: tableView)
     }
     
     @objc private func refresh(_ sender: Any) {
         
-        //todo refresh code
+        print("Refresh: Everything")
         self.refreshControl.endRefreshing()
     }
-    
-    
-    func addRefresh(){
-        if #available(iOS 10.0, *) {
-            self.tableView.refreshControl = refreshControl
-        } else {
-            self.tableView.addSubview(refreshControl)
-        }
-    }
+
     
 }
 
