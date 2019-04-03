@@ -34,15 +34,27 @@ class ArticleDetailViewController: UIViewController {
     func fillArticleData(){
         self.name.text = article?.title
         self.desc.text = article?.description
-        self.url.attributedText = LinkUtil.getLink(link: (article?.url)!)
+        self.url.text = article?.url
         self.url.text = article?.url
         self.date.text = DateTimeUtil.convertDateString(dateString: article?.publishedAt)
         self.autor.text = article?.author
         self.loadIcon(input: article?.urlToImage)
         self.image.layer.borderColor = UIColor.lightGray.cgColor
         self.image.layer.borderWidth = 2.0
+        
+        let tap: UITapGestureRecognizer =  UITapGestureRecognizer(
+            target: self,
+            action: #selector(self.openLink))
+        
+        self.url.addGestureRecognizer(tap)
     }
     
+    
+    
+    
+    @objc private func openLink(){
+        UIApplication.shared.open(URL(string: self.url.text!)!)
+    }
    
     func loadIcon(input: String?){
         if (input != nil){

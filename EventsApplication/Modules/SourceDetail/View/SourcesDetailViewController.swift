@@ -29,13 +29,25 @@ class SourcesDetailViewController: UIViewController {
     
     
     func fillSource(){
-        name.text = sources?.name
-        desc.text = sources?.description
-        category.text = sources?.category
-        language.text = "Language: "+(sources?.language!)!
-        country.text = "Country: "+(sources?.country!)!
-        url.attributedText = LinkUtil.getLink(link: (sources?.url)!)
-        url.text = sources?.url
+        self.name.text = sources?.name
+        self.desc.text = sources?.description
+        self.category.text = sources?.category
+        self.language.text = "Language: "+(sources?.language!)!
+        self.country.text = "Country: "+(sources?.country!)!
+        self.url.text = sources?.url
+        
+        
+        
+        let tap: UITapGestureRecognizer =  UITapGestureRecognizer(
+            target: self,
+            action: #selector(self.openLink))
+    
+        self.url.addGestureRecognizer(tap)
+    }
+    
+    @objc private func openLink(){
+        print("openlink ")
+        UIApplication.shared.open(URL(string: self.url.text!)!)
     }
 
 }
