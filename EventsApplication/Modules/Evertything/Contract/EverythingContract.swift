@@ -15,9 +15,9 @@ protocol EverythingPresenter: class {
     var interactor: EverythingInteractor! { get set }
     func onViewDidLoad()
     
-    func getEverythingByQuery(query: String)
+    func getEverything(query: String)
     
-    func getEverythingByLanguage(query: String, language: String)
+    func getEverything(query: String, language: String)
     
 }
 

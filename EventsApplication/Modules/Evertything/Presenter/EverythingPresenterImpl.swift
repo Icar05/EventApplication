@@ -24,7 +24,7 @@ class EverythingPresenterImpl {
 }
 extension EverythingPresenterImpl : EverythingPresenter{
     
-    func getEverythingByQuery(query: String) {
+    func getEverything(query: String) {
         self.view?.showLoading()
         self.interactor
             .getEverythingByQuery(query: query)
@@ -39,7 +39,7 @@ extension EverythingPresenterImpl : EverythingPresenter{
             }).disposed(by: disposeBag)
     }
     
-    func getEverythingByLanguage(query: String, language: String) {
+    func getEverything(query: String, language: String) {
         self.view?.showLoading()
         self.interactor
             .getEverythingByLanguage(query: query, language: language)
