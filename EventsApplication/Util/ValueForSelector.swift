@@ -18,4 +18,6 @@ class ValueForSelector {
     static let categories = ["business", "entertainment", "general", "health", "science", "sports", "technology" ]
     
     let newsApiAds = "https://newsapi.org/"
+    
+    static let defaultQuery: String = "Apple"
 }
