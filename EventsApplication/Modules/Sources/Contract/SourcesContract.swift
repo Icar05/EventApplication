@@ -13,7 +13,7 @@ protocol SourcesPresenter: class {
     var view: SourcesView? { get set }
     var interactor: SourcesInteractor! { get set }
     func onViewDidLoad()
-    
+    func setCategory(category: String)
     func getSourcesByCategory(category: String)
 }
 

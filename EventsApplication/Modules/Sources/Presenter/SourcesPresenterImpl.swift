@@ -11,19 +11,30 @@ import RxSwift
 
 class SourcesPresenterImpl {
     
+    
+    
     let disposeBag = DisposeBag()
-    
     var view: SourcesView?
-    
+    var category: String = ValueForSelector.categories[6]
     var interactor: SourcesInteractor!
     
+    
     func onViewDidLoad() {
-        
+        getSourcesByCategory(category: category)
     }
+    
+    
 }
 extension SourcesPresenterImpl: SourcesPresenter{
     
-    func getSourcesByCategory(category: String) {
+    
+    func setCategory(category: String) {
+        self.category = category
+        self.getSourcesByCategory(category: category)
+    }
+    
+    
+    internal func getSourcesByCategory(category: String) {
         self.view?.showLoading()
         self.interactor
             .getSourcesByCategory(category: category)

@@ -16,7 +16,6 @@ class SourcesViewController: BaseSourcesViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var presenter: SourcesPresenter!
-    var category: String = ValueForSelector.categories[6]
     
     
     override func viewDidLoad() {
@@ -27,21 +26,16 @@ class SourcesViewController: BaseSourcesViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.fetchData()
         self.refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
         self.addRefresh(tableView: tableView)
+        self.presenter.onViewDidLoad()
     }
+    
     
     @objc private func refresh(_ sender: Any) {
-        self.fetchData()
+        self.presenter.onViewDidLoad()
         self.refreshControl.endRefreshing()
     }
-    
-    
-    private func fetchData(){
-        self.presenter.getSourcesByCategory(category: category)
-    }
-    
     
 }
 
@@ -82,14 +76,12 @@ extension SourcesViewController : SourcesView{
 extension SourcesViewController: TabItem{
     
     func getNavBarButtons() -> [UIBarButtonItem?] {
-        return [createNavItem(title: "Category", selector: "selectCategory"),
-                nil]
+        return [createNavItem(title: "Category", selector: "selectCategory"), nil]
     }
     
     @objc func selectCategory(){
         ApplicationNavigator.presentSelectionDialog(current: self, datasource: ValueForSelector.categories, completion: { category in
-            self.category = category
-            self.fetchData()
+             self.presenter.setCategory(category: category)
         })
     }
    
