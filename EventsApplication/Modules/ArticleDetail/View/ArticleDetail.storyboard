@@ -32,7 +32,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vjr-wV-WIF">
-                                                <rect key="frame" x="16" y="229.33333333333334" width="704" height="20.333333333333343"/>
+                                                <rect key="frame" x="368" y="229.33333333333334" width="368" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -64,6 +64,7 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="z58-eM-aaU" secondAttribute="trailing" constant="16" id="0h8-9r-hvk"/>
                                             <constraint firstItem="CdP-x3-VBl" firstAttribute="leading" secondItem="dcy-gc-Gu6" secondAttribute="leading" constant="16" id="5qf-Qp-HGH"/>
+                                            <constraint firstAttribute="trailing" secondItem="Vjr-wV-WIF" secondAttribute="trailing" id="7u0-NS-GgH"/>
                                             <constraint firstItem="Wck-pw-7ti" firstAttribute="leading" secondItem="dcy-gc-Gu6" secondAttribute="leading" constant="16" id="8Df-uE-ng6"/>
                                             <constraint firstItem="Wck-pw-7ti" firstAttribute="top" secondItem="Zcy-gd-gD6" secondAttribute="bottom" constant="8" id="BXY-FK-dem"/>
                                             <constraint firstAttribute="trailing" secondItem="Wck-pw-7ti" secondAttribute="trailing" id="GMW-FU-URJ"/>
@@ -75,13 +76,16 @@
                                             <constraint firstItem="Zcy-gd-gD6" firstAttribute="top" secondItem="dcy-gc-Gu6" secondAttribute="top" id="QgH-ZB-dOn"/>
                                             <constraint firstAttribute="trailing" secondItem="Vjr-wV-WIF" secondAttribute="trailing" constant="16" id="Tle-Lv-91X"/>
                                             <constraint firstItem="Zcy-gd-gD6" firstAttribute="leading" secondItem="dcy-gc-Gu6" secondAttribute="leading" id="VgY-zb-dop"/>
+                                            <constraint firstItem="Vjr-wV-WIF" firstAttribute="width" secondItem="dcy-gc-Gu6" secondAttribute="width" multiplier="1:2" id="Vk3-tl-P0U"/>
                                             <constraint firstItem="CdP-x3-VBl" firstAttribute="top" secondItem="5Sr-rG-t9D" secondAttribute="bottom" constant="8" id="XH9-zK-ygE"/>
                                             <constraint firstAttribute="trailing" secondItem="Wck-pw-7ti" secondAttribute="trailing" constant="16" id="Z9A-JS-xsE"/>
                                             <constraint firstItem="Zcy-gd-gD6" firstAttribute="width" secondItem="dcy-gc-Gu6" secondAttribute="width" multiplier="1:2" id="aob-eT-yl3"/>
                                             <constraint firstItem="5Sr-rG-t9D" firstAttribute="top" secondItem="z58-eM-aaU" secondAttribute="bottom" constant="8" id="e7c-W5-H51"/>
                                             <constraint firstItem="Vjr-wV-WIF" firstAttribute="top" secondItem="Wck-pw-7ti" secondAttribute="bottom" constant="8" id="ex7-YS-ZkQ"/>
+                                            <constraint firstItem="Vjr-wV-WIF" firstAttribute="width" secondItem="dcy-gc-Gu6" secondAttribute="width" multiplier="1:2" id="mMq-8N-p06"/>
                                             <constraint firstAttribute="trailing" secondItem="Wck-pw-7ti" secondAttribute="trailing" id="nxZ-gR-Vpd"/>
                                             <constraint firstItem="5Sr-rG-t9D" firstAttribute="leading" secondItem="dcy-gc-Gu6" secondAttribute="leading" constant="16" id="o3p-vy-vAu"/>
+                                            <constraint firstAttribute="trailing" secondItem="Vjr-wV-WIF" secondAttribute="trailing" id="qCg-g7-IF5"/>
                                             <constraint firstItem="Wck-pw-7ti" firstAttribute="width" secondItem="dcy-gc-Gu6" secondAttribute="width" multiplier="1:2" id="tZb-CB-p0V"/>
                                             <constraint firstItem="Vjr-wV-WIF" firstAttribute="leading" secondItem="dcy-gc-Gu6" secondAttribute="leading" constant="16" id="wCU-sz-aDP"/>
                                             <constraint firstAttribute="trailing" secondItem="5Sr-rG-t9D" secondAttribute="trailing" constant="16" id="xb1-i9-5Gi"/>
@@ -91,6 +95,10 @@
                                             <mask key="constraints">
                                                 <exclude reference="JsU-bT-KKJ"/>
                                                 <exclude reference="aob-eT-yl3"/>
+                                                <exclude reference="7u0-NS-GgH"/>
+                                                <exclude reference="Vk3-tl-P0U"/>
+                                                <exclude reference="mMq-8N-p06"/>
+                                                <exclude reference="qCg-g7-IF5"/>
                                                 <exclude reference="GMW-FU-URJ"/>
                                                 <exclude reference="nxZ-gR-Vpd"/>
                                                 <exclude reference="tZb-CB-p0V"/>
@@ -101,6 +109,10 @@
                                             <mask key="constraints">
                                                 <exclude reference="QUA-VM-KXj"/>
                                                 <include reference="aob-eT-yl3"/>
+                                                <include reference="7u0-NS-GgH"/>
+                                                <exclude reference="Tle-Lv-91X"/>
+                                                <include reference="mMq-8N-p06"/>
+                                                <exclude reference="wCU-sz-aDP"/>
                                                 <exclude reference="8Df-uE-ng6"/>
                                                 <include reference="GMW-FU-URJ"/>
                                                 <exclude reference="Z9A-JS-xsE"/>
@@ -111,6 +123,10 @@
                                             <mask key="constraints">
                                                 <include reference="JsU-bT-KKJ"/>
                                                 <exclude reference="QUA-VM-KXj"/>
+                                                <exclude reference="Tle-Lv-91X"/>
+                                                <include reference="Vk3-tl-P0U"/>
+                                                <include reference="qCg-g7-IF5"/>
+                                                <exclude reference="wCU-sz-aDP"/>
                                                 <exclude reference="8Df-uE-ng6"/>
                                                 <exclude reference="Z9A-JS-xsE"/>
                                                 <include reference="nxZ-gR-Vpd"/>
