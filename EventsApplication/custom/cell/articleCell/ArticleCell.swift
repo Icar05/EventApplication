@@ -31,7 +31,7 @@ class ArticleCell: BaseCell {
         
         self.icon.layer.borderColor = UIColor.lightGray.cgColor
         self.icon.layer.borderWidth = 2.0
-        self.icon.image = UIImage(named: "empty")
+        self.icon.image = UIImage(named: "thumb")
 //        self.loadIcon(input: article.urlToImage)
     }
     

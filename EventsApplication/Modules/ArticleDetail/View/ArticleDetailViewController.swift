@@ -38,7 +38,7 @@ class ArticleDetailViewController: UIViewController {
         self.url.text = article?.url
         self.date.text = DateTimeUtil.convertDateString(dateString: article?.publishedAt)
         self.autor.text = article?.author
-        self.image.image = UIImage(named: "empty")
+        self.image.image = UIImage(named: "thumb")
         self.image.layer.borderColor = UIColor.lightGray.cgColor
         self.image.layer.borderWidth = 2.0
         
