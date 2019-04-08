@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ArticleCell: UITableViewCell {
+class ArticleCell: BaseCell {
     
     
     
@@ -23,11 +23,7 @@ class ArticleCell: UITableViewCell {
     @IBOutlet weak var date: UILabel!
     
    
-    
-    
-    
-    
-    
+
     func fillCell(article: Articles){
         self.title.text = article.title
         self.subtitle.text = article.description
@@ -36,13 +32,13 @@ class ArticleCell: UITableViewCell {
         self.icon.layer.borderColor = UIColor.lightGray.cgColor
         self.icon.layer.borderWidth = 2.0
         self.icon.image = UIImage(named: "empty")
-        self.loadIcon(input: article.urlToImage)
+//        self.loadIcon(input: article.urlToImage)
     }
     
     
+    
+    
     func loadIcon(input: String?){
-        
-        
         
         if (input != nil){
             let url = URL(string: input!)
@@ -56,8 +52,6 @@ class ArticleCell: UITableViewCell {
                         }
                     }
                 }
-            
-            
         }
     }
     

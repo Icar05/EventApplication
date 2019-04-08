@@ -18,6 +18,8 @@ class EmptyView: UIView {
     
     @IBOutlet weak var loading: UIActivityIndicatorView!
     
+    var blurView: UIVisualEffectView?
+    
     //    @IBInspectable var color: UIColor = UIColor.orange
     
     
@@ -73,9 +75,38 @@ class EmptyView: UIView {
             [UIView.AutoresizingMask.flexibleWidth,
              UIView.AutoresizingMask.flexibleHeight]
         
-        
+        setBlur()
         //        label.textColor = color
         //        loading.color = color
+    }
+    
+    
+   
+    
+    func setBlur(){
+        
+        if(blurView == nil){
+            self.backgroundColor = .clear
+            self.blurView = getBlurView()
+            self.insertSubview(self.blurView!, at: 0)
+        }
+    }
+    
+    func getBlurView() -> UIVisualEffectView{
+        let blurEffect = UIBlurEffect(style: .light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.bounds
+        
+        
+        blurEffectView.layer.borderColor = UIColor.black.withAlphaComponent(4.0).cgColor
+        blurEffectView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
+        blurEffectView.clipsToBounds = true;
+        blurEffectView.layer.borderColor = UIColor.black.withAlphaComponent(0.4).cgColor
+        blurEffectView.layer.borderWidth = 4.0;
+        blurEffectView.layer.cornerRadius = 6.0;
+        
+        return blurEffectView
     }
 
 }

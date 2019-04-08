@@ -31,8 +31,19 @@ extension BaseArticleController: UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIndifier) as! ArticleCell
             cell.fillCell(article: datasource[indexPath.row])
         
+        
         return cell
     }
+    
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+         cell.layer.backgroundColor = UIColor.clear.cgColor
+        
+         (cell as! BaseCell).setBlur()
+    }
+    
+
     
 }
 

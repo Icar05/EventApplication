@@ -32,6 +32,13 @@ extension BaseSourcesViewController: UITableViewDataSource{
         return cell
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        cell.layer.backgroundColor = UIColor.clear.cgColor
+        
+        (cell as! BaseCell).setBlur()
+    }
+    
 }
 
 extension BaseSourcesViewController: UITableViewDelegate{

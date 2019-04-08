@@ -23,6 +23,8 @@ class HeadersViewController: BaseArticleController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        self.setBackground(vc: self)
         self.tableView.register(UINib(nibName: cellIndifier, bundle: nil),
                                 forCellReuseIdentifier: cellIndifier)
         
