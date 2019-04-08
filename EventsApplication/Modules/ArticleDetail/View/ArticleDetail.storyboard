@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_5" orientation="landscape">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,46 +15,46 @@
             <objects>
                 <viewController storyboardIdentifier="ArticleDetailViewController" id="MEk-UZ-eeL" customClass="ArticleDetailViewController" customModule="EventsApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VqX-ua-FOr">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aER-ZD-wXg">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="393"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dcy-gc-Gu6">
-                                        <rect key="frame" x="0.0" y="0.0" width="896" height="393"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zcy-gd-gD6">
-                                                <rect key="frame" x="0.0" y="0.0" width="448" height="193"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="193"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="193" id="tVP-vg-SDC"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vjr-wV-WIF">
-                                                <rect key="frame" x="456" y="36.333333333333336" width="432" height="20.333333333333336"/>
+                                                <rect key="frame" x="16" y="229.33333333333334" width="382" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Url" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z58-eM-aaU">
-                                                <rect key="frame" x="456" y="64.666666666666671" width="432" height="20.333333333333329"/>
+                                                <rect key="frame" x="16" y="257.66666666666669" width="382" height="20.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                                 <color key="textColor" red="1" green="0.17418509400000001" blue="0.093026077949999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Sr-rG-t9D">
-                                                <rect key="frame" x="456" y="93" width="432" height="20.333333333333329"/>
+                                                <rect key="frame" x="16" y="286" width="382" height="20.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdP-x3-VBl">
-                                                <rect key="frame" x="456" y="121.33333333333333" width="432" height="20.333333333333329"/>
+                                                <rect key="frame" x="16" y="314.33333333333331" width="382" height="20.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wck-pw-7ti">
-                                                <rect key="frame" x="456" y="7.9999999999999982" width="432" height="20.333333333333329"/>
+                                                <rect key="frame" x="16" y="201" width="382" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -125,10 +125,6 @@
                                             <mask key="constraints">
                                                 <exclude reference="JsU-bT-KKJ"/>
                                                 <exclude reference="aob-eT-yl3"/>
-                                                <exclude reference="1KP-M5-f9O"/>
-                                                <exclude reference="8gO-6m-F0O"/>
-                                                <exclude reference="A48-fn-hch"/>
-                                                <exclude reference="Y0q-A3-7gM"/>
                                                 <exclude reference="3x4-eb-UfI"/>
                                                 <exclude reference="8DY-DY-zKI"/>
                                                 <exclude reference="GMW-FU-URJ"/>
@@ -163,16 +159,16 @@
                                                 <exclude reference="U0v-HG-fgj"/>
                                                 <exclude reference="gUA-Zk-jU3"/>
                                                 <exclude reference="k8O-ir-e55"/>
+                                                <exclude reference="1KP-M5-f9O"/>
+                                                <exclude reference="8gO-6m-F0O"/>
+                                                <exclude reference="A48-fn-hch"/>
+                                                <exclude reference="Y0q-A3-7gM"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=compact">
                                             <mask key="constraints">
                                                 <exclude reference="QUA-VM-KXj"/>
                                                 <include reference="aob-eT-yl3"/>
-                                                <exclude reference="5qf-Qp-HGH"/>
-                                                <include reference="8gO-6m-F0O"/>
-                                                <exclude reference="MpW-Js-RP4"/>
-                                                <include reference="Y0q-A3-7gM"/>
                                                 <include reference="3x4-eb-UfI"/>
                                                 <include reference="8DY-DY-zKI"/>
                                                 <exclude reference="8Df-uE-ng6"/>
@@ -199,16 +195,16 @@
                                                 <include reference="CfS-4J-eSf"/>
                                                 <exclude reference="o3p-vy-vAu"/>
                                                 <exclude reference="xb1-i9-5Gi"/>
+                                                <exclude reference="5qf-Qp-HGH"/>
+                                                <include reference="8gO-6m-F0O"/>
+                                                <exclude reference="MpW-Js-RP4"/>
+                                                <include reference="Y0q-A3-7gM"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular">
                                             <mask key="constraints">
                                                 <include reference="JsU-bT-KKJ"/>
                                                 <exclude reference="QUA-VM-KXj"/>
-                                                <include reference="1KP-M5-f9O"/>
-                                                <exclude reference="5qf-Qp-HGH"/>
-                                                <include reference="A48-fn-hch"/>
-                                                <exclude reference="MpW-Js-RP4"/>
                                                 <exclude reference="8Df-uE-ng6"/>
                                                 <exclude reference="BXY-FK-dem"/>
                                                 <include reference="NsQ-bA-KPM"/>
@@ -235,6 +231,10 @@
                                                 <exclude reference="k8O-ir-e55"/>
                                                 <exclude reference="o3p-vy-vAu"/>
                                                 <exclude reference="xb1-i9-5Gi"/>
+                                                <include reference="1KP-M5-f9O"/>
+                                                <exclude reference="5qf-Qp-HGH"/>
+                                                <include reference="A48-fn-hch"/>
+                                                <exclude reference="MpW-Js-RP4"/>
                                             </mask>
                                         </variation>
                                     </view>

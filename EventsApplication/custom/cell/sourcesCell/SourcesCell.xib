@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,7 +32,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhg-0a-0xK">
                     <rect key="frame" x="16" y="79" width="343" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.59224952399999997" blue="0.64683856870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" name="Accent"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -57,4 +58,9 @@
             <point key="canvasLocation" x="132" y="103.44827586206897"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="Accent">
+            <color red="0.078000001609325409" green="0.65200001001358032" blue="0.65700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
