@@ -23,12 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         ApplicationNavigator.presentRootScreen(in: window!)
         
-        
-        
         return true
     }
     
     
    
+}
+
+extension UIColor {
+    
+    static let accentColor = UIColor(named: "Accent")
+    
 }
 

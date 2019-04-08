@@ -21,6 +21,8 @@ class RootViewController: UITabBarController {
         self.delegate = self
         self.title = viewControllers?[0].tabBarItem.title
         self.drawNavigationButtonsAlignToId(id: 0)
+        self.tabBar.tintColor = .accentColor
+        self.tabBar.unselectedItemTintColor = UIColor.black
     }
     
 }
