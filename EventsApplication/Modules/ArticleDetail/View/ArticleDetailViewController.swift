@@ -32,12 +32,12 @@ class ArticleDetailViewController: UIViewController {
     
     
     func fillArticleData(){
-        self.name.text = article?.title
-        self.desc.text = article?.description
-        self.url.text = article?.url
-        self.url.text = article?.url
-        self.date.text = DateTimeUtil.convertDateString(dateString: article?.publishedAt)
-        self.autor.text = article?.author
+        self.name.text = getTestContent()
+        self.desc.text = getTestContent()
+        self.url.text = getTestContent()
+        self.url.text = getTestContent()
+        self.date.text = getTestContent()
+        self.autor.text = getTestContent()
         self.image.layer.borderColor = UIColor.lightGray.cgColor
         self.image.layer.borderWidth = 2.0
         
@@ -70,5 +70,10 @@ class ArticleDetailViewController: UIViewController {
 }
 
 extension ArticleDetailViewController: ArticleDetailView{
+    
+    
+    func getTestContent() -> String{
+        return "Почему все кричат о ужасной жизни? Или это так модно прикидываться несчастным и винить всех и во всем? Если уж так плохо - пойдите на кладбище. Серьезно, пойдите и посмотрите как там 'весело' и как лежащие там люди или то, что осталось - меняют свою жизнь. У каждого человека есть жизнь и она очень мала в сравнении с временем во Вселенной. Так что хватит ныть, поднимаем себя и живем как нравится. Не знаем что нравится? Напишите хотя бы на листочке то, чего хотите. Ну, не миллион долларов ничего не делая при этом. А хотя бы  цель. Хотите новый холодильник? Или куда-то поехать. Так что мешает? Нет времени или денег. Меняйте, делайте, вперед."
+    }
     
 }

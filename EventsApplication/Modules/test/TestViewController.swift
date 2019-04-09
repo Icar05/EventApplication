@@ -16,7 +16,7 @@ class TestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.setBackground()
+//        self.setBackground()
 //        self.test()
     }
 
