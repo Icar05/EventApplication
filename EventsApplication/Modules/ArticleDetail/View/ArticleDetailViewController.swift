@@ -57,16 +57,13 @@ class ArticleDetailViewController: UIViewController {
     }
    
     func loadIcon(input: String?){
-        if (input != nil){
-            let url = URL(string: input!)
-            
+        if let inputStirng = input, let url = URL(string: inputStirng){
             DispatchQueue.global().async {
-                if let data = try? Data(contentsOf: url!){
+                if let data = try? Data(contentsOf: url){
                     DispatchQueue.main.async {
                         self.image.image = UIImage(data: data)
                     }
                 }
-                
             }
         }
     }

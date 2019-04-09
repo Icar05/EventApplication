@@ -24,6 +24,8 @@ class ArticleCell: BaseCell {
     
     fileprivate var imageContent: UIImage?
     
+    let defaultImage = UIImage(named: "thumb")
+    
 
     func fillCell(article: Articles){
         self.title.text = article.title
@@ -35,10 +37,14 @@ class ArticleCell: BaseCell {
     }
     
     
+    override func prepareForReuse() {
+        self.imageContent = nil
+        self.icon.image = defaultImage
+    }
     
     func loadIcon(input: String?){
     
-//        if (imageContent == nil){
+        if (imageContent == nil){
             if let inputStirng = input, let url = URL(string: inputStirng){
     
                 DispatchQueue.global().async {
@@ -50,9 +56,9 @@ class ArticleCell: BaseCell {
                     }
                 }
             }
-//        }
-        
         }
+        
+    }
 }
     
     
