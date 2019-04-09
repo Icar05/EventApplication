@@ -81,9 +81,9 @@
                             <constraint firstItem="GsV-ND-b6P" firstAttribute="bottom" secondItem="kNn-0e-c2f" secondAttribute="bottom" id="8uI-jf-pJB"/>
                             <constraint firstItem="GsV-ND-b6P" firstAttribute="leading" secondItem="kNn-0e-c2f" secondAttribute="leading" id="G2X-bC-Xrs"/>
                             <constraint firstItem="GsV-ND-b6P" firstAttribute="top" secondItem="zix-1E-w5T" secondAttribute="bottom" id="MMv-Ac-1FD"/>
+                            <constraint firstItem="zix-1E-w5T" firstAttribute="width" secondItem="VqX-ua-FOr" secondAttribute="width" id="O0P-AG-WvT"/>
                             <constraint firstItem="zix-1E-w5T" firstAttribute="height" secondItem="VqX-ua-FOr" secondAttribute="height" multiplier="1:3" id="Od8-nE-tnd"/>
                             <constraint firstItem="GsV-ND-b6P" firstAttribute="trailing" secondItem="kNn-0e-c2f" secondAttribute="trailing" id="QP7-jc-dMw"/>
-                            <constraint firstItem="zix-1E-w5T" firstAttribute="leading" secondItem="kNn-0e-c2f" secondAttribute="leading" id="a4D-Nz-dex"/>
                             <constraint firstItem="zix-1E-w5T" firstAttribute="top" secondItem="kNn-0e-c2f" secondAttribute="top" id="o80-ad-pnW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kNn-0e-c2f"/>
