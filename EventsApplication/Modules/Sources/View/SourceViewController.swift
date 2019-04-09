@@ -82,7 +82,16 @@ extension SourcesViewController: TabItem{
     }
     
     @objc func selectCategory(){
-        ApplicationNavigator.presentSelectionDialog(current: self, datasource: ValueForSelector.categories, completion: { category in
+        
+        let title = "Category"
+        let subtitle = "Select category"
+        
+        ApplicationNavigator.presentSelectionDialog(
+            title: title,
+            subtitle: subtitle,
+            current: self,
+            datasource: ValueForSelector.categories,
+            completion: { category in
              self.presenter.setCategory(category: category)
         })
     }

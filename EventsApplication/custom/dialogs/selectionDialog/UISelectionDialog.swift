@@ -19,11 +19,13 @@ class UISelectionDialog: UIViewController {
     
     @IBOutlet weak var pickerView: UIPickerView!
     
-    @IBOutlet weak var cancelBtn: UIButton!
+    var customTitle: String?
     
-    @IBOutlet weak var okBtn: UIButton!
+    var customDescription: String?
     
-   
+    
+    
+    
     
     typealias selectDialogComplateion = (String)->Void
     var completion: selectDialogComplateion?
@@ -57,7 +59,6 @@ class UISelectionDialog: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupView()
-        animateView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -70,15 +71,8 @@ class UISelectionDialog: UIViewController {
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         self.pickerView.dataSource = self
         self.pickerView.delegate = self
-    }
-    
-    func animateView() {
-        self.alertView.alpha = 0;
-        self.alertView.frame.origin.y = self.alertView.frame.origin.y + 50
-        UIView.animate(withDuration: 0.4, animations: { () -> Void in
-            self.alertView.alpha = 1.0;
-            self.alertView.frame.origin.y = self.alertView.frame.origin.y - 50
-        })
+        self.dialogTitle.text = customTitle
+        self.dialogSubtitle.text = customDescription
     }
     
 }

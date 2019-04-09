@@ -18,6 +18,9 @@ class UISearchDialog: UIViewController{
     
     @IBOutlet weak var searchField: UITextField!
     
+    var customTitle: String?
+    
+    var customDescription: String?
     
     @IBAction func cancelClick(_ sender: UIButton) {
         self.completion = nil
@@ -38,6 +41,10 @@ class UISearchDialog: UIViewController{
     var completion: searchDialogComplateion?
     
     
+    func setDescription(title: String, subtitle: String){
+        self.dialogTitle.text = title
+        self.dialogSubtitle.text = subtitle
+    }
     
     func setCompletion(completion: @escaping searchDialogComplateion){
         self.completion = completion
@@ -61,6 +68,8 @@ class UISearchDialog: UIViewController{
     func setupView() {
         self.alertView.layer.cornerRadius = 10
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        self.dialogTitle.text = customTitle
+        self.dialogSubtitle.text = customDescription
     }
     
     

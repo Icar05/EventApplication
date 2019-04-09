@@ -32,20 +32,24 @@ class ApplicationNavigator {
     }
     
     typealias searchDialogComplateion = (String)->Void
-    static func presentSearchDialog(current: UIViewController?, completion: @escaping searchDialogComplateion) {
+    static func presentSearchDialog(title: String, subtitle: String, current: UIViewController?, completion: @escaping searchDialogComplateion) {
         let dialogStoryboard = UIStoryboard(name: "SearchDialog", bundle: nil)
         let customAlert = dialogStoryboard.instantiateViewController(withIdentifier: "UISearchDialog") as! UISearchDialog
             customAlert.setCompletion(completion: completion)
+            customAlert.customTitle = title
+            customAlert.customDescription = subtitle
             current?.present(customizeDialog(customAlert: customAlert),
                              animated: true, completion: nil)
     }
     
     typealias selectDialogComplateion = (String)->Void
-    static func presentSelectionDialog(current: UIViewController?, datasource: [String], completion: @escaping
+    static func presentSelectionDialog(title: String, subtitle: String, current: UIViewController?, datasource: [String], completion: @escaping
         selectDialogComplateion) {
         let dialogStoryboard = UIStoryboard(name: "SelectionDialog", bundle: nil)
         let customAlert = dialogStoryboard.instantiateViewController(withIdentifier: "UISelectionDialog") as! UISelectionDialog
             customAlert.setCompletion(completion: completion)
+            customAlert.customTitle = title
+            customAlert.customDescription = subtitle
             customAlert.setDatasource(value: datasource)
             current?.present(customizeDialog(customAlert: customAlert),
                              animated: true, completion: nil)

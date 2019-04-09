@@ -92,15 +92,33 @@ extension HeadersViewController: TabItem{
     
     
     @objc func selectCategory(){
-        ApplicationNavigator.presentSelectionDialog(current: self, datasource: ValueForSelector.categories,completion: { category in
+        
+        let title = "Category"
+        let subtitle = "Select category"
+        
+        ApplicationNavigator.presentSelectionDialog(
+            title: title,
+            subtitle: subtitle,
+            current: self,
+            datasource: ValueForSelector.categories,
+            completion: { category in
                 self.presenter.setCategory(category: category)
-            })
+        })
     }
     
     
     @objc func selectCountry(){
-            ApplicationNavigator.presentSelectionDialog(current: self, datasource: ValueForSelector.languages,completion: { country in
-                self.presenter.setCountry(country: country)
+        
+        let title = "Country"
+        let subtitle = "Select country"
+        
+            ApplicationNavigator.presentSelectionDialog(
+                title: title,
+                subtitle: subtitle,
+                current: self,
+                datasource: ValueForSelector.languages,
+                completion: { country in
+                    self.presenter.setCountry(country: country)
             })
     }
     
