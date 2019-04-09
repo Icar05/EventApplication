@@ -51,7 +51,6 @@ class UISearchDialog: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupView()
-        animateView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -64,14 +63,6 @@ class UISearchDialog: UIViewController{
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
     }
     
-    func animateView() {
-        self.alertView.alpha = 0;
-        self.alertView.frame.origin.y = self.alertView.frame.origin.y + 50
-        UIView.animate(withDuration: 0.4, animations: { () -> Void in
-            self.alertView.alpha = 1.0;
-            self.alertView.frame.origin.y = self.alertView.frame.origin.y - 50
-        })
-    }
     
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer =     UITapGestureRecognizer(target: self, action:    #selector(self.dismissKeyboard))

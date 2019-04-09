@@ -33,6 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension UIColor {
     
     static let accentColor = UIColor(named: "Accent")
-    
+    static let appGrayColor = UIColor(named: "ApplicationGray")
 }
 
