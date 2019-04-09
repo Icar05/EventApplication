@@ -1298,6 +1298,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9DE1443A2FDAB8AF65DD72B5 /* Pods-EventsApplication.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5M2X2PH6A7;
 				INFOPLIST_FILE = EventsApplication/Info.plist;
@@ -1316,6 +1317,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 690FACA11737355C05F058FD /* Pods-EventsApplication.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5M2X2PH6A7;
 				INFOPLIST_FILE = EventsApplication/Info.plist;

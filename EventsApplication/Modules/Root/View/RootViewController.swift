@@ -22,6 +22,7 @@ class RootViewController: UITabBarController {
         self.title = viewControllers?[0].tabBarItem.title
         self.drawNavigationButtonsAlignToId(id: 0)
         self.tabBar.tintColor = .accentColor
+//        self.tabBar.
         self.tabBar.unselectedItemTintColor = UIColor.black
     }
     
@@ -34,16 +35,16 @@ extension RootViewController : RootView{
         
         let headerVC = HeaderCreator.assembleModule()
             headerVC.tabBarItem.title = "Headers"
-            headerVC.tabBarItem.image = UIImage(named: "headers")
+            headerVC.tabBarItem.image = UIImage(named: "t")
         
         
         let everythingVC = EverythingCreator.assembleModule()
             everythingVC.tabBarItem.title = "Everything"
-            everythingVC.tabBarItem.image = UIImage(named: "star")
+            everythingVC.tabBarItem.image = UIImage(named: "tab.png")
         
         let sourcesVC = SourcesCreator.assembleModule()
             sourcesVC.tabBarItem.title = "Sources"
-            sourcesVC.tabBarItem.image = UIImage(named: "star")
+            sourcesVC.tabBarItem.image = UIImage(named: "t")
         
 
         
