@@ -24,7 +24,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dcy-gc-Gu6">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zcy-gd-gD6">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb" translatesAutoresizingMaskIntoConstraints="NO" id="Zcy-gd-gD6">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="193"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -272,4 +272,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="164.16791604197903"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="thumb" width="800" height="600"/>
+    </resources>
 </document>

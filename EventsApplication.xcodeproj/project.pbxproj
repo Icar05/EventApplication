@@ -62,7 +62,6 @@
 		9B6FB7B3225B2B9800439F98 /* TestViewCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6FB7B2225B2B9800439F98 /* TestViewCreator.swift */; };
 		9B6FB7B6225B75D900439F98 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6FB7B5225B75D900439F98 /* BaseCell.swift */; };
 		9B6FB7B8225B830C00439F98 /* ColorTheme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B6FB7B7225B830C00439F98 /* ColorTheme.xcassets */; };
-		9B6FB7BA225B899200439F98 /* BaseDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6FB7B9225B899200439F98 /* BaseDetailController.swift */; };
 		9B6FB7BC225B906300439F98 /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6FB7BB225B906300439F98 /* CustomScrollView.swift */; };
 		9B78808B224A13F600F7231A /* RootInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78808A224A13F600F7231A /* RootInteractorImpl.swift */; };
 		9B78808E224A144700F7231A /* RootPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78808D224A144700F7231A /* RootPresenterImpl.swift */; };
@@ -167,7 +166,6 @@
 		9B6FB7B2225B2B9800439F98 /* TestViewCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewCreator.swift; sourceTree = "<group>"; };
 		9B6FB7B5225B75D900439F98 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		9B6FB7B7225B830C00439F98 /* ColorTheme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorTheme.xcassets; sourceTree = "<group>"; };
-		9B6FB7B9225B899200439F98 /* BaseDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDetailController.swift; sourceTree = "<group>"; };
 		9B6FB7BB225B906300439F98 /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		9B78808A224A13F600F7231A /* RootInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractorImpl.swift; sourceTree = "<group>"; };
 		9B78808D224A144700F7231A /* RootPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresenterImpl.swift; sourceTree = "<group>"; };
@@ -744,7 +742,6 @@
 				1A3F1A10224D2B77008B1486 /* BaseArticleController.swift */,
 				1A3F1A18224D3827008B1486 /* BaseSourcesViewController.swift */,
 				1A3266D92254054D004F35A0 /* RequestKeysProtocol.swift */,
-				9B6FB7B9225B899200439F98 /* BaseDetailController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1114,7 +1111,6 @@
 				9B788094224A14C600F7231A /* RootContract.swift in Sources */,
 				9B84A505224CC6A000E747FC /* ArticleDetailCreator.swift in Sources */,
 				9B56312F224B64B9005B41A6 /* HeaderPresenterImpl.swift in Sources */,
-				9B6FB7BA225B899200439F98 /* BaseDetailController.swift in Sources */,
 				9B56314E224B7512005B41A6 /* EverythingViewController.swift in Sources */,
 				9B56314C224B74A3005B41A6 /* HeadersInteractorImpl.swift in Sources */,
 				1A3F1A19224D3827008B1486 /* BaseSourcesViewController.swift in Sources */,

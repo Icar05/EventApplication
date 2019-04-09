@@ -22,39 +22,42 @@ class ArticleCell: BaseCell {
     
     @IBOutlet weak var date: UILabel!
     
-   
+    fileprivate var imageContent: UIImage?
+    
 
     func fillCell(article: Articles){
         self.title.text = article.title
         self.subtitle.text = article.description
         self.date.text = DateTimeUtil.convertDateString(dateString: article.publishedAt)
-        
         self.icon.layer.borderColor = UIColor.lightGray.cgColor
         self.icon.layer.borderWidth = 2.0
-        self.icon.image = UIImage(named: "thumb")
-//        self.loadIcon(input: article.urlToImage)
+        self.loadIcon(input: article.urlToImage)
     }
-    
     
     
     
     func loadIcon(input: String?){
-        
-        if (input != nil){
-            let url = URL(string: input!)
-            
-                if(url != nil){
-                    DispatchQueue.global().async {
-                        if let data = try? Data(contentsOf: url!){
-                            DispatchQueue.main.async {
-                                self.icon.image = UIImage(data: data)
-                            }
+    
+//        if (imageContent == nil){
+            if let inputStirng = input, let url = URL(string: inputStirng){
+    
+                DispatchQueue.global().async {
+                    if let data = try? Data(contentsOf: url){
+                        DispatchQueue.main.async {
+                            self.imageContent = UIImage(data: data)
+                            self.icon.image = self.imageContent
                         }
                     }
                 }
+            }
+//        }
+        
         }
-    }
-    
-    
-     
 }
+    
+    
+
+    
+    
+    
+
