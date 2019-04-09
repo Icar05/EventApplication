@@ -33,18 +33,22 @@ extension RootViewController : RootView{
     
     func getDataSource() -> [UIViewController]{
         
+//        let image = UIImage(named: "news")?.withRenderingMode(UIImage.RenderingMode.automatic)
+//        var customTabBarItem:UITabBarItem = UITabBarItem(title: nil, image: , selectedImage: UIImage(named: "YOUR_IMAGE_NAME"))
+
+        
         let headerVC = HeaderCreator.assembleModule()
             headerVC.tabBarItem.title = "Headers"
-            headerVC.tabBarItem.image = UIImage(named: "t")
+            headerVC.tabBarItem.image = UIImage(named: "news")
         
         
         let everythingVC = EverythingCreator.assembleModule()
             everythingVC.tabBarItem.title = "Everything"
-            everythingVC.tabBarItem.image = UIImage(named: "tab.png")
+            everythingVC.tabBarItem.image = UIImage(named: "news")
         
         let sourcesVC = SourcesCreator.assembleModule()
             sourcesVC.tabBarItem.title = "Sources"
-            sourcesVC.tabBarItem.image = UIImage(named: "t")
+            sourcesVC.tabBarItem.image = UIImage(named: "news")
         
 
         
