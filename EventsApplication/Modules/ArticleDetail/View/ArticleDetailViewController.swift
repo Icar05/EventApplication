@@ -27,6 +27,7 @@ class ArticleDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.edgesForExtendedLayout = []
         self.fillArticleData()
 //        self.fillTestContent()()
     }
