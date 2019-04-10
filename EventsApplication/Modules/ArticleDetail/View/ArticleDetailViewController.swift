@@ -14,12 +14,12 @@ class ArticleDetailViewController: UIViewController {
     
     var presenter: ArticleDetailPresenter!
     var article: Articles?
-    @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var desc: UILabel!
-    @IBOutlet weak var url: UILabel!
-    @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var autor: UILabel!
+//    @IBOutlet weak var image: UIImageView!
+//    @IBOutlet weak var name: UILabel!
+//    @IBOutlet weak var desc: UILabel!
+//    @IBOutlet weak var url: UILabel!
+//    @IBOutlet weak var date: UILabel!
+//    @IBOutlet weak var autor: UILabel!
     
     
     
@@ -27,7 +27,7 @@ class ArticleDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.fillArticleData()
+//        self.fillArticleData()
     }
     
     
