@@ -12,11 +12,6 @@ class ApplicationNavigator {
     }
     
     
-    static func presentSingInController(current: UIViewController?, data: NSObject?) {
-        let secondController : SignInViewController = SignInCreator.assembleModule() as! SignInViewController
-        current?.navigationController?.pushViewController(secondController, animated: true)
-    }
-    
     static func presentArticleDetailController(current: UIViewController?, article: Articles) {
         let articleDetailViewController : ArticleDetailViewController = ArticleDetailCreator.assembleModule()
             as! ArticleDetailViewController

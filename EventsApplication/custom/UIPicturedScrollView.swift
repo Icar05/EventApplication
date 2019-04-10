@@ -24,14 +24,7 @@ class UIPicturedScrollView: UIScrollView {
     
     
     func setup(){
-        self.setBackground()
-    }
-    
-    
-    
-    func setBackground(){
-        let backgroundImage = UIImage(named: "back.png")
-        self.backgroundColor = UIColor(patternImage: backgroundImage!)
+        self.backgroundColor = UIColor(patternImage: .applicationBackground)
     }
 
 

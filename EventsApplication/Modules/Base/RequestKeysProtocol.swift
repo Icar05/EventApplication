@@ -20,12 +20,10 @@ extension TabItem{
     }
     
     func setBackground(vc: UIViewController){
-        let imageName = "back.png"
-        
-        let backgroundImage = UIImage(named: imageName)
+       
         let backgroundImageView = UIImageView.init(frame: vc.view.frame)
         
-            backgroundImageView.image = backgroundImage
+            backgroundImageView.image = .applicationBackground
             backgroundImageView.contentMode = .scaleAspectFill
         
         vc.view.insertSubview(backgroundImageView, at: 0)
