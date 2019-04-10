@@ -15,16 +15,19 @@ class UIPicturedScrollView: UIScrollView {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        setup()
     }
     
     override func encode(with aCoder: NSCoder) {
         super.encode(with: aCoder)
+        setup()
     }
     
     
-    override func draw(_ rect: CGRect) {
+    func setup(){
         self.setBackground()
     }
+    
     
     
     func setBackground(){
