@@ -28,6 +28,7 @@ extension BaseSourcesViewController: UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIndifier) as! SourcesCell
             cell.fillCell(sources: datasource[indexPath.row])
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none;
         
         return cell
     }
