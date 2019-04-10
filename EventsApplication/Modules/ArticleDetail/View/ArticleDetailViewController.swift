@@ -20,6 +20,7 @@ class ArticleDetailViewController: UIViewController {
     @IBOutlet weak var url: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var autor: UILabel!
+    @IBOutlet weak var stackView: UIBluredStackView!
     
     
     
@@ -55,6 +56,11 @@ class ArticleDetailViewController: UIViewController {
         let tap: UITapGestureRecognizer =  UITapGestureRecognizer(
             target: self,
             action: #selector(self.openLink))
+        
+        
+        self.stackView.layoutMargins = UIEdgeInsets(
+            top: 8, left: 8, bottom: 8, right: 8)
+        self.stackView.isLayoutMarginsRelativeArrangement = true
         
         self.url.addGestureRecognizer(tap)
         self.loadIcon(input: article?.urlToImage)

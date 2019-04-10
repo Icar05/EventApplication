@@ -92,6 +92,7 @@
                         <outlet property="desc" destination="h1v-2O-EQw" id="DYa-58-qN6"/>
                         <outlet property="language" destination="aWG-4S-Um2" id="j95-7Z-AHj"/>
                         <outlet property="name" destination="wdo-i0-Lgv" id="z0t-Zd-VqH"/>
+                        <outlet property="stackView" destination="Fl5-JY-qwT" id="kSX-Z4-EaI"/>
                         <outlet property="url" destination="OBx-VR-F3N" id="DKm-JX-8Mj"/>
                     </connections>
                 </viewController>

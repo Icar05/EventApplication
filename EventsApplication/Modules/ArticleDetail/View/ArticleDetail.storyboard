@@ -68,18 +68,26 @@
                                         </subviews>
                                         <color key="backgroundColor" name="Accent"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="yc7-Od-WRd" secondAttribute="trailing" id="3No-rb-8zz"/>
+                                            <constraint firstAttribute="trailing" secondItem="OBx-VR-F3N" secondAttribute="trailing" id="3fN-qj-Op2"/>
                                             <constraint firstItem="yc7-Od-WRd" firstAttribute="top" secondItem="a0i-DY-Kii" secondAttribute="bottom" id="6Sn-Ik-Fxn"/>
                                             <constraint firstAttribute="trailing" secondItem="a0i-DY-Kii" secondAttribute="trailing" id="AnZ-d9-wCU"/>
                                             <constraint firstItem="h1v-2O-EQw" firstAttribute="top" secondItem="wdo-i0-Lgv" secondAttribute="bottom" id="Bcw-Yv-TY3"/>
                                             <constraint firstAttribute="trailing" secondItem="yc7-Od-WRd" secondAttribute="trailing" id="HYc-RS-fyd"/>
+                                            <constraint firstAttribute="trailing" secondItem="a0i-DY-Kii" secondAttribute="trailing" id="Krg-Cv-ZPM"/>
+                                            <constraint firstItem="a0i-DY-Kii" firstAttribute="leading" secondItem="Fl5-JY-qwT" secondAttribute="leading" id="L1f-r4-8Xd"/>
+                                            <constraint firstItem="OBx-VR-F3N" firstAttribute="leading" secondItem="Fl5-JY-qwT" secondAttribute="leading" id="LbS-Yr-ii4"/>
                                             <constraint firstItem="h1v-2O-EQw" firstAttribute="leading" secondItem="Fl5-JY-qwT" secondAttribute="leading" id="MAy-RY-0Q2"/>
                                             <constraint firstAttribute="trailing" secondItem="OBx-VR-F3N" secondAttribute="trailing" id="P2D-HH-GVO"/>
                                             <constraint firstItem="OBx-VR-F3N" firstAttribute="leading" secondItem="Fl5-JY-qwT" secondAttribute="leading" id="TR7-Ox-Vtj"/>
                                             <constraint firstAttribute="trailing" secondItem="h1v-2O-EQw" secondAttribute="trailing" id="bbt-Ke-wLf"/>
                                             <constraint firstItem="yc7-Od-WRd" firstAttribute="leading" secondItem="Fl5-JY-qwT" secondAttribute="leading" id="cka-hG-AdT"/>
+                                            <constraint firstAttribute="trailing" secondItem="h1v-2O-EQw" secondAttribute="trailing" id="dAy-cz-uWs"/>
                                             <constraint firstItem="OBx-VR-F3N" firstAttribute="top" secondItem="h1v-2O-EQw" secondAttribute="bottom" id="eAZ-f6-mKi"/>
                                             <constraint firstItem="a0i-DY-Kii" firstAttribute="leading" secondItem="Fl5-JY-qwT" secondAttribute="leading" id="kHf-nI-FVR"/>
                                             <constraint firstItem="a0i-DY-Kii" firstAttribute="top" secondItem="OBx-VR-F3N" secondAttribute="bottom" id="nOm-6d-eVa"/>
+                                            <constraint firstItem="h1v-2O-EQw" firstAttribute="leading" secondItem="Fl5-JY-qwT" secondAttribute="leading" id="vGK-xf-9wG"/>
+                                            <constraint firstItem="yc7-Od-WRd" firstAttribute="leading" secondItem="Fl5-JY-qwT" secondAttribute="leading" id="vhq-vf-h7w"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -205,6 +213,7 @@
                         <outlet property="desc" destination="h1v-2O-EQw" id="mwg-M7-IHL"/>
                         <outlet property="image" destination="pBx-hD-7ED" id="MYf-ig-T97"/>
                         <outlet property="name" destination="wdo-i0-Lgv" id="t5W-or-JSw"/>
+                        <outlet property="stackView" destination="Fl5-JY-qwT" id="FwB-ZV-K1x"/>
                         <outlet property="url" destination="OBx-VR-F3N" id="FLP-Bx-OdA"/>
                     </connections>
                 </viewController>

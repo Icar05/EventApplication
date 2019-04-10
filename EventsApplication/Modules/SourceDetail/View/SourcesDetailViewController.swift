@@ -20,7 +20,7 @@ class SourcesDetailViewController: UIViewController {
     @IBOutlet weak var language: UILabel!
     
     @IBOutlet weak var country: UILabel!
-    
+    @IBOutlet weak var stackView: UIBluredStackView!
     @IBOutlet weak var url: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,9 @@ class SourcesDetailViewController: UIViewController {
         self.country.text = "Country: "+(sources?.country!)!
         self.url.text = sources?.url
         
-        
+        self.stackView.layoutMargins = UIEdgeInsets(
+            top: 8, left: 8, bottom: 8, right: 8)
+        self.stackView.isLayoutMarginsRelativeArrangement = true
         
         let tap: UITapGestureRecognizer =  UITapGestureRecognizer(
             target: self,
