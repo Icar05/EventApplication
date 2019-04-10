@@ -38,6 +38,7 @@
 		5142D2325929E234439D3E1E /* Pods_EventsApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14362051047C402913B017BC /* Pods_EventsApplication.framework */; };
 		9B11D179221EDB2500BFEBD4 /* NetworkServiceRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11D177221EDB2500BFEBD4 /* NetworkServiceRx.swift */; };
 		9B11D17A221EDB2500BFEBD4 /* UrlRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11D178221EDB2500BFEBD4 /* UrlRouter.swift */; };
+		9B257EDD225DFEC20026C460 /* UIBluredStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B257EDC225DFEC20026C460 /* UIBluredStackView.swift */; };
 		9B50C465225231F100C720E7 /* UISearchDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B50C464225231F100C720E7 /* UISearchDialog.swift */; };
 		9B56312B224B62FB005B41A6 /* HeaderContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56312A224B62FB005B41A6 /* HeaderContract.swift */; };
 		9B56312F224B64B9005B41A6 /* HeaderPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56312E224B64B9005B41A6 /* HeaderPresenterImpl.swift */; };
@@ -62,7 +63,7 @@
 		9B6FB7B3225B2B9800439F98 /* TestViewCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6FB7B2225B2B9800439F98 /* TestViewCreator.swift */; };
 		9B6FB7B6225B75D900439F98 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6FB7B5225B75D900439F98 /* BaseCell.swift */; };
 		9B6FB7B8225B830C00439F98 /* ColorTheme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B6FB7B7225B830C00439F98 /* ColorTheme.xcassets */; };
-		9B6FB7BC225B906300439F98 /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6FB7BB225B906300439F98 /* CustomScrollView.swift */; };
+		9B6FB7BC225B906300439F98 /* UIPicturedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6FB7BB225B906300439F98 /* UIPicturedScrollView.swift */; };
 		9B78808B224A13F600F7231A /* RootInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78808A224A13F600F7231A /* RootInteractorImpl.swift */; };
 		9B78808E224A144700F7231A /* RootPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78808D224A144700F7231A /* RootPresenterImpl.swift */; };
 		9B788091224A149500F7231A /* RootCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B788090224A149500F7231A /* RootCreator.swift */; };
@@ -142,6 +143,7 @@
 		75A050619A96C1E69E44BAFD /* Pods_EventsApplicationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventsApplicationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B11D177221EDB2500BFEBD4 /* NetworkServiceRx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceRx.swift; sourceTree = "<group>"; };
 		9B11D178221EDB2500BFEBD4 /* UrlRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlRouter.swift; sourceTree = "<group>"; };
+		9B257EDC225DFEC20026C460 /* UIBluredStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBluredStackView.swift; sourceTree = "<group>"; };
 		9B50C464225231F100C720E7 /* UISearchDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchDialog.swift; sourceTree = "<group>"; };
 		9B56312A224B62FB005B41A6 /* HeaderContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderContract.swift; sourceTree = "<group>"; };
 		9B56312E224B64B9005B41A6 /* HeaderPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderPresenterImpl.swift; sourceTree = "<group>"; };
@@ -166,7 +168,7 @@
 		9B6FB7B2225B2B9800439F98 /* TestViewCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewCreator.swift; sourceTree = "<group>"; };
 		9B6FB7B5225B75D900439F98 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		9B6FB7B7225B830C00439F98 /* ColorTheme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorTheme.xcassets; sourceTree = "<group>"; };
-		9B6FB7BB225B906300439F98 /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
+		9B6FB7BB225B906300439F98 /* UIPicturedScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPicturedScrollView.swift; sourceTree = "<group>"; };
 		9B78808A224A13F600F7231A /* RootInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractorImpl.swift; sourceTree = "<group>"; };
 		9B78808D224A144700F7231A /* RootPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresenterImpl.swift; sourceTree = "<group>"; };
 		9B788090224A149500F7231A /* RootCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCreator.swift; sourceTree = "<group>"; };
@@ -332,6 +334,8 @@
 		1A75A84B224C3BA60033C852 /* custom */ = {
 			isa = PBXGroup;
 			children = (
+				9B6FB7BB225B906300439F98 /* UIPicturedScrollView.swift */,
+				9B257EDC225DFEC20026C460 /* UIBluredStackView.swift */,
 				9B6FB7B4225B75BE00439F98 /* cell */,
 				9B9EB59E2251E90F00570C37 /* dialogs */,
 				1A3F1A1A224D410D008B1486 /* emptyView */,
@@ -545,7 +549,6 @@
 				9B6FB7AE225B2B5D00439F98 /* TestViewController.swift */,
 				9B6FB7B0225B2B6900439F98 /* test.storyboard */,
 				9B6FB7B2225B2B9800439F98 /* TestViewCreator.swift */,
-				9B6FB7BB225B906300439F98 /* CustomScrollView.swift */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -1093,9 +1096,10 @@
 				9B6FB7B3225B2B9800439F98 /* TestViewCreator.swift in Sources */,
 				9B563148224B73EE005B41A6 /* SourcesCreator.swift in Sources */,
 				9B563156224B764B005B41A6 /* SourceViewController.swift in Sources */,
-				9B6FB7BC225B906300439F98 /* CustomScrollView.swift in Sources */,
+				9B6FB7BC225B906300439F98 /* UIPicturedScrollView.swift in Sources */,
 				1A918BAC224971C400D34DCE /* ValueForSelector.swift in Sources */,
 				9B788091224A149500F7231A /* RootCreator.swift in Sources */,
+				9B257EDD225DFEC20026C460 /* UIBluredStackView.swift in Sources */,
 				9B563152224B75BB005B41A6 /* EverythingContract.swift in Sources */,
 				9B96623F221ED446008C512D /* SignInViewController.swift in Sources */,
 				1A3F1A03224D184A008B1486 /* SourceDetailInteractorImpl.swift in Sources */,

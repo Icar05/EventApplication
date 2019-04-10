@@ -29,9 +29,7 @@ class BaseCell: UITableViewCell {
         
         blurEffectView.layer.borderColor = UIColor.black.withAlphaComponent(4.0).cgColor
         blurEffectView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        
         blurEffectView.clipsToBounds = true;
-        blurEffectView.layer.borderColor = UIColor.black.withAlphaComponent(0.4).cgColor
         blurEffectView.layer.borderWidth = 4.0;
         blurEffectView.layer.cornerRadius = 6.0;
         

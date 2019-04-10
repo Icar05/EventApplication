@@ -27,28 +27,19 @@ class ArticleDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.fillArticleData()
-        self.fillDebug()
+        self.fillArticleData()
+//        self.fillTestContent()()
     }
     
     
-    func fillDebug(){
-        self.name.text = getDefaultContent()
-        self.desc.text = getDefaultContent()
-        self.url.text = getDefaultContent()
-        self.url.text = getDefaultContent()
-        self.date.text = getDefaultContent()
-        self.autor.text = getDefaultContent()
-//        self.image.layer.borderColor = UIColor.lightGray.cgColor
-//        self.image.layer.borderWidth = 2.0
-//
-//        let tap: UITapGestureRecognizer =  UITapGestureRecognizer(
-//            target: self,
-//            action: #selector(self.openLink))
-//
-//        self.url.addGestureRecognizer(tap)
-//        self.loadIcon(input: article?.urlToImage)
-    }
+//    func fillTestContent(){
+//        self.name.text = getDefaultContent()
+//        self.desc.text = getDefaultContent()
+//        self.url.text = getDefaultContent()
+//        self.url.text = getDefaultContent()
+//        self.date.text = getDefaultContent()
+//        self.autor.text = getDefaultContent()
+//    }
     
     func fillArticleData(){
         self.name.text = article?.title
