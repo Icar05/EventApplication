@@ -9,7 +9,6 @@
 import UIKit
 
 
-@IBDesignable
 class UIPicturedScrollView: UIScrollView {
 
 
