@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina3_5" orientation="landscape">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,19 +15,21 @@
             <objects>
                 <viewController storyboardIdentifier="ArticleDetailViewController" id="MEk-UZ-eeL" customClass="ArticleDetailViewController" customModule="EventsApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VqX-ua-FOr">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pBx-hD-7ED">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="333.5" height="375"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="pBx-hD-7ED" firstAttribute="width" secondItem="VqX-ua-FOr" secondAttribute="width" id="1B8-Qc-H5i"/>
                             <constraint firstItem="pBx-hD-7ED" firstAttribute="top" secondItem="kNn-0e-c2f" secondAttribute="top" id="5eu-pt-SOB"/>
                             <constraint firstItem="pBx-hD-7ED" firstAttribute="leading" secondItem="kNn-0e-c2f" secondAttribute="leading" id="8tF-Fc-UFd"/>
-                            <constraint firstItem="pBx-hD-7ED" firstAttribute="width" secondItem="VqX-ua-FOr" secondAttribute="width" id="A5Q-oK-skI"/>
+                            <constraint firstItem="pBx-hD-7ED" firstAttribute="width" secondItem="VqX-ua-FOr" secondAttribute="width" multiplier="1:2" id="A5Q-oK-skI"/>
                             <constraint firstItem="pBx-hD-7ED" firstAttribute="height" secondItem="VqX-ua-FOr" secondAttribute="height" multiplier="1:3" id="C07-IT-ISP"/>
+                            <constraint firstItem="pBx-hD-7ED" firstAttribute="height" secondItem="VqX-ua-FOr" secondAttribute="height" id="SnW-zJ-ERV"/>
                             <constraint firstItem="pBx-hD-7ED" firstAttribute="width" secondItem="VqX-ua-FOr" secondAttribute="width" id="gnd-3S-KJy"/>
                             <constraint firstItem="pBx-hD-7ED" firstAttribute="width" secondItem="VqX-ua-FOr" secondAttribute="width" multiplier="1:2" id="kBp-tk-BwH"/>
                             <constraint firstItem="pBx-hD-7ED" firstAttribute="height" secondItem="VqX-ua-FOr" secondAttribute="height" id="xVi-nG-VqH"/>
@@ -35,7 +37,9 @@
                         <viewLayoutGuide key="safeArea" id="kNn-0e-c2f"/>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="1B8-Qc-H5i"/>
                                 <exclude reference="A5Q-oK-skI"/>
+                                <exclude reference="SnW-zJ-ERV"/>
                                 <exclude reference="kBp-tk-BwH"/>
                                 <exclude reference="xVi-nG-VqH"/>
                             </mask>
@@ -50,7 +54,11 @@
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
+                                <exclude reference="1B8-Qc-H5i"/>
                                 <include reference="A5Q-oK-skI"/>
+                                <exclude reference="C07-IT-ISP"/>
+                                <include reference="SnW-zJ-ERV"/>
+                                <exclude reference="gnd-3S-KJy"/>
                             </mask>
                         </variation>
                     </view>
