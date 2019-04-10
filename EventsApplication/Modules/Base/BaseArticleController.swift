@@ -30,7 +30,7 @@ extension BaseArticleController: UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIndifier) as! ArticleCell
             cell.fillCell(article: datasource[indexPath.row])
-        
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none;
         
         return cell
     }
