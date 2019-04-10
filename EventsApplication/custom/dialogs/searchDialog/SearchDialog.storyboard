@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3M-SO-HL5" userLabel="Content View">
-                                <rect key="frame" x="16" y="161" width="382" height="200"/>
+                                <rect key="frame" x="16" y="268" width="382" height="200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FSe-AC-Ud7" userLabel="top separator">
                                         <rect key="frame" x="0.0" y="82" width="382" height="1"/>
@@ -123,7 +123,8 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="d3M-SO-HL5" firstAttribute="top" secondItem="7Km-Cy-Df9" secondAttribute="top" constant="141" id="eTm-q4-bl7"/>
+                            <constraint firstItem="d3M-SO-HL5" firstAttribute="centerX" secondItem="dZg-MQ-6HN" secondAttribute="centerX" id="7cp-C6-Wnp"/>
+                            <constraint firstItem="d3M-SO-HL5" firstAttribute="centerY" secondItem="dZg-MQ-6HN" secondAttribute="centerY" id="Prr-bU-3Qp"/>
                             <constraint firstItem="d3M-SO-HL5" firstAttribute="leading" secondItem="7Km-Cy-Df9" secondAttribute="leading" constant="16" id="u2n-0c-V77"/>
                             <constraint firstItem="d3M-SO-HL5" firstAttribute="trailing" secondItem="7Km-Cy-Df9" secondAttribute="trailing" constant="-16" id="xBm-zj-was"/>
                         </constraints>
