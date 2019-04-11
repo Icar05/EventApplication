@@ -57,10 +57,12 @@ class ArticleDetailViewController: UIViewController {
         self.image.layer.borderColor = UIColor.lightGray.cgColor
         self.image.layer.borderWidth = 2.0
         self.image.image = .defaultImage
-        self.image.downloadImageFrom(
+        let test = self.image.downloadImageFrom(
             link: article!.urlToImage!,
             contentMode: .scaleAspectFit
         )
+        
+        print("load image task \(String(describing: test))")
     }
     
     
