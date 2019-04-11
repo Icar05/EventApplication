@@ -32,8 +32,8 @@ class SourcesDetailViewController: UIViewController {
         self.name.text = sources?.name
         self.desc.text = sources?.description
         self.category.text = sources?.category
-        self.language.text = "Language: "+(sources?.language!)!
-        self.country.text = "Country: "+(sources?.country!)!
+        self.language.text = "\(NSLocalizedString("Language", comment: "")): "+(sources?.language!)!
+        self.country.text = "\(NSLocalizedString("Country", comment: "")): "+(sources?.country!)!
         self.prepareStackView()
         self.prepareUrl()
     }
@@ -41,7 +41,6 @@ class SourcesDetailViewController: UIViewController {
     
     
     @objc private func openLink(){
-        print("openlink ")
         UIApplication.shared.open(URL(string: self.url.text!)!)
     }
     
