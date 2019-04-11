@@ -22,7 +22,6 @@
 		1A3F1A15224D34F9008B1486 /* SourcesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A3F1A14224D34F9008B1486 /* SourcesCell.xib */; };
 		1A3F1A17224D3690008B1486 /* SourcesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F1A16224D3690008B1486 /* SourcesCell.swift */; };
 		1A3F1A19224D3827008B1486 /* BaseSourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F1A18224D3827008B1486 /* BaseSourcesViewController.swift */; };
-		1A3F1A1C224D412A008B1486 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A3F1A1B224D412A008B1486 /* EmptyView.xib */; };
 		1A3F1A1E224D413B008B1486 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F1A1D224D413B008B1486 /* EmptyView.swift */; };
 		1A611C0B224ADF7C008E9D14 /* Sources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A611C0A224ADF7C008E9D14 /* Sources.swift */; };
 		1A611C0D224ADFCD008E9D14 /* Json4Swift_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A611C0C224ADFCD008E9D14 /* Json4Swift_Base.swift */; };
@@ -82,6 +81,7 @@
 		9BB5C1FC225F60AB0006A74E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BB5C1FE225F60AB0006A74E /* Localizable.strings */; };
 		9BB5C200225F6D960006A74E /* SearchDialog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BB5C202225F6D960006A74E /* SearchDialog.storyboard */; };
 		9BB5C205225F6E1A0006A74E /* SelectionDialog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BB5C207225F6E1A0006A74E /* SelectionDialog.storyboard */; };
+		9BB5C217225F72CE0006A74E /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BB5C219225F72CE0006A74E /* EmptyView.xib */; };
 		9BEB17F8221C05CE003F8C9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEB17F7221C05CE003F8C9A /* AppDelegate.swift */; };
 		9BEB17FF221C05CF003F8C9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BEB17FE221C05CF003F8C9A /* Assets.xcassets */; };
 		9BEB1802221C05CF003F8C9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BEB1800221C05CF003F8C9A /* LaunchScreen.storyboard */; };
@@ -122,7 +122,6 @@
 		1A3F1A14224D34F9008B1486 /* SourcesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SourcesCell.xib; sourceTree = "<group>"; };
 		1A3F1A16224D3690008B1486 /* SourcesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesCell.swift; sourceTree = "<group>"; };
 		1A3F1A18224D3827008B1486 /* BaseSourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSourcesViewController.swift; sourceTree = "<group>"; };
-		1A3F1A1B224D412A008B1486 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		1A3F1A1D224D413B008B1486 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		1A611C0A224ADF7C008E9D14 /* Sources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources.swift; sourceTree = "<group>"; };
 		1A611C0C224ADFCD008E9D14 /* Json4Swift_Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json4Swift_Base.swift; sourceTree = "<group>"; };
@@ -188,6 +187,8 @@
 		9BB5C206225F6E1A0006A74E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SelectionDialog.storyboard; sourceTree = "<group>"; };
 		9BB5C209225F6E1D0006A74E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SelectionDialog.strings; sourceTree = "<group>"; };
 		9BB5C20D225F70FB0006A74E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		9BB5C218225F72CE0006A74E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EmptyView.xib; sourceTree = "<group>"; };
+		9BB5C21B225F72D20006A74E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/EmptyView.strings; sourceTree = "<group>"; };
 		9BEB17F4221C05CE003F8C9A /* EventsApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventsApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BEB17F7221C05CE003F8C9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BEB17FE221C05CF003F8C9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -312,7 +313,7 @@
 		1A3F1A1A224D410D008B1486 /* emptyView */ = {
 			isa = PBXGroup;
 			children = (
-				1A3F1A1B224D412A008B1486 /* EmptyView.xib */,
+				9BB5C219225F72CE0006A74E /* EmptyView.xib */,
 				1A3F1A1D224D413B008B1486 /* EmptyView.swift */,
 			);
 			path = emptyView;
@@ -913,7 +914,7 @@
 				9BB5C205225F6E1A0006A74E /* SelectionDialog.storyboard in Resources */,
 				9BB5C200225F6D960006A74E /* SearchDialog.storyboard in Resources */,
 				9B56313D224B6D11005B41A6 /* Everything.storyboard in Resources */,
-				1A3F1A1C224D412A008B1486 /* EmptyView.xib in Resources */,
+				9BB5C217225F72CE0006A74E /* EmptyView.xib in Resources */,
 				9B56313F224B6D32005B41A6 /* Sources.storyboard in Resources */,
 				9B788099224A151000F7231A /* Root.storyboard in Resources */,
 				9B56313B224B6CD6005B41A6 /* Headers.storyboard in Resources */,
@@ -1141,6 +1142,15 @@
 				9BB5C209225F6E1D0006A74E /* ru */,
 			);
 			name = SelectionDialog.storyboard;
+			sourceTree = "<group>";
+		};
+		9BB5C219225F72CE0006A74E /* EmptyView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BB5C218225F72CE0006A74E /* Base */,
+				9BB5C21B225F72D20006A74E /* ru */,
+			);
+			name = EmptyView.xib;
 			sourceTree = "<group>";
 		};
 		9BEB1800221C05CF003F8C9A /* LaunchScreen.storyboard */ = {
