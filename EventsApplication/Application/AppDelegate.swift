@@ -30,14 +30,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    
 }
 
-extension UIImage{
-    static let applicationBackground = UIImage(named: "back.png")!
-}
-
-extension UIColor {
-    
-    static let accentColor = UIColor(named: "Accent")
-    static let appGrayColor = UIColor(named: "ApplicationGray")
-    static let urlColor = UIColor(named: "Url")
-}
 

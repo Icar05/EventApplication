@@ -30,60 +30,53 @@ class ArticleDetailViewController: UIViewController {
         
         self.edgesForExtendedLayout = []
         self.fillArticleData()
-//        self.fillTestContent()()
     }
     
     
-//    func fillTestContent(){
-//        self.name.text = getDefaultContent()
-//        self.desc.text = getDefaultContent()
-//        self.url.text = getDefaultContent()
-//        self.url.text = getDefaultContent()
-//        self.date.text = getDefaultContent()
-//        self.autor.text = getDefaultContent()
-//    }
     
     func fillArticleData(){
         self.name.text = article?.title
         self.desc.text = article?.description
-        self.url.text = article?.url
-        self.url.text = article?.url
         self.date.text = DateTimeUtil.convertDateString(dateString: article?.publishedAt)
         self.autor.text = article?.author
+        self.prepareStackView()
+        self.prepareImage()
+        self.prepareUrl()
+    }
+    
+    
+    func prepareStackView(){
+        self.stackView.layoutMargins = UIEdgeInsets(
+            top: 8, left: 8, bottom: 8, right: 8)
+        self.stackView.isLayoutMarginsRelativeArrangement = true
+    }
+    
+    
+    
+    func prepareImage(){
         self.image.layer.borderColor = UIColor.lightGray.cgColor
         self.image.layer.borderWidth = 2.0
-        
+        self.image.image = UIImage(named: "thumb")
+        self.image.downloadImageFrom(link: article!.urlToImage!, contentMode: .scaleAspectFit)
+    }
+    
+    
+    
+    func prepareUrl(){
         let tap: UITapGestureRecognizer =  UITapGestureRecognizer(
             target: self,
             action: #selector(self.openLink))
         
-        
-        self.stackView.layoutMargins = UIEdgeInsets(
-            top: 8, left: 8, bottom: 8, right: 8)
-        self.stackView.isLayoutMarginsRelativeArrangement = true
-        
+        self.url.text = article?.url
+        self.url.text = article?.url
         self.url.addGestureRecognizer(tap)
-        self.loadIcon(input: article?.urlToImage)
     }
-    
-    
     
     
     @objc private func openLink(){
         UIApplication.shared.open(URL(string: self.url.text!)!)
     }
    
-    func loadIcon(input: String?){
-        if let inputStirng = input, let url = URL(string: inputStirng){
-            DispatchQueue.global().async {
-                if let data = try? Data(contentsOf: url){
-                    DispatchQueue.main.async {
-                        self.image.image = UIImage(data: data)
-                    }
-                }
-            }
-        }
-    }
 }
 
 extension ArticleDetailViewController: ArticleDetailView{

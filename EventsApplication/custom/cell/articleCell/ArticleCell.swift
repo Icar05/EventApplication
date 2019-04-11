@@ -33,7 +33,9 @@ class ArticleCell: BaseCell {
         self.date.text = DateTimeUtil.convertDateString(dateString: article.publishedAt)
         self.icon.layer.borderColor = UIColor.lightGray.cgColor
         self.icon.layer.borderWidth = 2.0
-        self.loadIcon(input: article.urlToImage)
+        self.icon.image = UIImage(named: "thumb")
+        self.icon.downloadImageFrom(link: article.urlToImage!, contentMode: .scaleAspectFit)
+//        self.loadIcon(input: article.urlToImage)
     }
     
     
@@ -42,23 +44,7 @@ class ArticleCell: BaseCell {
         self.icon.image = defaultImage
     }
     
-    func loadIcon(input: String?){
     
-        if (imageContent == nil){
-            if let inputStirng = input, let url = URL(string: inputStirng){
-    
-                DispatchQueue.global().async {
-                    if let data = try? Data(contentsOf: url){
-                        DispatchQueue.main.async {
-                            self.imageContent = UIImage(data: data)
-                            self.icon.image = self.imageContent
-                        }
-                    }
-                }
-            }
-        }
-        
-    }
 }
     
     
