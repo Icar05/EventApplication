@@ -15,7 +15,18 @@ class EverythingViewController: BaseArticleController {
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var emptyView: EmptyView!
+    
     var presenter: EverythingPresenter!
+    
+    fileprivate let languageTabItemTitle = NSLocalizedString("Language", comment: "")
+    
+    fileprivate let languageTabItemSubtitle = NSLocalizedString("Select language", comment: "")
+    
+    fileprivate let queryTabItemTitle = NSLocalizedString("Query", comment: "")
+    
+    fileprivate let queryTabItemSubtitle = NSLocalizedString("Select query", comment: "")
+    
+    
     
     
     
@@ -79,19 +90,15 @@ extension EverythingViewController : EverythingView{
 extension EverythingViewController : TabItem{
     
     func getNavBarButtons() -> [UIBarButtonItem?] {
-        return [createNavItem(title: "Lang", selector: "selectLanguage"),
-                createNavItem(title: "Query", selector: "selectQuery")]
+        return [createNavItem(title: languageTabItemTitle, selector: "selectLanguage"),
+                createNavItem(title: queryTabItemTitle, selector: "selectQuery")]
     }
     
     
     @objc func selectLanguage(){
-        
-        let title = "Language"
-        let subtitle = "Select language"
-        
         ApplicationNavigator.presentSelectionDialog(
-            title: title,
-            subtitle: subtitle,
+            title: languageTabItemTitle,
+            subtitle: languageTabItemSubtitle,
             current: self,
             datasource: ValueForSelector.languages,
             completion: { language in
@@ -100,13 +107,9 @@ extension EverythingViewController : TabItem{
     }
     
     @objc func selectQuery(){
-        
-        let title = "Query"
-        let subtitle = "Select query"
-        
         ApplicationNavigator.presentSearchDialog(
-            title: title,
-            subtitle: subtitle,
+            title: queryTabItemTitle,
+            subtitle: queryTabItemSubtitle,
             current: self, completion: { search in
                self.presenter.setQuery(query: search)
         })
