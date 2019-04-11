@@ -82,6 +82,7 @@
 		9BB5C200225F6D960006A74E /* SearchDialog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BB5C202225F6D960006A74E /* SearchDialog.storyboard */; };
 		9BB5C205225F6E1A0006A74E /* SelectionDialog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BB5C207225F6E1A0006A74E /* SelectionDialog.storyboard */; };
 		9BB5C217225F72CE0006A74E /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BB5C219225F72CE0006A74E /* EmptyView.xib */; };
+		9BB5C21E225F74440006A74E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BB5C220225F74440006A74E /* InfoPlist.strings */; };
 		9BEB17F8221C05CE003F8C9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEB17F7221C05CE003F8C9A /* AppDelegate.swift */; };
 		9BEB17FF221C05CF003F8C9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BEB17FE221C05CF003F8C9A /* Assets.xcassets */; };
 		9BEB1802221C05CF003F8C9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BEB1800221C05CF003F8C9A /* LaunchScreen.storyboard */; };
@@ -189,6 +190,8 @@
 		9BB5C20D225F70FB0006A74E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		9BB5C218225F72CE0006A74E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EmptyView.xib; sourceTree = "<group>"; };
 		9BB5C21B225F72D20006A74E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/EmptyView.strings; sourceTree = "<group>"; };
+		9BB5C21F225F74440006A74E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9BB5C221225F744F0006A74E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9BEB17F4221C05CE003F8C9A /* EventsApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventsApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BEB17F7221C05CE003F8C9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BEB17FE221C05CF003F8C9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -361,6 +364,7 @@
 				9BEB17FE221C05CF003F8C9A /* Assets.xcassets */,
 				9B6FB7B7225B830C00439F98 /* ColorTheme.xcassets */,
 				9BB5C1FE225F60AB0006A74E /* Localizable.strings */,
+				9BB5C220225F74440006A74E /* InfoPlist.strings */,
 			);
 			path = "application sources";
 			sourceTree = "<group>";
@@ -912,6 +916,7 @@
 				1A3F1A15224D34F9008B1486 /* SourcesCell.xib in Resources */,
 				9BEB1802221C05CF003F8C9A /* LaunchScreen.storyboard in Resources */,
 				9BB5C205225F6E1A0006A74E /* SelectionDialog.storyboard in Resources */,
+				9BB5C21E225F74440006A74E /* InfoPlist.strings in Resources */,
 				9BB5C200225F6D960006A74E /* SearchDialog.storyboard in Resources */,
 				9B56313D224B6D11005B41A6 /* Everything.storyboard in Resources */,
 				9BB5C217225F72CE0006A74E /* EmptyView.xib in Resources */,
@@ -1151,6 +1156,15 @@
 				9BB5C21B225F72D20006A74E /* ru */,
 			);
 			name = EmptyView.xib;
+			sourceTree = "<group>";
+		};
+		9BB5C220225F74440006A74E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BB5C21F225F74440006A74E /* ru */,
+				9BB5C221225F744F0006A74E /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		9BEB1800221C05CF003F8C9A /* LaunchScreen.storyboard */ = {
