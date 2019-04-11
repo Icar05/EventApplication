@@ -9,9 +9,7 @@
 import Foundation
 import UIKit
 
-class BaseSourcesViewController: UIViewController{
-    
-    let refreshControl = UIRefreshControl()
+class BaseSourcesViewController: BaseTableViewController{
     
     let cellIndifier = "SourcesCell"
     
@@ -39,20 +37,11 @@ extension BaseSourcesViewController: UITableViewDataSource{
         
         (cell as! BaseCell).setBlur()
     }
-    
 }
 
 extension BaseSourcesViewController: UITableViewDelegate{
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         ApplicationNavigator.presentSourcesDetailController(current: self, sources: datasource[indexPath.row])
     }
-    
-    func addRefresh(tableView: UITableView){
-        if #available(iOS 10.0, *) {
-            tableView.refreshControl = refreshControl
-        } else {
-            tableView.addSubview(refreshControl)
-        }
-    }
 }
+

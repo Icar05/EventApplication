@@ -29,6 +29,8 @@ class HeaderPresenterImpl {
             }else{
                 self.getHeadlines()
             }
+        
+        print("presenter refersh -> Header presenter reload!")
     }
 }
 

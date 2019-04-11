@@ -38,6 +38,7 @@
 		5142D2325929E234439D3E1E /* Pods_EventsApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14362051047C402913B017BC /* Pods_EventsApplication.framework */; };
 		9B11D179221EDB2500BFEBD4 /* NetworkServiceRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11D177221EDB2500BFEBD4 /* NetworkServiceRx.swift */; };
 		9B11D17A221EDB2500BFEBD4 /* UrlRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11D178221EDB2500BFEBD4 /* UrlRouter.swift */; };
+		9B1C2AE5225F37DF002CEF80 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C2AE4225F37DF002CEF80 /* BaseTableViewController.swift */; };
 		9B257EDD225DFEC20026C460 /* UIBluredStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B257EDC225DFEC20026C460 /* UIBluredStackView.swift */; };
 		9B50C465225231F100C720E7 /* UISearchDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B50C464225231F100C720E7 /* UISearchDialog.swift */; };
 		9B56312B224B62FB005B41A6 /* HeaderContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56312A224B62FB005B41A6 /* HeaderContract.swift */; };
@@ -138,6 +139,7 @@
 		75A050619A96C1E69E44BAFD /* Pods_EventsApplicationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventsApplicationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B11D177221EDB2500BFEBD4 /* NetworkServiceRx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceRx.swift; sourceTree = "<group>"; };
 		9B11D178221EDB2500BFEBD4 /* UrlRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlRouter.swift; sourceTree = "<group>"; };
+		9B1C2AE4225F37DF002CEF80 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		9B257EDC225DFEC20026C460 /* UIBluredStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBluredStackView.swift; sourceTree = "<group>"; };
 		9B50C464225231F100C720E7 /* UISearchDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchDialog.swift; sourceTree = "<group>"; };
 		9B56312A224B62FB005B41A6 /* HeaderContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderContract.swift; sourceTree = "<group>"; };
@@ -682,6 +684,7 @@
 				1A3F1A10224D2B77008B1486 /* BaseArticleController.swift */,
 				1A3F1A18224D3827008B1486 /* BaseSourcesViewController.swift */,
 				1A3266D92254054D004F35A0 /* RequestKeysProtocol.swift */,
+				9B1C2AE4225F37DF002CEF80 /* BaseTableViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1051,6 +1054,7 @@
 				9B56314E224B7512005B41A6 /* EverythingViewController.swift in Sources */,
 				9B56314C224B74A3005B41A6 /* HeadersInteractorImpl.swift in Sources */,
 				1A3F1A19224D3827008B1486 /* BaseSourcesViewController.swift in Sources */,
+				9B1C2AE5225F37DF002CEF80 /* BaseTableViewController.swift in Sources */,
 				9B78808E224A144700F7231A /* RootPresenterImpl.swift in Sources */,
 				9BEB17F8221C05CE003F8C9A /* AppDelegate.swift in Sources */,
 				9B56315F224B7C95005B41A6 /* HeaderCreator.swift in Sources */,

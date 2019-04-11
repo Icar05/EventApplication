@@ -9,14 +9,11 @@
 import Foundation
 import UIKit
 
-class BaseArticleController: UIViewController {
-    
-     let refreshControl = UIRefreshControl()
+class BaseArticleController: BaseTableViewController {
     
      let cellIndifier = "ArticleCell"
     
      var datasource: [Articles] = []
-    
     
 }
 
@@ -35,31 +32,19 @@ extension BaseArticleController: UITableViewDataSource{
         return cell
     }
     
-    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
          cell.layer.backgroundColor = UIColor.clear.cgColor
         
          (cell as! BaseCell).setBlur()
     }
-    
-
-    
 }
 
-extension BaseArticleController: UITableViewDelegate{
-    
+extension BaseArticleController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         ApplicationNavigator.presentArticleDetailController(current: self, article: datasource[indexPath.row])
     }
-    
-    func addRefresh(tableView: UITableView){
-        if #available(iOS 10.0, *) {
-            tableView.refreshControl = refreshControl
-        } else {
-            tableView.addSubview(refreshControl)
-        }
-    }
 }
+
 
 

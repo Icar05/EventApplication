@@ -21,6 +21,7 @@ class SourcesPresenterImpl {
     
     func onViewDidLoad() {
         getSourcesByCategory(category: category)
+        print("presenter refersh -> Sources presenter reload!")
     }
     
     

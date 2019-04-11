@@ -25,6 +25,8 @@ class EverythingPresenterImpl {
         self.language == nil ?
         self.getEverything(query: query) :
         self.getEverything(query: query, language: language!)
+        
+        print("presenter refersh -> Everything presenter reload!")
     }
 }
 extension EverythingPresenterImpl : EverythingPresenter{
