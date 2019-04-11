@@ -38,5 +38,6 @@ extension UIColor {
     
     static let accentColor = UIColor(named: "Accent")
     static let appGrayColor = UIColor(named: "ApplicationGray")
+    static let urlColor = UIColor(named: "Url")
 }
 
