@@ -22,7 +22,6 @@ class RootViewController: UITabBarController {
         self.title = viewControllers?[0].tabBarItem.title
         self.drawNavigationButtonsAlignToId(id: 0)
         self.tabBar.tintColor = .accentColor
-//        self.tabBar.
         self.tabBar.unselectedItemTintColor = UIColor.black
     }
     
@@ -33,22 +32,18 @@ extension RootViewController : RootView{
     
     func getDataSource() -> [UIViewController]{
         
-//        let image = UIImage(named: "news")?.withRenderingMode(UIImage.RenderingMode.automatic)
-//        var customTabBarItem:UITabBarItem = UITabBarItem(title: nil, image: , selectedImage: UIImage(named: "YOUR_IMAGE_NAME"))
-
-        
         let headerVC = HeaderCreator.assembleModule()
-            headerVC.tabBarItem.title = "Headers"
-            headerVC.tabBarItem.image = UIImage(named: "news")
+            headerVC.tabBarItem.title = NSLocalizedString("Headers", comment: "")
+            headerVC.tabBarItem.image = .tabIcon
         
         
         let everythingVC = EverythingCreator.assembleModule()
-            everythingVC.tabBarItem.title = "Everything"
-            everythingVC.tabBarItem.image = UIImage(named: "news")
+            everythingVC.tabBarItem.title = NSLocalizedString("Everything", comment: "")
+            everythingVC.tabBarItem.image = .tabIcon
         
         let sourcesVC = SourcesCreator.assembleModule()
-            sourcesVC.tabBarItem.title = "Sources"
-            sourcesVC.tabBarItem.image = UIImage(named: "news")
+            sourcesVC.tabBarItem.title = NSLocalizedString("Sources", comment: "")
+            sourcesVC.tabBarItem.image = .tabIcon
         
 
         

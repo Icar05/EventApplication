@@ -18,7 +18,17 @@ class HeadersViewController: BaseArticleController {
     
     var presenter: HeaderPresenter!
     
+    fileprivate let categoryTabItemTitle = NSLocalizedString("Category", comment: "")
+    
+    fileprivate let categoryTabItemSubtitle = NSLocalizedString("Select category", comment: "")
+    
+    fileprivate let countryTabItemTitle = NSLocalizedString("Country", comment: "")
+    
+    fileprivate let countryTabItemSubtitle = NSLocalizedString("Select country", comment: "")
+        
    
+        
+        
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,20 +95,16 @@ extension HeadersViewController: TabItem{
     
     
     func getNavBarButtons() -> [UIBarButtonItem?] {
-        return [createNavItem(title: "Category", selector: "selectCategory"),
-                createNavItem(title: "Country", selector: "selectCountry")]
+        return [createNavItem(title: categoryTabItemTitle, selector: "selectCategory"),
+                createNavItem(title: countryTabItemTitle, selector: "selectCountry")]
     }
 
     
     
     @objc func selectCategory(){
-        
-        let title = "Category"
-        let subtitle = "Select category"
-        
         ApplicationNavigator.presentSelectionDialog(
-            title: title,
-            subtitle: subtitle,
+            title: categoryTabItemTitle,
+            subtitle: categoryTabItemSubtitle,
             current: self,
             datasource: ValueForSelector.categories,
             completion: { category in
@@ -108,13 +114,9 @@ extension HeadersViewController: TabItem{
     
     
     @objc func selectCountry(){
-        
-        let title = "Country"
-        let subtitle = "Select country"
-        
             ApplicationNavigator.presentSelectionDialog(
-                title: title,
-                subtitle: subtitle,
+                title: countryTabItemTitle,
+                subtitle: countryTabItemSubtitle,
                 current: self,
                 datasource: ValueForSelector.languages,
                 completion: { country in

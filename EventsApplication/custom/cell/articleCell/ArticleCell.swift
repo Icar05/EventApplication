@@ -30,7 +30,7 @@ class ArticleCell: BaseCell {
         self.date.text = DateTimeUtil.convertDateString(dateString: article.publishedAt)
         self.icon.layer.borderColor = UIColor.lightGray.cgColor
         self.icon.layer.borderWidth = 2.0
-        self.icon.image = UIImage(named: "thumb")
+        self.icon.image = .defaultImage
         self.task = self.icon.downloadImageFrom(link: article.urlToImage, contentMode: .scaleAspectFit)
     }
     

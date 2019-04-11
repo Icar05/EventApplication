@@ -12,6 +12,7 @@ import UIKit
 extension UIImage{
     static let applicationBackground = UIImage(named: "back.png")!
     static let defaultImage = UIImage(named: "thumb")!
+    static let tabIcon = UIImage(named: "news")
 }
 
 extension UIColor {
