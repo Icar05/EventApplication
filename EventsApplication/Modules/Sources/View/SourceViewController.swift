@@ -13,9 +13,19 @@ class SourcesViewController: BaseSourcesViewController {
     
     
     @IBOutlet weak var emptyView: EmptyView!
+    
     @IBOutlet weak var tableView: UITableView!
     
     var presenter: SourcesPresenter!
+    
+    fileprivate let categoryTabItemTitle = NSLocalizedString("Category", comment: "")
+    
+    fileprivate let categoryTabItemSubtitle = NSLocalizedString("Select category", comment: "")
+    
+    
+    
+    
+    
     
     
     override func viewDidLoad() {
@@ -78,17 +88,13 @@ extension SourcesViewController : SourcesView{
 extension SourcesViewController: TabItem{
     
     func getNavBarButtons() -> [UIBarButtonItem?] {
-        return [createNavItem(title: "Category", selector: "selectCategory"), nil]
+        return [createNavItem(title: categoryTabItemTitle, selector: "selectCategory"), nil]
     }
     
     @objc func selectCategory(){
-        
-        let title = "Category"
-        let subtitle = "Select category"
-        
         ApplicationNavigator.presentSelectionDialog(
-            title: title,
-            subtitle: subtitle,
+            title: categoryTabItemTitle,
+            subtitle: categoryTabItemSubtitle,
             current: self,
             datasource: ValueForSelector.categories,
             completion: { category in
