@@ -1,0 +1,12 @@
+
+/* Class = "UIButton"; normalTitle = "Ok"; ObjectID = "IbI-v3-8PF"; */
+"IbI-v3-8PF.normalTitle" = "Ок";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "rA4-s4-MOw"; */
+"rA4-s4-MOw.text" = "Описание";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "uAl-p2-Vya"; */
+"uAl-p2-Vya.normalTitle" = "Отмена";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "xHr-gc-gJ7"; */
+"xHr-gc-gJ7.text" = "Название";
