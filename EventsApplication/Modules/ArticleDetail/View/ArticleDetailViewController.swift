@@ -56,8 +56,11 @@ class ArticleDetailViewController: UIViewController {
     func prepareImage(){
         self.image.layer.borderColor = UIColor.lightGray.cgColor
         self.image.layer.borderWidth = 2.0
-        self.image.image = UIImage(named: "thumb")
-        self.image.downloadImageFrom(link: article!.urlToImage!, contentMode: .scaleAspectFit)
+        self.image.image = .defaultImage
+        self.image.downloadImageFrom(
+            link: article!.urlToImage!,
+            contentMode: .scaleAspectFit
+        )
     }
     
     

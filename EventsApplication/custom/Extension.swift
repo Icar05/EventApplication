@@ -11,6 +11,7 @@ import UIKit
 
 extension UIImage{
     static let applicationBackground = UIImage(named: "back.png")!
+    static let defaultImage = UIImage(named: "thumb")!
 }
 
 extension UIColor {
@@ -20,20 +21,24 @@ extension UIColor {
     static let urlColor = UIColor(named: "Url")
 }
 
-extension UIImageView {
-    func downloadImageFrom(link:String?, contentMode: UIView.ContentMode) {
+extension UIImageView  {
+    func downloadImageFrom(link:String?, contentMode: UIView.ContentMode)-> URLSessionDataTask? {
         
-        if let url = URL(string: link!){
-            URLSession.shared.dataTask(with: URLRequest(url: url), completionHandler: {
+        if let current = link, let url = URL(string: current){
+            let task: URLSessionDataTask = URLSession.shared.dataTask(with: URLRequest(url: url), completionHandler: {
                 (data, response, error) -> Void in
                 DispatchQueue.main.async {
                     self.contentMode =  contentMode
                     if let data = data { self.image = UIImage(data: data) }
                 }
-            }).resume()
+            })
+            
+                task.resume()
+            
+            return task
         }
         
-        
+        return nil
     }
     
     

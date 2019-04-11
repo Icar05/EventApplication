@@ -34,22 +34,30 @@ class SourcesDetailViewController: UIViewController {
         self.category.text = sources?.category
         self.language.text = "Language: "+(sources?.language!)!
         self.country.text = "Country: "+(sources?.country!)!
-        self.url.text = sources?.url
-        
-        self.stackView.layoutMargins = UIEdgeInsets(
-            top: 8, left: 8, bottom: 8, right: 8)
-        self.stackView.isLayoutMarginsRelativeArrangement = true
-        
-        let tap: UITapGestureRecognizer =  UITapGestureRecognizer(
-            target: self,
-            action: #selector(self.openLink))
-    
-        self.url.addGestureRecognizer(tap)
+        self.prepareStackView()
+        self.prepareUrl()
     }
+    
+    
     
     @objc private func openLink(){
         print("openlink ")
         UIApplication.shared.open(URL(string: self.url.text!)!)
+    }
+    
+    
+    func prepareUrl(){
+        let tap: UITapGestureRecognizer =  UITapGestureRecognizer(
+            target: self,
+            action: #selector(self.openLink))
+        self.url.text = sources?.url
+        self.url.addGestureRecognizer(tap)
+    }
+    
+    func prepareStackView(){
+        self.stackView.layoutMargins = UIEdgeInsets(
+            top: 8, left: 8, bottom: 8, right: 8)
+        self.stackView.isLayoutMarginsRelativeArrangement = true
     }
 
 }

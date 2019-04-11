@@ -11,9 +11,6 @@ import UIKit
 
 class ArticleCell: BaseCell {
     
-    
-    
-    
     @IBOutlet weak var icon: UIImageView!
     
     @IBOutlet weak var title: UILabel!
@@ -22,9 +19,9 @@ class ArticleCell: BaseCell {
     
     @IBOutlet weak var date: UILabel!
     
-    fileprivate var imageContent: UIImage?
+    fileprivate var task:URLSessionDataTask?
     
-    let defaultImage = UIImage(named: "thumb")
+    
     
 
     func fillCell(article: Articles){
@@ -34,14 +31,13 @@ class ArticleCell: BaseCell {
         self.icon.layer.borderColor = UIColor.lightGray.cgColor
         self.icon.layer.borderWidth = 2.0
         self.icon.image = UIImage(named: "thumb")
-        self.icon.downloadImageFrom(link: article.urlToImage!, contentMode: .scaleAspectFit)
-//        self.loadIcon(input: article.urlToImage)
+        self.task = self.icon.downloadImageFrom(link: article.urlToImage, contentMode: .scaleAspectFit)
     }
     
     
     override func prepareForReuse() {
-        self.imageContent = nil
-        self.icon.image = defaultImage
+        self.task?.cancel()
+        self.icon.image = .defaultImage
     }
     
     
