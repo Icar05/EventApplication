@@ -33,7 +33,7 @@ class RootCreator: BaseCreator {
         
         
         let backButton = UIBarButtonItem()
-            backButton.title = "Back"
+            backButton.title = NSLocalizedString("Back", comment: "")
             navigation.navigationBar.topItem!.backBarButtonItem = backButton
         
         
