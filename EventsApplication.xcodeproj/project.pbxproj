@@ -32,6 +32,9 @@
 		1A75A84F224C45890033C852 /* DialogHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75A84E224C45890033C852 /* DialogHelper.swift */; };
 		1A918BAC224971C400D34DCE /* ValueForSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A918BAB224971C400D34DCE /* ValueForSelector.swift */; };
 		1A918BAF22497E8D00D34DCE /* AuthUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A918BAE22497E8D00D34DCE /* AuthUtil.swift */; };
+		1A9ED6152262571A0030092D /* TransitionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9ED6142262571A0030092D /* TransitionCoordinator.swift */; };
+		1A9ED61722625D5F0030092D /* CustomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9ED61622625D5F0030092D /* CustomTransition.swift */; };
+		1A9ED61922625EAE0030092D /* CustomTransictable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9ED61822625EAE0030092D /* CustomTransictable.swift */; };
 		1AF3B80A2226D911004FA784 /* MockNetworkTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3B8092226D911004FA784 /* MockNetworkTester.swift */; };
 		1AF63CBC2226FCD700CB7466 /* to read.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF63CBB2226FCD700CB7466 /* to read.swift */; };
 		5142D2325929E234439D3E1E /* Pods_EventsApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14362051047C402913B017BC /* Pods_EventsApplication.framework */; };
@@ -133,6 +136,9 @@
 		1A75A84E224C45890033C852 /* DialogHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogHelper.swift; sourceTree = "<group>"; };
 		1A918BAB224971C400D34DCE /* ValueForSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueForSelector.swift; sourceTree = "<group>"; };
 		1A918BAE22497E8D00D34DCE /* AuthUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUtil.swift; sourceTree = "<group>"; };
+		1A9ED6142262571A0030092D /* TransitionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionCoordinator.swift; sourceTree = "<group>"; };
+		1A9ED61622625D5F0030092D /* CustomTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransition.swift; sourceTree = "<group>"; };
+		1A9ED61822625EAE0030092D /* CustomTransictable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransictable.swift; sourceTree = "<group>"; };
 		1AF3B8092226D911004FA784 /* MockNetworkTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkTester.swift; sourceTree = "<group>"; };
 		1AF63CBB2226FCD700CB7466 /* to read.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "to read.swift"; sourceTree = "<group>"; };
 		690FACA11737355C05F058FD /* Pods-EventsApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApplication.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventsApplication/Pods-EventsApplication.release.xcconfig"; sourceTree = "<group>"; };
@@ -335,6 +341,7 @@
 		1A75A84B224C3BA60033C852 /* custom */ = {
 			isa = PBXGroup;
 			children = (
+				1A9ED613226257060030092D /* animation */,
 				9B6FB7BB225B906300439F98 /* UIPicturedScrollView.swift */,
 				9B257EDC225DFEC20026C460 /* UIBluredStackView.swift */,
 				9B6FB7B4225B75BE00439F98 /* cell */,
@@ -366,6 +373,17 @@
 				9BB5C220225F74440006A74E /* InfoPlist.strings */,
 			);
 			path = "application sources";
+			sourceTree = "<group>";
+		};
+		1A9ED613226257060030092D /* animation */ = {
+			isa = PBXGroup;
+			children = (
+				1A9ED6142262571A0030092D /* TransitionCoordinator.swift */,
+				1A9ED61622625D5F0030092D /* CustomTransition.swift */,
+				1A9ED61822625EAE0030092D /* CustomTransictable.swift */,
+			);
+			name = animation;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		9B11D172221ED98900BFEBD4 /* Network */ = {
@@ -1042,6 +1060,8 @@
 				9B78808B224A13F600F7231A /* RootInteractorImpl.swift in Sources */,
 				1A3F1A1E224D413B008B1486 /* EmptyView.swift in Sources */,
 				9B56315A224B769E005B41A6 /* SourcesPresenterImpl.swift in Sources */,
+				1A9ED6152262571A0030092D /* TransitionCoordinator.swift in Sources */,
+				1A9ED61722625D5F0030092D /* CustomTransition.swift in Sources */,
 				1A611C0D224ADFCD008E9D14 /* Json4Swift_Base.swift in Sources */,
 				9B563150224B7579005B41A6 /* EverythingPresenterImpl.swift in Sources */,
 				9B6FB7B3225B2B9800439F98 /* TestViewCreator.swift in Sources */,
@@ -1069,6 +1089,7 @@
 				9B56314C224B74A3005B41A6 /* HeadersInteractorImpl.swift in Sources */,
 				1A3F1A19224D3827008B1486 /* BaseSourcesViewController.swift in Sources */,
 				9B1C2AE5225F37DF002CEF80 /* BaseTableViewController.swift in Sources */,
+				1A9ED61922625EAE0030092D /* CustomTransictable.swift in Sources */,
 				9B78808E224A144700F7231A /* RootPresenterImpl.swift in Sources */,
 				9BEB17F8221C05CE003F8C9A /* AppDelegate.swift in Sources */,
 				9B56315F224B7C95005B41A6 /* HeaderCreator.swift in Sources */,
