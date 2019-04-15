@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class UISelectionDialog: UIViewController {
+class UISelectionDialog: BaseDialogViewController {
     
     @IBOutlet weak var alertView: UIView!
     
@@ -66,25 +66,6 @@ class UISelectionDialog: UIViewController {
         view.layoutIfNeeded()
     }
     
-    
-    
-    
-    
-    /*
-        init
-     */
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        self.providesPresentationContextTransitionStyle = true
-        self.definesPresentationContext = true
-        self.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-        self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
-        //        self.transitioningDelegate = self.transitioner
-    }
-    
-    /*
-        init
-     */
     
     func setupView() {
 

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class UISearchDialog: UIViewController{
+class UISearchDialog: BaseDialogViewController{
     
     
     @IBOutlet weak var dialogTitle: UILabel!
@@ -21,6 +21,7 @@ class UISearchDialog: UIViewController{
     var customTitle: String?
     
     var customDescription: String?
+    
     
     @IBAction func cancelClick(_ sender: UIButton) {
         self.completion = nil
@@ -39,24 +40,6 @@ class UISearchDialog: UIViewController{
     
     typealias searchDialogComplateion = (String)->Void
     var completion: searchDialogComplateion?
-    
-    
-    
-    /*
-     init
-     */
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        self.providesPresentationContextTransitionStyle = true
-        self.definesPresentationContext = true
-        self.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-        self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
-        //        self.transitioningDelegate = self.transitioner
-    }
-    
-    /*
-     init
-     */
     
     
     func setDescription(title: String, subtitle: String){

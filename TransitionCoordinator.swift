@@ -8,16 +8,20 @@
 
 import UIKit
 
-class TransitionCoordinator: NSObject, UINavigationControllerDelegate {
-
+class TransitionCoordinator: NSObject, UIViewControllerTransitioningDelegate {
     
-    func navigationController(_ navigationController: UINavigationController,
-                              animationControllerFor operation: UINavigationController.Operation,
-                              from fromVC: UIViewController,
-                              to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
-        
-        return CustomTransition()
-    }
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        segue.destinationViewController.transitioningDelegate = self
+//    }
+//
+//    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        return AnimationController(withDuration: 3.0, forTransitionType: .Dismissing, originFrame: self.image.frame)
+//    }
+//
+//    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        return AnimationController(withDuration: 3.0, forTransitionType: .Presenting, originFrame: self.image.frame)
+//    }
+
     
 }
