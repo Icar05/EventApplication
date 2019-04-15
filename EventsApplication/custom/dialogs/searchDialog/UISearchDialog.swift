@@ -68,7 +68,6 @@ class UISearchDialog: BaseDialogViewController{
     
     func setupView() {
         self.alertView.layer.cornerRadius = 10
-        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         self.dialogTitle.text = customTitle
         self.dialogSubtitle.text = customDescription
     }

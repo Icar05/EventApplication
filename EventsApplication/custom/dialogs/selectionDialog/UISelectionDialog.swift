@@ -70,7 +70,6 @@ class UISelectionDialog: BaseDialogViewController {
     func setupView() {
 
         self.alertView.layer.cornerRadius = 10
-        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         self.pickerView.dataSource = self
         self.pickerView.delegate = self
         self.dialogTitle.text = customTitle

@@ -1,3 +1,4 @@
+
 //
 //  AnimationController.swift
 //  EventsApplication
@@ -37,26 +38,33 @@ class AnimationController: NSObject, UIViewControllerAnimatedTransitioning {
         let toView = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)!.view
         
         let targetView = self.isPresenting ? toView : fromView
-
-        if self.isPresenting {
-            containerView.addSubview(toView!)
+        
+        
+        containerView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        
+        var scaleX = self.isPresenting ? 0.1 : 1.0
+        var scaleY = self.isPresenting ? 0.1 : 1.0
+        
+        
+        if( isPresenting){
+            containerView.addSubview(targetView!)
         }
-
-        targetView!.frame.origin = self.isPresenting ? self.originFrame.origin : CGPoint(x: 0, y: 0)
-        targetView!.frame.size.width = self.isPresenting ? self.originFrame.size.width : containerView.bounds.width
+        
+        
+        targetView!.transform = CGAffineTransform(scaleX: CGFloat(scaleX), y: CGFloat(scaleY))
         targetView!.layoutIfNeeded()
-
-        for view in targetView!.subviews {
-                view.alpha = isPresenting ? 0.0 : 1.0
-        }
-
+        
+        
         UIView.animate(withDuration: self.duration, animations: { () -> Void in
-            targetView!.frame = self.isPresenting ? containerView.bounds : self.originFrame
+            scaleX = self.isPresenting ? 1.0 : 0.1
+            scaleY = self.isPresenting ? 1.0 : 0.1
+            targetView!.transform = CGAffineTransform(scaleX: CGFloat(scaleX), y: CGFloat(scaleY))
+            
+            
+            
             targetView!.layoutIfNeeded()
-
-            for view in targetView!.subviews {
-                    view.alpha = self.isPresenting ? 1.0 : 0.0
-            }
+            
+            
         }) { (completed: Bool) -> Void in
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
