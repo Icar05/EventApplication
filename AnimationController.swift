@@ -19,6 +19,7 @@ class AnimationController: NSObject, UIViewControllerAnimatedTransitioning {
     var isPresenting: Bool
     var originFrame: CGRect
     
+    
     init(withDuration duration: TimeInterval, forTransitionType type: TransitionType, originFrame: CGRect) {
         self.duration = duration
         self.isPresenting = type == .Presenting
@@ -32,42 +33,35 @@ class AnimationController: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        
+        
         let containerView = transitionContext.containerView
+            containerView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        
         
         let fromView = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)!.view
         let toView = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)!.view
-        
         let targetView = self.isPresenting ? toView : fromView
         
-        
-        containerView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
-        
-        var scaleX = self.isPresenting ? 0.1 : 1.0
-        var scaleY = self.isPresenting ? 0.1 : 1.0
-        
-        
+    
         if( isPresenting){
             containerView.addSubview(targetView!)
         }
         
-        
-        targetView!.transform = CGAffineTransform(scaleX: CGFloat(scaleX), y: CGFloat(scaleY))
-        targetView!.layoutIfNeeded()
-        
+      
+        self.animate(view: targetView!,value: CGFloat(self.isPresenting ? 0.1 : 1.0))
         
         UIView.animate(withDuration: self.duration, animations: { () -> Void in
-            scaleX = self.isPresenting ? 1.0 : 0.1
-            scaleY = self.isPresenting ? 1.0 : 0.1
-            targetView!.transform = CGAffineTransform(scaleX: CGFloat(scaleX), y: CGFloat(scaleY))
-            
-            
-            
-            targetView!.layoutIfNeeded()
-            
-            
+            self.animate(view: targetView!,value: CGFloat(self.isPresenting ? 1.0 : 0.1))
         }) { (completed: Bool) -> Void in
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
+    }
+    
+    
+    fileprivate func animate(view: UIView, value: CGFloat){
+        view.transform = CGAffineTransform(scaleX: value, y: value)
+        view.layoutIfNeeded()
     }
     
 }
