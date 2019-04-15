@@ -33,8 +33,7 @@ class ApplicationNavigator {
             customAlert.setCompletion(completion: completion)
             customAlert.customTitle = title
             customAlert.customDescription = subtitle
-            current?.present(customizeDialog(customAlert: customAlert),
-                             animated: true, completion: nil)
+            current?.present(customAlert, animated: true, completion: nil)
     }
     
     typealias selectDialogComplateion = (String)->Void
@@ -46,16 +45,7 @@ class ApplicationNavigator {
             customAlert.customTitle = title
             customAlert.customDescription = subtitle
             customAlert.setDatasource(value: datasource)
-            current?.present(customizeDialog(customAlert: customAlert),
-                             animated: true, completion: nil)
+            current?.present(customAlert,animated: true, completion: nil)
     }
     
-    
-    private static func customizeDialog(customAlert: UIViewController) -> UIViewController{
-        customAlert.providesPresentationContextTransitionStyle = true
-        customAlert.definesPresentationContext = true
-        customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-        customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-        return customAlert
-    }
 }

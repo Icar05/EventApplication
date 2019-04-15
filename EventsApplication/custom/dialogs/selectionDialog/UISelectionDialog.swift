@@ -66,7 +66,28 @@ class UISelectionDialog: UIViewController {
         view.layoutIfNeeded()
     }
     
+    
+    
+    
+    
+    /*
+        init
+     */
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.providesPresentationContextTransitionStyle = true
+        self.definesPresentationContext = true
+        self.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+        //        self.transitioningDelegate = self.transitioner
+    }
+    
+    /*
+        init
+     */
+    
     func setupView() {
+
         self.alertView.layer.cornerRadius = 10
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         self.pickerView.dataSource = self

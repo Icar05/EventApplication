@@ -41,6 +41,24 @@ class UISearchDialog: UIViewController{
     var completion: searchDialogComplateion?
     
     
+    
+    /*
+     init
+     */
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.providesPresentationContextTransitionStyle = true
+        self.definesPresentationContext = true
+        self.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+        //        self.transitioningDelegate = self.transitioner
+    }
+    
+    /*
+     init
+     */
+    
+    
     func setDescription(title: String, subtitle: String){
         self.dialogTitle.text = title
         self.dialogSubtitle.text = subtitle
