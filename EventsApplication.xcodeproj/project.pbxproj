@@ -32,8 +32,9 @@
 		1A75A84F224C45890033C852 /* DialogHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A75A84E224C45890033C852 /* DialogHelper.swift */; };
 		1A918BAC224971C400D34DCE /* ValueForSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A918BAB224971C400D34DCE /* ValueForSelector.swift */; };
 		1A918BAF22497E8D00D34DCE /* AuthUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A918BAE22497E8D00D34DCE /* AuthUtil.swift */; };
+		1AB264E82265047700D298F4 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB264E72265047700D298F4 /* Repository.swift */; };
+		1AB264EA2265048F00D298F4 /* RepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB264E92265048F00D298F4 /* RepositoryImpl.swift */; };
 		1AF3B80A2226D911004FA784 /* MockNetworkTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3B8092226D911004FA784 /* MockNetworkTester.swift */; };
-		1AF63CBC2226FCD700CB7466 /* to read.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF63CBB2226FCD700CB7466 /* to read.swift */; };
 		5142D2325929E234439D3E1E /* Pods_EventsApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14362051047C402913B017BC /* Pods_EventsApplication.framework */; };
 		9B11D179221EDB2500BFEBD4 /* NetworkServiceRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11D177221EDB2500BFEBD4 /* NetworkServiceRx.swift */; };
 		9B11D17A221EDB2500BFEBD4 /* UrlRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11D178221EDB2500BFEBD4 /* UrlRouter.swift */; };
@@ -135,8 +136,9 @@
 		1A75A84E224C45890033C852 /* DialogHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogHelper.swift; sourceTree = "<group>"; };
 		1A918BAB224971C400D34DCE /* ValueForSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueForSelector.swift; sourceTree = "<group>"; };
 		1A918BAE22497E8D00D34DCE /* AuthUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUtil.swift; sourceTree = "<group>"; };
+		1AB264E72265047700D298F4 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		1AB264E92265048F00D298F4 /* RepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryImpl.swift; sourceTree = "<group>"; };
 		1AF3B8092226D911004FA784 /* MockNetworkTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkTester.swift; sourceTree = "<group>"; };
-		1AF63CBB2226FCD700CB7466 /* to read.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "to read.swift"; sourceTree = "<group>"; };
 		690FACA11737355C05F058FD /* Pods-EventsApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApplication.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventsApplication/Pods-EventsApplication.release.xcconfig"; sourceTree = "<group>"; };
 		6D4849D14C4D55568CB3C967 /* Pods-EventsApplicationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApplicationUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventsApplicationUITests/Pods-EventsApplicationUITests.release.xcconfig"; sourceTree = "<group>"; };
 		75A050619A96C1E69E44BAFD /* Pods_EventsApplicationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventsApplicationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -381,13 +383,21 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
+		1AB264E62265045200D298F4 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				1AB264E72265047700D298F4 /* Repository.swift */,
+				1AB264E92265048F00D298F4 /* RepositoryImpl.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		9B11D172221ED98900BFEBD4 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				9B11D177221EDB2500BFEBD4 /* NetworkServiceRx.swift */,
 				9B11D178221EDB2500BFEBD4 /* UrlRouter.swift */,
 				1AF3B8092226D911004FA784 /* MockNetworkTester.swift */,
-				1AF63CBB2226FCD700CB7466 /* to read.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -790,6 +800,7 @@
 		9BEB17F6221C05CE003F8C9A /* EventsApplication */ = {
 			isa = PBXGroup;
 			children = (
+				1AB264E62265045200D298F4 /* Repository */,
 				1A75A84B224C3BA60033C852 /* custom */,
 				1A611C12224AE371008E9D14 /* Models */,
 				9BEB1803221C05CF003F8C9A /* Info.plist */,
@@ -1066,6 +1077,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A3F1A0B224D19D9008B1486 /* SourcesDetailCreator.swift in Sources */,
+				1AB264EA2265048F00D298F4 /* RepositoryImpl.swift in Sources */,
 				9B966247221ED5B7008C512D /* ApplicationNavigator.swift in Sources */,
 				9B563154224B75F5005B41A6 /* EverythingInteractorImpl.swift in Sources */,
 				9B6FB7AF225B2B5D00439F98 /* TestViewController.swift in Sources */,
@@ -1100,6 +1112,7 @@
 				9B56315C224B76C4005B41A6 /* SourcesInteractorImpl.swift in Sources */,
 				9B84A4FF224CC4EA00E747FC /* ArticleDetailPresenterImpl.swift in Sources */,
 				1A3F1A17224D3690008B1486 /* SourcesCell.swift in Sources */,
+				1AB264E82265047700D298F4 /* Repository.swift in Sources */,
 				9B5E70F4225F260100363A35 /* Extension.swift in Sources */,
 				1A3266DA2254054D004F35A0 /* RequestKeysProtocol.swift in Sources */,
 				9B788094224A14C600F7231A /* RootContract.swift in Sources */,
@@ -1123,7 +1136,6 @@
 				1A611C0F224ADFEF008E9D14 /* Articles.swift in Sources */,
 				1A75A84F224C45890033C852 /* DialogHelper.swift in Sources */,
 				9B56312B224B62FB005B41A6 /* HeaderContract.swift in Sources */,
-				1AF63CBC2226FCD700CB7466 /* to read.swift in Sources */,
 				1A3F1A11224D2B77008B1486 /* BaseArticleController.swift in Sources */,
 				9B9AB2A522648F2A00712530 /* BaseDialogViewController.swift in Sources */,
 				1A3F19F9224D1695008B1486 /* ArticleDetailViewController.swift in Sources */,
