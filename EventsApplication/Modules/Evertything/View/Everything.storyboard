@@ -27,7 +27,7 @@
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z5R-It-d8J" customClass="EmptyView" customModule="EventsApplication" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -41,7 +41,7 @@
                             <constraint firstItem="Z5R-It-d8J" firstAttribute="bottom" secondItem="1eW-8j-OB1" secondAttribute="bottom" id="LJT-nr-3P3"/>
                             <constraint firstItem="JwR-3j-lbh" firstAttribute="leading" secondItem="1eW-8j-OB1" secondAttribute="leading" id="PsB-UT-eaG"/>
                             <constraint firstItem="JwR-3j-lbh" firstAttribute="bottom" secondItem="1eW-8j-OB1" secondAttribute="bottom" id="XlQ-lG-xku"/>
-                            <constraint firstItem="Z5R-It-d8J" firstAttribute="top" secondItem="sWu-Fb-N58" secondAttribute="top" id="bAt-xy-o11"/>
+                            <constraint firstItem="Z5R-It-d8J" firstAttribute="top" secondItem="1eW-8j-OB1" secondAttribute="top" id="bAt-xy-o11"/>
                             <constraint firstItem="JwR-3j-lbh" firstAttribute="trailing" secondItem="1eW-8j-OB1" secondAttribute="trailing" id="qbz-ZY-TDF"/>
                             <constraint firstItem="Z5R-It-d8J" firstAttribute="leading" secondItem="1eW-8j-OB1" secondAttribute="leading" id="tpQ-y1-Mma"/>
                             <constraint firstItem="Z5R-It-d8J" firstAttribute="trailing" secondItem="1eW-8j-OB1" secondAttribute="trailing" id="wAg-2F-c5z"/>

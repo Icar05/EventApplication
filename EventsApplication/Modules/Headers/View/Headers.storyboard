@@ -27,14 +27,14 @@
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="67Z-vX-mv4" customClass="EmptyView" customModule="EventsApplication" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="UXX-qA-hfe" firstAttribute="top" secondItem="2a8-cM-ol9" secondAttribute="top" id="Hfg-T1-4Of"/>
-                            <constraint firstItem="67Z-vX-mv4" firstAttribute="top" secondItem="2a8-cM-ol9" secondAttribute="top" id="KJc-Sa-QXD"/>
+                            <constraint firstItem="67Z-vX-mv4" firstAttribute="top" secondItem="S9h-rl-ZO5" secondAttribute="top" id="KJc-Sa-QXD"/>
                             <constraint firstItem="UXX-qA-hfe" firstAttribute="trailing" secondItem="S9h-rl-ZO5" secondAttribute="trailing" id="ODt-hp-Zfu"/>
                             <constraint firstItem="67Z-vX-mv4" firstAttribute="trailing" secondItem="S9h-rl-ZO5" secondAttribute="trailing" id="PIh-IK-THd"/>
                             <constraint firstItem="UXX-qA-hfe" firstAttribute="leading" secondItem="S9h-rl-ZO5" secondAttribute="leading" id="T3r-hg-bTe"/>
