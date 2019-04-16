@@ -28,7 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-    
+    /*
+        https://medium.com/@ankurvekariya/core-data-crud-with-swift-4-2-for-beginners-40efe4e7d1cc
+        https://medium.com/xcblog/core-data-with-swift-4-for-beginners-1fc067cca707
+    */
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
