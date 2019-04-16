@@ -51,66 +51,49 @@ extension HeaderPresenterImpl : HeaderPresenter{
     }
     
     
+    
+    
+    
     func getHeadlines() {
-        self.view?.showLoading()
-        self.interactor.getDefaultHeadlines()
-            .flatMap{ articles -> Observable<[Articles]> in
-                self.repository.saveArticles(articles: articles)
-                return self.repository.getHeadlines()
-            }
-            .catchError{
-                error in self.view?.handleError(error: error)
-                print("Repository error ->  \(error.localizedDescription)")
-                return self.repository.getHeadlines()
-            }
-            .observeOn(MainScheduler.instance)
-            .subscribe(
-                onNext: { (articles) in
-                    self.view?.hideLoading()
-                    self.view?.updateTableView(articles: articles)
-            }).disposed(by: disposeBag)
+        self.makeRequest(
+            fromNetwork: self.interactor.getDefaultHeadlines(),
+            fromRepo: self.repository.getHeadlines())
     }
     
     func getHeadlines(country: String) {
-        self.view?.showLoading()
-        self.interactor.getHeadlinesByCountry(country: country)
-            .flatMap{ articles -> Observable<[Articles]> in
-                self.repository.saveArticles(articles: articles)
-                return self.repository.getHeadlines(country: country)
-            }
-            .catchError{
-                error in self.view?.handleError(error: error)
-                print("Repository error ->  \(error.localizedDescription)")
-                return self.repository.getHeadlines(country: country)
-            }
-            .observeOn(MainScheduler.instance)
-            .subscribe(
-                onNext: { (articles) in
-                    self.view?.hideLoading()
-                    self.view?.updateTableView(articles: articles)
-            }).disposed(by: disposeBag)
+        self.makeRequest(
+            fromNetwork: self.interactor.getHeadlinesByCountry(country: country),
+            fromRepo: self.repository.getHeadlines(country: country))
     }
     
     func getHeadlines(category: String) {
-        self.view?.showLoading()
-        self.interactor.getHeadlinesByCategory(category: category)
-            .flatMap{ articles -> Observable<[Articles]> in
-                self.repository.saveArticles(articles: articles)
-                return self.repository.getHeadlines(category: category)
-            }
-            .catchError{
-                error in self.view?.handleError(error: error)
-                print("Repository error ->  \(error.localizedDescription)")
-                return self.repository.getHeadlines(category: category)
-            }
-            .observeOn(MainScheduler.instance)
-            .subscribe(
-                onNext: { (articles) in
-                    self.view?.hideLoading()
-                    self.view?.updateTableView(articles: articles)
-            }).disposed(by: disposeBag)
+        self.makeRequest(
+            fromNetwork: self.interactor.getHeadlinesByCategory(category: category),
+            fromRepo: self.repository.getHeadlines(category: category))
     }
     
+    
+    func makeRequest(fromNetwork: Observable<[Articles]>, fromRepo: Observable<[Articles]>){
+        
+                self.view?.showLoading()
+                fromNetwork
+                .flatMap{ articles -> Observable<[Articles]> in
+                    let success = self.repository.saveArticles(articles: articles)
+                    print("Repository data stored :\(success)")
+                    return fromRepo
+                }
+                .catchError{
+                    error in self.view?.handleError(error: error)
+                    print("Repository error ->  \(error.localizedDescription)")
+                    return fromRepo
+                }
+                .observeOn(MainScheduler.instance)
+                .subscribe(
+                    onNext: { (articles) in
+                        self.view?.hideLoading()
+                        self.view?.updateTableView(articles: articles)
+                }).disposed(by: disposeBag)
+    }
     
 }
 

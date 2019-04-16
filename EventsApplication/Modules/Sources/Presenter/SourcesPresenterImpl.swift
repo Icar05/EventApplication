@@ -43,7 +43,8 @@ extension SourcesPresenterImpl: SourcesPresenter{
         self.interactor
             .getSourcesByCategory(category: category)
             .flatMap{ sources -> Observable<[Sources]> in
-                self.repository.saveSources(sources: sources)
+                let success = self.repository.saveSources(sources: sources)
+                print("Repository data stored :\(success)")
                 return self.repository.getSourcesByCategory(category: category)
             }
             .catchError{

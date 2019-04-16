@@ -48,46 +48,38 @@ extension EverythingPresenterImpl : EverythingPresenter{
 
     
     func getEverything(query: String) {
-        self.view?.showLoading()
-        self.interactor
-            .getEverythingByQuery(query: query)
-            .flatMap{ articles -> Observable<[Articles]> in
-                self.repository.saveArticles(articles: articles)
-                return self.repository.getEverything(query: query)
-            }
-            .catchError{
-                error in self.view?.handleError(error: error)
-                print("Repository error ->  \(error.localizedDescription)")
-                return self.repository.getEverything(query: query)
-            }
-            .observeOn(MainScheduler.instance)
-            .subscribe(
-                onNext: { (articles) in
-                    self.view?.hideLoading()
-                    self.view?.updateTableView(articles: articles)
-            }).disposed(by: disposeBag)
+        self.makeRequest(
+            fromNetwork: interactor.getEverythingByQuery(query: query),
+            fromRepo: repository.getEverything(query: query))
     }
     
     func getEverything(query: String, language: String) {
-        self.view?.showLoading()
-        self.interactor
-            .getEverythingByLanguage(query: query, language: language)
-            .flatMap{ articles -> Observable<[Articles]> in
-                self.repository.saveArticles(articles: articles)
-                return self.repository.getEverything(query: query, language: language)
-            }
-            .catchError{
-                error in self.view?.handleError(error: error)
-                print("Repository error ->  \(error.localizedDescription)")
-                return self.repository.getEverything(query: query, language: language)
-            }
-            .observeOn(MainScheduler.instance)
-            .subscribe(
-                onNext: { (articles) in
-                    self.view?.hideLoading()
-                    self.view?.updateTableView(articles: articles)
-            }).disposed(by: disposeBag)
+        self.makeRequest(
+            fromNetwork: interactor.getEverythingByLanguage(query: query, language: language),
+            fromRepo: repository.getEverything(query: query, language: language))
+    }
+    
+    
+    fileprivate func makeRequest(fromNetwork: Observable<[Articles]>, fromRepo: Observable<[Articles]>){
         
+            self.view?.showLoading()
+                fromNetwork
+                .flatMap{ articles -> Observable<[Articles]> in
+                    let success = self.repository.saveArticles(articles: articles)
+                    print("Repository data stored :\(success)")
+                    return fromRepo
+                }
+                .catchError{
+                    error in self.view?.handleError(error: error)
+                    print("Repository error ->  \(error.localizedDescription)")
+                    return fromRepo
+                }
+                .observeOn(MainScheduler.instance)
+                .subscribe(
+                    onNext: { (articles) in
+                        self.view?.hideLoading()
+                        self.view?.updateTableView(articles: articles)
+                }).disposed(by: disposeBag)
     }
     
 }
