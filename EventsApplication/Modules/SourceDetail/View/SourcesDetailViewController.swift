@@ -22,6 +22,11 @@ class SourcesDetailViewController: UIViewController {
     @IBOutlet weak var country: UILabel!
     @IBOutlet weak var stackView: UIBluredStackView!
     @IBOutlet weak var url: UILabel!
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fillSource()

@@ -65,6 +65,7 @@
 		9B6FB7B3225B2B9800439F98 /* TestViewCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6FB7B2225B2B9800439F98 /* TestViewCreator.swift */; };
 		9B6FB7B8225B830C00439F98 /* ColorTheme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B6FB7B7225B830C00439F98 /* ColorTheme.xcassets */; };
 		9B6FB7BC225B906300439F98 /* UIPicturedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6FB7BB225B906300439F98 /* UIPicturedScrollView.swift */; };
+		9B78182F2266161A00C0E4ED /* NewsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B78182D2266161A00C0E4ED /* NewsModel.xcdatamodeld */; };
 		9B78808B224A13F600F7231A /* RootInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78808A224A13F600F7231A /* RootInteractorImpl.swift */; };
 		9B78808E224A144700F7231A /* RootPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78808D224A144700F7231A /* RootPresenterImpl.swift */; };
 		9B788091224A149500F7231A /* RootCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B788090224A149500F7231A /* RootCreator.swift */; };
@@ -170,6 +171,7 @@
 		9B6FB7B2225B2B9800439F98 /* TestViewCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewCreator.swift; sourceTree = "<group>"; };
 		9B6FB7B7225B830C00439F98 /* ColorTheme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorTheme.xcassets; sourceTree = "<group>"; };
 		9B6FB7BB225B906300439F98 /* UIPicturedScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPicturedScrollView.swift; sourceTree = "<group>"; };
+		9B78182E2266161A00C0E4ED /* NewsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsModel.xcdatamodel; sourceTree = "<group>"; };
 		9B78808A224A13F600F7231A /* RootInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractorImpl.swift; sourceTree = "<group>"; };
 		9B78808D224A144700F7231A /* RootPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresenterImpl.swift; sourceTree = "<group>"; };
 		9B788090224A149500F7231A /* RootCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCreator.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 		1A918BB12249824E00D34DCE /* application sources */ = {
 			isa = PBXGroup;
 			children = (
+				9B78182D2266161A00C0E4ED /* NewsModel.xcdatamodeld */,
 				9BEB1800221C05CF003F8C9A /* LaunchScreen.storyboard */,
 				9BEB17FE221C05CF003F8C9A /* Assets.xcassets */,
 				9B6FB7B7225B830C00439F98 /* ColorTheme.xcassets */,
@@ -1095,6 +1098,7 @@
 				9B9AB2A222647AD900712530 /* AnimationController.swift in Sources */,
 				9B563148224B73EE005B41A6 /* SourcesCreator.swift in Sources */,
 				9B563156224B764B005B41A6 /* SourceViewController.swift in Sources */,
+				9B78182F2266161A00C0E4ED /* NewsModel.xcdatamodeld in Sources */,
 				9B6FB7BC225B906300439F98 /* UIPicturedScrollView.swift in Sources */,
 				1A918BAC224971C400D34DCE /* ValueForSelector.swift in Sources */,
 				9B788091224A149500F7231A /* RootCreator.swift in Sources */,
@@ -1506,6 +1510,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9B78182D2266161A00C0E4ED /* NewsModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9B78182E2266161A00C0E4ED /* NewsModel.xcdatamodel */,
+			);
+			currentVersion = 9B78182E2266161A00C0E4ED /* NewsModel.xcdatamodel */;
+			path = NewsModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9BEB17EC221C05CE003F8C9A /* Project object */;
 }
