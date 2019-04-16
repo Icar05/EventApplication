@@ -18,6 +18,7 @@ class HeaderPresenterImpl {
     var interactor: HeadersInteractor!
     var category = ""
     var country = ""
+    let repository = RepositoryImpl.shared
     
     
     
@@ -51,47 +52,62 @@ extension HeaderPresenterImpl : HeaderPresenter{
     
     
     func getHeadlines() {
-       self.view?.showLoading()
-       self.interactor
-            .getDefaultHeadlines()
+        self.view?.showLoading()
+        self.interactor.getDefaultHeadlines()
+            .flatMap{ articles -> Observable<[Articles]> in
+                self.repository.saveArticles(articles: articles)
+                return self.repository.getHeadlines()
+            }
+            .catchError{
+                error in self.view?.handleError(error: error)
+                print("Repository error ->  \(error.localizedDescription)")
+                return self.repository.getHeadlines()
+            }
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { (articles) in
                     self.view?.hideLoading()
                     self.view?.updateTableView(articles: articles)
-            }, onError: { (error) in
-                    self.view?.hideLoading()
-                    self.view?.handleError(error: error)
             }).disposed(by: disposeBag)
     }
     
     func getHeadlines(country: String) {
         self.view?.showLoading()
-        self.interactor
-            .getHeadlinesByCountry(country: country)
+        self.interactor.getHeadlinesByCountry(country: country)
+            .flatMap{ articles -> Observable<[Articles]> in
+                self.repository.saveArticles(articles: articles)
+                return self.repository.getHeadlines(country: country)
+            }
+            .catchError{
+                error in self.view?.handleError(error: error)
+                print("Repository error ->  \(error.localizedDescription)")
+                return self.repository.getHeadlines(country: country)
+            }
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { (articles) in
-                self.view?.hideLoading()
-                self.view?.updateTableView(articles: articles)
-            }, onError: { (error) in
-                self.view?.hideLoading()
-                self.view?.handleError(error: error)
+                    self.view?.hideLoading()
+                    self.view?.updateTableView(articles: articles)
             }).disposed(by: disposeBag)
     }
     
     func getHeadlines(category: String) {
         self.view?.showLoading()
-        self.interactor
-            .getHeadlinesByCategory(category: category)
+        self.interactor.getHeadlinesByCategory(category: category)
+            .flatMap{ articles -> Observable<[Articles]> in
+                self.repository.saveArticles(articles: articles)
+                return self.repository.getHeadlines(category: category)
+            }
+            .catchError{
+                error in self.view?.handleError(error: error)
+                print("Repository error ->  \(error.localizedDescription)")
+                return self.repository.getHeadlines(category: category)
+            }
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { (articles) in
-                self.view?.hideLoading()
-                self.view?.updateTableView(articles: articles)
-            }, onError: { (error) in
-                self.view?.hideLoading()
-                self.view?.handleError(error: error)
+                    self.view?.hideLoading()
+                    self.view?.updateTableView(articles: articles)
             }).disposed(by: disposeBag)
     }
     

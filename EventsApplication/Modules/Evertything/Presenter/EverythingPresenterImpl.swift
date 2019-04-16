@@ -17,7 +17,7 @@ class EverythingPresenterImpl {
     var interactor: EverythingInteractor!
     var query: String = ValueForSelector.defaultQuery
     var language: String? = nil
-    
+    var repository = RepositoryImpl.shared
     
     
     
@@ -45,18 +45,26 @@ extension EverythingPresenterImpl : EverythingPresenter{
     }
     
     
+
+    
     func getEverything(query: String) {
         self.view?.showLoading()
         self.interactor
             .getEverythingByQuery(query: query)
+            .flatMap{ articles -> Observable<[Articles]> in
+                self.repository.saveArticles(articles: articles)
+                return self.repository.getEverything(query: query)
+            }
+            .catchError{
+                error in self.view?.handleError(error: error)
+                print("Repository error ->  \(error.localizedDescription)")
+                return self.repository.getEverything(query: query)
+            }
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { (articles) in
-                self.view?.hideLoading()
-                self.view?.updateTableView(articles: articles)
-            }, onError: { (error) in
-                self.view?.hideLoading()
-                self.view?.handleError(error: error)
+                    self.view?.hideLoading()
+                    self.view?.updateTableView(articles: articles)
             }).disposed(by: disposeBag)
     }
     
@@ -64,14 +72,20 @@ extension EverythingPresenterImpl : EverythingPresenter{
         self.view?.showLoading()
         self.interactor
             .getEverythingByLanguage(query: query, language: language)
+            .flatMap{ articles -> Observable<[Articles]> in
+                self.repository.saveArticles(articles: articles)
+                return self.repository.getEverything(query: query, language: language)
+            }
+            .catchError{
+                error in self.view?.handleError(error: error)
+                print("Repository error ->  \(error.localizedDescription)")
+                return self.repository.getEverything(query: query, language: language)
+            }
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { (articles) in
-                self.view?.hideLoading()
-                self.view?.updateTableView(articles: articles)
-            }, onError: { (error) in
-                self.view?.hideLoading()
-                self.view?.handleError(error: error)
+                    self.view?.hideLoading()
+                    self.view?.updateTableView(articles: articles)
             }).disposed(by: disposeBag)
         
     }

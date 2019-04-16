@@ -13,7 +13,7 @@ protocol Repository{
     
     func saveArticles(articles: [Articles]) -> Observable<Bool>
     
-    func saveSources(articles: [Sources]) -> Observable<Bool>
+    func saveSources(sources: [Sources]) -> Observable<Bool>
     
     func getHeadlines(country: String) -> Observable<[Articles]>
     

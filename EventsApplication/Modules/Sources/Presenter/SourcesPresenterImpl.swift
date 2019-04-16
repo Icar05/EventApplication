@@ -17,7 +17,7 @@ class SourcesPresenterImpl {
     var view: SourcesView?
     var category: String = ValueForSelector.categories[6]
     var interactor: SourcesInteractor!
-    
+    let repository = RepositoryImpl.shared
     
     func onViewDidLoad() {
         getSourcesByCategory(category: category)
@@ -35,18 +35,27 @@ extension SourcesPresenterImpl: SourcesPresenter{
     }
     
     
-    internal func getSourcesByCategory(category: String) {
+    
+   
+    
+    func getSourcesByCategory(category: String) {
         self.view?.showLoading()
         self.interactor
             .getSourcesByCategory(category: category)
+            .flatMap{ sources -> Observable<[Sources]> in
+                self.repository.saveSources(sources: sources)
+                return self.repository.getSourcesByCategory(category: category)
+            }
+            .catchError{
+                error in self.view?.handleError(error: error)
+                print("Repository error ->  \(error.localizedDescription)")
+                return self.repository.getSourcesByCategory(category: category)
+            }
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { (sources) in
-                self.view?.hideLoading()
-                self.view?.updateTableView(sources: sources)
-            }, onError: { (error) in
-                self.view?.hideLoading()
-                self.view?.handleError(error: error)
+                    self.view?.hideLoading()
+                    self.view?.updateTableView(sources: sources)
             }).disposed(by: disposeBag)
     }
     
