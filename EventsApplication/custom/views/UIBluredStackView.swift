@@ -11,7 +11,7 @@ import UIKit
 class UIBluredStackView: UIStackView {
 
     
-    let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+    let backgroundView = UIView()
     
     required init(coder: NSCoder) {
         super.init(coder: coder)
@@ -25,20 +25,18 @@ class UIBluredStackView: UIStackView {
     
     
     func setup(){
-        self.backgroundColor = .clear
-        self.blurEffectView.layer.borderColor = UIColor.black.withAlphaComponent(4.0).cgColor
-        self.blurEffectView.layer.borderWidth = 2.0;
-        self.insertSubview(blurEffectView, at: 0)
+        self.backgroundView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
+        self.insertSubview(backgroundView, at: 0)
     }
     
     override var bounds: CGRect{
         didSet{
-            self.blurEffectView.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
+            self.backgroundView.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
         }
     }
-    
+
     override func layoutSubviews() {
-        self.blurEffectView.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
+            self.backgroundView.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
     }
     
 

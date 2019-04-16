@@ -33,10 +33,7 @@ extension BaseArticleController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
          cell.layer.backgroundColor = UIColor.clear.cgColor
-        
-         (cell as! BaseCell).setBlur()
     }
 }
 

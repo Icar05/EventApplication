@@ -17,6 +17,10 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view alpha="0.45000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLL-Jv-BcS">
+                    <rect key="frame" x="4" y="4" width="367" height="112"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gc-Oi-NUi">
                     <rect key="frame" x="16" y="12" width="343" height="21"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -41,10 +45,14 @@
             <constraints>
                 <constraint firstItem="LCT-PM-gaJ" firstAttribute="trailing" secondItem="Dhg-0a-0xK" secondAttribute="trailing" id="1ye-hI-lbW"/>
                 <constraint firstItem="9gc-Oi-NUi" firstAttribute="trailing" secondItem="LCT-PM-gaJ" secondAttribute="trailing" id="2ky-cC-VzK"/>
+                <constraint firstItem="aLL-Jv-BcS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="78n-u5-Ped"/>
                 <constraint firstItem="9gc-Oi-NUi" firstAttribute="leading" secondItem="LCT-PM-gaJ" secondAttribute="leading" id="F7Z-tx-Ytt"/>
+                <constraint firstItem="aLL-Jv-BcS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="4" id="Kdg-Mi-mCk"/>
                 <constraint firstItem="9gc-Oi-NUi" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="12" id="S8G-br-P4y"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="aLL-Jv-BcS" secondAttribute="trailing" constant="4" id="Sgo-3F-yal"/>
                 <constraint firstItem="LCT-PM-gaJ" firstAttribute="top" secondItem="9gc-Oi-NUi" secondAttribute="bottom" constant="2" id="Xux-N7-GG2"/>
                 <constraint firstItem="9gc-Oi-NUi" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="dzt-kr-Kkb"/>
+                <constraint firstAttribute="bottom" secondItem="aLL-Jv-BcS" secondAttribute="bottom" constant="4" id="iGh-O4-N8C"/>
                 <constraint firstAttribute="bottom" secondItem="Dhg-0a-0xK" secondAttribute="bottom" constant="20" symbolic="YES" id="jZz-6k-1GJ"/>
                 <constraint firstItem="9gc-Oi-NUi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="k0y-gY-WeQ"/>
                 <constraint firstItem="LCT-PM-gaJ" firstAttribute="leading" secondItem="Dhg-0a-0xK" secondAttribute="leading" id="rNO-3b-QyG"/>

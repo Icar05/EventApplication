@@ -63,7 +63,6 @@
 		9B6FB7AF225B2B5D00439F98 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6FB7AE225B2B5D00439F98 /* TestViewController.swift */; };
 		9B6FB7B1225B2B6900439F98 /* test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6FB7B0225B2B6900439F98 /* test.storyboard */; };
 		9B6FB7B3225B2B9800439F98 /* TestViewCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6FB7B2225B2B9800439F98 /* TestViewCreator.swift */; };
-		9B6FB7B6225B75D900439F98 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6FB7B5225B75D900439F98 /* BaseCell.swift */; };
 		9B6FB7B8225B830C00439F98 /* ColorTheme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B6FB7B7225B830C00439F98 /* ColorTheme.xcassets */; };
 		9B6FB7BC225B906300439F98 /* UIPicturedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6FB7BB225B906300439F98 /* UIPicturedScrollView.swift */; };
 		9B78808B224A13F600F7231A /* RootInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78808A224A13F600F7231A /* RootInteractorImpl.swift */; };
@@ -169,7 +168,6 @@
 		9B6FB7AE225B2B5D00439F98 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		9B6FB7B0225B2B6900439F98 /* test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = test.storyboard; sourceTree = "<group>"; };
 		9B6FB7B2225B2B9800439F98 /* TestViewCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewCreator.swift; sourceTree = "<group>"; };
-		9B6FB7B5225B75D900439F98 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		9B6FB7B7225B830C00439F98 /* ColorTheme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorTheme.xcassets; sourceTree = "<group>"; };
 		9B6FB7BB225B906300439F98 /* UIPicturedScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPicturedScrollView.swift; sourceTree = "<group>"; };
 		9B78808A224A13F600F7231A /* RootInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractorImpl.swift; sourceTree = "<group>"; };
@@ -585,7 +583,6 @@
 			children = (
 				1A3F1A12224D345F008B1486 /* articleCell */,
 				1A3F1A13224D34DC008B1486 /* sourcesCell */,
-				9B6FB7B5225B75D900439F98 /* BaseCell.swift */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -1082,7 +1079,6 @@
 				9B563154224B75F5005B41A6 /* EverythingInteractorImpl.swift in Sources */,
 				9B6FB7AF225B2B5D00439F98 /* TestViewController.swift in Sources */,
 				1A3F1A05224D1879008B1486 /* SourceDetailPresenterImpl.swift in Sources */,
-				9B6FB7B6225B75D900439F98 /* BaseCell.swift in Sources */,
 				1A69B9C4224F65EA00DD811C /* DateTimeUtil.swift in Sources */,
 				1A3F19F7224D13AE008B1486 /* ArticleDetailContract.swift in Sources */,
 				9B50C465225231F100C720E7 /* UISearchDialog.swift in Sources */,

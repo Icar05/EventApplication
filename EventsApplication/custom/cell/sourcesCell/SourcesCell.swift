@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SourcesCell: BaseCell {
+class SourcesCell: UITableViewCell {
     
     
     @IBOutlet weak var title: UILabel!

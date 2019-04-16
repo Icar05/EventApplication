@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ArticleCell: BaseCell {
+class ArticleCell: UITableViewCell {
     
     @IBOutlet weak var icon: UIImageView!
     
