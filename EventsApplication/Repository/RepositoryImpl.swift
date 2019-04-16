@@ -12,35 +12,35 @@ import RxSwift
 class RepositoryImpl : Repository {
     
     func saveArticles(articles: [Articles]) -> Observable<Bool> {
-        <#code#>
+        return Observable.just(true)
     }
     
     func saveSources(articles: [Sources]) -> Observable<Bool> {
-        <#code#>
+        return Observable.just(true)
     }
     
     func getHeadlines(country: String) -> Observable<[Articles]> {
-        <#code#>
+        return Observable.just([])
     }
     
     func getHeadlines(category: String) -> Observable<[Articles]> {
-        <#code#>
+        return Observable.just([])
     }
     
     func getHeadlines() -> Observable<[Articles]> {
-        <#code#>
+        return Observable.just([])
     }
     
     func getEverything(query: String) -> Observable<[Articles]> {
-        <#code#>
+        return Observable.just([])
     }
     
     func getEverything(query: String, language: String) -> Observable<[Articles]> {
-        <#code#>
+        return Observable.just([])
     }
     
     func getSourcesByCategory(category: String) -> Observable<[Sources]> {
-        <#code#>
+        return Observable.just([])
     }
     
     

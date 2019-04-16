@@ -24,14 +24,13 @@ class BaseCell: UITableViewCell {
     func getBlurView() -> UIVisualEffectView{
         let blurEffect = UIBlurEffect(style: .light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = self.bounds
+            blurEffectView.frame = self.bounds
+    
+            blurEffectView.layer.borderColor = UIColor.black.withAlphaComponent(4.0).cgColor
+            blurEffectView.layer.borderWidth = 4.0;
+//            blurEffectView.layer.cornerRadius = 6.0;
         
         
-        blurEffectView.layer.borderColor = UIColor.black.withAlphaComponent(4.0).cgColor
-        blurEffectView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        blurEffectView.clipsToBounds = true;
-        blurEffectView.layer.borderWidth = 4.0;
-        blurEffectView.layer.cornerRadius = 6.0;
         
         return blurEffectView
     }
