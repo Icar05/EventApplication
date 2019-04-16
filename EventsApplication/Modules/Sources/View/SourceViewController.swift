@@ -31,7 +31,6 @@ class SourcesViewController: BaseSourcesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setBackground(vc: self)
         self.tableView.register(UINib(nibName: cellIndifier, bundle: nil),
             forCellReuseIdentifier: cellIndifier)
         
@@ -72,9 +71,13 @@ extension SourcesViewController : SourcesView{
     
     func updateTableView(sources: [Sources]) {
         DispatchQueue.main.async {
-            sources.count > 0 ?
-                self.refillTableView(sources: sources) :
+            if(sources.count > 0){
+                self.tableView.isHidden = false
+                self.refillTableView(sources: sources)
+            }else{
+                self.tableView.isHidden = true
                 self.emptyView.showEmptyView()
+            }
         }
     }
     

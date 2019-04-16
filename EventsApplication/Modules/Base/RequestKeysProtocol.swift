@@ -18,14 +18,4 @@ extension TabItem{
         return UIBarButtonItem(title: title, style: .plain, target: self,
                                action: Selector((selector)))
     }
-    
-    func setBackground(vc: UIViewController){
-       
-        let backgroundImageView = UIImageView.init(frame: vc.view.frame)
-        
-            backgroundImageView.image = .applicationBackground
-            backgroundImageView.contentMode = .scaleAspectFill
-        
-        vc.view.insertSubview(backgroundImageView, at: 0)
-    }
 }

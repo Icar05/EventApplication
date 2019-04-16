@@ -34,7 +34,6 @@ class HeadersViewController: BaseArticleController {
         super.viewDidLoad()
         
         
-        self.setBackground(vc: self)
         self.tableView.register(UINib(nibName: cellIndifier, bundle: nil),
                                 forCellReuseIdentifier: cellIndifier)
         
@@ -77,9 +76,15 @@ extension HeadersViewController : HeaderView{
     
     func updateTableView(articles: [Articles]) {
         DispatchQueue.main.async {
-            articles.count > 0 ?
-                self.refillTableView(articles: articles) :
+            
+            if(articles.count > 0){
+                self.tableView.isHidden = false
+                self.refillTableView(articles: articles)
+            }else{
+                self.tableView.isHidden = true
                 self.emptyView.showEmptyView()
+            }
+            
         }
     }
     
