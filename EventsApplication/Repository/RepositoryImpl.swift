@@ -56,14 +56,14 @@ class RepositoryImpl : Repository {
     /*
      write data
     */
-    func saveArticles(articles: [Articles]) -> Observable<Bool> {
+    func saveArticles(articles: [Articles]) -> Bool {
         debug(value: "saveArticles")
-        return Observable.just(localStorage.storeArticles(articles: articles))
+        return localStorage.storeArticles(articles: articles)
     }
     
-    func saveSources(sources: [Sources]) -> Observable<Bool> {
+    func saveSources(sources: [Sources]) -> Bool {
         debug(value: "saveSources")
-        return Observable.just(localStorage.storeSources(sources: sources))
+        return localStorage.storeSources(sources: sources)
     }
     
     

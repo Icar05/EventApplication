@@ -33,14 +33,14 @@ class HeadersInteractorImpl: HeadersInteractor {
         
         for article: Articles in articles{
             let articleObject = Articles(
-                nTitle: article.title,
-                nDesc: article.description,
-                nUrl: article.url,
-                nUrlToImage: article.urlToImage,
-                nDate: article.publishedAt,
-                nAuthor: article.author,
+                nTitle: article.title ?? "",
+                nDesc: article.description ?? "",
+                nUrl: article.url ?? "",
+                nUrlToImage: article.urlToImage ?? "",
+                nDate: article.publishedAt ?? "",
+                nAuthor: article.author ?? "",
                 nLanguage: CountryUtil.getDefaultCountry(),
-                nCategory: nil)
+                nCategory: "")
             
             
             output.append(articleObject)

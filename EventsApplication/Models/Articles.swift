@@ -55,7 +55,7 @@ struct Articles : Codable, Replacible {
     }
     
     
-    init(nTitle: String?, nDesc: String?, nUrl: String?, nUrlToImage: String?, nDate: String?, nAuthor: String?, nLanguage: String?, nCategory: String? ){
+    init(nTitle: String, nDesc: String, nUrl: String, nUrlToImage: String, nDate: String, nAuthor: String, nLanguage: String, nCategory: String ){
         title = nTitle
         description = nDesc
         url = nUrl

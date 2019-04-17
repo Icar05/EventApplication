@@ -11,9 +11,9 @@ import RxSwift
 
 protocol Repository{
     
-    func saveArticles(articles: [Articles]) -> Observable<Bool>
+    func saveArticles(articles: [Articles]) -> Bool
     
-    func saveSources(sources: [Sources]) -> Observable<Bool>
+    func saveSources(sources: [Sources]) -> Bool
     
     func getHeadlines(country: String) -> Observable<[Articles]>
     
