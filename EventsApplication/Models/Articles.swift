@@ -25,6 +25,8 @@ struct Articles : Codable, Replacible {
     let urlToImage : String?
     let publishedAt : String?
     let content : String?
+    let language: String?
+    let category: String?
     
     enum CodingKeys: String, CodingKey {
         
@@ -48,6 +50,8 @@ struct Articles : Codable, Replacible {
         urlToImage = try values.decodeIfPresent(String.self, forKey: .urlToImage)
         publishedAt = try values.decodeIfPresent(String.self, forKey: .publishedAt)
         content = try values.decodeIfPresent(String.self, forKey: .content)
+        language = nil
+        category = nil
     }
     
     
@@ -60,6 +64,8 @@ struct Articles : Codable, Replacible {
         author = nAuthor
         source = nil
         content = nil
+        language = nil
+        category = nil
     }
     
     

@@ -49,7 +49,7 @@ enum UrlRouter: URLRequestConvertible {
                 
                 case .getDefaultHeadlines():
                     return ("v2/top-headlines", ["apiKey": UrlRouter.apiKey,
-                                                 "country": getDefaultCountry()])
+                                                 "country": CountryUtil.getDefaultCountry()])
                 
                 case .getHeadlinesByCountry(let country):
                     return ("v2/top-headlines", ["apiKey": UrlRouter.apiKey,
@@ -58,7 +58,7 @@ enum UrlRouter: URLRequestConvertible {
                 case .getHeadlinesByCategory(let category):
                     return ("v2/top-headlines", ["apiKey": UrlRouter.apiKey,
                                                  "category": category,
-                                                 "country": getDefaultCountry()])
+                                                 "country": CountryUtil.getDefaultCountry()])
                 
                 case .getEverythingByQuery(let query):
                     return ("v2/everything",    ["apiKey": UrlRouter.apiKey,
@@ -82,16 +82,6 @@ enum UrlRouter: URLRequestConvertible {
             urlRequest.httpMethod = method.rawValue
         
         return try encoding.encode(urlRequest, with: result.parameters)
-    }
-    
-    
-    func getDefaultCountry()->String{
-        
-        if let countryCode = (Locale.current as NSLocale).object(forKey: .countryCode) as? String {
-            return countryCode
-        } else{
-            return ""
-        }
     }
     
 }

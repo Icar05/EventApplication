@@ -22,6 +22,8 @@ class LocalStorage {
     let articleAutor = "autor"
     let articleImageUrl = "imgUrl"
     let articleUrl = "url"
+    let articleLanguage = "language"
+    let articleCategory = "category"
     
     
     let sourcesTableName = "SourcesNews"
@@ -39,10 +41,17 @@ class LocalStorage {
     
    
     
+    
+    
     fileprivate func getManagedContext() -> NSManagedObjectContext?{
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         return appDelegate?.persistentContainer.viewContext
     }
+    
+    
+    
+    
+    
     
     
     /*
@@ -50,7 +59,7 @@ class LocalStorage {
      */
     func getHeadlines() -> Observable<[Articles]>{
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: articleTableName)
-            fetchRequest.predicate = NSPredicate(format: "country = %@", getDefaultCountry())
+            fetchRequest.predicate = NSPredicate(format: "\(articleLanguage) = %@", CountryUtil.getDefaultCountry())
         
         return getArticles(fetchedRequest: fetchRequest)
     }
@@ -58,14 +67,14 @@ class LocalStorage {
     func getHeadlines(country: String) -> Observable<[Articles]>{
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: articleTableName)
-            fetchRequest.predicate = NSPredicate(format: "country = %@", country)
+            fetchRequest.predicate = NSPredicate(format: "\(articleLanguage) = %@", country)
         
         return getArticles(fetchedRequest: fetchRequest)
     }
     
     func getHeadlines(category: String) -> Observable<[Articles]> {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: articleTableName)
-            fetchRequest.predicate = NSPredicate(format: "category = %@ AND country = %@", category, getDefaultCountry())
+            fetchRequest.predicate = NSPredicate(format: "\(articleCategory) = %@ AND \(articleLanguage) = %@", category, CountryUtil.getDefaultCountry())
         
         return getArticles(fetchedRequest: fetchRequest)
     }
@@ -76,14 +85,14 @@ class LocalStorage {
     */
     func getEverything(query: String) -> Observable<[Articles]>{
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: articleTableName)
-            fetchRequest.predicate = NSPredicate(format: "name contains[c] %@ OR desc contains[c] %@", query, query)
+            fetchRequest.predicate = NSPredicate(format: "\(articleTitle) contains[c] %@ OR \(articleDescription) contains[c] %@", query, query)
         
         return getArticles(fetchedRequest: fetchRequest)
     }
 
     func getEverything(query: String, language: String) -> Observable<[Articles]> {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: articleTableName)
-            fetchRequest.predicate = NSPredicate(format: "name contains[c] %@ OR desc contains[c] %@ AND language = %@", query,query,language)
+            fetchRequest.predicate = NSPredicate(format: "\(articleTitle) contains[c] %@ OR \(articleDescription) contains[c] %@ AND \(articleLanguage) = %@", query,query,language)
         
         return getArticles(fetchedRequest: fetchRequest)
     }
@@ -95,48 +104,89 @@ class LocalStorage {
      */
     func getSourcesByCategory(category: String) -> Observable<[Sources]> {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: sourcesTableName)
-            fetchRequest.predicate = NSPredicate(format: "category = %@", category)
+            fetchRequest.predicate = NSPredicate(format: "\(sourcesCategory) = %@", category)
         
         return getSources(fetchedRequest: fetchRequest)
     }
     
     
-    
     /*
-        write article
+     file private realizations of read data
      */
-    
-    func replaceArticleEntity(article: Articles){
-        if( !entityAlreadyCreated(entity: article, tableName: articleTableName)){
-            createArticle(article: article)
-        }
-    }
-    
-    
-    func replaceSourceEntity(source: Sources){
-        if( !entityAlreadyCreated(entity: source, tableName: sourcesTableName)){
-            createSource(source: source)
-        }
-    }
-    
-    
-    fileprivate func entityAlreadyCreated(entity: Replacible, tableName: String) -> Bool{
+    fileprivate func getSources(fetchedRequest: NSFetchRequest<NSFetchRequestResult>) -> Observable<[Sources]> {
+        
         let managedContext = getManagedContext()
         
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: tableName)
-            fetchRequest.predicate = NSPredicate(format: "description = %@", entity.getUnicueField()!)
+        var sources: [Sources]  = []
         
-            do {
-                if let result = try managedContext?.fetch(fetchRequest){
-                    return result.count > 0
-                }
-            } catch  {
+        do {
+            let result = try managedContext?.fetch(fetchedRequest)
+            for data in result as! [NSManagedObject] {
                 
+                let source = Sources(
+                    nName: data.value(forKey: sourcesName) as! String,
+                    nDesc: data.value(forKey: sourcesDescription) as! String,
+                    nLanguage: data.value(forKey: sourcesLanguage) as! String,
+                    nCategory: data.value(forKey: sourcesCategory) as! String,
+                    nCountry: data.value(forKey: sourcesCountry) as! String,
+                    nUrl: data.value(forKey: sourcesUrl) as! String)
+                
+                
+                sources.append(source)
             }
+            
+            sourcesSubject.onNext(sources)
+        } catch let error {
+            sourcesSubject.onError(error)
+        }
         
-            return false
+        
+        return sourcesSubject
     }
     
+    
+    
+    /*
+     file private realizations of read data
+     */
+    fileprivate func getArticles(fetchedRequest: NSFetchRequest<NSFetchRequestResult>) -> Observable<[Articles]> {
+        
+        let managedContext = getManagedContext()
+        
+        var articles: [Articles]  = []
+        
+        do {
+            let result = try managedContext?.fetch(fetchedRequest)
+            for data in result as! [NSManagedObject] {
+                
+                let article = Articles(
+                    nTitle: data.value(forKey: articleTitle) as! String,
+                    nDesc: data.value(forKey: articleDescription) as! String,
+                    nUrl: data.value(forKey: articleUrl) as! String,
+                    nUrlToImage: data.value(forKey: articleImageUrl) as! String,
+                    nDate: data.value(forKey: articleDate) as! String,
+                    nAuthor: data.value(forKey: articleAutor) as! String)
+                
+                articles.append(article)
+            }
+            
+            articleSubject.onNext(articles)
+        } catch let error {
+            articleSubject.onError(error)
+        }
+        
+        
+        return articleSubject
+    }
+    
+    
+    
+    
+    
+    
+    /*
+        write data
+     */
     
     
     func storeArticles(articles: [Articles]) -> Bool{
@@ -157,6 +207,42 @@ class LocalStorage {
         
         return true
     }
+    
+    
+    func replaceArticleEntity(article: Articles){
+        if( !entityAlreadyCreated(entity: article, tableName: articleTableName)){
+            createArticle(article: article)
+        }
+    }
+    
+    
+    func replaceSourceEntity(source: Sources){
+        if( !entityAlreadyCreated(entity: source, tableName: sourcesTableName)){
+            createSource(source: source)
+        }
+    }
+    
+    
+    fileprivate func entityAlreadyCreated(entity: Replacible, tableName: String) -> Bool{
+        let managedContext = getManagedContext()
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: tableName)
+            fetchRequest.predicate = NSPredicate(format: "desc = %@", entity.getUnicueField()!)
+        
+            do {
+                if let result = try managedContext?.fetch(fetchRequest){
+                    return result.count > 0
+                }
+            } catch  {
+                
+            }
+        
+            return false
+    }
+    
+    
+    
+   
 
     fileprivate func createArticle(article: Articles){
 
@@ -197,86 +283,6 @@ class LocalStorage {
             try managedContext!.save()
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
-        }
-    }
-    
-    
-    /*
-     file private realizations of read data
-     */
-    fileprivate func getSources(fetchedRequest: NSFetchRequest<NSFetchRequestResult>) -> Observable<[Sources]> {
-
-        let managedContext = getManagedContext()
-
-        var sources: [Sources]  = []
-
-        do {
-            let result = try managedContext?.fetch(fetchedRequest)
-            for data in result as! [NSManagedObject] {
-
-                let source = Sources(
-                    nName: data.value(forKey: sourcesName) as! String,
-                    nDesc: data.value(forKey: sourcesDescription) as! String,
-                    nLanguage: data.value(forKey: sourcesLanguage) as! String,
-                    nCategory: data.value(forKey: sourcesCategory) as! String,
-                    nCountry: data.value(forKey: sourcesCountry) as! String,
-                    nUrl: data.value(forKey: sourcesUrl) as! String)
-
-
-                sources.append(source)
-            }
-
-            sourcesSubject.onNext(sources)
-        } catch let error {
-            sourcesSubject.onError(error)
-        }
-
-
-        return sourcesSubject
-    }
-    
-    
-    
-    /*
-        file private realizations of read data
-     */
-    fileprivate func getArticles(fetchedRequest: NSFetchRequest<NSFetchRequestResult>) -> Observable<[Articles]> {
-        
-        let managedContext = getManagedContext()
-        
-        var articles: [Articles]  = []
-        
-        do {
-            let result = try managedContext?.fetch(fetchedRequest)
-            for data in result as! [NSManagedObject] {
-                
-                let article = Articles(
-                    nTitle: data.value(forKey: articleTitle) as! String,
-                    nDesc: data.value(forKey: articleDescription) as! String,
-                    nUrl: data.value(forKey: articleUrl) as! String,
-                    nUrlToImage: data.value(forKey: articleImageUrl) as! String,
-                    nDate: data.value(forKey: articleDate) as! String,
-                    nAuthor: data.value(forKey: articleAutor) as! String)
-                
-                articles.append(article)
-            }
-            
-            articleSubject.onNext(articles)
-        } catch let error {
-            articleSubject.onError(error)
-        }
-        
-        
-        return articleSubject
-    }
-    
-    
-    fileprivate func getDefaultCountry()->String {
-        
-        if let countryCode = (Locale.current as NSLocale).object(forKey: .countryCode) as? String {
-            return countryCode
-        } else{
-            return ""
         }
     }
 

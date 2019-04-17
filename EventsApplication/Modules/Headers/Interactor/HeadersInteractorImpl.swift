@@ -13,6 +13,12 @@ class HeadersInteractorImpl: HeadersInteractor {
     
     func getDefaultHeadlines() -> Observable<[Articles]> {
         return NetworkServiceRx.shared.getDefaultHeadlines()
+//            .map{ for article in $0 {
+//                        article.language = CountryUtil.getDefaultCountry()
+//                  }
+//
+//                return $0
+//        }
     }
     
     func getHeadlinesByCountry(country: String) -> Observable<[Articles]> {
