@@ -60,6 +60,8 @@
 		9B56315C224B76C4005B41A6 /* SourcesInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56315B224B76C4005B41A6 /* SourcesInteractorImpl.swift */; };
 		9B56315F224B7C95005B41A6 /* HeaderCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56315E224B7C95005B41A6 /* HeaderCreator.swift */; };
 		9B5E70F4225F260100363A35 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E70F3225F260100363A35 /* Extension.swift */; };
+		9B67F39E2267012C004402FB /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B67F39D2267012C004402FB /* LocalStorage.swift */; };
+		9B67F3A022672B2B004402FB /* Replacible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B67F39F22672B2B004402FB /* Replacible.swift */; };
 		9B6FB7AF225B2B5D00439F98 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6FB7AE225B2B5D00439F98 /* TestViewController.swift */; };
 		9B6FB7B1225B2B6900439F98 /* test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6FB7B0225B2B6900439F98 /* test.storyboard */; };
 		9B6FB7B3225B2B9800439F98 /* TestViewCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6FB7B2225B2B9800439F98 /* TestViewCreator.swift */; };
@@ -166,6 +168,8 @@
 		9B56315B224B76C4005B41A6 /* SourcesInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesInteractorImpl.swift; sourceTree = "<group>"; };
 		9B56315E224B7C95005B41A6 /* HeaderCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCreator.swift; sourceTree = "<group>"; };
 		9B5E70F3225F260100363A35 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		9B67F39D2267012C004402FB /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		9B67F39F22672B2B004402FB /* Replacible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Replacible.swift; sourceTree = "<group>"; };
 		9B6FB7AE225B2B5D00439F98 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		9B6FB7B0225B2B6900439F98 /* test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = test.storyboard; sourceTree = "<group>"; };
 		9B6FB7B2225B2B9800439F98 /* TestViewCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewCreator.swift; sourceTree = "<group>"; };
@@ -334,6 +338,7 @@
 				1A611C0E224ADFEF008E9D14 /* Articles.swift */,
 				1A611C0C224ADFCD008E9D14 /* Json4Swift_Base.swift */,
 				1A611C0A224ADF7C008E9D14 /* Sources.swift */,
+				9B67F39F22672B2B004402FB /* Replacible.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -571,6 +576,14 @@
 			path = Creator;
 			sourceTree = "<group>";
 		};
+		9B67F39C2267010E004402FB /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9B67F39D2267012C004402FB /* LocalStorage.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		9B6FB7AD225B2B2B00439F98 /* test */ = {
 			isa = PBXGroup;
 			children = (
@@ -800,6 +813,7 @@
 		9BEB17F6221C05CE003F8C9A /* EventsApplication */ = {
 			isa = PBXGroup;
 			children = (
+				9B67F39C2267010E004402FB /* Data */,
 				1AB264E62265045200D298F4 /* Repository */,
 				1A75A84B224C3BA60033C852 /* custom */,
 				1A611C12224AE371008E9D14 /* Models */,
@@ -1080,6 +1094,7 @@
 				1AB264EA2265048F00D298F4 /* RepositoryImpl.swift in Sources */,
 				9B966247221ED5B7008C512D /* ApplicationNavigator.swift in Sources */,
 				9B563154224B75F5005B41A6 /* EverythingInteractorImpl.swift in Sources */,
+				9B67F3A022672B2B004402FB /* Replacible.swift in Sources */,
 				9B6FB7AF225B2B5D00439F98 /* TestViewController.swift in Sources */,
 				1A3F1A05224D1879008B1486 /* SourceDetailPresenterImpl.swift in Sources */,
 				1A69B9C4224F65EA00DD811C /* DateTimeUtil.swift in Sources */,
@@ -1121,6 +1136,7 @@
 				9B56314E224B7512005B41A6 /* EverythingViewController.swift in Sources */,
 				9B56314C224B74A3005B41A6 /* HeadersInteractorImpl.swift in Sources */,
 				1A3F1A19224D3827008B1486 /* BaseSourcesViewController.swift in Sources */,
+				9B67F39E2267012C004402FB /* LocalStorage.swift in Sources */,
 				9B1C2AE5225F37DF002CEF80 /* BaseTableViewController.swift in Sources */,
 				9B78808E224A144700F7231A /* RootPresenterImpl.swift in Sources */,
 				9BEB17F8221C05CE003F8C9A /* AppDelegate.swift in Sources */,

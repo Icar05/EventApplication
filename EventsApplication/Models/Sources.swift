@@ -13,7 +13,9 @@
 
 import Foundation
 
-struct Sources : Codable {
+struct Sources : Codable, Replacible {
+   
+    
     let id : String?
     let name : String?
     let description : String?
@@ -44,5 +46,20 @@ struct Sources : Codable {
         country = try values.decodeIfPresent(String.self, forKey: .country)
     }
     
+    
+    init(nName: String, nDesc: String, nLanguage: String, nCategory: String, nCountry: String, nUrl: String){
+        name = nName
+        description = nDesc
+        language = nLanguage
+        category = nCategory
+        country = nCountry
+        url = nUrl
+        id = nil
+    }
+    
+    func getUnicueField() -> String? {
+        return description
+    }
+
 }
 

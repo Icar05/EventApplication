@@ -12,7 +12,11 @@
  */
 
 import Foundation
-struct Articles : Codable {
+
+struct Articles : Codable, Replacible {
+   
+    
+    
     let source : Source?
     let author : String?
     let title : String?
@@ -44,6 +48,23 @@ struct Articles : Codable {
         urlToImage = try values.decodeIfPresent(String.self, forKey: .urlToImage)
         publishedAt = try values.decodeIfPresent(String.self, forKey: .publishedAt)
         content = try values.decodeIfPresent(String.self, forKey: .content)
+    }
+    
+    
+    init(nTitle: String, nDesc: String, nUrl: String, nUrlToImage: String, nDate: String, nAuthor: String ){
+        title = nTitle
+        description = nDesc
+        url = nUrl
+        urlToImage = nUrlToImage
+        publishedAt = nDate
+        author = nAuthor
+        source = nil
+        content = nil
+    }
+    
+    
+    func getUnicueField() -> String? {
+        return description
     }
     
 }

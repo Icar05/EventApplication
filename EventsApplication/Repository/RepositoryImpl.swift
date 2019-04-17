@@ -11,49 +11,65 @@ import RxSwift
 
 class RepositoryImpl : Repository {
     
+    
     static let shared = RepositoryImpl()
     
-    func saveArticles(articles: [Articles]) -> Observable<Bool> {
-        debug(value: "saveArticles")
-        return Observable.just(true)
-    }
+    let localStorage = LocalStorage()
     
-    func saveSources(sources: [Sources]) -> Observable<Bool> {
-        debug(value: "saveSources")
-        return Observable.just(true)
-    }
     
+
+    /*
+     read data
+    */
+ 
     func getHeadlines(country: String) -> Observable<[Articles]> {
         debug(value: "getHeadlines ->  country")
-        return Observable.just([])
+        return localStorage.getHeadlines(country:country)
     }
     
     func getHeadlines(category: String) -> Observable<[Articles]> {
         debug(value: "getHeadlines ->  category")
-        return Observable.just([])
+        return localStorage.getHeadlines(category:category)
     }
     
     func getHeadlines() -> Observable<[Articles]> {
         debug(value: "getHeadlines")
-        return Observable.just([])
+        return localStorage.getHeadlines()
     }
     
     func getEverything(query: String) -> Observable<[Articles]> {
         debug(value: "getEverything ->  query")
-        return Observable.just([])
+        return localStorage.getEverything(query:query)
     }
     
     func getEverything(query: String, language: String) -> Observable<[Articles]> {
         debug(value: "getEverything ->  query, lang")
-        return Observable.just([])
+        return localStorage.getEverything(query: query, language: language)
     }
     
     func getSourcesByCategory(category: String) -> Observable<[Sources]> {
         debug(value: "getSourcesByCategory ->  category")
-        return Observable.just([])
+        return localStorage.getSourcesByCategory(category:category)
     }
     
     
+    /*
+     write data
+    */
+    func saveArticles(articles: [Articles]) -> Observable<Bool> {
+        debug(value: "saveArticles")
+        return Observable.just(localStorage.storeArticles(articles: articles))
+    }
+    
+    func saveSources(sources: [Sources]) -> Observable<Bool> {
+        debug(value: "saveSources")
+        return Observable.just(localStorage.storeSources(sources: sources))
+    }
+    
+    
+    /*
+     debug
+     */
     fileprivate func debug(value: String){
         print("Repository \(value)")
     }
