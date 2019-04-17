@@ -160,12 +160,15 @@ class LocalStorage {
             for data in result as! [NSManagedObject] {
                 
                 let article = Articles(
-                    nTitle: data.value(forKey: articleTitle) as! String,
-                    nDesc: data.value(forKey: articleDescription) as! String,
-                    nUrl: data.value(forKey: articleUrl) as! String,
-                    nUrlToImage: data.value(forKey: articleImageUrl) as! String,
-                    nDate: data.value(forKey: articleDate) as! String,
-                    nAuthor: data.value(forKey: articleAutor) as! String)
+                    nTitle: data.value(forKey: articleTitle) as? String,
+                    nDesc: data.value(forKey: articleDescription) as? String,
+                    nUrl: data.value(forKey: articleUrl) as? String,
+                    nUrlToImage: data.value(forKey: articleImageUrl) as? String,
+                    nDate: data.value(forKey: articleDate) as? String,
+                    nAuthor: data.value(forKey: articleAutor) as? String,
+                    nLanguage: data.value(forKey: articleLanguage) as? String,
+                    nCategory: data.value(forKey: articleCategory) as? String
+                )
                 
                 articles.append(article)
             }
