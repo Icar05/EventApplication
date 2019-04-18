@@ -56,18 +56,19 @@ extension HeaderPresenterImpl : HeaderPresenter{
     
     func getHeadlines() {
         self.view?.showLoading()
-        self.interactor.getDefaultHeadlines()
-            .flatMap{ articles -> Observable<[Articles]> in
-                let success = self.repository.saveArticles(articles: articles)
-                print("Repository data stored :\(success)")
-                return self.repository.getHeadlines()
+        self.interactor.getDefaultHeadlines().asObservable()
+            .map{ articles  in
+                self.repository.saveArticles(articles: articles)
             }
-            .catchError{
-                error in self.view?.handleError(error: error)
+            .map{ result in
+                self.repository.getHeadlines()
+            }
+            .catchError{ error in
+                self.view?.handleError(error: error)
                 print("Repository error ->  \(error.localizedDescription)")
-                return self.repository.getHeadlines()
+                
+                return Observable.just(self.repository.getHeadlines())
             }
-//            .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { (articles) in
                     print("Repository hide loading")
@@ -78,20 +79,22 @@ extension HeaderPresenterImpl : HeaderPresenter{
     
     func getHeadlines(country: String) {
         self.view?.showLoading()
-        self.interactor.getHeadlinesByCountry(country: country)
-            .flatMap{ articles -> Observable<[Articles]> in
-                let success = self.repository.saveArticles(articles: articles)
-                print("Repository data stored :\(success)")
-                return self.repository.getHeadlines(country: country)
+        self.interactor.getHeadlinesByCountry(country: country).asObservable()
+            .map{ articles  in
+                self.repository.saveArticles(articles: articles)
             }
-            .catchError{
-                error in self.view?.handleError(error: error)
+            .map{ result in
+                self.repository.getHeadlines(country: country)
+            }
+            .catchError{ error in
+                self.view?.handleError(error: error)
                 print("Repository error ->  \(error.localizedDescription)")
-                return self.repository.getHeadlines(country: country)
+                
+                return Observable.just(self.repository.getHeadlines(country: country))
             }
-            .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { (articles) in
+                    print("Repository hide loading")
                     self.view?.hideLoading()
                     self.view?.updateTableView(articles: articles)
             }).disposed(by: disposeBag)
@@ -99,20 +102,22 @@ extension HeaderPresenterImpl : HeaderPresenter{
     
     func getHeadlines(category: String) {
         self.view?.showLoading()
-        self.interactor.getHeadlinesByCategory(category: category)
-            .flatMap{ articles -> Observable<[Articles]> in
-                let success = self.repository.saveArticles(articles: articles)
-                print("Repository data stored :\(success)")
-                return self.repository.getHeadlines(category: category)
+        self.interactor.getHeadlinesByCategory(category: category).asObservable()
+            .map{ articles  in
+                self.repository.saveArticles(articles: articles)
             }
-            .catchError{
-                error in self.view?.handleError(error: error)
+            .map{ result in
+                self.repository.getHeadlines(category: category)
+            }
+            .catchError{ error in
+                self.view?.handleError(error: error)
                 print("Repository error ->  \(error.localizedDescription)")
-                return self.repository.getHeadlines(category: category)
+                
+                return Observable.just(self.repository.getHeadlines(category: category))
             }
-            .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { (articles) in
+                    print("Repository hide loading")
                     self.view?.hideLoading()
                     self.view?.updateTableView(articles: articles)
             }).disposed(by: disposeBag)
