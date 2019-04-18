@@ -19,7 +19,7 @@ protocol Repository{
     
     func getHeadlines(category: String) -> Observable<[Articles]>
     
-    func getHeadlines() -> Observable<[Articles]>
+    func getHeadlines(wasStored: Bool) -> Observable<[Articles]>
     
     func getEverything(query: String) -> Observable<[Articles]>
     

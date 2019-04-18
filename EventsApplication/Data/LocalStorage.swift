@@ -59,24 +59,36 @@ class LocalStorage {
      */
     func getHeadlines() -> Observable<[Articles]>{
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: articleTableName)
-            fetchRequest.predicate = NSPredicate(format: "\(articleLanguage) = %@", CountryUtil.getDefaultCountry())
+//            fetchRequest.predicate = NSPredicate(format: "\(articleLanguage) = %@", CountryUtil.getDefaultCountry())
         
-        return getArticles(fetchedRequest: fetchRequest)
+        let results =  getArticles(fetchedRequest: fetchRequest)
+        
+            debug(value: "getHeadlines ->  default \(results)")
+        
+        return results
     }
     
     func getHeadlines(country: String) -> Observable<[Articles]>{
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: articleTableName)
-            fetchRequest.predicate = NSPredicate(format: "\(articleLanguage) = %@", country)
+//            fetchRequest.predicate = NSPredicate(format: "\(articleLanguage) = %@", country)
         
-        return getArticles(fetchedRequest: fetchRequest)
+        let results =  getArticles(fetchedRequest: fetchRequest)
+        
+            debug(value: "getHeadlines ->  country \(results)")
+        
+        return results
     }
     
     func getHeadlines(category: String) -> Observable<[Articles]> {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: articleTableName)
             fetchRequest.predicate = NSPredicate(format: "\(articleCategory) = %@ AND \(articleLanguage) = %@", category, CountryUtil.getDefaultCountry())
         
-        return getArticles(fetchedRequest: fetchRequest)
+        let result =  getArticles(fetchedRequest: fetchRequest)
+        
+            debug(value: "getHeadlines ->  category \(result)")
+        
+        return result
     }
 
     
@@ -87,14 +99,23 @@ class LocalStorage {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: articleTableName)
             fetchRequest.predicate = NSPredicate(format: "\(articleTitle) contains[c] %@ OR \(articleDescription) contains[c] %@", query, query)
         
-        return getArticles(fetchedRequest: fetchRequest)
+        let results =  getArticles(fetchedRequest: fetchRequest)
+        
+            debug(value: "getEverything ->  query \(results)")
+        
+        return results
+        
     }
 
     func getEverything(query: String, language: String) -> Observable<[Articles]> {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: articleTableName)
             fetchRequest.predicate = NSPredicate(format: "\(articleTitle) contains[c] %@ OR \(articleDescription) contains[c] %@ AND \(articleLanguage) = %@", query,query,language)
         
-        return getArticles(fetchedRequest: fetchRequest)
+        let results = getArticles(fetchedRequest: fetchRequest)
+        
+            debug(value: "getEverything ->  query, lang \(results)")
+        
+        return results
     }
 
     
@@ -106,7 +127,11 @@ class LocalStorage {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: sourcesTableName)
             fetchRequest.predicate = NSPredicate(format: "\(sourcesCategory) = %@", category)
         
-        return getSources(fetchedRequest: fetchRequest)
+        let results =  getSources(fetchedRequest: fetchRequest)
+        
+            debug(value: "getSourcesByCategory ->  category \(results)")
+        
+        return results
     }
     
     
@@ -198,6 +223,7 @@ class LocalStorage {
             replaceArticleEntity(article: article)
         }
         
+        debug(value: "saveArticles")
         return true
     }
     
@@ -208,21 +234,33 @@ class LocalStorage {
             replaceSourceEntity(source: source)
         }
         
+        debug(value: "saveSources")
         return true
     }
     
     
     func replaceArticleEntity(article: Articles){
-        if( !entityAlreadyCreated(entity: article, tableName: articleTableName)){
+        
+        let result = entityAlreadyCreated(entity: article, tableName: articleTableName)
+        
+        if( !result){
             createArticle(article: article)
         }
+        
+        
+//        debug(value: "article , entityAlreadyCreated \(result)")
     }
     
     
     func replaceSourceEntity(source: Sources){
-        if( !entityAlreadyCreated(entity: source, tableName: sourcesTableName)){
+        
+        let result = entityAlreadyCreated(entity: source, tableName: sourcesTableName)
+        
+        if(!result){
             createSource(source: source)
         }
+        
+//        debug(value: "source, entityAlreadyCreated \(result)")
     }
     
     
@@ -236,8 +274,8 @@ class LocalStorage {
                 if let result = try managedContext?.fetch(fetchRequest){
                     return result.count > 0
                 }
-            } catch  {
-                
+            } catch let error {
+                 debug(value: "entity allready created error \(error)")
             }
         
             return false
@@ -287,6 +325,15 @@ class LocalStorage {
         } catch let error as NSError {
             print("Repository: Could not save source. \(error), \(error.userInfo)")
         }
+    }
+    
+    
+    
+    /*
+     debug
+     */
+    fileprivate func debug(value: String){
+        print("Repository \(value)")
     }
 
 }

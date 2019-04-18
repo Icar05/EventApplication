@@ -47,7 +47,7 @@ extension RootViewController : RootView{
         
 
         
-        return [headerVC, everythingVC, sourcesVC]
+        return [headerVC]
     }
 }
 

@@ -64,6 +64,7 @@ extension HeadersViewController : HeaderView{
     
     func hideLoading() {
         self.emptyView?.hideLoading()
+         print("Repository view hide loading")
     }
     
     
