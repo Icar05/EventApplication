@@ -40,21 +40,22 @@ extension SourcesPresenterImpl: SourcesPresenter{
     
     func getSourcesByCategory(category: String) {
         self.view?.showLoading()
-        self.interactor
-            .getSourcesByCategory(category: category)
-            .flatMap{ sources -> Observable<[Sources]> in
-                let success = self.repository.saveSources(sources: sources)
-                print("Repository data stored :\(success)")
-                return self.repository.getSourcesByCategory(category: category)
+        self.interactor.getSourcesByCategory(category: category).asObservable()
+            .map{ sources  in
+                self.repository.saveSources(sources: sources)
             }
-            .catchError{
-                error in self.view?.handleError(error: error)
+            .map{ result in
+                self.repository.getSourcesByCategory(category: category)
+            }
+            .catchError{ error in
+                self.view?.handleError(error: error)
                 print("Repository error ->  \(error.localizedDescription)")
-                return self.repository.getSourcesByCategory(category: category)
+                
+                return Observable.just(self.repository.getSourcesByCategory(category: category))
             }
-            .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { (sources) in
+                    print("Repository hide loading")
                     self.view?.hideLoading()
                     self.view?.updateTableView(sources: sources)
             }).disposed(by: disposeBag)
