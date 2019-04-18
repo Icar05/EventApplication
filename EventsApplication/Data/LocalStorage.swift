@@ -76,7 +76,7 @@ class LocalStorage {
     
     func getHeadlines(category: String) -> [Articles] {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: articleTableName)
-            fetchRequest.predicate = NSPredicate(format: "\(articleCategory) = %@ AND \(articleLanguage) = %@", category, CountryUtil.getDefaultCountry())
+//            fetchRequest.predicate = NSPredicate(format: "\(articleCategory) = %@ AND \(articleLanguage) = %@", category, CountryUtil.getDefaultCountry())
         
         let result =  getArticles(fetchedRequest: fetchRequest)
         
