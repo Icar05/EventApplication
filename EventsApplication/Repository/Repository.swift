@@ -23,8 +23,6 @@ protocol Repository{
     
     func getEverything(query: String) -> [Articles]
 
-    func getEverything(query: String, language: String) -> [Articles]
-
     func getSourcesByCategory(category: String) -> [Sources]
     
 }

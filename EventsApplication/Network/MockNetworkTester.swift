@@ -95,27 +95,6 @@ class MockNetworkTester{
 
 
 
-
-    func testGetEverythingByLanguage(query: String, language: String){
-        NetworkServiceRx.shared
-            .getEverythingByLanguage(query: query, language: language)
-            .observeOn(MainScheduler.instance)
-            .subscribe(
-                onNext: { (articles) in
-                self.debug(value: "-------------- On NEXT ")
-                self.debugArticles(articles: articles)
-            }, onError: { (error) in
-                self.debug(value: "-------------- On onError \(error.localizedDescription)")
-            }, onCompleted: {
-                self.debug(value: "-------------- On onCompleted ")
-            }, onDisposed: {
-                self.debug(value: "-------------- On onDisposed ")
-            }).disposed(by: disposibleBag)
-
-    }
-
-
-
     func testGetSourcesByCategory(category: String){
         NetworkServiceRx.shared
             .getSourcesByCategory(category: category)

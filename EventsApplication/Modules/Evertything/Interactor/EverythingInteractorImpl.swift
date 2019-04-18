@@ -17,11 +17,6 @@ class EverythingInteractorImpl: EverythingInteractor {
         
     }
     
-    func getEverythingByLanguage(query: String, language: String) -> Observable<[Articles]> {
-        return NetworkServiceRx.shared.getEverythingByLanguage(query: query, language: language)
-            .map{ return self.transformEverything(articles: $0, language: language, category: nil)}
-    }
-    
     
     func transformEverything(articles: [Articles], language: String?, category: String? ) -> [Articles]{
         var output: [Articles]  = []
@@ -34,7 +29,7 @@ class EverythingInteractorImpl: EverythingInteractor {
                 nUrlToImage: article.urlToImage ?? "",
                 nDate: article.publishedAt ?? "",
                 nAuthor: article.author ?? "",
-                nLanguage: CountryUtil.getDefaultCountry(),
+                nLanguage: language ?? "",
                 nCategory: "")
             
             

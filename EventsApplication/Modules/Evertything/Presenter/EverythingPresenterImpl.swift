@@ -16,31 +16,23 @@ class EverythingPresenterImpl {
     var view: EverythingView?
     var interactor: EverythingInteractor!
     var query: String = ValueForSelector.defaultQuery
-    var language: String? = nil
     var repository = RepositoryImpl.shared
     
     
     
     func onViewDidLoad() {
-        self.language == nil ?
-        self.getEverything(query: query) :
-        self.getEverything(query: query, language: language!)
+        
+        self.getEverything(query: query)
         
         print("presenter refersh -> Everything presenter reload!")
     }
 }
 extension EverythingPresenterImpl : EverythingPresenter{
     
-    
-    func setLanguage(language: String) {
-        self.language = language
-        self.query = ValueForSelector.defaultQuery
-        self.getEverything(query: query, language: language)
-    }
+
     
     func setQuery(query: String) {
         self.query = query.isEmpty ? ValueForSelector.defaultQuery: query
-        self.language = nil
         self.getEverything(query: query)
     }
     
@@ -51,6 +43,7 @@ extension EverythingPresenterImpl : EverythingPresenter{
         self.view?.showLoading()
         self.interactor.getEverythingByQuery(query: query).asObservable()
             .map{ articles  in
+                print("Repository input count -> \(articles.count)")
                 self.repository.saveArticles(articles: articles)
             }
             .map{ result in
@@ -61,30 +54,6 @@ extension EverythingPresenterImpl : EverythingPresenter{
                 print("Repository error ->  \(error.localizedDescription)")
                 
                 return Observable.just(self.repository.getEverything(query: query))
-            }
-            .subscribe(
-                onNext: { (articles) in
-                    print("Repository hide loading")
-                    self.view?.hideLoading()
-                    self.view?.updateTableView(articles: articles)
-            }).disposed(by: disposeBag)
-        
-    }
-    
-    func getEverything(query: String, language: String) {
-        self.view?.showLoading()
-        self.interactor.getEverythingByLanguage(query: query, language: language)
-            .map{ articles  in
-                self.repository.saveArticles(articles: articles)
-            }
-            .map{ result in
-                self.repository.getEverything(query: query, language: language)
-            }
-            .catchError{ error in
-                self.view?.handleError(error: error)
-                print("Repository error ->  \(error.localizedDescription)")
-                
-                return Observable.just(self.repository.getEverything(query: query, language: language))
             }
             .subscribe(
                 onNext: { (articles) in

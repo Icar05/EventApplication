@@ -58,6 +58,7 @@ extension HeaderPresenterImpl : HeaderPresenter{
         self.view?.showLoading()
         self.interactor.getDefaultHeadlines().asObservable()
             .map{ articles  in
+                print("Repository input count -> \(articles.count)")
                 self.repository.saveArticles(articles: articles)
             }
             .map{ result in
@@ -81,6 +82,7 @@ extension HeaderPresenterImpl : HeaderPresenter{
         self.view?.showLoading()
         self.interactor.getHeadlinesByCountry(country: country).asObservable()
             .map{ articles  in
+                print("Repository input count -> \(articles.count)")
                 self.repository.saveArticles(articles: articles)
             }
             .map{ result in
@@ -104,6 +106,7 @@ extension HeaderPresenterImpl : HeaderPresenter{
         self.view?.showLoading()
         self.interactor.getHeadlinesByCategory(category: category).asObservable()
             .map{ articles  in
+                print("Repository input count -> \(articles.count)")
                 self.repository.saveArticles(articles: articles)
             }
             .map{ result in

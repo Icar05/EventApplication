@@ -92,20 +92,7 @@ extension EverythingViewController : EverythingView{
 extension EverythingViewController : TabItem{
     
     func getNavBarButtons() -> [UIBarButtonItem?] {
-        return [createNavItem(title: languageTabItemTitle, selector: "selectLanguage"),
-                createNavItem(title: queryTabItemTitle, selector: "selectQuery")]
-    }
-    
-    
-    @objc func selectLanguage(){
-        ApplicationNavigator.presentSelectionDialog(
-            title: languageTabItemTitle,
-            subtitle: languageTabItemSubtitle,
-            current: self,
-            datasource: ValueForSelector.languages,
-            completion: { language in
-                self.presenter.setLanguage(language: language)
-        })
+        return [createNavItem(title: queryTabItemTitle, selector: "selectQuery"),nil]
     }
     
     @objc func selectQuery(){

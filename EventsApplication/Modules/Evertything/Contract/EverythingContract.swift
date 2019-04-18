@@ -15,7 +15,6 @@ protocol EverythingPresenter: class {
     var interactor: EverythingInteractor! { get set }
     func onViewDidLoad()
     
-    func setLanguage(language: String)
     func setQuery(query: String)
     
 }
@@ -23,9 +22,6 @@ protocol EverythingPresenter: class {
 protocol EverythingInteractor: class {
     
     func getEverythingByQuery(query: String) -> Observable<[Articles]>
-   
-    func getEverythingByLanguage(query: String, language: String) -> Observable<[Articles]>
-    
 }
 
 protocol EverythingView: class {

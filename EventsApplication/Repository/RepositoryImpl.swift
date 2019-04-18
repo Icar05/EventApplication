@@ -42,10 +42,6 @@ class RepositoryImpl : Repository {
         return localStorage.getEverything(query: query)
     }
     
-    func getEverything(query: String, language: String) -> [Articles] {
-        return localStorage.getEverything(query: query, language: language)
-    }
-    
     func getSourcesByCategory(category: String) -> [Sources] {
         return localStorage.getSourcesByCategory(category: category)
     }

@@ -53,11 +53,11 @@ class LocalStorage {
      */
     func getHeadlines() -> [Articles]{
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: articleTableName)
-//            fetchRequest.predicate = NSPredicate(format: "\(articleLanguage) = %@", CountryUtil.getDefaultCountry())
+            fetchRequest.predicate = NSPredicate(format: "\(articleLanguage) = %@", CountryUtil.getDefaultCountry())
         
         let results =  getArticles(fetchedRequest: fetchRequest)
         
-            debug(value: "getHeadlines ->  default \(results)")
+            debug(value: "getHeadlines ->  default \(results.count)")
         
         return results
     }
@@ -65,22 +65,22 @@ class LocalStorage {
     func getHeadlines(country: String) -> [Articles]{
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: articleTableName)
-//            fetchRequest.predicate = NSPredicate(format: "\(articleLanguage) = %@", country)
+            fetchRequest.predicate = NSPredicate(format: "\(articleLanguage) = %@", country)
         
         let results =  getArticles(fetchedRequest: fetchRequest)
         
-            debug(value: "getHeadlines ->  country \(results)")
+            debug(value: "getHeadlines ->  country \(results.count)")
         
         return results
     }
     
     func getHeadlines(category: String) -> [Articles] {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: articleTableName)
-//            fetchRequest.predicate = NSPredicate(format: "\(articleCategory) = %@ AND \(articleLanguage) = %@", category, CountryUtil.getDefaultCountry())
+            fetchRequest.predicate = NSPredicate(format: "\(articleCategory) = %@ ", category)
         
         let result =  getArticles(fetchedRequest: fetchRequest)
         
-            debug(value: "getHeadlines ->  category \(result)")
+            debug(value: "getHeadlines ->  category \(result.count)")
         
         return result
     }
@@ -95,23 +95,11 @@ class LocalStorage {
         
         let results =  getArticles(fetchedRequest: fetchRequest)
         
-            debug(value: "getEverything ->  query \(results)")
+            debug(value: "getEverything ->  query \(results.count)")
         
         return results
         
     }
-
-    func getEverything(query: String, language: String) -> [Articles] {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: articleTableName)
-            fetchRequest.predicate = NSPredicate(format: "\(articleTitle) contains[c] %@ OR \(articleDescription) contains[c] %@ AND \(articleLanguage) = %@", query,query,language)
-        
-        let results = getArticles(fetchedRequest: fetchRequest)
-        
-            debug(value: "getEverything ->  query, lang \(results)")
-        
-        return results
-    }
-
     
     
     /*
@@ -123,7 +111,7 @@ class LocalStorage {
         
         let results =  getSources(fetchedRequest: fetchRequest)
         
-            debug(value: "getSourcesByCategory ->  category \(results)")
+            debug(value: "getSourcesByCategory ->  category \(results.count)")
         
         return results
     }
@@ -238,7 +226,7 @@ class LocalStorage {
         }
         
         
-//        debug(value: "article , entityAlreadyCreated \(result)")
+        debug(value: "article , entityAlreadyCreated \(result)")
     }
     
     
@@ -250,7 +238,7 @@ class LocalStorage {
             createSource(source: source)
         }
         
-//        debug(value: "source, entityAlreadyCreated \(result)")
+        debug(value: "source, entityAlreadyCreated \(result)")
     }
     
     
@@ -288,6 +276,8 @@ class LocalStorage {
                 newArticle.setValue(article.author, forKeyPath: articleAutor)
                 newArticle.setValue(article.urlToImage, forKeyPath: articleImageUrl)
                 newArticle.setValue(article.url, forKeyPath: articleUrl)
+                newArticle.setValue(article.language, forKeyPath: articleLanguage)
+                newArticle.setValue(article.category, forKeyPath: articleCategory)
 
         do {
             try managedContext!.save()

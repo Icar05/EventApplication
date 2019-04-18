@@ -124,31 +124,6 @@ class NetworkServiceRx {
     }
 
 
-    // everything by language
-    func getEverythingByLanguage(query: String, language: String) -> Observable<[Articles]>{
-
-        return Observable<[Articles]>.create({[weak self] (observer) -> Disposable in
-            let request = self?.sessionManager.request(UrlRouter.getEverythingByLanguage(query, language))
-                .validate()
-                .responseJSON { (response) in
-                    switch response.result {
-                    case .success( _):
-
-                        let responseModel  = try! self!.jsonDecoder.decode(Json4Swift_Base.self, from:response.data!)
-                        observer.onNext(responseModel.articles!)
-                        observer.onCompleted()
-
-                    case .failure(let error):
-                        self?.debug(value: "getEverythingByLanguage: \(error.localizedDescription)")
-                        observer.onError(error)
-                    }
-            }
-            return Disposables.create {
-                request?.cancel()
-            }
-        })
-    }
-
     //get sources. categories from selector
     func getSourcesByCategory(category: String) -> Observable<[Sources]>{
         return Observable<[Sources]>.create({[weak self] (observer) -> Disposable in

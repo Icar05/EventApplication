@@ -15,7 +15,6 @@ enum UrlRouter: URLRequestConvertible {
     case getHeadlinesByCountry(String)
     case getHeadlinesByCategory(String)
     case getEverythingByQuery(String)
-    case getEverythingByLanguage(String, String)
     case getSourcesByCategory(String)
     
 
@@ -26,7 +25,6 @@ enum UrlRouter: URLRequestConvertible {
                 case .getHeadlinesByCountry: return .get
                 case .getHeadlinesByCategory: return .get
                 case .getEverythingByQuery: return .get
-                case .getEverythingByLanguage: return .get
                 case .getSourcesByCategory: return .get
             }
     }
@@ -37,7 +35,6 @@ enum UrlRouter: URLRequestConvertible {
             case .getHeadlinesByCountry: return URLEncoding.default
             case .getHeadlinesByCategory: return URLEncoding.default
             case .getEverythingByQuery: return URLEncoding.default
-            case .getEverythingByLanguage: return URLEncoding.default
             case .getSourcesByCategory: return URLEncoding.default
         }
     }
@@ -64,11 +61,6 @@ enum UrlRouter: URLRequestConvertible {
                     return ("v2/everything",    ["apiKey": UrlRouter.apiKey,
                                                  "page": 1,
                                                  "q": query])
-                
-                case .getEverythingByLanguage(let query, let language):
-                    return ("v2/everything",    ["apiKey": UrlRouter.apiKey,
-                                                 "q": query,
-                                                 "language": language])
                 
                 case .getSourcesByCategory(let category):
                      return ("v2/sources",   ["apiKey": UrlRouter.apiKey,
