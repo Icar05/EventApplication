@@ -13,7 +13,7 @@ class HeadersInteractorImpl: HeadersInteractor {
     
     func getDefaultHeadlines() -> Observable<[Articles]> {
         return NetworkServiceRx.shared.getDefaultHeadlines()
-            .map{ return self.transformHeaders(articles: $0, language: CountryUtil.getDefaultCountry(), category: nil)}
+            .map{ return self.transformHeaders(articles: $0, language: CountryUtil.getDefaultCountry(), category: nil)}.asSingle()
     }
     
     

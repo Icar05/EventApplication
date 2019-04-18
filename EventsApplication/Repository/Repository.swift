@@ -15,16 +15,16 @@ protocol Repository{
     
     func saveSources(sources: [Sources]) -> Bool
     
-    func getHeadlines(country: String) -> Observable<[Articles]>
+    func getHeadlines() -> [Articles]
     
-    func getHeadlines(category: String) -> Observable<[Articles]>
+    func getHeadlines(country: String) -> [Articles]
+
+    func getHeadlines(category: String) -> [Articles]
     
-    func getHeadlines(wasStored: Bool) -> Observable<[Articles]>
-    
-    func getEverything(query: String) -> Observable<[Articles]>
-    
-    func getEverything(query: String, language: String) -> Observable<[Articles]>
-    
-    func getSourcesByCategory(category: String) -> Observable<[Sources]>
+    func getEverything(query: String) -> [Articles]
+
+    func getEverything(query: String, language: String) -> [Articles]
+
+    func getSourcesByCategory(category: String) -> [Sources]
     
 }

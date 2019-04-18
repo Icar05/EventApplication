@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import CoreData
-import RxSwift
 
 
 class LocalStorage {
@@ -34,11 +33,6 @@ class LocalStorage {
     let sourcesName = "name"
     let sourcesUrl = "url"
     
-    
-    let articleSubject: PublishSubject<[Articles]>  =  PublishSubject()
-    let sourcesSubject: PublishSubject<[Sources]>  =  PublishSubject()
-    let saveDataSubject: PublishSubject<Bool>  =  PublishSubject()
-    
    
     
     
@@ -57,7 +51,7 @@ class LocalStorage {
     /*
         Read headlines
      */
-    func getHeadlines() -> Observable<[Articles]>{
+    func getHeadlines() -> [Articles]{
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: articleTableName)
 //            fetchRequest.predicate = NSPredicate(format: "\(articleLanguage) = %@", CountryUtil.getDefaultCountry())
         
@@ -68,7 +62,7 @@ class LocalStorage {
         return results
     }
     
-    func getHeadlines(country: String) -> Observable<[Articles]>{
+    func getHeadlines(country: String) -> [Articles]{
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: articleTableName)
 //            fetchRequest.predicate = NSPredicate(format: "\(articleLanguage) = %@", country)
@@ -80,7 +74,7 @@ class LocalStorage {
         return results
     }
     
-    func getHeadlines(category: String) -> Observable<[Articles]> {
+    func getHeadlines(category: String) -> [Articles] {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: articleTableName)
             fetchRequest.predicate = NSPredicate(format: "\(articleCategory) = %@ AND \(articleLanguage) = %@", category, CountryUtil.getDefaultCountry())
         
@@ -95,7 +89,7 @@ class LocalStorage {
     /*
       Read evertything
     */
-    func getEverything(query: String) -> Observable<[Articles]>{
+    func getEverything(query: String) -> [Articles]{
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: articleTableName)
             fetchRequest.predicate = NSPredicate(format: "\(articleTitle) contains[c] %@ OR \(articleDescription) contains[c] %@", query, query)
         
@@ -107,7 +101,7 @@ class LocalStorage {
         
     }
 
-    func getEverything(query: String, language: String) -> Observable<[Articles]> {
+    func getEverything(query: String, language: String) -> [Articles] {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: articleTableName)
             fetchRequest.predicate = NSPredicate(format: "\(articleTitle) contains[c] %@ OR \(articleDescription) contains[c] %@ AND \(articleLanguage) = %@", query,query,language)
         
@@ -123,7 +117,7 @@ class LocalStorage {
     /*
       Read sources
      */
-    func getSourcesByCategory(category: String) -> Observable<[Sources]> {
+    func getSourcesByCategory(category: String) -> [Sources] {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: sourcesTableName)
             fetchRequest.predicate = NSPredicate(format: "\(sourcesCategory) = %@", category)
         
@@ -138,7 +132,7 @@ class LocalStorage {
     /*
      file private realizations of read data
      */
-    fileprivate func getSources(fetchedRequest: NSFetchRequest<NSFetchRequestResult>) -> Observable<[Sources]> {
+    fileprivate func getSources(fetchedRequest: NSFetchRequest<NSFetchRequestResult>) -> [Sources] {
         
         let managedContext = getManagedContext()
         
@@ -160,13 +154,11 @@ class LocalStorage {
                 sources.append(source)
             }
             
-            sourcesSubject.onNext(sources)
+            return sources
         } catch let error {
-            sourcesSubject.onError(error)
+            debug(value: "Error while getArticles -> \(error.localizedDescription)")
+            return []
         }
-        
-        
-        return sourcesSubject
     }
     
     
@@ -174,7 +166,7 @@ class LocalStorage {
     /*
      file private realizations of read data
      */
-    fileprivate func getArticles(fetchedRequest: NSFetchRequest<NSFetchRequestResult>) -> Observable<[Articles]> {
+    fileprivate func getArticles(fetchedRequest: NSFetchRequest<NSFetchRequestResult>) -> [Articles] {
         
         let managedContext = getManagedContext()
         
@@ -198,13 +190,11 @@ class LocalStorage {
                 articles.append(article)
             }
             
-            articleSubject.onNext(articles)
+            return articles
         } catch let error {
-            articleSubject.onError(error)
+            debug(value: "Error while getArticles -> \(error.localizedDescription)")
+            return []
         }
-        
-        
-        return articleSubject
     }
     
     

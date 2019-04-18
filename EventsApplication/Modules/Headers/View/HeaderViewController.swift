@@ -64,13 +64,11 @@ extension HeadersViewController : HeaderView{
     
     func hideLoading() {
         self.emptyView?.hideLoading()
-         print("Repository view hide loading")
     }
     
     
     func handleError(error: Error) {
         DispatchQueue.main.async {
-            self.emptyView.showEmptyView()
             DialogHelper.presentErrorDialog(error: error, viewController: self)
         }
     }
