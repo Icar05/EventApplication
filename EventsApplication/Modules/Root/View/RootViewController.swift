@@ -69,14 +69,7 @@ extension RootViewController: UITabBarControllerDelegate {
         self.navigationItem.leftBarButtonItem = nil
         
         let current = self.viewControllers?[selectedIndex] as! TabItem
-        let buttons: [UIBarButtonItem?] = current.getNavBarButtons()
-        self.addButtonsToNavbar(right: buttons[0], left: buttons[1])
-    }
-    
-    
-    func addButtonsToNavbar(right: UIBarButtonItem?, left: UIBarButtonItem?){
-        self.navigationItem.rightBarButtonItem = right
-        self.navigationItem.leftBarButtonItem = left
+        self.navigationItem.rightBarButtonItem = current.getNavBarButton()
     }
 
 }

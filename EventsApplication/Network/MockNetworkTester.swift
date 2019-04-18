@@ -54,26 +54,6 @@ class MockNetworkTester{
     }
 
 
-    //done
-    func testGetHeadlinesByCategory(category: String){
-        NetworkServiceRx.shared
-            .getHeadlinesByCategory(category: category)
-            .observeOn(MainScheduler.instance)
-            .subscribe(
-                onNext: { (articles) in
-                self.debug(value: "-------------- On NEXT ")
-                self.debugArticles(articles: articles)
-            }, onError: { (error) in
-                self.debug(value: "-------------- On onError \(error.localizedDescription)")
-            }, onCompleted: {
-                self.debug(value: "-------------- On onCompleted ")
-            }, onDisposed: {
-                self.debug(value: "-------------- On onDisposed ")
-            }).disposed(by: disposibleBag)
-
-    }
-
-
 
     func testtGetEverythingByQuery(query: String){
         NetworkServiceRx.shared

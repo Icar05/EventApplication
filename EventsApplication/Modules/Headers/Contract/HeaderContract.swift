@@ -14,7 +14,6 @@ protocol HeaderPresenter: class {
     var interactor: HeadersInteractor! { get set }
     func onViewDidLoad()
     
-    func setCategory(category: String)
     func setCountry(country: String)
 }
 
@@ -24,7 +23,6 @@ protocol HeadersInteractor: class {
     
     func getHeadlinesByCountry(country: String) -> Observable<[Articles]>
     
-    func getHeadlinesByCategory(category: String) -> Observable<[Articles]>
 }
 
 protocol HeaderView: class {

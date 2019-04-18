@@ -16,7 +16,6 @@ class HeaderPresenterImpl {
     let disposeBag = DisposeBag()
     var view: HeaderView?
     var interactor: HeadersInteractor!
-    var category = ""
     var country = ""
     let repository = RepositoryImpl.shared
     
@@ -25,8 +24,6 @@ class HeaderPresenterImpl {
     func onViewDidLoad() {
             if(!country.isEmpty){
                 self.getHeadlines(country: country)
-            }else if(!category.isEmpty){
-                self.getHeadlines(category: category)
             }else{
                 self.getHeadlines()
             }
@@ -37,16 +34,8 @@ class HeaderPresenterImpl {
 
 extension HeaderPresenterImpl : HeaderPresenter{
     
-    
-    func setCategory(category: String) {
-        self.category = category
-        self.country = ""
-        self.getHeadlines(category: category)
-    }
-    
     func setCountry(country: String) {
         self.country = country
-        self.category = ""
         self.getHeadlines(country: country)
     }
     
@@ -93,30 +82,6 @@ extension HeaderPresenterImpl : HeaderPresenter{
                 print("Repository error ->  \(error.localizedDescription)")
                 
                 return Observable.just(self.repository.getHeadlines(country: country))
-            }
-            .subscribe(
-                onNext: { (articles) in
-                    print("Repository hide loading")
-                    self.view?.hideLoading()
-                    self.view?.updateTableView(articles: articles)
-            }).disposed(by: disposeBag)
-    }
-    
-    func getHeadlines(category: String) {
-        self.view?.showLoading()
-        self.interactor.getHeadlinesByCategory(category: category).asObservable()
-            .map{ articles  in
-                print("Repository input count -> \(articles.count)")
-                self.repository.saveArticles(articles: articles)
-            }
-            .map{ result in
-                self.repository.getHeadlines(category: category)
-            }
-            .catchError{ error in
-                self.view?.handleError(error: error)
-                print("Repository error ->  \(error.localizedDescription)")
-                
-                return Observable.just(self.repository.getHeadlines(category: category))
             }
             .subscribe(
                 onNext: { (articles) in

@@ -91,8 +91,8 @@ extension EverythingViewController : EverythingView{
 }
 extension EverythingViewController : TabItem{
     
-    func getNavBarButtons() -> [UIBarButtonItem?] {
-        return [createNavItem(title: queryTabItemTitle, selector: "selectQuery"),nil]
+    func getNavBarButton() -> UIBarButtonItem? {
+        return createNavItem(title: queryTabItemTitle, selector: "selectQuery")
     }
     
     @objc func selectQuery(){

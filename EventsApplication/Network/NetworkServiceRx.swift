@@ -72,33 +72,6 @@ class NetworkServiceRx {
     }
 
 
-
-    //  headers by category. get values from selector
-    func getHeadlinesByCategory(category: String) -> Observable<[Articles]>{
-        return Observable<[Articles]>.create({[weak self] (observer) -> Disposable in
-            let request = self?.sessionManager.request(UrlRouter.getHeadlinesByCategory(category))
-                .validate()
-                .responseJSON { (response) in
-                    switch response.result {
-                    case .success( _):
-
-                        let responseModel  = try! self!.jsonDecoder.decode(Json4Swift_Base.self, from:response.data!)
-                        observer.onNext(responseModel.articles!)
-                        observer.onCompleted()
-
-                    case .failure(let error):
-                        self?.debug(value: "getHeadlinesByCategory: \(error.localizedDescription)")
-                        observer.onError(error)
-                    }
-            }
-            return Disposables.create {
-                request?.cancel()
-            }
-        })
-    }
-
-
-
     //  everything by query
     func getEverythingByQuery(query: String) -> Observable<[Articles]>{
         return Observable<[Articles]>.create({[weak self] (observer) -> Disposable in

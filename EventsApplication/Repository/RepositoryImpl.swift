@@ -34,10 +34,6 @@ class RepositoryImpl : Repository {
         return localStorage.getHeadlines(country:country)
     }
     
-    func getHeadlines(category: String) -> [Articles] {
-        return localStorage.getHeadlines(category:category)
-    }
-    
     func getEverything(query: String) -> [Articles] {
         return localStorage.getEverything(query: query)
     }

@@ -73,17 +73,6 @@ class LocalStorage {
         
         return results
     }
-    
-    func getHeadlines(category: String) -> [Articles] {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: articleTableName)
-            fetchRequest.predicate = NSPredicate(format: "\(articleCategory) = %@ ", category)
-        
-        let result =  getArticles(fetchedRequest: fetchRequest)
-        
-            debug(value: "getHeadlines ->  category \(result.count)")
-        
-        return result
-    }
 
     
     /*

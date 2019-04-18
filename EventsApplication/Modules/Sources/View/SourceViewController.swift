@@ -89,8 +89,8 @@ extension SourcesViewController : SourcesView{
 
 extension SourcesViewController: TabItem{
     
-    func getNavBarButtons() -> [UIBarButtonItem?] {
-        return [createNavItem(title: categoryTabItemTitle, selector: "selectCategory"), nil]
+    func getNavBarButton() -> UIBarButtonItem? {
+        return createNavItem(title: categoryTabItemTitle, selector: "selectCategory")
     }
     
     @objc func selectCategory(){

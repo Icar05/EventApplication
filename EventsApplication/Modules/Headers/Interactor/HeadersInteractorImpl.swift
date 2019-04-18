@@ -22,11 +22,6 @@ class HeadersInteractorImpl: HeadersInteractor {
             .map{ return self.transformHeaders(articles: $0, language: country, category: nil)}
     }
     
-    func getHeadlinesByCategory(category: String) -> Observable<[Articles]> {
-        return NetworkServiceRx.shared.getHeadlinesByCategory(category:category)
-            .map{ return self.transformHeaders(articles: $0, language: CountryUtil.getDefaultCountry(), category: category)}
-    }
-    
     
     func transformHeaders(articles: [Articles], language: String?, category: String? ) -> [Articles]{
         var output: [Articles]  = []
@@ -39,8 +34,8 @@ class HeadersInteractorImpl: HeadersInteractor {
                 nUrlToImage: article.urlToImage ?? "",
                 nDate: article.publishedAt ?? "",
                 nAuthor: article.author ?? "",
-                nLanguage: CountryUtil.getDefaultCountry(),
-                nCategory: "")
+                nLanguage: language ?? CountryUtil.getDefaultCountry(),
+                nCategory: category ?? "")
             
             
             output.append(articleObject)

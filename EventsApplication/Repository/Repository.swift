@@ -18,8 +18,6 @@ protocol Repository{
     func getHeadlines() -> [Articles]
     
     func getHeadlines(country: String) -> [Articles]
-
-    func getHeadlines(category: String) -> [Articles]
     
     func getEverything(query: String) -> [Articles]
 
