@@ -13,11 +13,11 @@ class MockNetworkTester{
   
    let disposibleBag = DisposeBag()
     
+    let repository: Repository = RepositoryImpl.shared
 
     // done
     func testGetDefaultHeadlines(){
-            NetworkServiceRx.shared
-                .getDefaultHeadlines()
+            repository.loadHeadlines()
                 .observeOn(MainScheduler.instance)
                 .subscribe(
                    onNext: { (articles) in
@@ -36,8 +36,7 @@ class MockNetworkTester{
 
     //done
     func testGetHeadlinesByCountry(country: String){
-        NetworkServiceRx.shared
-            .getHeadlinesByCountry(country: country)
+       repository.loadHeadlines(country: country)
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { (articles) in
@@ -56,8 +55,7 @@ class MockNetworkTester{
 
 
     func testtGetEverythingByQuery(query: String){
-        NetworkServiceRx.shared
-            .getEverythingByQuery(query: query)
+            repository.loadEverything(query: query)
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { (articles) in
@@ -76,8 +74,7 @@ class MockNetworkTester{
 
 
     func testGetSourcesByCategory(category: String){
-        NetworkServiceRx.shared
-            .getSourcesByCategory(category: category)
+            repository.loadSourcesByCategory(category: category)
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { (sources) in

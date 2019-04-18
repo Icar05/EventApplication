@@ -13,7 +13,7 @@ class SourcesInteractorImpl: SourcesInteractor {
     
     
     func getSourcesByCategory(category: String) -> Observable<[Sources]> {
-        return NetworkServiceRx.shared.getSourcesByCategory(category: category)
+        return RepositoryImpl.shared.loadSourcesByCategory(category:category)
     }
     
     

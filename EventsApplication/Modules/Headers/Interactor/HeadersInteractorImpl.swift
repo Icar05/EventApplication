@@ -12,13 +12,13 @@ import RxSwift
 class HeadersInteractorImpl: HeadersInteractor {
     
     func getDefaultHeadlines() -> Observable<[Articles]> {
-        return NetworkServiceRx.shared.getDefaultHeadlines()
+        return RepositoryImpl.shared.loadHeadlines()
             .map{ return self.transformHeaders(articles: $0, language: CountryUtil.getDefaultCountry(), category: nil)}
     }
     
     
     func getHeadlinesByCountry(country: String) -> Observable<[Articles]> {
-        return NetworkServiceRx.shared.getHeadlinesByCountry(country:country)
+        return RepositoryImpl.shared.loadHeadlines(country:country)
             .map{ return self.transformHeaders(articles: $0, language: country, category: nil)}
     }
     

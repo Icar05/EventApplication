@@ -47,8 +47,8 @@ extension HeaderPresenterImpl : HeaderPresenter{
         self.view?.showLoading()
         self.interactor.getDefaultHeadlines().asObservable()
             .map{ articles  in
-                print("Repository input count -> \(articles.count)")
-                self.repository.saveArticles(articles: articles)
+                let result = self.repository.saveArticles(articles: articles)
+                print("Repository input count -> \(articles.count), result of save \(result)")
             }
             .map{ result in
                 self.repository.getHeadlines()
@@ -71,8 +71,8 @@ extension HeaderPresenterImpl : HeaderPresenter{
         self.view?.showLoading()
         self.interactor.getHeadlinesByCountry(country: country).asObservable()
             .map{ articles  in
-                print("Repository input count -> \(articles.count)")
-                self.repository.saveArticles(articles: articles)
+                let result = self.repository.saveArticles(articles: articles)
+                print("Repository input count -> \(articles.count), result of save \(result)")
             }
             .map{ result in
                 self.repository.getHeadlines(country: country)

@@ -28,9 +28,8 @@ class EverythingPresenterImpl {
     }
 }
 extension EverythingPresenterImpl : EverythingPresenter{
-    
+   
 
-    
     func setQuery(query: String) {
         self.query = query.isEmpty ? ValueForSelector.defaultQuery: query
         self.getEverything(query: query)
@@ -43,8 +42,8 @@ extension EverythingPresenterImpl : EverythingPresenter{
         self.view?.showLoading()
         self.interactor.getEverythingByQuery(query: query).asObservable()
             .map{ articles  in
-                print("Repository input count -> \(articles.count)")
-                self.repository.saveArticles(articles: articles)
+                let result = self.repository.saveArticles(articles: articles)
+                print("Repository input count -> \(articles.count), result of save \(result)")
             }
             .map{ result in
                 self.repository.getEverything(query: query)

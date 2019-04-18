@@ -23,4 +23,12 @@ protocol Repository{
 
     func getSourcesByCategory(category: String) -> [Sources]
     
+    func loadHeadlines() -> Observable<[Articles]>
+    
+    func loadHeadlines(country: String) -> Observable<[Articles]>
+    
+    func loadEverything(query: String) -> Observable<[Articles]>
+    
+    func loadSourcesByCategory(category: String) -> Observable<[Sources]>
+    
 }

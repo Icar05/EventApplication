@@ -8,13 +8,11 @@ import Alamofire
 class NetworkServiceRx {
 
     
-    
-    static let shared = NetworkServiceRx()
     let sessionManager: SessionManager // = Alamofire.SessionManager.default
     let jsonDecoder: JSONDecoder = JSONDecoder()
 
 
-    private init(){
+    init(){
         let configuration = URLSessionConfiguration.default
             configuration.timeoutIntervalForRequest = 20.0
         self.sessionManager = Alamofire.SessionManager(configuration: configuration)

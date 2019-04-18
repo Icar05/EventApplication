@@ -11,8 +11,10 @@ import RxSwift
 
 class EverythingInteractorImpl: EverythingInteractor {
     
+    
+    
     func getEverythingByQuery(query: String) -> Observable<[Articles]> {
-        return NetworkServiceRx.shared.getEverythingByQuery(query: query)
+        return RepositoryImpl.shared.loadEverything(query:query)
             .map{ return self.transformEverything(articles: $0, language: nil, category: nil)}
         
     }
