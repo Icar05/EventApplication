@@ -7,6 +7,6 @@ This is simple news application which get news based on news api: https://newsap
 
 There are animated dialogs for select query or country:
 
-![alt text](https://github.com/Icar05/EventApplication/blob/master/iOSNewsQuery.jpg)   ![alt text](https://github.com/Icar05/EventApplication/blob/master/IMG-0041.jpg) 
+![alt text](https://github.com/Icar05/EventApplication/blob/master/iOSQuery.jpg)   ![alt text](https://github.com/Icar05/EventApplication/blob/master/IMG-0041.jpg) 
 
 18.04.2019
