@@ -20,3 +20,12 @@
 "Select query" = "Напишите запрос";
 "Back" = "Назад";
 "Error" = "Ошибка";
+
+// categories
+"business" = "Бизнес";
+"entertainment" = "Развлечения";
+"general" = "Общее";
+"health" = "Здоровье";
+"science" = "Наука";
+"sports" = "Спорт";
+"technology" = "Технологии";
