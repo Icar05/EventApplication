@@ -8,5 +8,8 @@
 /* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "axG-LQ-ZSb"; */
 "axG-LQ-ZSb.normalTitle" = "Отмена";
 
+/* Class = "UITextField"; placeholder = " Enter query ..."; ObjectID = "bpN-xl-erB"; */
+"bpN-xl-erB.placeholder" = " Введите запрос ...";
+
 /* Class = "UILabel"; text = "Title"; ObjectID = "xHr-gc-gJ7"; */
 "xHr-gc-gJ7.text" = "Название";
