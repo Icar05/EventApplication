@@ -50,60 +50,53 @@ class LocalStorage {
     
     /*
         Read headlines
+        debug(value: "getHeadlines ->  default \(results.count)")
      */
     func getHeadlines() -> [Articles]{
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: articleTableName)
             fetchRequest.predicate = NSPredicate(format: "\(articleLanguage) = %@", CountryUtil.getDefaultCountry())
-        
-        let results =  getArticles(fetchedRequest: fetchRequest)
-        
-            debug(value: "getHeadlines ->  default \(results.count)")
-        
-        return results
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: articleDate, ascending: false)]
+        return getArticles(fetchedRequest: fetchRequest)
     }
     
+    
+    /*
+        read headlines
+        debug(value: "getHeadlines ->  country \(results.count)")
+     */
     func getHeadlines(country: String) -> [Articles]{
-        
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: articleTableName)
             fetchRequest.predicate = NSPredicate(format: "\(articleLanguage) = %@", country)
-        
-        let results =  getArticles(fetchedRequest: fetchRequest)
-        
-            debug(value: "getHeadlines ->  country \(results.count)")
-        
-        return results
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: articleDate, ascending: false)]
+        return getArticles(fetchedRequest: fetchRequest)
     }
 
     
     /*
       Read evertything
+      debug(value: "getEverything ->  query \(results.count)")
     */
     func getEverything(query: String) -> [Articles]{
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: articleTableName)
             fetchRequest.predicate = NSPredicate(format: "\(articleTitle) contains[c] %@ OR \(articleDescription) contains[c] %@", query, query)
-        
-        let results =  getArticles(fetchedRequest: fetchRequest)
-        
-            debug(value: "getEverything ->  query \(results.count)")
-        
-        return results
-        
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: articleDate, ascending: false)]
+        return getArticles(fetchedRequest: fetchRequest)
     }
     
     
     /*
       Read sources
+      debug(value: "getSourcesByCategory ->  category \(results.count)")
      */
     func getSourcesByCategory(category: String) -> [Sources] {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: sourcesTableName)
             fetchRequest.predicate = NSPredicate(format: "\(sourcesCategory) = %@", category)
-        
-        let results =  getSources(fetchedRequest: fetchRequest)
-        
-            debug(value: "getSourcesByCategory ->  category \(results.count)")
-        
-        return results
+        return getSources(fetchedRequest: fetchRequest)
     }
+    
+    
+    
+    
     
     
     /*
