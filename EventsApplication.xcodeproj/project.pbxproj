@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -91,6 +91,10 @@
 		9BEB1802221C05CF003F8C9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BEB1800221C05CF003F8C9A /* LaunchScreen.storyboard */; };
 		9BEB180D221C05D0003F8C9A /* EventsApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEB180C221C05D0003F8C9A /* EventsApplicationTests.swift */; };
 		9BEB1818221C05D0003F8C9A /* EventsApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEB1817221C05D0003F8C9A /* EventsApplicationUITests.swift */; };
+		EDD2B16C289ADFDA004DAC2D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B16A289ADFDA004DAC2D /* DetailViewController.swift */; };
+		EDD2B16D289ADFDA004DAC2D /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD2B16B289ADFDA004DAC2D /* DetailViewController.xib */; };
+		EDD2B16F289ADFE8004DAC2D /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B16E289ADFE8004DAC2D /* DetailPresenter.swift */; };
+		EDD2B171289ADFF7004DAC2D /* DetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B170289ADFF7004DAC2D /* DetailDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -210,6 +214,10 @@
 		9BEB1819221C05D0003F8C9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DE1443A2FDAB8AF65DD72B5 /* Pods-EventsApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApplication.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventsApplication/Pods-EventsApplication.debug.xcconfig"; sourceTree = "<group>"; };
 		AC43CD9C8AB5AE50429C62F2 /* Pods-EventsApplicationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApplicationUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventsApplicationUITests/Pods-EventsApplicationUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EDD2B16A289ADFDA004DAC2D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		EDD2B16B289ADFDA004DAC2D /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		EDD2B16E289ADFE8004DAC2D /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		EDD2B170289ADFF7004DAC2D /* DetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,17 +350,13 @@
 		1A75A84B224C3BA60033C852 /* custom */ = {
 			isa = PBXGroup;
 			children = (
-				9B9AB2A022647A9F00712530 /* extension */,
-				9B9AB29F22647A8800712530 /* views */,
-				1A9ED613226257060030092D /* animation */,
 				9B6FB7B4225B75BE00439F98 /* cell */,
-				9B9EB59E2251E90F00570C37 /* dialogs */,
 				1A3F1A1A224D410D008B1486 /* emptyView */,
 			);
 			path = custom;
 			sourceTree = "<group>";
 		};
-		1A918BAD22497E7C00D34DCE /* Util */ = {
+		1A918BAD22497E7C00D34DCE /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
 				1A918BAB224971C400D34DCE /* ValueForSelector.swift */,
@@ -361,7 +365,7 @@
 				1A69B9C3224F65EA00DD811C /* DateTimeUtil.swift */,
 				9B67F3A12267489B004402FB /* CountryUtil.swift */,
 			);
-			path = Util;
+			path = Dependencies;
 			sourceTree = "<group>";
 		};
 		1A918BB12249824E00D34DCE /* application sources */ = {
@@ -576,6 +580,9 @@
 		9B67F39C2267010E004402FB /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				9B11D172221ED98900BFEBD4 /* Network */,
+				1A611C12224AE371008E9D14 /* Models */,
+				1AB264E62265045200D298F4 /* Repository */,
 				9B67F39D2267012C004402FB /* LocalStorage.swift */,
 			);
 			path = Data;
@@ -688,14 +695,6 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		9B9661EC221E9050008C512D /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				9BEB17F7221C05CE003F8C9A /* AppDelegate.swift */,
-			);
-			path = Application;
-			sourceTree = "<group>";
-		};
 		9B9661EE221E9227008C512D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -728,23 +727,6 @@
 				9B966246221ED5B7008C512D /* ApplicationNavigator.swift */,
 			);
 			path = ApplicationNavigator;
-			sourceTree = "<group>";
-		};
-		9B9AB29F22647A8800712530 /* views */ = {
-			isa = PBXGroup;
-			children = (
-				9B6FB7BB225B906300439F98 /* UIPicturedScrollView.swift */,
-				9B257EDC225DFEC20026C460 /* UIBluredStackView.swift */,
-			);
-			path = views;
-			sourceTree = "<group>";
-		};
-		9B9AB2A022647A9F00712530 /* extension */ = {
-			isa = PBXGroup;
-			children = (
-				9B5E70F3225F260100363A35 /* Extension.swift */,
-			);
-			path = extension;
 			sourceTree = "<group>";
 		};
 		9B9AB2A322648F0000712530 /* baseDialog */ = {
@@ -800,16 +782,12 @@
 			isa = PBXGroup;
 			children = (
 				9B67F39C2267010E004402FB /* Data */,
-				1AB264E62265045200D298F4 /* Repository */,
+				EDD2B172289AE2CE004DAC2D /* Presentation */,
+				EDD2B173289AE2E8004DAC2D /* UI */,
+				EDD2B174289AE6F3004DAC2D /* AppSources */,
 				1A75A84B224C3BA60033C852 /* custom */,
-				1A611C12224AE371008E9D14 /* Models */,
 				9BEB1803221C05CF003F8C9A /* Info.plist */,
-				1A918BB12249824E00D34DCE /* application sources */,
-				1A918BAD22497E7C00D34DCE /* Util */,
-				9B11D172221ED98900BFEBD4 /* Network */,
-				9B966245221ED5AA008C512D /* ApplicationNavigator */,
 				9B9661EE221E9227008C512D /* Modules */,
-				9B9661EC221E9050008C512D /* Application */,
 			);
 			path = EventsApplication;
 			sourceTree = "<group>";
@@ -841,6 +819,64 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EDD2B168289ADF39004DAC2D /* screens */ = {
+			isa = PBXGroup;
+			children = (
+				EDD2B169289ADFB2004DAC2D /* Detail */,
+			);
+			path = screens;
+			sourceTree = "<group>";
+		};
+		EDD2B169289ADFB2004DAC2D /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				EDD2B175289B0328004DAC2D /* DetailImageCell */,
+				EDD2B16A289ADFDA004DAC2D /* DetailViewController.swift */,
+				EDD2B16B289ADFDA004DAC2D /* DetailViewController.xib */,
+				EDD2B16E289ADFE8004DAC2D /* DetailPresenter.swift */,
+				EDD2B170289ADFF7004DAC2D /* DetailDataSource.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		EDD2B172289AE2CE004DAC2D /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		EDD2B173289AE2E8004DAC2D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				9B9EB59E2251E90F00570C37 /* dialogs */,
+				1A9ED613226257060030092D /* animation */,
+				EDD2B168289ADF39004DAC2D /* screens */,
+				9B257EDC225DFEC20026C460 /* UIBluredStackView.swift */,
+				9B6FB7BB225B906300439F98 /* UIPicturedScrollView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		EDD2B174289AE6F3004DAC2D /* AppSources */ = {
+			isa = PBXGroup;
+			children = (
+				1A918BAD22497E7C00D34DCE /* Dependencies */,
+				1A918BB12249824E00D34DCE /* application sources */,
+				9B966245221ED5AA008C512D /* ApplicationNavigator */,
+				9B5E70F3225F260100363A35 /* Extension.swift */,
+				9BEB17F7221C05CE003F8C9A /* AppDelegate.swift */,
+			);
+			path = AppSources;
+			sourceTree = "<group>";
+		};
+		EDD2B175289B0328004DAC2D /* DetailImageCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DetailImageCell;
+			sourceTree = "<group>";
+		};
 		EDD351A1284122E6FE868852 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -863,7 +899,6 @@
 				9BEB17F0221C05CE003F8C9A /* Sources */,
 				9BEB17F1221C05CE003F8C9A /* Frameworks */,
 				9BEB17F2221C05CE003F8C9A /* Resources */,
-				6D181485408A15DF3423A1BE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -962,6 +997,7 @@
 			files = (
 				1A3F1A09224D19A5008B1486 /* SourcesDetail.storyboard in Resources */,
 				9B6FB7B8225B830C00439F98 /* ColorTheme.xcassets in Resources */,
+				EDD2B16D289ADFDA004DAC2D /* DetailViewController.xib in Resources */,
 				1A3F1A15224D34F9008B1486 /* SourcesCell.xib in Resources */,
 				9BEB1802221C05CF003F8C9A /* LaunchScreen.storyboard in Resources */,
 				9BB5C205225F6E1A0006A74E /* SelectionDialog.storyboard in Resources */,
@@ -1018,23 +1054,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6D181485408A15DF3423A1BE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EventsApplication/Pods-EventsApplication-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EventsApplication/Pods-EventsApplication-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EventsApplication/Pods-EventsApplication-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C1C31A684A58AC172C4332C3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1073,6 +1092,7 @@
 				1A69B9C4224F65EA00DD811C /* DateTimeUtil.swift in Sources */,
 				1A3F19F7224D13AE008B1486 /* ArticleDetailContract.swift in Sources */,
 				9B50C465225231F100C720E7 /* UISearchDialog.swift in Sources */,
+				EDD2B171289ADFF7004DAC2D /* DetailDataSource.swift in Sources */,
 				9B966244221ED556008C512D /* BaseCreator.swift in Sources */,
 				1A3F1A07224D1943008B1486 /* SourcesDetailViewController.swift in Sources */,
 				9B563146224B73BA005B41A6 /* EverythingCreator.swift in Sources */,
@@ -1116,12 +1136,14 @@
 				9B56315F224B7C95005B41A6 /* HeaderCreator.swift in Sources */,
 				9B11D179221EDB2500BFEBD4 /* NetworkServiceRx.swift in Sources */,
 				1A3F1A01224D17E5008B1486 /* SourceDetailContract.swift in Sources */,
+				EDD2B16C289ADFDA004DAC2D /* DetailViewController.swift in Sources */,
 				9B11D17A221EDB2500BFEBD4 /* UrlRouter.swift in Sources */,
 				1AF3B80A2226D911004FA784 /* MockNetworkTester.swift in Sources */,
 				1A611C11224AE08B008E9D14 /* Source.swift in Sources */,
 				1A611C0B224ADF7C008E9D14 /* Sources.swift in Sources */,
 				9B84A4FD224CC4A400E747FC /* ArticleDetailInteractorImpl.swift in Sources */,
 				1A918BAF22497E8D00D34DCE /* AuthUtil.swift in Sources */,
+				EDD2B16F289ADFE8004DAC2D /* DetailPresenter.swift in Sources */,
 				1A611C0F224ADFEF008E9D14 /* Articles.swift in Sources */,
 				1A75A84F224C45890033C852 /* DialogHelper.swift in Sources */,
 				9B56312B224B62FB005B41A6 /* HeaderContract.swift in Sources */,
