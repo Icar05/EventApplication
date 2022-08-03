@@ -17,21 +17,31 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dP0-nn-92s" userLabel="Container">
+                    <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="dP0-nn-92s" userLabel="Container">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="213.5"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MWm-a0-IOz">
-                                <rect key="frame" x="16" y="8" width="288" height="197.5"/>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x6N-KG-UWz" userLabel="Cover">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="213.5"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb" translatesAutoresizingMaskIntoConstraints="NO" id="MWm-a0-IOz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="213.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MWm-a0-IOz" secondAttribute="height" multiplier="1.5:1" id="t0k-DR-jDc"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="MWm-a0-IOz" firstAttribute="leading" secondItem="dP0-nn-92s" secondAttribute="leading" constant="16" id="Afg-K1-Vrk"/>
-                            <constraint firstAttribute="bottom" secondItem="MWm-a0-IOz" secondAttribute="bottom" constant="8" id="Yf4-Id-OI2"/>
-                            <constraint firstItem="MWm-a0-IOz" firstAttribute="top" secondItem="dP0-nn-92s" secondAttribute="top" constant="8" id="nqL-Ig-FS1"/>
-                            <constraint firstAttribute="width" secondItem="dP0-nn-92s" secondAttribute="height" multiplier="1.5:1" id="p15-Qj-bNt"/>
-                            <constraint firstAttribute="trailing" secondItem="MWm-a0-IOz" secondAttribute="trailing" constant="16" id="qtV-Aj-F1y"/>
+                            <constraint firstItem="MWm-a0-IOz" firstAttribute="leading" secondItem="dP0-nn-92s" secondAttribute="leading" id="Afg-K1-Vrk"/>
+                            <constraint firstItem="x6N-KG-UWz" firstAttribute="leading" secondItem="dP0-nn-92s" secondAttribute="leading" id="Gke-QF-BwT"/>
+                            <constraint firstItem="x6N-KG-UWz" firstAttribute="top" secondItem="dP0-nn-92s" secondAttribute="top" id="Ix8-e5-70w"/>
+                            <constraint firstAttribute="trailing" secondItem="x6N-KG-UWz" secondAttribute="trailing" id="TXY-Z4-xqF"/>
+                            <constraint firstItem="MWm-a0-IOz" firstAttribute="bottom" secondItem="dP0-nn-92s" secondAttribute="bottom" id="Yf4-Id-OI2"/>
+                            <constraint firstAttribute="bottom" secondItem="x6N-KG-UWz" secondAttribute="bottom" id="aY5-Pd-Bkd"/>
+                            <constraint firstItem="MWm-a0-IOz" firstAttribute="top" secondItem="dP0-nn-92s" secondAttribute="top" id="nqL-Ig-FS1"/>
+                            <constraint firstItem="MWm-a0-IOz" firstAttribute="trailing" secondItem="dP0-nn-92s" secondAttribute="trailing" id="qtV-Aj-F1y"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -57,4 +67,7 @@
             <point key="canvasLocation" x="132" y="63"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="thumb" width="800" height="600"/>
+    </resources>
 </document>

@@ -30,18 +30,16 @@ public final class DetailPresenter{
     
     
     /**
-     self.name.text = article?.title
      self.desc.text = article?.description
      self.date.text = DateTimeUtil.convertDateString(dateString: article?.publishedAt)
      self.autor.text = article?.author
-     self.prepareStackView()
-     self.prepareImage()
      self.prepareUrl()
      */
-    private func prepareCells(article: Articles) -> [DetailImageCellModel]{
+    private func prepareCells(article: Articles) -> [DetailModel]{
         
         return [
-            DetailImageCellModel(image: article.urlToImage)
+            DetailImageCellModel(image: article.urlToImage),
+            DetailTitleCellModel(title: article.title!)
         ]
         
     }

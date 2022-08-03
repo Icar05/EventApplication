@@ -28,9 +28,16 @@ extension UIImageView  {
         if let current = link, let url = URL(string: current){
             let task: URLSessionDataTask = URLSession.shared.dataTask(with: URLRequest(url: url), completionHandler: {
                 (data, response, error) -> Void in
+                
                 DispatchQueue.main.async {
                     self.contentMode =  contentMode
-                    if let data = data { self.image = UIImage(data: data) }
+                    if let data = data, let image = UIImage(data: data) {
+                        print("i here! \(image)")
+                        self.image = image// UIImage(data: data)
+                        
+                    }else{
+                        self.image = .defaultImage
+                    }
                 }
             })
             

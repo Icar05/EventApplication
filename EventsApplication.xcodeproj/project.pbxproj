@@ -98,6 +98,9 @@
 		EDD2B178289B0CD2004DAC2D /* DetailImageCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B176289B0CD2004DAC2D /* DetailImageCellTableViewCell.swift */; };
 		EDD2B179289B0CD2004DAC2D /* DetailImageCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD2B177289B0CD2004DAC2D /* DetailImageCellTableViewCell.xib */; };
 		EDD2B17B289B0CE3004DAC2D /* DetailImageCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B17A289B0CE3004DAC2D /* DetailImageCellModel.swift */; };
+		EDD2B17F289B2CDF004DAC2D /* DetailTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B17D289B2CDF004DAC2D /* DetailTitleCell.swift */; };
+		EDD2B180289B2CDF004DAC2D /* DetailTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD2B17E289B2CDF004DAC2D /* DetailTitleCell.xib */; };
+		EDD2B182289B2CF0004DAC2D /* DetailTitleCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B181289B2CF0004DAC2D /* DetailTitleCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -224,6 +227,9 @@
 		EDD2B176289B0CD2004DAC2D /* DetailImageCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageCellTableViewCell.swift; sourceTree = "<group>"; };
 		EDD2B177289B0CD2004DAC2D /* DetailImageCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailImageCellTableViewCell.xib; sourceTree = "<group>"; };
 		EDD2B17A289B0CE3004DAC2D /* DetailImageCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageCellModel.swift; sourceTree = "<group>"; };
+		EDD2B17D289B2CDF004DAC2D /* DetailTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTitleCell.swift; sourceTree = "<group>"; };
+		EDD2B17E289B2CDF004DAC2D /* DetailTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTitleCell.xib; sourceTree = "<group>"; };
+		EDD2B181289B2CF0004DAC2D /* DetailTitleCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTitleCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -836,6 +842,7 @@
 		EDD2B169289ADFB2004DAC2D /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				EDD2B17C289B2CBF004DAC2D /* DetailTitleCell */,
 				EDD2B175289B0328004DAC2D /* DetailImageCell */,
 				EDD2B16A289ADFDA004DAC2D /* DetailViewController.swift */,
 				EDD2B16B289ADFDA004DAC2D /* DetailViewController.xib */,
@@ -884,6 +891,16 @@
 				EDD2B17A289B0CE3004DAC2D /* DetailImageCellModel.swift */,
 			);
 			path = DetailImageCell;
+			sourceTree = "<group>";
+		};
+		EDD2B17C289B2CBF004DAC2D /* DetailTitleCell */ = {
+			isa = PBXGroup;
+			children = (
+				EDD2B17D289B2CDF004DAC2D /* DetailTitleCell.swift */,
+				EDD2B17E289B2CDF004DAC2D /* DetailTitleCell.xib */,
+				EDD2B181289B2CF0004DAC2D /* DetailTitleCellModel.swift */,
+			);
+			path = DetailTitleCell;
 			sourceTree = "<group>";
 		};
 		EDD351A1284122E6FE868852 /* Pods */ = {
@@ -1005,6 +1022,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDD2B180289B2CDF004DAC2D /* DetailTitleCell.xib in Resources */,
 				1A3F1A09224D19A5008B1486 /* SourcesDetail.storyboard in Resources */,
 				9B6FB7B8225B830C00439F98 /* ColorTheme.xcassets in Resources */,
 				EDD2B16D289ADFDA004DAC2D /* DetailViewController.xib in Resources */,
@@ -1120,6 +1138,7 @@
 				1A69B9C4224F65EA00DD811C /* DateTimeUtil.swift in Sources */,
 				1A3F19F7224D13AE008B1486 /* ArticleDetailContract.swift in Sources */,
 				9B50C465225231F100C720E7 /* UISearchDialog.swift in Sources */,
+				EDD2B182289B2CF0004DAC2D /* DetailTitleCellModel.swift in Sources */,
 				EDD2B171289ADFF7004DAC2D /* DetailDataSource.swift in Sources */,
 				9B966244221ED556008C512D /* BaseCreator.swift in Sources */,
 				1A3F1A07224D1943008B1486 /* SourcesDetailViewController.swift in Sources */,
@@ -1174,6 +1193,7 @@
 				9B84A4FD224CC4A400E747FC /* ArticleDetailInteractorImpl.swift in Sources */,
 				1A918BAF22497E8D00D34DCE /* AuthUtil.swift in Sources */,
 				EDD2B16F289ADFE8004DAC2D /* DetailPresenter.swift in Sources */,
+				EDD2B17F289B2CDF004DAC2D /* DetailTitleCell.swift in Sources */,
 				1A611C0F224ADFEF008E9D14 /* Articles.swift in Sources */,
 				1A75A84F224C45890033C852 /* DialogHelper.swift in Sources */,
 				9B56312B224B62FB005B41A6 /* HeaderContract.swift in Sources */,

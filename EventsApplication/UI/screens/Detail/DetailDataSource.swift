@@ -18,12 +18,13 @@ protocol DetailCell: UITableViewCell {
 
 final class DetailDataSource : NSObject, UITableViewDataSource, UITableViewDelegate{
 
+    
+    
     private var data: [DetailModel] = []
     
     func setData(data: [DetailModel]){
         self.data = data
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return  data.count
