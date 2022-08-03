@@ -43,8 +43,8 @@ class DetailImageCellTableViewCell: UITableViewCell, DetailCell {
         
         print("imageUrl: \(imgUrl)")
 
-
-        self.task = self.detailImage.downloadImageFrom(link: imgUrl, contentMode: .scaleAspectFit)
+        self.detailImage.image = .defaultImage
+//        self.task = self.detailImage.downloadImageFrom(link: imgUrl, contentMode: .scaleAspectFit)
 
         print("load image task \(String(describing: task))")
     }
