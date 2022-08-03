@@ -36,7 +36,7 @@ final class DetailDataSource : NSObject, UITableViewDataSource, UITableViewDeleg
         let id = model.reuseIdentifier
         let cell = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath)  as! DetailCell
             cell.update(with: model)
-
+        
         return cell
     }
     

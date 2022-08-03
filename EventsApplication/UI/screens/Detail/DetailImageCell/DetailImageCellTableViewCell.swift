@@ -15,6 +15,7 @@ class DetailImageCellTableViewCell: UITableViewCell, DetailCell {
     
     @IBOutlet weak var detailImage: UIImageView!
     
+    @IBOutlet weak var container: UIView!
     
 
     override func awakeFromNib() {
