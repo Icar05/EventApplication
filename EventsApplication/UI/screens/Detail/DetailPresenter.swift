@@ -30,7 +30,6 @@ public final class DetailPresenter{
     
     
     /**
-     self.desc.text = article?.description
      self.date.text = DateTimeUtil.convertDateString(dateString: article?.publishedAt)
      self.autor.text = article?.author
      self.prepareUrl()
@@ -39,7 +38,9 @@ public final class DetailPresenter{
         
         return [
             DetailImageCellModel(image: article.urlToImage),
-            DetailTitleCellModel(title: article.title!)
+            DetailTitleCellModel(title: article.title!),
+            DetailDescriptionCellModel(description: article.description ?? ""),
+            DetailUrlCellModel(url: article.url ?? "")
         ]
         
     }
