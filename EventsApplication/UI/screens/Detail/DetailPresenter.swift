@@ -30,9 +30,8 @@ public final class DetailPresenter{
     
     
     /**
-     self.date.text = DateTimeUtil.convertDateString(dateString: article?.publishedAt)
+     self.date.text =
      self.autor.text = article?.author
-     self.prepareUrl()
      */
     private func prepareCells(article: Articles) -> [DetailModel]{
         
@@ -40,7 +39,13 @@ public final class DetailPresenter{
             DetailImageCellModel(image: article.urlToImage),
             DetailTitleCellModel(title: article.title!),
             DetailDescriptionCellModel(description: article.description ?? ""),
-            DetailUrlCellModel(url: article.url ?? "")
+            DetailUrlCellModel(url: article.url ?? ""),
+            DetailAuthorCellModel(
+                author: article.author,
+                date: DateTimeUtil.convertDateString(
+                    dateString: article.publishedAt
+                )
+            )
         ]
         
     }

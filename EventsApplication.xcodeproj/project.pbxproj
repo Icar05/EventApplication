@@ -107,6 +107,9 @@
 		EDD2B18D289B3A5C004DAC2D /* DetailUrlCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B18B289B3A5C004DAC2D /* DetailUrlCell.swift */; };
 		EDD2B18E289B3A5C004DAC2D /* DetailUrlCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD2B18C289B3A5C004DAC2D /* DetailUrlCell.xib */; };
 		EDD2B190289B3A6F004DAC2D /* DetailUrlCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B18F289B3A6F004DAC2D /* DetailUrlCellModel.swift */; };
+		EDD2B194289B3F44004DAC2D /* DetailAuthorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B192289B3F44004DAC2D /* DetailAuthorCell.swift */; };
+		EDD2B195289B3F44004DAC2D /* DetailAuthorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD2B193289B3F44004DAC2D /* DetailAuthorCell.xib */; };
+		EDD2B197289B3F5F004DAC2D /* DetailAuthorCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B196289B3F5F004DAC2D /* DetailAuthorCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -242,6 +245,9 @@
 		EDD2B18B289B3A5C004DAC2D /* DetailUrlCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUrlCell.swift; sourceTree = "<group>"; };
 		EDD2B18C289B3A5C004DAC2D /* DetailUrlCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailUrlCell.xib; sourceTree = "<group>"; };
 		EDD2B18F289B3A6F004DAC2D /* DetailUrlCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUrlCellModel.swift; sourceTree = "<group>"; };
+		EDD2B192289B3F44004DAC2D /* DetailAuthorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAuthorCell.swift; sourceTree = "<group>"; };
+		EDD2B193289B3F44004DAC2D /* DetailAuthorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailAuthorCell.xib; sourceTree = "<group>"; };
+		EDD2B196289B3F5F004DAC2D /* DetailAuthorCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAuthorCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -854,6 +860,7 @@
 		EDD2B169289ADFB2004DAC2D /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				EDD2B191289B3E23004DAC2D /* DetailAuthorCell */,
 				EDD2B18A289B3A3E004DAC2D /* DetailUrlCell */,
 				EDD2B183289B376A004DAC2D /* DetailDescriptionCell */,
 				EDD2B17C289B2CBF004DAC2D /* DetailTitleCell */,
@@ -935,6 +942,16 @@
 				EDD2B18F289B3A6F004DAC2D /* DetailUrlCellModel.swift */,
 			);
 			path = DetailUrlCell;
+			sourceTree = "<group>";
+		};
+		EDD2B191289B3E23004DAC2D /* DetailAuthorCell */ = {
+			isa = PBXGroup;
+			children = (
+				EDD2B192289B3F44004DAC2D /* DetailAuthorCell.swift */,
+				EDD2B193289B3F44004DAC2D /* DetailAuthorCell.xib */,
+				EDD2B196289B3F5F004DAC2D /* DetailAuthorCellModel.swift */,
+			);
+			path = DetailAuthorCell;
 			sourceTree = "<group>";
 		};
 		EDD351A1284122E6FE868852 /* Pods */ = {
@@ -1065,6 +1082,7 @@
 				9BEB1802221C05CF003F8C9A /* LaunchScreen.storyboard in Resources */,
 				9BB5C205225F6E1A0006A74E /* SelectionDialog.storyboard in Resources */,
 				9BB5C21E225F74440006A74E /* InfoPlist.strings in Resources */,
+				EDD2B195289B3F44004DAC2D /* DetailAuthorCell.xib in Resources */,
 				9BB5C200225F6D960006A74E /* SearchDialog.storyboard in Resources */,
 				9B56313D224B6D11005B41A6 /* Everything.storyboard in Resources */,
 				9BB5C217225F72CE0006A74E /* EmptyView.xib in Resources */,
@@ -1172,6 +1190,7 @@
 				9B67F3A022672B2B004402FB /* Replacible.swift in Sources */,
 				1A3F1A05224D1879008B1486 /* SourceDetailPresenterImpl.swift in Sources */,
 				1A69B9C4224F65EA00DD811C /* DateTimeUtil.swift in Sources */,
+				EDD2B194289B3F44004DAC2D /* DetailAuthorCell.swift in Sources */,
 				1A3F19F7224D13AE008B1486 /* ArticleDetailContract.swift in Sources */,
 				9B50C465225231F100C720E7 /* UISearchDialog.swift in Sources */,
 				EDD2B182289B2CF0004DAC2D /* DetailTitleCellModel.swift in Sources */,
@@ -1181,6 +1200,7 @@
 				1A3F1A07224D1943008B1486 /* SourcesDetailViewController.swift in Sources */,
 				9B563146224B73BA005B41A6 /* EverythingCreator.swift in Sources */,
 				9B9EB5A32251E94A00570C37 /* UISelectionDialog.swift in Sources */,
+				EDD2B197289B3F5F004DAC2D /* DetailAuthorCellModel.swift in Sources */,
 				9B78808B224A13F600F7231A /* RootInteractorImpl.swift in Sources */,
 				1A3F1A1E224D413B008B1486 /* EmptyView.swift in Sources */,
 				9B56315A224B769E005B41A6 /* SourcesPresenterImpl.swift in Sources */,
