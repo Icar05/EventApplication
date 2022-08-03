@@ -13,10 +13,12 @@ class ApplicationNavigator {
     
     
     static func presentArticleDetailController(current: UIViewController?, article: Articles) {
-        let articleDetailViewController : ArticleDetailViewController = ArticleDetailCreator.assembleModule()
-            as! ArticleDetailViewController
-                articleDetailViewController.article = article
-        current?.navigationController?.pushViewController(articleDetailViewController, animated: true)
+        
+        let presenter = DetailPresenter(article: article)
+        let viewController = DetailViewController(presenter: presenter)
+        presenter.set(view: viewController)
+        
+        current?.navigationController?.pushViewController(viewController, animated: true)
     }
     
     static func presentSourcesDetailController(current: UIViewController?, sources: Sources) {

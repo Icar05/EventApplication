@@ -9,13 +9,14 @@
 import UIKit
 
 public final class DetailViewController: UIViewController {
-
-
+    
+    
+    @IBOutlet weak var tableView: UITableView!
     
     private let dataSource = DetailDataSource()
-       
+    
     private let presenter: DetailPresenter
-
+    
     
     @available(iOS, unavailable)
     required init?(coder: NSCoder) {
@@ -28,16 +29,26 @@ public final class DetailViewController: UIViewController {
         
         super.init(nibName: "DetailViewController", bundle: Bundle.main)
     }
-
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
+        self.tableView.delegate = dataSource
+        self.tableView.dataSource = dataSource
+        self.tableView.tableFooterView = UIView()
+        
         self.presenter.viewDidLoad()
     }
     
-
-    func displayArticle(article: Article){
+    func registerCells(models: [DetailModel]){
         
+        models.forEach{
+            let nib = UINib(nibName: $0.reuseIdentifier, bundle: nil)
+            self.tableView?.register(nib, forCellReuseIdentifier: $0.reuseIdentifier)
+        }
+        
+        self.dataSource.setData(data: models)
+        self.tableView.reloadData()
     }
     
 }

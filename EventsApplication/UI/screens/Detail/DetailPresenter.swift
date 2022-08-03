@@ -11,7 +11,7 @@ import Foundation
 public final class DetailPresenter{
     
     
-    private let article: Article
+    private let article: Articles
     
     unowned var view: DetailViewController!
 
@@ -20,12 +20,30 @@ public final class DetailPresenter{
         self.view = view
     }
     
-    init(article: Article){
+    init(article: Articles){
         self.article = article
     }
     
     func viewDidLoad(){
-        self.view.displayArticle(article: article)
+        self.view.registerCells(models: prepareCells(article: article))
+    }
+    
+    
+    /**
+     self.name.text = article?.title
+     self.desc.text = article?.description
+     self.date.text = DateTimeUtil.convertDateString(dateString: article?.publishedAt)
+     self.autor.text = article?.author
+     self.prepareStackView()
+     self.prepareImage()
+     self.prepareUrl()
+     */
+    private func prepareCells(article: Articles) -> [DetailImageCellModel]{
+        
+        return [
+            DetailImageCellModel(image: article.urlToImage)
+        ]
+        
     }
     
 }
