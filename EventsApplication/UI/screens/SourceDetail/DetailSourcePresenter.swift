@@ -33,9 +33,6 @@ public final class DetailSourcePresenter{
     /**
      
      let category : String? green
-     
-     
-     
      let url : String?
  
      let language : String?
@@ -44,6 +41,7 @@ public final class DetailSourcePresenter{
     private func prepareCells(sources: Sources) -> [DetailModel]{
         
         return [
+//            DetailDescriptionCellModel(description: sources.category ?? ""),
             DetailTitleCellModel(title: sources.name ?? ""),
             DetailDescriptionCellModel(description: sources.description ?? ""),
 //            DetailImageCellModel(image: article.urlToImage),

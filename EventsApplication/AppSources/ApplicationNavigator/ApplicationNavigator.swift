@@ -21,11 +21,17 @@ class ApplicationNavigator {
         current?.navigationController?.pushViewController(viewController, animated: true)
     }
     
+    /**
+     //        let sourcesDetailViewController : SourcesDetailViewController = SourcesDetailCreator.assembleModule()
+     //            as! SourcesDetailViewController
+     //        sourcesDetailViewController.sources = sources
+     */
     static func presentSourcesDetailController(current: UIViewController?, sources: Sources) {
-        let sourcesDetailViewController : SourcesDetailViewController = SourcesDetailCreator.assembleModule()
-            as! SourcesDetailViewController
-        sourcesDetailViewController.sources = sources
-        current?.navigationController?.pushViewController(sourcesDetailViewController, animated: true)
+        let presenter = DetailSourcePresenter(sources: sources)
+        let viewController = DetailSourceViewController(presenter: presenter)
+        presenter.set(view: viewController)
+
+        current?.navigationController?.pushViewController(viewController, animated: true)
     }
     
     typealias searchDialogComplateion = (String)->Void

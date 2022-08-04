@@ -85,9 +85,9 @@
 		9BEB1802221C05CF003F8C9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BEB1800221C05CF003F8C9A /* LaunchScreen.storyboard */; };
 		9BEB180D221C05D0003F8C9A /* EventsApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEB180C221C05D0003F8C9A /* EventsApplicationTests.swift */; };
 		9BEB1818221C05D0003F8C9A /* EventsApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEB1817221C05D0003F8C9A /* EventsApplicationUITests.swift */; };
-		ED67A31D289BCC26009AFA4C /* DetailSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67A31B289BCC26009AFA4C /* DetailSourceViewController.swift */; };
-		ED67A31E289BCC26009AFA4C /* DetailSourceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED67A31C289BCC26009AFA4C /* DetailSourceViewController.xib */; };
 		ED67A320289BCC3C009AFA4C /* DetailSourcePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67A31F289BCC3C009AFA4C /* DetailSourcePresenter.swift */; };
+		ED67A323289C3177009AFA4C /* DetailSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67A321289C3177009AFA4C /* DetailSourceViewController.swift */; };
+		ED67A324289C3177009AFA4C /* DetailSourceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED67A322289C3177009AFA4C /* DetailSourceViewController.xib */; };
 		EDD2B16C289ADFDA004DAC2D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B16A289ADFDA004DAC2D /* DetailViewController.swift */; };
 		EDD2B16D289ADFDA004DAC2D /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD2B16B289ADFDA004DAC2D /* DetailViewController.xib */; };
 		EDD2B16F289ADFE8004DAC2D /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B16E289ADFE8004DAC2D /* DetailPresenter.swift */; };
@@ -220,9 +220,9 @@
 		9BEB1819221C05D0003F8C9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DE1443A2FDAB8AF65DD72B5 /* Pods-EventsApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApplication.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventsApplication/Pods-EventsApplication.debug.xcconfig"; sourceTree = "<group>"; };
 		AC43CD9C8AB5AE50429C62F2 /* Pods-EventsApplicationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApplicationUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventsApplicationUITests/Pods-EventsApplicationUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		ED67A31B289BCC26009AFA4C /* DetailSourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSourceViewController.swift; sourceTree = "<group>"; };
-		ED67A31C289BCC26009AFA4C /* DetailSourceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailSourceViewController.xib; sourceTree = "<group>"; };
 		ED67A31F289BCC3C009AFA4C /* DetailSourcePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSourcePresenter.swift; sourceTree = "<group>"; };
+		ED67A321289C3177009AFA4C /* DetailSourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSourceViewController.swift; sourceTree = "<group>"; };
+		ED67A322289C3177009AFA4C /* DetailSourceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailSourceViewController.xib; sourceTree = "<group>"; };
 		EDD2B16A289ADFDA004DAC2D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EDD2B16B289ADFDA004DAC2D /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		EDD2B16E289ADFE8004DAC2D /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
@@ -792,8 +792,8 @@
 		ED67A31A289BCA04009AFA4C /* SourceDetail */ = {
 			isa = PBXGroup;
 			children = (
-				ED67A31B289BCC26009AFA4C /* DetailSourceViewController.swift */,
-				ED67A31C289BCC26009AFA4C /* DetailSourceViewController.xib */,
+				ED67A321289C3177009AFA4C /* DetailSourceViewController.swift */,
+				ED67A322289C3177009AFA4C /* DetailSourceViewController.xib */,
 				ED67A31F289BCC3C009AFA4C /* DetailSourcePresenter.swift */,
 			);
 			path = SourceDetail;
@@ -1032,7 +1032,7 @@
 				EDD2B187289B378A004DAC2D /* DetailDescriptionCell.xib in Resources */,
 				9BEB1802221C05CF003F8C9A /* LaunchScreen.storyboard in Resources */,
 				9BB5C205225F6E1A0006A74E /* SelectionDialog.storyboard in Resources */,
-				ED67A31E289BCC26009AFA4C /* DetailSourceViewController.xib in Resources */,
+				ED67A324289C3177009AFA4C /* DetailSourceViewController.xib in Resources */,
 				9BB5C21E225F74440006A74E /* InfoPlist.strings in Resources */,
 				EDD2B195289B3F44004DAC2D /* DetailAuthorCell.xib in Resources */,
 				9BB5C200225F6D960006A74E /* SearchDialog.storyboard in Resources */,
@@ -1193,7 +1193,6 @@
 				EDD2B186289B378A004DAC2D /* DetailDescriptionCell.swift in Sources */,
 				9B56315F224B7C95005B41A6 /* HeaderCreator.swift in Sources */,
 				9B11D179221EDB2500BFEBD4 /* NetworkServiceRx.swift in Sources */,
-				ED67A31D289BCC26009AFA4C /* DetailSourceViewController.swift in Sources */,
 				1A3F1A01224D17E5008B1486 /* SourceDetailContract.swift in Sources */,
 				EDD2B16C289ADFDA004DAC2D /* DetailViewController.swift in Sources */,
 				9B11D17A221EDB2500BFEBD4 /* UrlRouter.swift in Sources */,
@@ -1203,6 +1202,7 @@
 				1A918BAF22497E8D00D34DCE /* AuthUtil.swift in Sources */,
 				EDD2B16F289ADFE8004DAC2D /* DetailPresenter.swift in Sources */,
 				EDD2B17F289B2CDF004DAC2D /* DetailTitleCell.swift in Sources */,
+				ED67A323289C3177009AFA4C /* DetailSourceViewController.swift in Sources */,
 				1A611C0F224ADFEF008E9D14 /* Articles.swift in Sources */,
 				1A75A84F224C45890033C852 /* DialogHelper.swift in Sources */,
 				9B56312B224B62FB005B41A6 /* HeaderContract.swift in Sources */,
