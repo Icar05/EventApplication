@@ -8,21 +8,21 @@
 
 import UIKit
 
-protocol DetailModel{
+protocol CustomCellModel{
     var reuseIdentifier: String { get }
 }
 
-protocol DetailCell: UITableViewCell {
-    func update(with model: DetailModel)
+protocol CustomCell: UITableViewCell {
+    func update(with model: CustomCellModel)
 }
 
 final class DetailDataSource : NSObject, UITableViewDataSource, UITableViewDelegate{
 
     
     
-    private var data: [DetailModel] = []
+    private var data: [CustomCellModel] = []
     
-    func setData(data: [DetailModel]){
+    func setData(data: [CustomCellModel]){
         self.data = data
     }
     
@@ -35,7 +35,7 @@ final class DetailDataSource : NSObject, UITableViewDataSource, UITableViewDeleg
    
         let model = data[indexPath.row]
         let id = model.reuseIdentifier
-        let cell = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath)  as! DetailCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath)  as! CustomCell
             cell.update(with: model)
         
         return cell

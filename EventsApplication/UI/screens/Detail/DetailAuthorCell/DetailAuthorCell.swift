@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailAuthorCell: UITableViewCell, DetailCell {
+class DetailAuthorCell: UITableViewCell, CustomCell {
     
     
     
@@ -24,7 +24,7 @@ class DetailAuthorCell: UITableViewCell, DetailCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func update(with model: DetailModel) {
+    func update(with model: CustomCellModel) {
         guard let m = model as? DetailAuthorCellModel else {
             return
         }

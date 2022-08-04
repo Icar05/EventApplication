@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DetailAccentCellModel: DetailModel{
+struct DetailAccentCellModel: CustomCellModel{
     
     var text: String
         

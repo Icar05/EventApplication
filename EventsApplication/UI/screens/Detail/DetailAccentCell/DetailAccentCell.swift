@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailAccentCell: UITableViewCell, DetailCell {
+class DetailAccentCell: UITableViewCell, CustomCell {
     
     
     
@@ -23,7 +23,7 @@ class DetailAccentCell: UITableViewCell, DetailCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func update(with model: DetailModel) {
+    func update(with model: CustomCellModel) {
         guard let m = model as? DetailAccentCellModel else {
             return
         }

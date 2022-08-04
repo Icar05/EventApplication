@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DetailTransparentCellModel: DetailModel{
+struct DetailTransparentCellModel: CustomCellModel{
     
     var text: String
         

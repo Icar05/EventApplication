@@ -9,7 +9,7 @@
 import UIKit
 
 
-class DetailCategoryCell: UITableViewCell, DetailCell {
+class DetailCategoryCell: UITableViewCell, CustomCell {
     
     
     
@@ -24,7 +24,7 @@ class DetailCategoryCell: UITableViewCell, DetailCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func update(with model: DetailModel) {
+    func update(with model: CustomCellModel) {
         guard let m = model as? DetailCategoryCellModel else {
             return
         }

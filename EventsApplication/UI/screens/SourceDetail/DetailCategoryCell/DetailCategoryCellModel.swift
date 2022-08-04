@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DetailCategoryCellModel: DetailModel{
+struct DetailCategoryCellModel: CustomCellModel{
     
     var category: String?
             

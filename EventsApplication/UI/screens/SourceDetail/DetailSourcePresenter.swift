@@ -38,7 +38,7 @@ public final class DetailSourcePresenter{
      let language : String?
      let country : String?
      */
-    private func prepareCells(sources: Sources) -> [DetailModel]{
+    private func prepareCells(sources: Sources) -> [CustomCellModel]{
         
         return [
             DetailTransparentCellModel(text: sources.name ?? ""),

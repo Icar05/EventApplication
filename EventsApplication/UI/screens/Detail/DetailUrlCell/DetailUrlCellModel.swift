@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DetailUrlCellModel: DetailModel{
+struct DetailUrlCellModel: CustomCellModel{
     
     var url: String?
         

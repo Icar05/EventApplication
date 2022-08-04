@@ -28,7 +28,7 @@ public final class DetailPresenter{
         self.view.registerCells(models: prepareCells(article: article))
     }
     
-    private func prepareCells(article: Articles) -> [DetailModel]{
+    private func prepareCells(article: Articles) -> [CustomCellModel]{
         return [
             DetailImageCellModel(image: article.urlToImage),
             DetailTransparentCellModel(text: article.title!),

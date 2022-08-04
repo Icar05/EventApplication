@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailUrlCell: UITableViewCell, DetailCell {
+class DetailUrlCell: UITableViewCell, CustomCell {
     
     
     
@@ -29,7 +29,7 @@ class DetailUrlCell: UITableViewCell, DetailCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func update(with model: DetailModel) {
+    func update(with model: CustomCellModel) {
         guard let m = model as? DetailUrlCellModel else {
             return
         }

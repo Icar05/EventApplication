@@ -40,7 +40,7 @@ public final class DetailSourceViewController: UIViewController {
         self.presenter.viewDidLoad()
     }
     
-    func registerCells(models: [DetailModel]){
+    func registerCells(models: [CustomCellModel]){
         
         models.forEach{
             let nib = UINib(nibName: $0.reuseIdentifier, bundle: nil)

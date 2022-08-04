@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailTransparentCell: UITableViewCell, DetailCell {
+class DetailTransparentCell: UITableViewCell, CustomCell {
     
     
     
@@ -24,7 +24,7 @@ class DetailTransparentCell: UITableViewCell, DetailCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func update(with model: DetailModel) {
+    func update(with model: CustomCellModel) {
         guard let m = model as? DetailTransparentCellModel else {
             return
         }

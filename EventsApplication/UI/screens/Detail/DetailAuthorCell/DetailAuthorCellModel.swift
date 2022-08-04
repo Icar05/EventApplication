@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DetailAuthorCellModel: DetailModel{
+struct DetailAuthorCellModel: CustomCellModel{
     
     var author: String?
     

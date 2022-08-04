@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DetailImageCellModel: DetailModel{
+struct DetailImageCellModel: CustomCellModel{
     
     var image: String?
         

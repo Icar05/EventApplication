@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailImageCellTableViewCell: UITableViewCell, DetailCell {
+class DetailImageCellTableViewCell: UITableViewCell, CustomCell {
     
     
     private var task: URLSessionDataTask? = nil
@@ -31,7 +31,7 @@ class DetailImageCellTableViewCell: UITableViewCell, DetailCell {
         self.detailImage.image = .defaultImage
     }
     
-    func update(with model: DetailModel) {
+    func update(with model: CustomCellModel) {
         guard let m = model as? DetailImageCellModel else {
             return
         }
