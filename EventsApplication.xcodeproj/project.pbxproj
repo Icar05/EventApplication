@@ -331,6 +331,7 @@
 		1A9ED613226257060030092D /* animation */ = {
 			isa = PBXGroup;
 			children = (
+				ED67A33D289C6B37009AFA4C /* AnimatedController.swift */,
 			);
 			name = animation;
 			path = ../..;
@@ -679,7 +680,6 @@
 			isa = PBXGroup;
 			children = (
 				9B67F39C2267010E004402FB /* Data */,
-				ED67A33A289C6481009AFA4C /* Presentation */,
 				EDD2B173289AE2E8004DAC2D /* UI */,
 				EDD2B174289AE6F3004DAC2D /* AppSources */,
 				1A75A84B224C3BA60033C852 /* custom */,
@@ -728,13 +728,6 @@
 			path = DetailCategoryCell;
 			sourceTree = "<group>";
 		};
-		ED67A33A289C6481009AFA4C /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presentation;
-			sourceTree = "<group>";
-		};
 		EDD2B168289ADF39004DAC2D /* screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -766,7 +759,6 @@
 				9B9EB59E2251E90F00570C37 /* dialogs */,
 				1A9ED613226257060030092D /* animation */,
 				EDD2B168289ADF39004DAC2D /* screens */,
-				ED67A33D289C6B37009AFA4C /* AnimatedController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
