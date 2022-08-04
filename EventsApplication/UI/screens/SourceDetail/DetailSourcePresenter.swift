@@ -32,9 +32,10 @@ public final class DetailSourcePresenter{
     
     /**
      
-     let category : String? green
+     let name : String?
+     let description : String?
      let url : String?
- 
+     let category : String?
      let language : String?
      let country : String?
      */
@@ -42,8 +43,8 @@ public final class DetailSourcePresenter{
         
         return [
 //            DetailDescriptionCellModel(description: sources.category ?? ""),
-            DetailTitleCellModel(title: sources.name ?? ""),
-            DetailDescriptionCellModel(description: sources.description ?? ""),
+            DetailTransparentCellModel(title: sources.name ?? ""),
+            DetailAccentCellModel(description: sources.description ?? ""),
 //            DetailImageCellModel(image: article.urlToImage),
 //            DetailTitleCellModel(title: article.title!),
             

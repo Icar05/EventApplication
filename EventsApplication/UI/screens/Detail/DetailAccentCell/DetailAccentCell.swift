@@ -1,5 +1,5 @@
 //
-//  DetailTitleCell.swift
+//  DetailDescriptionCell.swift
 //  EventsApplication
 //
 //  Created by ICoon on 04.08.2022.
@@ -8,12 +8,11 @@
 
 import UIKit
 
-class DetailTitleCell: UITableViewCell, DetailCell {
+class DetailAccentCell: UITableViewCell, DetailCell {
     
     
     
-    @IBOutlet weak var titleLabel: UILabel!
-    
+    @IBOutlet weak var descriptionLabel: UILabel!
     
 
     override func awakeFromNib() {
@@ -25,11 +24,11 @@ class DetailTitleCell: UITableViewCell, DetailCell {
     }
     
     func update(with model: DetailModel) {
-        guard let m = model as? DetailTitleCellModel else {
+        guard let m = model as? DetailAccentCellModel else {
             return
         }
         
-        self.titleLabel.text = m.title
+        self.descriptionLabel.text = m.description
     }
     
 }

@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct DetailDescriptionCellModel: DetailModel{
+struct DetailAccentCellModel: DetailModel{
     
     var description: String
         
-    var reuseIdentifier: String = String(describing: DetailDescriptionCell.self)
+    var reuseIdentifier: String = String(describing: DetailAccentCell.self)
 }

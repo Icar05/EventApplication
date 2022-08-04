@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct DetailTitleCellModel: DetailModel{
+struct DetailTransparentCellModel: DetailModel{
     
     var title: String
         
-    var reuseIdentifier: String = String(describing: DetailTitleCell.self)
+    var reuseIdentifier: String = String(describing: DetailTransparentCell.self)
 }
