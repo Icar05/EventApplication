@@ -1,5 +1,5 @@
 //
-//  AnimController.swift
+//  AnimatedController.swift
 //  EventsApplication
 //
 //  Created by ICoon on 04.08.2022.
@@ -12,7 +12,7 @@ enum TransitionType {
     case Presenting, Dismissing
 }
 
-class AnimController: NSObject, UIViewControllerAnimatedTransitioning {
+class AnimatedController: NSObject, UIViewControllerAnimatedTransitioning {
 
     var duration: TimeInterval
     var isPresenting: Bool
