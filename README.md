@@ -11,3 +11,6 @@ There are animated dialogs for select query or country:
 
 18.04.2019
 
+# License
+
+http://www.apache.org/licenses/LICENSE-2.0
