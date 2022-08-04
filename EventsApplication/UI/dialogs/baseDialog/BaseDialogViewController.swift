@@ -24,12 +24,12 @@ class BaseDialogViewController: UIViewController {
 extension BaseDialogViewController: UIViewControllerTransitioningDelegate{
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return AnimationController(withDuration: 0.5, forTransitionType: .Dismissing, originFrame: self.view.frame)
+        return AnimController(withDuration: 0.5, forTransitionType: .Dismissing, originFrame: self.view.frame)
     }
     
     func animationController(forPresented presented: UIViewController,presenting: UIViewController, source: UIViewController)
         -> UIViewControllerAnimatedTransitioning?{
-            return AnimationController(withDuration: 0.5, forTransitionType: .Presenting, originFrame: self.view.frame)
+            return AnimController(withDuration: 0.5, forTransitionType: .Presenting, originFrame: self.view.frame)
     }
     
 }

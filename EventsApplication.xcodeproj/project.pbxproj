@@ -82,6 +82,7 @@
 		ED67A32B289C449E009AFA4C /* DetailCategoryCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67A32A289C449E009AFA4C /* DetailCategoryCellModel.swift */; };
 		ED67A32E289C4FA0009AFA4C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = ED67A32D289C4FA0009AFA4C /* Alamofire */; };
 		ED67A339289C6452009AFA4C /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ED67A338289C6452009AFA4C /* RxSwift */; };
+		ED67A33C289C6522009AFA4C /* AnimController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67A33B289C6522009AFA4C /* AnimController.swift */; };
 		EDD2B16C289ADFDA004DAC2D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B16A289ADFDA004DAC2D /* DetailViewController.swift */; };
 		EDD2B16D289ADFDA004DAC2D /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD2B16B289ADFDA004DAC2D /* DetailViewController.xib */; };
 		EDD2B16F289ADFE8004DAC2D /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B16E289ADFE8004DAC2D /* DetailPresenter.swift */; };
@@ -205,6 +206,7 @@
 		ED67A326289C448D009AFA4C /* DetailCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCategoryCell.swift; sourceTree = "<group>"; };
 		ED67A327289C448D009AFA4C /* DetailCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCategoryCell.xib; sourceTree = "<group>"; };
 		ED67A32A289C449E009AFA4C /* DetailCategoryCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCategoryCellModel.swift; sourceTree = "<group>"; };
+		ED67A33B289C6522009AFA4C /* AnimController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimController.swift; sourceTree = "<group>"; };
 		EDD2B16A289ADFDA004DAC2D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EDD2B16B289ADFDA004DAC2D /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		EDD2B16E289ADFE8004DAC2D /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 		1A9ED613226257060030092D /* animation */ = {
 			isa = PBXGroup;
 			children = (
+				ED67A33B289C6522009AFA4C /* AnimController.swift */,
 			);
 			name = animation;
 			path = ../..;
@@ -897,7 +900,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = ipinguin_linuxoid;
 				TargetAttributes = {
 					9BEB17F3221C05CE003F8C9A = {
@@ -1031,6 +1034,7 @@
 				1A3266DA2254054D004F35A0 /* RequestKeysProtocol.swift in Sources */,
 				9B788094224A14C600F7231A /* RootContract.swift in Sources */,
 				9B56312F224B64B9005B41A6 /* HeaderPresenterImpl.swift in Sources */,
+				ED67A33C289C6522009AFA4C /* AnimController.swift in Sources */,
 				9B56314E224B7512005B41A6 /* EverythingViewController.swift in Sources */,
 				9B56314C224B74A3005B41A6 /* HeadersInteractorImpl.swift in Sources */,
 				1A3F1A19224D3827008B1486 /* BaseSourcesViewController.swift in Sources */,
@@ -1175,6 +1179,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1237,6 +1242,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1430,16 +1436,16 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
+				kind = exactVersion;
+				version = 5.0.0;
 			};
 		};
 		ED67A337289C6452009AFA4C /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
+				kind = exactVersion;
+				version = 4.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
