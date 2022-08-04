@@ -38,7 +38,13 @@ extension BaseSourcesViewController: UITableViewDataSource{
 
 extension BaseSourcesViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        ApplicationNavigator.presentSourcesDetailController(current: self, sources: datasource[indexPath.row])
+        navigateToSourceDetail(sources: datasource[indexPath.row])
+    }
+    
+    private func navigateToSourceDetail(sources: Sources){
+        let navigator = getApplication().getNavigator()
+        let destination = navigator.getSourceDetailScreen(sources: sources)
+        navigator.navigate(from: self, to: destination)
     }
 }
 

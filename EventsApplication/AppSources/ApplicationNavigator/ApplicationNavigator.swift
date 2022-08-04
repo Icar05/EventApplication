@@ -25,17 +25,12 @@ class ApplicationNavigator {
         return viewController
     }
     
-    /**
-     //        let sourcesDetailViewController : SourcesDetailViewController = SourcesDetailCreator.assembleModule()
-     //            as! SourcesDetailViewController
-     //        sourcesDetailViewController.sources = sources
-     */
-    static func presentSourcesDetailController(current: UIViewController?, sources: Sources) {
+    func getSourceDetailScreen(sources: Sources) -> UIViewController {
         let presenter = DetailSourcePresenter(sources: sources)
         let viewController = DetailSourceViewController(presenter: presenter)
         presenter.set(view: viewController)
 
-        current?.navigationController?.pushViewController(viewController, animated: true)
+        return viewController
     }
     
 
