@@ -47,7 +47,7 @@ public final class DetailSourcePresenter{
             DetailAuthorCellModel(
                 author: NSLocalizedString(sources.country!, comment: ""),
                 date: "\(NSLocalizedString("Language", comment: "")) : \(sources.language!)"),
-            DetailTransparentCellModel(text: sources.category ?? "")
+            DetailCategoryCellModel(category: sources.category ?? "")
         ]
         
     }

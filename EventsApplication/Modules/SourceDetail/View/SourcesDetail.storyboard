@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina3_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mFc-rG-3TT" customClass="UIPicturedScrollView" customModule="EventsApplication" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Fl5-JY-qwT" customClass="UIBluredStackView" customModule="EventsApplication" customModuleProvider="target">
                                         <rect key="frame" x="8" y="8" width="304" height="125"/>
@@ -78,6 +76,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="vNI-mS-ClF"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mFc-rG-3TT" firstAttribute="leading" secondItem="vNI-mS-ClF" secondAttribute="leading" id="Tov-OD-9vP"/>
@@ -85,7 +84,6 @@
                             <constraint firstItem="mFc-rG-3TT" firstAttribute="top" secondItem="vNI-mS-ClF" secondAttribute="top" id="d4n-dR-fxM"/>
                             <constraint firstItem="vNI-mS-ClF" firstAttribute="trailing" secondItem="mFc-rG-3TT" secondAttribute="trailing" id="nIg-Xx-xDj"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="vNI-mS-ClF"/>
                     </view>
                     <connections>
                         <outlet property="category" destination="DXA-mF-W7a" id="eNL-2f-bZV"/>

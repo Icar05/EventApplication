@@ -44,14 +44,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="C9Z-78-GU9" secondAttribute="bottom" constant="16" id="8fh-Gb-7az"/>
+                                    <constraint firstItem="C9Z-78-GU9" firstAttribute="bottom" secondItem="5ub-wT-Dfs" secondAttribute="bottom" constant="-16" id="8fh-Gb-7az"/>
                                     <constraint firstItem="C9Z-78-GU9" firstAttribute="top" secondItem="5ub-wT-Dfs" secondAttribute="top" constant="16" id="Axn-zi-uRu"/>
                                     <constraint firstItem="V3Q-pe-uf2" firstAttribute="leading" secondItem="5ub-wT-Dfs" secondAttribute="leading" id="MFQ-n7-iQB"/>
-                                    <constraint firstAttribute="bottom" secondItem="V3Q-pe-uf2" secondAttribute="bottom" id="S9v-em-Hkr"/>
+                                    <constraint firstItem="V3Q-pe-uf2" firstAttribute="bottom" secondItem="5ub-wT-Dfs" secondAttribute="bottom" id="S9v-em-Hkr"/>
                                     <constraint firstItem="C9Z-78-GU9" firstAttribute="leading" secondItem="5ub-wT-Dfs" secondAttribute="leading" constant="16" id="Yu2-DC-Bdk"/>
                                     <constraint firstItem="V3Q-pe-uf2" firstAttribute="top" secondItem="5ub-wT-Dfs" secondAttribute="top" id="fgk-2O-xQA"/>
-                                    <constraint firstAttribute="trailing" secondItem="V3Q-pe-uf2" secondAttribute="trailing" id="w92-mN-rzE"/>
-                                    <constraint firstAttribute="trailing" secondItem="C9Z-78-GU9" secondAttribute="trailing" constant="16" id="xUM-Eh-uwZ"/>
+                                    <constraint firstItem="V3Q-pe-uf2" firstAttribute="trailing" secondItem="5ub-wT-Dfs" secondAttribute="trailing" id="w92-mN-rzE"/>
+                                    <constraint firstItem="C9Z-78-GU9" firstAttribute="trailing" secondItem="5ub-wT-Dfs" secondAttribute="trailing" constant="-16" id="xUM-Eh-uwZ"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97D-3M-fnx" userLabel="BottomDivider">
@@ -72,15 +72,15 @@
                             <constraint firstItem="5ub-wT-Dfs" firstAttribute="top" secondItem="GD2-A0-uSy" secondAttribute="bottom" id="Zbm-fO-Gyc"/>
                             <constraint firstItem="5ub-wT-Dfs" firstAttribute="bottom" secondItem="97D-3M-fnx" secondAttribute="top" id="brh-6J-Cgc"/>
                             <constraint firstItem="97D-3M-fnx" firstAttribute="bottom" secondItem="Mfw-hI-0HN" secondAttribute="bottom" id="dHO-3Q-J6Z"/>
-                            <constraint firstAttribute="trailing" secondItem="5ub-wT-Dfs" secondAttribute="trailing" id="wP3-BJ-OH4"/>
+                            <constraint firstItem="5ub-wT-Dfs" firstAttribute="trailing" secondItem="Mfw-hI-0HN" secondAttribute="trailing" id="wP3-BJ-OH4"/>
                             <constraint firstItem="5ub-wT-Dfs" firstAttribute="leading" secondItem="Mfw-hI-0HN" secondAttribute="leading" id="wXn-ll-QJW"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="Mfw-hI-0HN" secondAttribute="bottom" id="JCl-wX-3ra"/>
+                    <constraint firstItem="Mfw-hI-0HN" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottom" id="JCl-wX-3ra"/>
                     <constraint firstItem="Mfw-hI-0HN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Q2j-YJ-C6G"/>
-                    <constraint firstAttribute="trailing" secondItem="Mfw-hI-0HN" secondAttribute="trailing" id="Z2C-mo-FOx"/>
+                    <constraint firstItem="Mfw-hI-0HN" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" id="Z2C-mo-FOx"/>
                     <constraint firstItem="Mfw-hI-0HN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="cpD-4d-Ahg"/>
                 </constraints>
             </tableViewCellContentView>
