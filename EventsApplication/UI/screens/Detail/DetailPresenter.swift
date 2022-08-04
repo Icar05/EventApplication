@@ -28,13 +28,7 @@ public final class DetailPresenter{
         self.view.registerCells(models: prepareCells(article: article))
     }
     
-    
-    /**
-     self.date.text =
-     self.autor.text = article?.author
-     */
     private func prepareCells(article: Articles) -> [DetailModel]{
-        
         return [
             DetailImageCellModel(image: article.urlToImage),
             DetailTitleCellModel(title: article.title!),
@@ -47,7 +41,6 @@ public final class DetailPresenter{
                 )
             )
         ]
-        
     }
     
 }

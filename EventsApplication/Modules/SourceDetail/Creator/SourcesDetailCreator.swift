@@ -12,6 +12,7 @@ import UIKit
 class SourcesDetailCreator: BaseCreator {
     
     static func assembleModule() -> UIViewController {
+        
         let view = getSelfUIViewController() as! SourcesDetailViewController
         
         
