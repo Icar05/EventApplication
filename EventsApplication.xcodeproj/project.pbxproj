@@ -81,6 +81,7 @@
 		ED67A329289C448D009AFA4C /* DetailCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED67A327289C448D009AFA4C /* DetailCategoryCell.xib */; };
 		ED67A32B289C449E009AFA4C /* DetailCategoryCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67A32A289C449E009AFA4C /* DetailCategoryCellModel.swift */; };
 		ED67A32E289C4FA0009AFA4C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = ED67A32D289C4FA0009AFA4C /* Alamofire */; };
+		ED67A339289C6452009AFA4C /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ED67A338289C6452009AFA4C /* RxSwift */; };
 		EDD2B16C289ADFDA004DAC2D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B16A289ADFDA004DAC2D /* DetailViewController.swift */; };
 		EDD2B16D289ADFDA004DAC2D /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD2B16B289ADFDA004DAC2D /* DetailViewController.xib */; };
 		EDD2B16F289ADFE8004DAC2D /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B16E289ADFE8004DAC2D /* DetailPresenter.swift */; };
@@ -230,6 +231,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED67A339289C6452009AFA4C /* RxSwift in Frameworks */,
 				ED67A32E289C4FA0009AFA4C /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -675,7 +677,7 @@
 			isa = PBXGroup;
 			children = (
 				9B67F39C2267010E004402FB /* Data */,
-				EDD2B172289AE2CE004DAC2D /* Presentation */,
+				ED67A33A289C6481009AFA4C /* Presentation */,
 				EDD2B173289AE2E8004DAC2D /* UI */,
 				EDD2B174289AE6F3004DAC2D /* AppSources */,
 				1A75A84B224C3BA60033C852 /* custom */,
@@ -724,6 +726,13 @@
 			path = DetailCategoryCell;
 			sourceTree = "<group>";
 		};
+		ED67A33A289C6481009AFA4C /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		EDD2B168289ADF39004DAC2D /* screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -747,13 +756,6 @@
 				EDD2B170289ADFF7004DAC2D /* DetailDataSource.swift */,
 			);
 			path = Detail;
-			sourceTree = "<group>";
-		};
-		EDD2B172289AE2CE004DAC2D /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presentation;
 			sourceTree = "<group>";
 		};
 		EDD2B173289AE2E8004DAC2D /* UI */ = {
@@ -846,6 +848,7 @@
 			name = EventsApplication;
 			packageProductDependencies = (
 				ED67A32D289C4FA0009AFA4C /* Alamofire */,
+				ED67A338289C6452009AFA4C /* RxSwift */,
 			);
 			productName = EventsApplication;
 			productReference = 9BEB17F4221C05CE003F8C9A /* EventsApplication.app */;
@@ -921,7 +924,8 @@
 			);
 			mainGroup = 9BEB17EB221C05CE003F8C9A;
 			packageReferences = (
-				ED67A32C289C4FA0009AFA4C /* XCRemoteSwiftPackageReference "Alamofire.git" */,
+				ED67A32C289C4FA0009AFA4C /* XCRemoteSwiftPackageReference "Alamofire" */,
+				ED67A337289C6452009AFA4C /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 9BEB17F5221C05CE003F8C9A /* Products */;
 			projectDirPath = "";
@@ -1422,7 +1426,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		ED67A32C289C4FA0009AFA4C /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
+		ED67A32C289C4FA0009AFA4C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -1430,13 +1434,26 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		ED67A337289C6452009AFA4C /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		ED67A32D289C4FA0009AFA4C /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = ED67A32C289C4FA0009AFA4C /* XCRemoteSwiftPackageReference "Alamofire.git" */;
+			package = ED67A32C289C4FA0009AFA4C /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		ED67A338289C6452009AFA4C /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED67A337289C6452009AFA4C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 
