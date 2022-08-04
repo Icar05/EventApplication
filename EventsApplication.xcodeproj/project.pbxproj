@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		17EEA6E68486C94B3FF50A04 /* Pods_EventsApplicationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A050619A96C1E69E44BAFD /* Pods_EventsApplicationUITests.framework */; };
 		1A3266DA2254054D004F35A0 /* RequestKeysProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3266D92254054D004F35A0 /* RequestKeysProtocol.swift */; };
-		1A3F19F7224D13AE008B1486 /* ArticleDetailContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F19F6224D13AE008B1486 /* ArticleDetailContract.swift */; };
-		1A3F19F9224D1695008B1486 /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F19F8224D1695008B1486 /* ArticleDetailViewController.swift */; };
 		1A3F1A01224D17E5008B1486 /* SourceDetailContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F1A00224D17E5008B1486 /* SourceDetailContract.swift */; };
 		1A3F1A03224D184A008B1486 /* SourceDetailInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F1A02224D184A008B1486 /* SourceDetailInteractorImpl.swift */; };
 		1A3F1A05224D1879008B1486 /* SourceDetailPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F1A04224D1879008B1486 /* SourceDetailPresenterImpl.swift */; };
@@ -72,10 +70,6 @@
 		9B788094224A14C600F7231A /* RootContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B788093224A14C600F7231A /* RootContract.swift */; };
 		9B788097224A14F000F7231A /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B788096224A14F000F7231A /* RootViewController.swift */; };
 		9B788099224A151000F7231A /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B788098224A151000F7231A /* Root.storyboard */; };
-		9B84A4FD224CC4A400E747FC /* ArticleDetailInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B84A4FC224CC4A400E747FC /* ArticleDetailInteractorImpl.swift */; };
-		9B84A4FF224CC4EA00E747FC /* ArticleDetailPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B84A4FE224CC4EA00E747FC /* ArticleDetailPresenterImpl.swift */; };
-		9B84A503224CC63C00E747FC /* ArticleDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B84A502224CC63C00E747FC /* ArticleDetail.storyboard */; };
-		9B84A505224CC6A000E747FC /* ArticleDetailCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B84A504224CC6A000E747FC /* ArticleDetailCreator.swift */; };
 		9B966244221ED556008C512D /* BaseCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B966243221ED556008C512D /* BaseCreator.swift */; };
 		9B966247221ED5B7008C512D /* ApplicationNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B966246221ED5B7008C512D /* ApplicationNavigator.swift */; };
 		9B9AB2A222647AD900712530 /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9AB2A122647AD900712530 /* AnimationController.swift */; };
@@ -132,8 +126,6 @@
 /* Begin PBXFileReference section */
 		14362051047C402913B017BC /* Pods_EventsApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventsApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A3266D92254054D004F35A0 /* RequestKeysProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestKeysProtocol.swift; sourceTree = "<group>"; };
-		1A3F19F6224D13AE008B1486 /* ArticleDetailContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailContract.swift; sourceTree = "<group>"; };
-		1A3F19F8224D1695008B1486 /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		1A3F1A00224D17E5008B1486 /* SourceDetailContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceDetailContract.swift; sourceTree = "<group>"; };
 		1A3F1A02224D184A008B1486 /* SourceDetailInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceDetailInteractorImpl.swift; sourceTree = "<group>"; };
 		1A3F1A04224D1879008B1486 /* SourceDetailPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceDetailPresenterImpl.swift; sourceTree = "<group>"; };
@@ -197,10 +189,6 @@
 		9B788093224A14C600F7231A /* RootContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootContract.swift; sourceTree = "<group>"; };
 		9B788096224A14F000F7231A /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		9B788098224A151000F7231A /* Root.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
-		9B84A4FC224CC4A400E747FC /* ArticleDetailInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailInteractorImpl.swift; sourceTree = "<group>"; };
-		9B84A4FE224CC4EA00E747FC /* ArticleDetailPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailPresenterImpl.swift; sourceTree = "<group>"; };
-		9B84A502224CC63C00E747FC /* ArticleDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArticleDetail.storyboard; sourceTree = "<group>"; };
-		9B84A504224CC6A000E747FC /* ArticleDetailCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailCreator.swift; sourceTree = "<group>"; };
 		9B966243221ED556008C512D /* BaseCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCreator.swift; sourceTree = "<group>"; };
 		9B966246221ED5B7008C512D /* ApplicationNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationNavigator.swift; sourceTree = "<group>"; };
 		9B9AB2A122647AD900712530 /* AnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
@@ -277,14 +265,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1A3F19F5224D1383008B1486 /* Contract */ = {
-			isa = PBXGroup;
-			children = (
-				1A3F19F6224D13AE008B1486 /* ArticleDetailContract.swift */,
-			);
-			path = Contract;
-			sourceTree = "<group>";
-		};
 		1A3F19FA224D1793008B1486 /* SourceDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -680,56 +660,10 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		9B84A4F4224CC36500E747FC /* ArticleDetail */ = {
-			isa = PBXGroup;
-			children = (
-				9B84A4F5224CC37A00E747FC /* View */,
-				9B84A4F6224CC38100E747FC /* Creator */,
-				1A3F19F5224D1383008B1486 /* Contract */,
-				9B84A4F8224CC39200E747FC /* Presenter */,
-				9B84A4F9224CC39A00E747FC /* Interactor */,
-			);
-			path = ArticleDetail;
-			sourceTree = "<group>";
-		};
-		9B84A4F5224CC37A00E747FC /* View */ = {
-			isa = PBXGroup;
-			children = (
-				9B84A502224CC63C00E747FC /* ArticleDetail.storyboard */,
-				1A3F19F8224D1695008B1486 /* ArticleDetailViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		9B84A4F6224CC38100E747FC /* Creator */ = {
-			isa = PBXGroup;
-			children = (
-				9B84A504224CC6A000E747FC /* ArticleDetailCreator.swift */,
-			);
-			path = Creator;
-			sourceTree = "<group>";
-		};
-		9B84A4F8224CC39200E747FC /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				9B84A4FE224CC4EA00E747FC /* ArticleDetailPresenterImpl.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		9B84A4F9224CC39A00E747FC /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				9B84A4FC224CC4A400E747FC /* ArticleDetailInteractorImpl.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
 		9B9661EE221E9227008C512D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				1A3F19FA224D1793008B1486 /* SourceDetail */,
-				9B84A4F4224CC36500E747FC /* ArticleDetail */,
 				9B563110224B61CA005B41A6 /* Sources */,
 				9B56310F224B61BE005B41A6 /* Evertything */,
 				9B56310E224B61AD005B41A6 /* Headers */,
@@ -1090,7 +1024,6 @@
 				9B56313F224B6D32005B41A6 /* Sources.storyboard in Resources */,
 				9B788099224A151000F7231A /* Root.storyboard in Resources */,
 				9B56313B224B6CD6005B41A6 /* Headers.storyboard in Resources */,
-				9B84A503224CC63C00E747FC /* ArticleDetail.storyboard in Resources */,
 				EDD2B179289B0CD2004DAC2D /* DetailImageCellTableViewCell.xib in Resources */,
 				1A3F1A0D224D1D3A008B1486 /* ArticleCell.xib in Resources */,
 				9BB5C1FC225F60AB0006A74E /* Localizable.strings in Resources */,
@@ -1191,7 +1124,6 @@
 				1A3F1A05224D1879008B1486 /* SourceDetailPresenterImpl.swift in Sources */,
 				1A69B9C4224F65EA00DD811C /* DateTimeUtil.swift in Sources */,
 				EDD2B194289B3F44004DAC2D /* DetailAuthorCell.swift in Sources */,
-				1A3F19F7224D13AE008B1486 /* ArticleDetailContract.swift in Sources */,
 				9B50C465225231F100C720E7 /* UISearchDialog.swift in Sources */,
 				EDD2B182289B2CF0004DAC2D /* DetailTitleCellModel.swift in Sources */,
 				EDD2B171289ADFF7004DAC2D /* DetailDataSource.swift in Sources */,
@@ -1225,13 +1157,11 @@
 				EDD2B190289B3A6F004DAC2D /* DetailUrlCellModel.swift in Sources */,
 				1A75A84D224C3BC70033C852 /* ArticleCell.swift in Sources */,
 				9B56315C224B76C4005B41A6 /* SourcesInteractorImpl.swift in Sources */,
-				9B84A4FF224CC4EA00E747FC /* ArticleDetailPresenterImpl.swift in Sources */,
 				1A3F1A17224D3690008B1486 /* SourcesCell.swift in Sources */,
 				1AB264E82265047700D298F4 /* Repository.swift in Sources */,
 				9B5E70F4225F260100363A35 /* Extension.swift in Sources */,
 				1A3266DA2254054D004F35A0 /* RequestKeysProtocol.swift in Sources */,
 				9B788094224A14C600F7231A /* RootContract.swift in Sources */,
-				9B84A505224CC6A000E747FC /* ArticleDetailCreator.swift in Sources */,
 				9B56312F224B64B9005B41A6 /* HeaderPresenterImpl.swift in Sources */,
 				9B56314E224B7512005B41A6 /* EverythingViewController.swift in Sources */,
 				9B56314C224B74A3005B41A6 /* HeadersInteractorImpl.swift in Sources */,
@@ -1250,7 +1180,6 @@
 				1AF3B80A2226D911004FA784 /* MockNetworkTester.swift in Sources */,
 				1A611C11224AE08B008E9D14 /* Source.swift in Sources */,
 				1A611C0B224ADF7C008E9D14 /* Sources.swift in Sources */,
-				9B84A4FD224CC4A400E747FC /* ArticleDetailInteractorImpl.swift in Sources */,
 				1A918BAF22497E8D00D34DCE /* AuthUtil.swift in Sources */,
 				EDD2B16F289ADFE8004DAC2D /* DetailPresenter.swift in Sources */,
 				EDD2B17F289B2CDF004DAC2D /* DetailTitleCell.swift in Sources */,
@@ -1259,7 +1188,6 @@
 				9B56312B224B62FB005B41A6 /* HeaderContract.swift in Sources */,
 				1A3F1A11224D2B77008B1486 /* BaseArticleController.swift in Sources */,
 				9B9AB2A522648F2A00712530 /* BaseDialogViewController.swift in Sources */,
-				1A3F19F9224D1695008B1486 /* ArticleDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
