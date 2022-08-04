@@ -37,16 +37,15 @@ class SourcesViewController: BaseSourcesViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.tableFooterView = UIView()
-        self.refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
         self.addRefresh(tableView: tableView)
         self.presenter.onViewDidLoad()
     }
     
-    
-    @objc private func refresh(_ sender: Any) {
+    override func onRefresh() {
         self.presenter.onViewDidLoad()
         self.refreshControl.endRefreshing()
     }
+
     
 }
 
@@ -59,13 +58,6 @@ extension SourcesViewController : SourcesView{
     
     func hideLoading() {
         self.emptyView.hideLoading()
-    }
-    
-    
-    func handleError(error: Error) {
-        DispatchQueue.main.async {
-            DialogHelper.presentErrorDialog(error: error, viewController: self)
-        }
     }
     
     func updateTableView(sources: [Sources]) {

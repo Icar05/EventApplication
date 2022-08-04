@@ -12,13 +12,17 @@ class ApplicationNavigator {
     }
     
     
-    static func presentArticleDetailController(current: UIViewController?, article: Articles) {
+    func navigate(from: UIViewController, to: UIViewController){
+        from.navigationController?.pushViewController(to, animated: true)
+    }
+    
+    func getArticleDetailScreen(article: Articles) -> UIViewController {
         
         let presenter = DetailPresenter(article: article)
         let viewController = DetailViewController(presenter: presenter)
         presenter.set(view: viewController)
         
-        current?.navigationController?.pushViewController(viewController, animated: true)
+        return viewController
     }
     
     /**

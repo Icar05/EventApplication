@@ -39,7 +39,13 @@ extension BaseArticleController: UITableViewDataSource{
 
 extension BaseArticleController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        ApplicationNavigator.presentArticleDetailController(current: self, article: datasource[indexPath.row])
+        self.navigateToArticleDetail(article: datasource[indexPath.row])
+    }
+    
+    private func navigateToArticleDetail(article: Articles){
+        let navigator = getApplication().getNavigator()
+        let destination = navigator.getArticleDetailScreen(article: article)
+        navigator.navigate(from: self, to: destination)
     }
 }
 

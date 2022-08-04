@@ -32,9 +32,7 @@ extension UIImageView  {
                 DispatchQueue.main.async {
                     self.contentMode =  contentMode
                     if let data = data, let image = UIImage(data: data) {
-                        print("i here! \(image)")
-                        self.image = image// UIImage(data: data)
-                        
+                        self.image = image
                     }else{
                         self.image = .defaultImage
                     }
@@ -48,23 +46,11 @@ extension UIImageView  {
         
         return nil
     }
-    
-    
-//    func loadIcon(input: String?){
-//
-//        if (imageContent == nil){
-//            if let inputStirng = input, let url = URL(string: inputStirng){
-//
-//                DispatchQueue.global().async {
-//                    if let data = try? Data(contentsOf: url){
-//                        DispatchQueue.main.async {
-//                            self.imageContent = UIImage(data: data)
-//                            self.icon.image = self.imageContent
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//
-//    }
+
+}
+
+extension UIViewController {
+    func getApplication() -> AppDelegate{
+        return UIApplication.shared.delegate as! AppDelegate
+    }
 }
