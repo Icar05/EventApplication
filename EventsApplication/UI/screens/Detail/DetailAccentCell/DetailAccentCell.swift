@@ -28,7 +28,7 @@ class DetailAccentCell: UITableViewCell, DetailCell {
             return
         }
         
-        self.descriptionLabel.text = m.description
+        self.descriptionLabel.text = m.text
     }
     
 }

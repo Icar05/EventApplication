@@ -10,7 +10,7 @@ import Foundation
 
 struct DetailAccentCellModel: DetailModel{
     
-    var description: String
+    var text: String
         
     var reuseIdentifier: String = String(describing: DetailAccentCell.self)
 }

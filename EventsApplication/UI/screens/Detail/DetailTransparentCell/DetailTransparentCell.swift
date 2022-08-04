@@ -29,7 +29,7 @@ class DetailTransparentCell: UITableViewCell, DetailCell {
             return
         }
         
-        self.titleLabel.text = m.title
+        self.titleLabel.text = m.text
     }
     
 }

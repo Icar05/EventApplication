@@ -31,8 +31,8 @@ public final class DetailPresenter{
     private func prepareCells(article: Articles) -> [DetailModel]{
         return [
             DetailImageCellModel(image: article.urlToImage),
-            DetailTransparentCellModel(title: article.title!),
-            DetailAccentCellModel(description: article.description ?? ""),
+            DetailTransparentCellModel(text: article.title!),
+            DetailAccentCellModel(text: article.description ?? ""),
             DetailUrlCellModel(url: article.url ?? ""),
             DetailAuthorCellModel(
                 author: article.author,

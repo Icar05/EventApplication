@@ -10,7 +10,7 @@ import Foundation
 
 struct DetailTransparentCellModel: DetailModel{
     
-    var title: String
+    var text: String
         
     var reuseIdentifier: String = String(describing: DetailTransparentCell.self)
 }
