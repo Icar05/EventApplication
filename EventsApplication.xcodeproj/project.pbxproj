@@ -328,14 +328,6 @@
 			path = "application sources";
 			sourceTree = "<group>";
 		};
-		1A9ED613226257060030092D /* animation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = animation;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		1AB264E62265045200D298F4 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -757,7 +749,6 @@
 			children = (
 				ED67A33D289C6B37009AFA4C /* AnimatedController.swift */,
 				9B9EB59E2251E90F00570C37 /* dialogs */,
-				1A9ED613226257060030092D /* animation */,
 				EDD2B168289ADF39004DAC2D /* screens */,
 			);
 			path = UI;
