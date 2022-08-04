@@ -32,7 +32,7 @@ class SourcesViewController: BaseSourcesViewController {
         super.viewDidLoad()
         
         self.tableView.register(UINib(nibName: cellIndifier, bundle: nil),
-            forCellReuseIdentifier: cellIndifier)
+                                forCellReuseIdentifier: cellIndifier)
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -95,13 +95,14 @@ extension SourcesViewController: TabItem{
     
     @objc func selectCategory(){
         ApplicationNavigator.presentSelectionDialog(
-            title: categoryTabItemTitle,
-            subtitle: categoryTabItemSubtitle,
-            current: self,
-            datasource: ValueForSelector.categories,
-            completion: { category in
-             self.presenter.setCategory(category: category)
-        })
+            model: UISelectionDialogModel(
+                title: categoryTabItemTitle,
+                subtitle: categoryTabItemSubtitle,
+                dataSourse: ValueForSelector.categories,
+                completion: {category in
+                    self.presenter.setCategory(category: category)
+                }),
+            current: self)
     }
-   
+    
 }

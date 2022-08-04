@@ -9,7 +9,16 @@
 import Foundation
 import UIKit
 
+struct UISelectionDialogModel{
+    let title: String
+    let subtitle: String
+    let dataSourse: [String]
+    var completion: ((String)->Void)?
+}
+
 class UISelectionDialog: BaseDialogViewController {
+    
+    
     
     @IBOutlet weak var alertView: UIView!
     
@@ -19,41 +28,22 @@ class UISelectionDialog: BaseDialogViewController {
     
     @IBOutlet weak var pickerView: UIPickerView!
     
-    var customTitle: String?
-    
-    var customDescription: String?
-    
-    
-    
-    
-    
-    typealias selectDialogComplateion = (String)->Void
-    var completion: selectDialogComplateion?
-    
     @IBAction func cancelClick(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func okClick(_ sender: UIButton) {
-        self.completion?(value == "" ? pickerDataSource[0] : value)
+        self.model?.completion?(getResult())
         self.dismiss(animated: true, completion: nil)
     }
     
+    private var model: UISelectionDialogModel? = nil
     
-    var pickerDataSource: [String] = []
-    var value: String = ""
+    private var value: String = ""
     
     
-    func setDatasource(value: [String]){
-        self.pickerDataSource = value
-    }
-    
-    func setCompletion(completion: @escaping selectDialogComplateion){
-        self.completion = completion
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-       
+    func setModel(model: UISelectionDialogModel){
+        self.model = model
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,12 +58,19 @@ class UISelectionDialog: BaseDialogViewController {
     
     
     func setupView() {
-
         self.alertView.layer.cornerRadius = 10
         self.pickerView.dataSource = self
         self.pickerView.delegate = self
-        self.dialogTitle.text = customTitle
-        self.dialogSubtitle.text = customDescription
+        self.dialogTitle.text = model?.title
+        self.dialogSubtitle.text = model?.subtitle
+    }
+    
+    private func getResult() -> String{
+        if(value.isEmpty){
+            return (self.model?.dataSourse.first)!
+        }
+        
+        return value
     }
     
 }
@@ -88,17 +85,17 @@ extension UISelectionDialog : UIPickerViewDelegate, UIPickerViewDataSource{
     
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerDataSource.count
+        return (model?.dataSourse.count)!
     }
     
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) ->  String? {
-        return NSLocalizedString(pickerDataSource[row], comment: "")
+        return NSLocalizedString((model?.dataSourse[row])!, comment: "")
     }
     
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.value = pickerDataSource[row]
-        print("picker : \(pickerDataSource[row])")
+        self.value = (model?.dataSourse[row])!
+        print("picker : \(String(describing: model?.dataSourse[row]))")
     }
    
     

@@ -44,14 +44,10 @@ class ApplicationNavigator {
     }
     
     typealias selectDialogComplateion = (String)->Void
-    static func presentSelectionDialog(title: String, subtitle: String, current: UIViewController?, datasource: [String], completion: @escaping
-        selectDialogComplateion) {
+    static func presentSelectionDialog(model: UISelectionDialogModel, current: UIViewController?) {
         let dialogStoryboard = UIStoryboard(name: "SelectionDialog", bundle: nil)
         let customAlert = dialogStoryboard.instantiateViewController(withIdentifier: "UISelectionDialog") as! UISelectionDialog
-            customAlert.setCompletion(completion: completion)
-            customAlert.customTitle = title
-            customAlert.customDescription = subtitle
-            customAlert.setDatasource(value: datasource)
+            customAlert.setModel(model: model)
             current?.present(customAlert,animated: true, completion: nil)
     }
     

@@ -25,11 +25,11 @@ class HeadersViewController: BaseArticleController {
     fileprivate let countryTabItemTitle = NSLocalizedString("Country", comment: "")
     
     fileprivate let countryTabItemSubtitle = NSLocalizedString("Select country", comment: "")
-        
-   
-        
-        
-
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,7 +46,7 @@ class HeadersViewController: BaseArticleController {
     }
     
     
-   
+    
     
     @objc private func refresh(_ sender: Any) {
         self.viewDidLoad()
@@ -104,14 +104,15 @@ extension HeadersViewController: TabItem{
     
     
     @objc func selectCountry(){
-            ApplicationNavigator.presentSelectionDialog(
+        ApplicationNavigator.presentSelectionDialog(
+            model: UISelectionDialogModel(
                 title: countryTabItemTitle,
                 subtitle: countryTabItemSubtitle,
-                current: self,
-                datasource: ValueForSelector.countries,
+                dataSourse:ValueForSelector.countries,
                 completion: { country in
                     self.presenter.setCountry(country: country)
-            })
+                }),
+            current: self)
     }
     
 }
