@@ -119,3 +119,6 @@ iOSInjectionProject/
 
 # End of https://www.toptal.com/developers/gitignore/api/swift,macos
 Podfile
+Pods
+Podfile.lock
+*.xcuserstate
