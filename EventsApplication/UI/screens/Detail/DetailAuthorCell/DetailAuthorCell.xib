@@ -21,29 +21,30 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePf-8B-8zv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuU-TK-MfC">
-                                <rect key="frame" x="16" y="16" width="160" height="12"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bek-Qe-jtE">
-                                <rect key="frame" x="184" y="16" width="120" height="12"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="x5c-GF-loU">
+                                <rect key="frame" x="16" y="16" width="288" height="12"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuU-TK-MfC">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bek-Qe-jtE">
+                                        <rect key="frame" x="0.0" y="12" width="288" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" name="Accent"/>
                         <constraints>
-                            <constraint firstItem="ZuU-TK-MfC" firstAttribute="leading" secondItem="ePf-8B-8zv" secondAttribute="leading" constant="16" id="DgL-yd-Cq9"/>
-                            <constraint firstItem="bek-Qe-jtE" firstAttribute="top" secondItem="ePf-8B-8zv" secondAttribute="top" constant="16" id="Yyy-oN-zxx"/>
-                            <constraint firstAttribute="trailing" secondItem="bek-Qe-jtE" secondAttribute="trailing" constant="16" id="cEg-Yo-PEV"/>
-                            <constraint firstItem="ZuU-TK-MfC" firstAttribute="top" secondItem="ePf-8B-8zv" secondAttribute="top" constant="16" id="g5Z-JW-wzP"/>
-                            <constraint firstAttribute="bottom" secondItem="ZuU-TK-MfC" secondAttribute="bottom" constant="16" id="hCw-C5-Wf2"/>
-                            <constraint firstItem="ZuU-TK-MfC" firstAttribute="width" secondItem="ePf-8B-8zv" secondAttribute="width" multiplier="0.5" id="nD4-yK-aPz"/>
-                            <constraint firstAttribute="bottom" secondItem="bek-Qe-jtE" secondAttribute="bottom" constant="16" id="uuQ-7c-tUa"/>
-                            <constraint firstItem="bek-Qe-jtE" firstAttribute="leading" secondItem="ZuU-TK-MfC" secondAttribute="trailing" constant="8" id="x26-V0-k3j"/>
+                            <constraint firstItem="x5c-GF-loU" firstAttribute="top" secondItem="ePf-8B-8zv" secondAttribute="top" constant="16" id="DnL-CL-nNL"/>
+                            <constraint firstAttribute="trailing" secondItem="x5c-GF-loU" secondAttribute="trailing" constant="16" id="hc6-u3-SdP"/>
+                            <constraint firstAttribute="bottom" secondItem="x5c-GF-loU" secondAttribute="bottom" constant="16" id="uZX-MV-Ckk"/>
+                            <constraint firstItem="x5c-GF-loU" firstAttribute="leading" secondItem="ePf-8B-8zv" secondAttribute="leading" constant="16" id="z37-En-6yz"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -59,7 +60,7 @@
                 <outlet property="authorLabel" destination="ZuU-TK-MfC" id="juI-q5-Xei"/>
                 <outlet property="datelabel" destination="bek-Qe-jtE" id="PeR-03-sk4"/>
             </connections>
-            <point key="canvasLocation" x="132" y="54"/>
+            <point key="canvasLocation" x="85.507246376811594" y="66.964285714285708"/>
         </tableViewCell>
     </objects>
     <resources>

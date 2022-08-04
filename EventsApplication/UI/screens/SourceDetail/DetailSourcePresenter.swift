@@ -15,7 +15,7 @@ public final class DetailSourcePresenter{
     private let sources: Sources
     
     unowned var view: DetailSourceViewController!
-
+    
     
     public func set(view: DetailSourceViewController) {
         self.view = view
@@ -31,36 +31,23 @@ public final class DetailSourcePresenter{
     
     
     /**
-     
      let name : String?
      let description : String?
      let url : String?
-     
-     
-    
      let category : String?
-     
-     
      let language : String?
      let country : String?
      */
     private func prepareCells(sources: Sources) -> [DetailModel]{
         
         return [
-//            DetailDescriptionCellModel(description: sources.category ?? ""),
             DetailTransparentCellModel(text: sources.name ?? ""),
             DetailAccentCellModel(text: sources.description ?? ""),
-            DetailUrlCellModel(url: sources.url)
-//            DetailImageCellModel(image: article.urlToImage),
-//            DetailTitleCellModel(title: article.title!),
-            
-//            DetailUrlCellModel(url: article.url ?? ""),
-//            DetailAuthorCellModel(
-//                author: article.author,
-//                date: DateTimeUtil.convertDateString(
-//                    dateString: article.publishedAt
-//                )
-//            )
+            DetailUrlCellModel(url: sources.url),
+            DetailAuthorCellModel(
+                author: NSLocalizedString(sources.country!, comment: ""),
+                date: "\(NSLocalizedString("Language", comment: "")) : \(sources.language!)"),
+            DetailTransparentCellModel(text: sources.category ?? "")
         ]
         
     }
