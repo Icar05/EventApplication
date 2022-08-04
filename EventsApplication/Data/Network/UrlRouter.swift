@@ -11,7 +11,7 @@ enum UrlRouter: URLRequestConvertible {
     static let baseUrl = "https://newsapi.org/"
     
     
-    case getDefaultHeadlines(Void)
+    case getDefaultHeadlines
     case getHeadlinesByCountry(String)
     case getEverythingByQuery(String)
     case getSourcesByCategory(String)
@@ -41,7 +41,7 @@ enum UrlRouter: URLRequestConvertible {
         let result: (path: String, parameters: Parameters?) = {
             switch self {
                 
-                case .getDefaultHeadlines():
+                case .getDefaultHeadlines:
                     return ("v2/top-headlines", ["apiKey": UrlRouter.apiKey,
                                                  "country": CountryUtil.getDefaultCountry()])
                 

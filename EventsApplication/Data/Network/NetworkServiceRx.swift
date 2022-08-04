@@ -23,7 +23,7 @@ class NetworkServiceRx {
     //  all new headers
     func getDefaultHeadlines() -> Observable<[Articles]>{
         return Observable<[Articles]>.create({[weak self] (observer) -> Disposable in
-                    let request = self?.sessionManager.request(UrlRouter.getDefaultHeadlines())
+            let request = self?.sessionManager.request(UrlRouter.getDefaultHeadlines)
                         .validate()
                         .responseJSON { (response) in
                             switch response.result {
