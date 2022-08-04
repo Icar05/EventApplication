@@ -11,7 +11,7 @@ enum UrlRouter: URLRequestConvertible {
     static let baseUrl = "https://newsapi.org/"
     
     
-    case getDefaultHeadlines()
+    case getDefaultHeadlines(Void)
     case getHeadlinesByCountry(String)
     case getEverythingByQuery(String)
     case getSourcesByCategory(String)
