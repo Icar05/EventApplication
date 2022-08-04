@@ -35,7 +35,7 @@ class EverythingViewController: BaseArticleController {
         super.viewDidLoad()
         
         self.tableView.register(UINib(nibName: cellIndifier, bundle: nil),
-            forCellReuseIdentifier: cellIndifier)
+                                forCellReuseIdentifier: cellIndifier)
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -97,11 +97,13 @@ extension EverythingViewController : TabItem{
     
     @objc func selectQuery(){
         ApplicationNavigator.presentSearchDialog(
-            title: queryTabItemTitle,
-            subtitle: queryTabItemSubtitle,
-            current: self, completion: { search in
-               self.presenter.setQuery(query: search)
-        })
+            model: UISearchDialogModel(
+                title: queryTabItemTitle,
+                subtitle: queryTabItemSubtitle,
+                completion: { search in
+                    self.presenter.setQuery(query: search)
+                }),
+            current: self)
     }
     
 }

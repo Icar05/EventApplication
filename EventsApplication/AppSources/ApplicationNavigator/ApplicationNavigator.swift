@@ -34,16 +34,14 @@ class ApplicationNavigator {
         current?.navigationController?.pushViewController(viewController, animated: true)
     }
     
-    typealias searchDialogComplateion = (String)->Void
-    static func presentSearchDialog(title: String, subtitle: String, current: UIViewController?, completion: @escaping searchDialogComplateion) {
+
+    static func presentSearchDialog(model: UISearchDialogModel, current: UIViewController?) {
         let dialogStoryboard = UIStoryboard(name: "SearchDialog", bundle: nil)
-        let model = UISearchDialogModel(title: title, subtitle: subtitle, completion: completion)
         let customAlert = dialogStoryboard.instantiateViewController(withIdentifier: "UISearchDialog") as! UISearchDialog
             customAlert.setModel(model: model)
             current?.present(customAlert, animated: true, completion: nil)
     }
     
-    typealias selectDialogComplateion = (String)->Void
     static func presentSelectionDialog(model: UISelectionDialogModel, current: UIViewController?) {
         let dialogStoryboard = UIStoryboard(name: "SelectionDialog", bundle: nil)
         let customAlert = dialogStoryboard.instantiateViewController(withIdentifier: "UISelectionDialog") as! UISelectionDialog
