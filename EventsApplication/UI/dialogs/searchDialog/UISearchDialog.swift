@@ -9,8 +9,17 @@
 import Foundation
 import UIKit
 
+struct UISearchDialogModel{
+    let title: String
+    let subtitle: String
+    var completion: ((String)->Void)?
+}
+
+
 class UISearchDialog: BaseDialogViewController{
     
+    
+    @IBOutlet weak var alertView: UIView!
     
     @IBOutlet weak var dialogTitle: UILabel!
     
@@ -18,37 +27,23 @@ class UISearchDialog: BaseDialogViewController{
     
     @IBOutlet weak var searchField: UITextField!
     
-    var customTitle: String?
-    
-    var customDescription: String?
+    private var model: UISearchDialogModel? = nil
+
     
     
     @IBAction func cancelClick(_ sender: UIButton) {
-        self.completion = nil
+        self.model?.completion = nil
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func okClick(_ sender: UIButton) {
-        self.completion?(self.searchField.text ?? "")
-        self.completion = nil
+        self.model?.completion?(self.searchField.text ?? "")
+        self.model?.completion = nil
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBOutlet weak var alertView: UIView!
-    
-    
-    
-    typealias searchDialogComplateion = (String)->Void
-    var completion: searchDialogComplateion?
-    
-    
-    func setDescription(title: String, subtitle: String){
-        self.dialogTitle.text = title
-        self.dialogSubtitle.text = subtitle
-    }
-    
-    func setCompletion(completion: @escaping searchDialogComplateion){
-        self.completion = completion
+    func setModel(model: UISearchDialogModel){
+        self.model = model
     }
     
     override func viewDidLoad() {
@@ -68,8 +63,8 @@ class UISearchDialog: BaseDialogViewController{
     
     func setupView() {
         self.alertView.layer.cornerRadius = 10
-        self.dialogTitle.text = customTitle
-        self.dialogSubtitle.text = customDescription
+        self.dialogTitle.text = model?.title
+        self.dialogSubtitle.text = model?.subtitle
     }
     
     

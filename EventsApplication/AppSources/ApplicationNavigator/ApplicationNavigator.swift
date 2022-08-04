@@ -37,10 +37,9 @@ class ApplicationNavigator {
     typealias searchDialogComplateion = (String)->Void
     static func presentSearchDialog(title: String, subtitle: String, current: UIViewController?, completion: @escaping searchDialogComplateion) {
         let dialogStoryboard = UIStoryboard(name: "SearchDialog", bundle: nil)
+        let model = UISearchDialogModel(title: title, subtitle: subtitle, completion: completion)
         let customAlert = dialogStoryboard.instantiateViewController(withIdentifier: "UISearchDialog") as! UISearchDialog
-            customAlert.setCompletion(completion: completion)
-            customAlert.customTitle = title
-            customAlert.customDescription = subtitle
+            customAlert.setModel(model: model)
             current?.present(customAlert, animated: true, completion: nil)
     }
     
