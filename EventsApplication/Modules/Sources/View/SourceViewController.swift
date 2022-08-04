@@ -86,15 +86,19 @@ extension SourcesViewController: TabItem{
     }
     
     @objc func selectCategory(){
-        ApplicationNavigator.presentSelectionDialog(
-            model: UISelectionDialogModel(
-                title: categoryTabItemTitle,
-                subtitle: categoryTabItemSubtitle,
-                dataSourse: ValueForSelector.categories,
-                completion: {category in
-                    self.presenter.setCategory(category: category)
-                }),
-            current: self)
+        presentDialog()
+    }
+    
+    private func presentDialog(){
+        let navigator = getApplication().getNavigator()
+        let dialog = navigator.getSelectionDialog(model: UISelectionDialogModel(
+            title: categoryTabItemTitle,
+            subtitle: categoryTabItemSubtitle,
+            dataSourse:ValueForSelector.categories,
+            completion: { category in
+                self.presenter.setCategory(category: category)
+            }))
+        navigator.present(from: self, to: dialog)
     }
     
 }

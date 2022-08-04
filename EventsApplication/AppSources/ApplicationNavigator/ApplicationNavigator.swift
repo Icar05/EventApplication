@@ -16,6 +16,10 @@ class ApplicationNavigator {
         from.navigationController?.pushViewController(to, animated: true)
     }
     
+    func present(from: UIViewController, to: UIViewController){
+        from.present(to, animated: true, completion: nil)
+    }
+    
     func getArticleDetailScreen(article: Articles) -> UIViewController {
         
         let presenter = DetailPresenter(article: article)
@@ -34,18 +38,20 @@ class ApplicationNavigator {
     }
     
 
-    static func presentSearchDialog(model: UISearchDialogModel, current: UIViewController?) {
+    func getSearchDialog(model: UISearchDialogModel) -> UISearchDialog {
         let dialogStoryboard = UIStoryboard(name: "SearchDialog", bundle: nil)
         let customAlert = dialogStoryboard.instantiateViewController(withIdentifier: "UISearchDialog") as! UISearchDialog
             customAlert.setModel(model: model)
-            current?.present(customAlert, animated: true, completion: nil)
+        
+        return customAlert
     }
     
-    static func presentSelectionDialog(model: UISelectionDialogModel, current: UIViewController?) {
+    func getSelectionDialog(model: UISelectionDialogModel) -> UISelectionDialog {
         let dialogStoryboard = UIStoryboard(name: "SelectionDialog", bundle: nil)
         let customAlert = dialogStoryboard.instantiateViewController(withIdentifier: "UISelectionDialog") as! UISelectionDialog
             customAlert.setModel(model: model)
-            current?.present(customAlert,animated: true, completion: nil)
+           
+       return customAlert
     }
     
 }

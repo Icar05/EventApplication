@@ -88,14 +88,19 @@ extension EverythingViewController : TabItem{
     }
     
     @objc func selectQuery(){
-        ApplicationNavigator.presentSearchDialog(
-            model: UISearchDialogModel(
-                title: queryTabItemTitle,
-                subtitle: queryTabItemSubtitle,
-                completion: { search in
-                    self.presenter.setQuery(query: search)
-                }),
-            current: self)
+        presentDialog()
+    }
+    
+    private func presentDialog(){
+        let navigator = getApplication().getNavigator()
+        let dialog = navigator.getSearchDialog(model: UISearchDialogModel(
+            title: queryTabItemTitle,
+            subtitle: queryTabItemSubtitle,
+            completion: { search in
+                self.presenter.setQuery(query: search)
+            }))
+        
+        navigator.present(from: self, to: dialog)
     }
     
 }
