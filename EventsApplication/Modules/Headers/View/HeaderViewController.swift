@@ -86,31 +86,6 @@ extension HeadersViewController : HeaderView{
     
 }
 
-extension HeadersViewController: TabItem{
-    
-    
-    func getNavBarButton() -> UIBarButtonItem? {
-        return createNavItem(title: countryTabItemTitle, selector: "selectCountry")
-    }
-    
-    
-    @objc func selectCountry(){
-        self.presentDialog()
-    }
-    
-    private func presentDialog(){
-        let navigator = getApplication().getNavigator()
-        let dialog = navigator.getSelectionDialog(model: UISelectionDialogModel(
-            title: countryTabItemTitle,
-            subtitle: countryTabItemSubtitle,
-            dataSourse:ValueForSelector.countries,
-            completion: { country in
-                self.presenter.setCountry(country: country)
-            }))
-        navigator.present(from: self, to: dialog)
-    }
-    
-}
 
 
 

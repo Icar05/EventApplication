@@ -13,6 +13,8 @@ public final class NewsPresenter{
     
     
     
+    private let showLog = false
+    
     private let disposeBag = DisposeBag()
     
     private let repository: Repository
@@ -23,6 +25,8 @@ public final class NewsPresenter{
     
     unowned var view: NewsViewController!
 
+    
+    
     
     public func set(view: NewsViewController) {
         self.view = view
@@ -35,7 +39,53 @@ public final class NewsPresenter{
     
     func viewDidLoad(country: String = ""){
         self.country = country
-        self.handleObservable(query: getQuery())
+        self.handleObservable(
+            onBegin: {
+                self.view?.showLoading()
+            },
+            onEnd: {models in
+                self.view?.hideLoading()
+                self.view?.registerCells(models: models)
+            },
+            query: getQuery())
+    }
+    
+    func setCountry(country: String){
+        self.country = country
+        self.handleObservable(
+            onBegin: {
+                self.view?.showLoading()
+            },
+            onEnd: {models in
+                self.view?.hideLoading()
+                self.view?.refreshCells(models: models)
+            },
+            query: getQuery())
+    }
+    
+    
+    
+    private func handleObservable(onBegin: () -> Void,  onEnd:  @escaping (_ models: [CustomCellModel]) -> Void, query: Observable<[Articles]>){
+        onBegin()
+            query
+            .map{ [weak self] articles  in
+                let result = self?.repository.saveArticles(articles: articles)
+                self?.printLog("Repository input count -> \(articles.count), result of save \(String(describing: result))")
+            }
+            .map{ [weak self] result in
+                self?.getContentFromRepository()
+            }
+            .catchError{ [weak self] error in
+                self?.view?.handleError(error: error)
+                self?.printLog("Repository error ->  \(error.localizedDescription)")
+                return Observable.just(self?.getContentFromRepository() ?? [])
+            }
+            .subscribe(
+                onNext: { [weak self] (articles) in
+                    self?.printLog("Repository hide loading")
+                    let cells = self?.prepareCells(article: articles ?? []) ?? []
+                    onEnd(cells)
+            }).disposed(by: disposeBag)
     }
     
     private func getQuery() -> Observable<[Articles]>{
@@ -46,32 +96,22 @@ public final class NewsPresenter{
         return self.interactor.getHeadlinesByCountry(country: country).asObservable()
     }
     
-    private func handleObservable(query: Observable<[Articles]>){
-        self.view?.showLoading()
-            query
-            .map{ articles  in
-                let result = self.repository.saveArticles(articles: articles)
-                print("Repository input count -> \(articles.count), result of save \(result)")
-            }
-            .map{ result in
-                self.repository.getHeadlines()
-            }
-            .catchError{ error in
-                self.view?.handleError(error: error)
-                print("Repository error ->  \(error.localizedDescription)")
-                
-                return Observable.just(self.repository.getHeadlines())
-            }
-            .subscribe(
-                onNext: { (articles) in
-                    print("Repository hide loading")
-                    self.view?.hideLoading()
-                    self.view?.registerCells(models: self.prepareCells(article: articles))
-            }).disposed(by: disposeBag)
+    private func getContentFromRepository() -> [Articles]{
+        if(country.isEmpty){
+            return self.repository.getHeadlines()
+        }
+        
+        return self.repository.getHeadlines(country: country)
     }
     
     private func prepareCells(article: [Articles]) -> [CustomCellModel]{
         return article.map{ DetailTransparentCellModel(text: $0.title!)}
+    }
+    
+    private func printLog(_ value: String){
+        if(showLog){
+            print(value)
+        }
     }
     
 }

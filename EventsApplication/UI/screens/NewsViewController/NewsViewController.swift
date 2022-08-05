@@ -8,18 +8,21 @@
 
 import UIKit
 
-/**
- fileprivate let categoryTabItemTitle = NSLocalizedString("Category", comment: "")
- 
- fileprivate let categoryTabItemSubtitle = NSLocalizedString("Select category", comment: "")
- 
- fileprivate let countryTabItemTitle = NSLocalizedString("Country", comment: "")
- 
- fileprivate let countryTabItemSubtitle = NSLocalizedString("Select country", comment: "")
- */
 
+/**
+ private let categoryTabItemTitle = NSLocalizedString("Category", comment: "")
+ 
+ private let categoryTabItemSubtitle = NSLocalizedString("Select category", comment: "")
+ */
 public final class NewsViewController: BaseTableViewController {
     
+    
+    
+  
+    
+    private let countryTabItemTitle = NSLocalizedString("Country", comment: "")
+    
+    private let countryTabItemSubtitle = NSLocalizedString("Select country", comment: "")
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -61,26 +64,54 @@ public final class NewsViewController: BaseTableViewController {
             self.tableView?.register(nib, forCellReuseIdentifier: $0.reuseIdentifier)
         }
         
+        self.refreshCells(models: models)
+    }
+    
+    func refreshCells(models: [CustomCellModel]){
+        print("TEMP -> refreshCells: \(models.count)")
         self.dataSource.setData(data: models)
         self.tableView.reloadData()
     }
     
     public override func onRefresh() {
         #warning("handle it")
-        print("need handle it")
+        print("TEMP -> onRefresh")
     }
    
     func showLoading() {
         #warning("handle it")
 //        self.emptyView?.showLoading()
+        print("TEMP -> showLoading")
     }
     
     func hideLoading() {
         #warning("handle it")
 //        self.emptyView?.hideLoading()
+        print("TEMP -> hideLoading")
     }
     
 }
+
+extension NewsViewController: TabItem{
+    
+    
+    func getNavBarButton() -> UIBarButtonItem? {
+        return createNavItem(title: countryTabItemTitle, selector: "selectCountry")
+    }
+    
+    
+    @objc func selectCountry(){
+        self.presentSelectionDialog(model: UISelectionDialogModel(
+            title: countryTabItemTitle,
+            subtitle: countryTabItemSubtitle,
+            dataSourse: ValueForSelector.countries,
+            completion: { country in
+                self.presenter.setCountry(country: country)
+            }))
+    }
+    
+}
+
 
 
 

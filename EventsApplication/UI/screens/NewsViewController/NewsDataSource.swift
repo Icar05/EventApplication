@@ -15,6 +15,7 @@ final class NewsDataSource : NSObject, UITableViewDataSource, UITableViewDelegat
     private var data: [CustomCellModel] = []
     
     func setData(data: [CustomCellModel]){
+        self.data = []
         self.data = data
     }
     

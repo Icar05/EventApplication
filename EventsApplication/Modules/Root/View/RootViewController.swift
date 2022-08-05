@@ -17,7 +17,7 @@ class RootViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewControllers = getDataSource()
+        self.viewControllers = prepareControllers()
         self.delegate = self
         self.title = viewControllers?[0].tabBarItem.title
         self.drawNavigationButtonsAlignToId(id: 0)
@@ -30,11 +30,18 @@ class RootViewController: UITabBarController {
 
 extension RootViewController : RootView{
     
-    func getDataSource() -> [UIViewController]{
+    func prepareControllers() -> [UIViewController]{
         
-        let headerVC = HeaderCreator.assembleModule()
-            headerVC.tabBarItem.title = NSLocalizedString("Headers", comment: "")
-            headerVC.tabBarItem.image = .tabIcon
+        let navigator = getApplication().getNavigator()
+        let component = getApplication().getAppComponent()
+        let headerInteractor = component.getHeaderInteractor()
+        let repository = component.getRepository()
+        
+        let newsVC = navigator.getNewsViewController(
+            interactor: headerInteractor,
+            repository: repository)
+            newsVC.tabBarItem.title = NSLocalizedString("Headers", comment: "")
+            newsVC.tabBarItem.image = .tabIcon
         
         
         let everythingVC = EverythingCreator.assembleModule()
@@ -47,7 +54,7 @@ extension RootViewController : RootView{
         
 
         
-        return [headerVC, everythingVC, sourcesVC]
+        return [newsVC, everythingVC, sourcesVC]
     }
 }
 

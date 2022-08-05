@@ -40,5 +40,12 @@ public class BaseTableViewController: UIViewController {
         }
     }
     
+    
+    internal func presentSelectionDialog(model: UISelectionDialogModel){
+        let navigator = getApplication().getNavigator()
+        let dialog = navigator.getSelectionDialog(model: model)
+        navigator.present(from: self, to: dialog)
+    }
+    
   
 }

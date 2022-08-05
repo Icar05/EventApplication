@@ -20,6 +20,15 @@ class ApplicationNavigator {
         from.present(to, animated: true, completion: nil)
     }
     
+    func getNewsViewController(interactor: HeadersInteractor, repository: Repository) -> UIViewController{
+        
+        let presenter = NewsPresenter(interactor: interactor, resository: repository)
+        let vc = NewsViewController(presenter: presenter)
+        presenter.set(view: vc)
+        
+        return vc
+    }
+    
     func getArticleDetailScreen(article: Articles) -> UIViewController {
         
         let presenter = DetailPresenter(article: article)
