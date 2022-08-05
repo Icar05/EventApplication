@@ -96,7 +96,14 @@ public final class NewsPresenter{
     }
     
     private func prepareCells(article: [Articles]) -> [CustomCellModel]{
-        return article.map{ NewsCellModel(article: $0) }
+        
+        var cells: [CustomCellModel] = [NewsSeparatorCellModel()]
+            article.forEach{
+                cells.append(NewsCellModel(article: $0))
+                cells.append(NewsSeparatorCellModel())
+            }
+        
+       return cells
     }
     
     private func printLog(_ value: String){
