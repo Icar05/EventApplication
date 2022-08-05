@@ -29,7 +29,7 @@ class ApplicationNavigator {
         let vc = NewsViewController(presenter: presenter)
         presenter.set(view: vc)
         
-        return vc
+        return UINavigationController(rootViewController: vc)
     }
     
     func getArticleDetailScreen(article: Articles) -> UIViewController {

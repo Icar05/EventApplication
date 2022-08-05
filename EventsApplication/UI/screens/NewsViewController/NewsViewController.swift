@@ -96,10 +96,19 @@ public final class NewsViewController: BaseTableViewController {
 extension NewsViewController: NewsDataSourceDelegate{
     
     func didItemSelected(item: CustomCellModel) {
-        #warning("handle it")
-       let text =  (item as? DetailTransparentCellModel)?.text
+        
+        guard let new: NewsCellModel = item as? NewsCellModel else{
+            return
+        }
+        
+        self.navigateToArticleDetail(article: new.article)
     }
     
+    private func navigateToArticleDetail(article: Articles){
+        let navigator = getApplication().getNavigator()
+        let destination = navigator.getArticleDetailScreen(article: article)
+        navigator.navigate(from: self, to: destination)
+    }
     
 }
 
@@ -107,6 +116,7 @@ extension NewsViewController: TabItem{
     
     
     func getNavBarButton() -> UIBarButtonItem? {
+        print("test -> getItme!")
         return createNavItem(title: countryTabItemTitle, selector: "selectCountry")
     }
     

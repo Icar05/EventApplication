@@ -66,8 +66,19 @@ extension RootViewController: UITabBarControllerDelegate {
         self.navigationItem.rightBarButtonItem = nil
         self.navigationItem.leftBarButtonItem = nil
         
-        let current = self.viewControllers?[selectedIndex] as! TabItem
-        self.navigationItem.rightBarButtonItem = current.getNavBarButton()
+        
+        let current = self.viewControllers?[selectedIndex]
+        
+        guard let navigationVC = current as? UINavigationController,
+              let root = navigationVC.viewControllers.first,
+              let tabItem = root as? TabItem else {
+                  return
+              }
+        
+        root.title = navigationVC.tabBarItem.title
+        root.navigationItem.rightBarButtonItem = tabItem.getNavBarButton()
+        navigationVC.navigationBar.tintColor = UIColor.black
+
     }
 
 }

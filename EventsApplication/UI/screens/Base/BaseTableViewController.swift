@@ -13,6 +13,9 @@ public class BaseTableViewController: UIViewController {
     
     internal let refreshControl = UIRefreshControl()
     
+    
+    
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         

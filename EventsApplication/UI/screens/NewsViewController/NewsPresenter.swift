@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import UIKit
 
 public final class NewsPresenter{
     
@@ -39,6 +40,7 @@ public final class NewsPresenter{
     }
     
     func viewDidLoad(){
+        print("Test! -> onViewDidLoad!")
         self.loadContent(
             onEnd: { models in
                 self.view?.registerCells(models: models)
@@ -46,6 +48,7 @@ public final class NewsPresenter{
     }
     
     func getFreshContent(){
+        print("Test! -> getFreshContent!")
         self.loadContent(
             onEnd: { models in
                 self.view?.refreshCells(models: models)
@@ -53,6 +56,7 @@ public final class NewsPresenter{
     }
     
     func setCountry(country: String){
+        print("Test! -> setCountry!")
         self.country = country
         self.getFreshContent()
     }
@@ -68,16 +72,26 @@ public final class NewsPresenter{
                 self?.getHeaders()
             }        
             .catchError{ [weak self] error in
-                self?.view?.handleError(error: error)
+                
+                if let view = self?.view{
+                    view.handleError(error: error)
+                }
+                
                 self?.printLog("Repository error ->  \(error.localizedDescription)")
                 return Observable.just(self?.getHeaders() ?? [])
             }
             .subscribe(
                 onNext: { [weak self] (articles) in
+                    
+                    print("Test! -> Finish!")
                     self?.printLog("Repository hide loading")
-                    let cells = self?.prepareCells(article: articles ?? []) ?? []
-                    self?.view?.hideLoading()
-                    onEnd(cells)
+                    
+                    if let view: NewsViewController = self?.view, let article = articles, let s = self{
+                        let content = s.prepareCells(article: article)
+                        view.hideLoading()
+                        onEnd(content)
+                    }
+                    
             }).disposed(by: disposeBag)
     }
     
