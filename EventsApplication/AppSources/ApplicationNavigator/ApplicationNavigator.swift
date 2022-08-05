@@ -23,6 +23,15 @@ class ApplicationNavigator {
         return RootViewController()
     }
     
+    func getWorldNewsViewController(interactor: EverythingInteractor, repository: Repository) -> UIViewController{
+        
+        let presenter = WorldNewsPresenter(interactor: interactor, resository: repository)
+        let vc = WorldNewsViewController(presenter: presenter)
+        presenter.set(view: vc)
+        
+        return UINavigationController(rootViewController: vc)
+    }
+    
     func getNewsViewController(interactor: HeadersInteractor, repository: Repository) -> UIViewController{
         
         let presenter = NewsPresenter(interactor: interactor, resository: repository)

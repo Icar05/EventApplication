@@ -84,6 +84,9 @@
 		ED67A358289CD1C8009AFA4C /* NewsSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67A356289CD1C8009AFA4C /* NewsSeparatorCell.swift */; };
 		ED67A359289CD1C8009AFA4C /* NewsSeparatorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED67A357289CD1C8009AFA4C /* NewsSeparatorCell.xib */; };
 		ED67A35B289CD1DA009AFA4C /* NewsSeparatorCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67A35A289CD1DA009AFA4C /* NewsSeparatorCellModel.swift */; };
+		ED67A35F289CE555009AFA4C /* WorldNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67A35D289CE555009AFA4C /* WorldNewsViewController.swift */; };
+		ED67A360289CE555009AFA4C /* WorldNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED67A35E289CE555009AFA4C /* WorldNewsViewController.xib */; };
+		ED67A362289CE564009AFA4C /* WorldNewsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67A361289CE564009AFA4C /* WorldNewsPresenter.swift */; };
 		EDD2B16C289ADFDA004DAC2D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B16A289ADFDA004DAC2D /* DetailViewController.swift */; };
 		EDD2B16D289ADFDA004DAC2D /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD2B16B289ADFDA004DAC2D /* DetailViewController.xib */; };
 		EDD2B16F289ADFE8004DAC2D /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B16E289ADFE8004DAC2D /* DetailPresenter.swift */; };
@@ -209,6 +212,9 @@
 		ED67A356289CD1C8009AFA4C /* NewsSeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSeparatorCell.swift; sourceTree = "<group>"; };
 		ED67A357289CD1C8009AFA4C /* NewsSeparatorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsSeparatorCell.xib; sourceTree = "<group>"; };
 		ED67A35A289CD1DA009AFA4C /* NewsSeparatorCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSeparatorCellModel.swift; sourceTree = "<group>"; };
+		ED67A35D289CE555009AFA4C /* WorldNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldNewsViewController.swift; sourceTree = "<group>"; };
+		ED67A35E289CE555009AFA4C /* WorldNewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorldNewsViewController.xib; sourceTree = "<group>"; };
+		ED67A361289CE564009AFA4C /* WorldNewsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldNewsPresenter.swift; sourceTree = "<group>"; };
 		EDD2B16A289ADFDA004DAC2D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EDD2B16B289ADFDA004DAC2D /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		EDD2B16E289ADFE8004DAC2D /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
@@ -601,7 +607,7 @@
 			path = animation;
 			sourceTree = "<group>";
 		};
-		ED67A340289C7C97009AFA4C /* NewsViewController */ = {
+		ED67A340289C7C97009AFA4C /* News */ = {
 			isa = PBXGroup;
 			children = (
 				ED67A355289CD1A5009AFA4C /* NewsSeparatorCell */,
@@ -611,7 +617,7 @@
 				ED67A341289C7CB0009AFA4C /* NewsPresenter.swift */,
 				ED67A347289C7CE2009AFA4C /* NewsDataSource.swift */,
 			);
-			path = NewsViewController;
+			path = News;
 			sourceTree = "<group>";
 		};
 		ED67A349289C7EB0009AFA4C /* Presentation */ = {
@@ -662,12 +668,23 @@
 			path = NewsSeparatorCell;
 			sourceTree = "<group>";
 		};
+		ED67A35C289CE518009AFA4C /* WorldNews */ = {
+			isa = PBXGroup;
+			children = (
+				ED67A35D289CE555009AFA4C /* WorldNewsViewController.swift */,
+				ED67A35E289CE555009AFA4C /* WorldNewsViewController.xib */,
+				ED67A361289CE564009AFA4C /* WorldNewsPresenter.swift */,
+			);
+			path = WorldNews;
+			sourceTree = "<group>";
+		};
 		EDD2B168289ADF39004DAC2D /* screens */ = {
 			isa = PBXGroup;
 			children = (
-				ED67A34D289CB210009AFA4C /* Root */,
 				ED67A34A289C8816009AFA4C /* Base */,
-				ED67A340289C7C97009AFA4C /* NewsViewController */,
+				ED67A34D289CB210009AFA4C /* Root */,
+				ED67A35C289CE518009AFA4C /* WorldNews */,
+				ED67A340289C7C97009AFA4C /* News */,
 				ED67A31A289BCA04009AFA4C /* SourceDetail */,
 				EDD2B169289ADFB2004DAC2D /* Detail */,
 			);
@@ -892,6 +909,7 @@
 				9BB5C217225F72CE0006A74E /* EmptyView.xib in Resources */,
 				EDD2B18E289B3A5C004DAC2D /* DetailUrlCell.xib in Resources */,
 				9B56313F224B6D32005B41A6 /* Sources.storyboard in Resources */,
+				ED67A360289CE555009AFA4C /* WorldNewsViewController.xib in Resources */,
 				ED67A329289C448D009AFA4C /* DetailCategoryCell.xib in Resources */,
 				EDD2B179289B0CD2004DAC2D /* DetailImageCellTableViewCell.xib in Resources */,
 				1A3F1A0D224D1D3A008B1486 /* ArticleCell.xib in Resources */,
@@ -927,6 +945,7 @@
 				1AB264EA2265048F00D298F4 /* RepositoryImpl.swift in Sources */,
 				9B966247221ED5B7008C512D /* ApplicationNavigator.swift in Sources */,
 				9B563154224B75F5005B41A6 /* EverythingInteractor.swift in Sources */,
+				ED67A35F289CE555009AFA4C /* WorldNewsViewController.swift in Sources */,
 				9B67F3A022672B2B004402FB /* Replacible.swift in Sources */,
 				1A69B9C4224F65EA00DD811C /* DateTimeUtil.swift in Sources */,
 				EDD2B194289B3F44004DAC2D /* DetailAuthorCell.swift in Sources */,
@@ -954,6 +973,7 @@
 				EDD2B17B289B0CE3004DAC2D /* DetailImageCellModel.swift in Sources */,
 				9B67F3A22267489B004402FB /* CountryUtil.swift in Sources */,
 				9B788097224A14F000F7231A /* RootViewController.swift in Sources */,
+				ED67A362289CE564009AFA4C /* WorldNewsPresenter.swift in Sources */,
 				ED67A32B289C449E009AFA4C /* DetailCategoryCellModel.swift in Sources */,
 				9B563158224B7672005B41A6 /* SourcesContract.swift in Sources */,
 				EDD2B190289B3A6F004DAC2D /* DetailUrlCellModel.swift in Sources */,

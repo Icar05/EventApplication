@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WorldNewsViewController" customModule="EventsApplication" customModuleProvider="target">
+            <connections>
+                <outlet property="emptyView" destination="Io7-Wx-wnF" id="xoH-wE-92P"/>
+                <outlet property="tableView" destination="JJM-UX-QGX" id="Jmr-D5-GPK"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AU0-w7-deV" userLabel="Container">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="FmU-Q8-4gR">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                        </imageView>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JJM-UX-QGX">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </tableView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Io7-Wx-wnF" customClass="EmptyView" customModule="EventsApplication" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="Io7-Wx-wnF" firstAttribute="leading" secondItem="AU0-w7-deV" secondAttribute="leading" id="0u1-6g-WCU"/>
+                        <constraint firstItem="JJM-UX-QGX" firstAttribute="top" secondItem="AU0-w7-deV" secondAttribute="top" id="Fda-d1-cbn"/>
+                        <constraint firstAttribute="trailing" secondItem="FmU-Q8-4gR" secondAttribute="trailing" id="FhM-5B-0EK"/>
+                        <constraint firstAttribute="bottom" secondItem="FmU-Q8-4gR" secondAttribute="bottom" id="GTD-QQ-Q4Z"/>
+                        <constraint firstAttribute="bottom" secondItem="JJM-UX-QGX" secondAttribute="bottom" id="KjT-g4-ObU"/>
+                        <constraint firstItem="Io7-Wx-wnF" firstAttribute="top" secondItem="AU0-w7-deV" secondAttribute="top" id="Ntb-3O-VMh"/>
+                        <constraint firstItem="JJM-UX-QGX" firstAttribute="leading" secondItem="AU0-w7-deV" secondAttribute="leading" id="aWq-oC-fAa"/>
+                        <constraint firstItem="FmU-Q8-4gR" firstAttribute="top" secondItem="AU0-w7-deV" secondAttribute="top" id="hhh-FP-Ihs"/>
+                        <constraint firstAttribute="trailing" secondItem="Io7-Wx-wnF" secondAttribute="trailing" id="s8r-IY-ix5"/>
+                        <constraint firstItem="FmU-Q8-4gR" firstAttribute="leading" secondItem="AU0-w7-deV" secondAttribute="leading" id="u8G-or-cKc"/>
+                        <constraint firstAttribute="bottom" secondItem="Io7-Wx-wnF" secondAttribute="bottom" id="wFh-qJ-hfu"/>
+                        <constraint firstAttribute="trailing" secondItem="JJM-UX-QGX" secondAttribute="trailing" id="xdq-OP-Dsf"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="AU0-w7-deV" secondAttribute="bottom" id="9ro-F9-6BE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AU0-w7-deV" secondAttribute="trailing" id="K6P-dv-wlh"/>
+                <constraint firstItem="AU0-w7-deV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="avP-5U-PVt"/>
+                <constraint firstItem="AU0-w7-deV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="oy6-gI-hgl"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="57"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back" width="1247" height="603"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
