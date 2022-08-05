@@ -62,7 +62,7 @@ public final class SourcesViewController: BaseTableViewController {
     }
     
     func refreshCells(models: [CustomCellModel]){
-        if(models.isEmpty){
+        if(models.count < 2){
             self.emptyView.showEmptyView()
             return
         }

@@ -70,7 +70,7 @@ public final class WorldNewsViewController: BaseTableViewController {
     }
     
     func refreshCells(models: [CustomCellModel]){
-        if(models.isEmpty){
+        if(models.count < 2){
             self.emptyView.showEmptyView()
             return
         }
