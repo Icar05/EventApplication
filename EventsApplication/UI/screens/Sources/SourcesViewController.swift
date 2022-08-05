@@ -109,7 +109,7 @@ extension SourcesViewController : TabItem{
         return createNavItem(title: categoryTabItemTitle, selector: "selectCategory")
     }
     
-    @objc func selectQuery(){
+    @objc func selectCategory(){
         self.presentSelectionDialog(model: UISelectionDialogModel(
             title: categoryTabItemTitle,
             subtitle: categoryTabItemSubtitle,

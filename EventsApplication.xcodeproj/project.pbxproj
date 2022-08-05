@@ -50,6 +50,9 @@
 		ED0DD4B5289CFA5500FA9F19 /* SourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0DD4B3289CFA5500FA9F19 /* SourcesViewController.swift */; };
 		ED0DD4B6289CFA5500FA9F19 /* SourcesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED0DD4B4289CFA5500FA9F19 /* SourcesViewController.xib */; };
 		ED0DD4B8289CFA6400FA9F19 /* SourcesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0DD4B7289CFA6400FA9F19 /* SourcesPresenter.swift */; };
+		ED0DD4BC289D00EA00FA9F19 /* SourcesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0DD4BA289D00EA00FA9F19 /* SourcesCell.swift */; };
+		ED0DD4BD289D00EA00FA9F19 /* SourcesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED0DD4BB289D00EA00FA9F19 /* SourcesCell.xib */; };
+		ED0DD4BF289D00F700FA9F19 /* SourcesCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0DD4BE289D00F700FA9F19 /* SourcesCellModel.swift */; };
 		ED67A320289BCC3C009AFA4C /* DetailSourcePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67A31F289BCC3C009AFA4C /* DetailSourcePresenter.swift */; };
 		ED67A323289C3177009AFA4C /* DetailSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67A321289C3177009AFA4C /* DetailSourceViewController.swift */; };
 		ED67A324289C3177009AFA4C /* DetailSourceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED67A322289C3177009AFA4C /* DetailSourceViewController.xib */; };
@@ -166,6 +169,9 @@
 		ED0DD4B3289CFA5500FA9F19 /* SourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesViewController.swift; sourceTree = "<group>"; };
 		ED0DD4B4289CFA5500FA9F19 /* SourcesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SourcesViewController.xib; sourceTree = "<group>"; };
 		ED0DD4B7289CFA6400FA9F19 /* SourcesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesPresenter.swift; sourceTree = "<group>"; };
+		ED0DD4BA289D00EA00FA9F19 /* SourcesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesCell.swift; sourceTree = "<group>"; };
+		ED0DD4BB289D00EA00FA9F19 /* SourcesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SourcesCell.xib; sourceTree = "<group>"; };
+		ED0DD4BE289D00F700FA9F19 /* SourcesCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesCellModel.swift; sourceTree = "<group>"; };
 		ED67A31F289BCC3C009AFA4C /* DetailSourcePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSourcePresenter.swift; sourceTree = "<group>"; };
 		ED67A321289C3177009AFA4C /* DetailSourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSourceViewController.swift; sourceTree = "<group>"; };
 		ED67A322289C3177009AFA4C /* DetailSourceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailSourceViewController.xib; sourceTree = "<group>"; };
@@ -408,11 +414,22 @@
 		ED0DD4B2289CFA3200FA9F19 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				ED0DD4B9289D00CC00FA9F19 /* SourcesCell */,
 				ED0DD4B3289CFA5500FA9F19 /* SourcesViewController.swift */,
 				ED0DD4B4289CFA5500FA9F19 /* SourcesViewController.xib */,
 				ED0DD4B7289CFA6400FA9F19 /* SourcesPresenter.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		ED0DD4B9289D00CC00FA9F19 /* SourcesCell */ = {
+			isa = PBXGroup;
+			children = (
+				ED0DD4BA289D00EA00FA9F19 /* SourcesCell.swift */,
+				ED0DD4BB289D00EA00FA9F19 /* SourcesCell.xib */,
+				ED0DD4BE289D00F700FA9F19 /* SourcesCellModel.swift */,
+			);
+			path = SourcesCell;
 			sourceTree = "<group>";
 		};
 		ED67A31A289BCA04009AFA4C /* SourceDetail */ = {
@@ -743,6 +760,7 @@
 				EDD2B195289B3F44004DAC2D /* DetailAuthorCell.xib in Resources */,
 				9BB5C200225F6D960006A74E /* SearchDialog.storyboard in Resources */,
 				9BB5C217225F72CE0006A74E /* EmptyView.xib in Resources */,
+				ED0DD4BD289D00EA00FA9F19 /* SourcesCell.xib in Resources */,
 				ED0DD4B6289CFA5500FA9F19 /* SourcesViewController.xib in Resources */,
 				EDD2B18E289B3A5C004DAC2D /* DetailUrlCell.xib in Resources */,
 				ED67A360289CE555009AFA4C /* WorldNewsViewController.xib in Resources */,
@@ -788,6 +806,7 @@
 				EDD2B182289B2CF0004DAC2D /* DetailTransparentCellModel.swift in Sources */,
 				EDD2B171289ADFF7004DAC2D /* DetailDataSource.swift in Sources */,
 				ED67A351289CB3C1009AFA4C /* NewsCell.swift in Sources */,
+				ED0DD4BF289D00F700FA9F19 /* SourcesCellModel.swift in Sources */,
 				ED0DD4B8289CFA6400FA9F19 /* SourcesPresenter.swift in Sources */,
 				EDD2B189289B379D004DAC2D /* DetailAccentCellModel.swift in Sources */,
 				9B9EB5A32251E94A00570C37 /* UISelectionDialog.swift in Sources */,
@@ -825,6 +844,7 @@
 				9B11D17A221EDB2500BFEBD4 /* UrlRouter.swift in Sources */,
 				1AF3B80A2226D911004FA784 /* MockNetworkTester.swift in Sources */,
 				1A611C11224AE08B008E9D14 /* Source.swift in Sources */,
+				ED0DD4BC289D00EA00FA9F19 /* SourcesCell.swift in Sources */,
 				1A611C0B224ADF7C008E9D14 /* Sources.swift in Sources */,
 				1A918BAF22497E8D00D34DCE /* AuthUtil.swift in Sources */,
 				EDD2B16F289ADFE8004DAC2D /* DetailPresenter.swift in Sources */,

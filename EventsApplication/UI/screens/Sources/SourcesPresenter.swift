@@ -97,15 +97,13 @@ public final class SourcesPresenter{
     
     private func prepareCells(sources: [Sources]) -> [CustomCellModel]{
         
-//        var cells: [CustomCellModel] = [NewsSeparatorCellModel()]
-//            article.forEach{
-//                cells.append(NewsCellModel(article: $0))
-//                cells.append(NewsSeparatorCellModel())
-//            }
-//
-//       return cells
-        
-        return []
+        var cells: [CustomCellModel] = [NewsSeparatorCellModel()]
+        sources.forEach{
+                cells.append(SourcesCellModel(source: $0))
+                cells.append(NewsSeparatorCellModel())
+            }
+
+       return cells
     }
     
     private func printLog(_ value: String){
