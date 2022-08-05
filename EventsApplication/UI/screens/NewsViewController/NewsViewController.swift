@@ -53,6 +53,7 @@ public final class NewsViewController: BaseTableViewController {
         self.tableView.tableFooterView = UIView()
         
         self.addRefresh(tableView: tableView)
+        self.dataSource.delegate = self
         
         self.presenter.viewDidLoad()
     }
@@ -89,6 +90,16 @@ public final class NewsViewController: BaseTableViewController {
 //        self.emptyView?.hideLoading()
         print("TEMP -> hideLoading")
     }
+    
+}
+
+extension NewsViewController: NewsDataSourceDelegate{
+    
+    func didItemSelected(item: CustomCellModel) {
+       let text =  (item as? DetailTransparentCellModel)?.text
+        print("TEMP ->  text: \(String(describing: text))")
+    }
+    
     
 }
 

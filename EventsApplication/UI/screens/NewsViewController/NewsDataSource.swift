@@ -8,14 +8,19 @@
 
 import UIKit
 
+protocol NewsDataSourceDelegate: NSObject{
+    func didItemSelected(item: CustomCellModel)
+}
+
 final class NewsDataSource : NSObject, UITableViewDataSource, UITableViewDelegate{
 
     
     
     private var data: [CustomCellModel] = []
     
+    weak var delegate: NewsDataSourceDelegate? = nil
+    
     func setData(data: [CustomCellModel]){
-        self.data = []
         self.data = data
     }
     
@@ -37,6 +42,11 @@ final class NewsDataSource : NSObject, UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return UITableViewCell.EditingStyle.none
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.delegate?.didItemSelected(item: data[indexPath.row])
+    }
+    
 }
 
 
