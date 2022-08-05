@@ -12,9 +12,6 @@ import UIKit
 class RootViewController: UITabBarController {
     
     
-    
-    var presenter: RootPresenter!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewControllers = prepareControllers()
@@ -24,11 +21,6 @@ class RootViewController: UITabBarController {
         self.tabBar.tintColor = .accentColor
         self.tabBar.unselectedItemTintColor = UIColor.black
     }
-    
-}
-
-
-extension RootViewController : RootView{
     
     func prepareControllers() -> [UIViewController]{
         
@@ -56,6 +48,7 @@ extension RootViewController : RootView{
         
         return [newsVC, everythingVC, sourcesVC]
     }
+    
 }
 
 extension RootViewController: UITabBarControllerDelegate {
@@ -67,8 +60,6 @@ extension RootViewController: UITabBarControllerDelegate {
         self.title = self.viewControllers?[tabBarController.selectedIndex].tabBarItem.title
         self.drawNavigationButtonsAlignToId(id: tabBarController.selectedIndex)
     }
-    
-    
     
     func drawNavigationButtonsAlignToId(id: Int){
         

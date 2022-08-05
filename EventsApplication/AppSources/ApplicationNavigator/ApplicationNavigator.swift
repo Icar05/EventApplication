@@ -6,18 +6,21 @@ import UIKit
 class ApplicationNavigator {
     
     
-    static func presentRootScreen(in window: UIWindow!){
-        window.rootViewController = RootCreator.assembleModule()
-        window.makeKeyAndVisible()
-    }
-    
-    
     func navigate(from: UIViewController, to: UIViewController){
         from.navigationController?.pushViewController(to, animated: true)
     }
     
     func present(from: UIViewController, to: UIViewController){
         from.present(to, animated: true, completion: nil)
+    }
+    
+    func initRootScreen(in window: UIWindow){
+        window.rootViewController = getRootViewController()
+        window.makeKeyAndVisible()
+    }
+    
+    func getRootViewController() -> UITabBarController{
+        return RootViewController()
     }
     
     func getNewsViewController(interactor: HeadersInteractor, repository: Repository) -> UIViewController{
