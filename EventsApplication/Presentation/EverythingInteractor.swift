@@ -25,7 +25,6 @@ class EverythingInteractor {
         
     }
     
-    
     func transformEverything(articles: [Articles], language: String?, category: String? ) -> [Articles]{
         var output: [Articles]  = []
         

@@ -38,7 +38,7 @@
 		9B56314E224B7512005B41A6 /* EverythingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56314D224B7512005B41A6 /* EverythingViewController.swift */; };
 		9B563150224B7579005B41A6 /* EverythingPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56314F224B7579005B41A6 /* EverythingPresenterImpl.swift */; };
 		9B563152224B75BB005B41A6 /* EverythingContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563151224B75BB005B41A6 /* EverythingContract.swift */; };
-		9B563154224B75F5005B41A6 /* EverythingInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563153224B75F5005B41A6 /* EverythingInteractorImpl.swift */; };
+		9B563154224B75F5005B41A6 /* EverythingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563153224B75F5005B41A6 /* EverythingInteractor.swift */; };
 		9B563156224B764B005B41A6 /* SourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563155224B764B005B41A6 /* SourceViewController.swift */; };
 		9B563158224B7672005B41A6 /* SourcesContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563157224B7672005B41A6 /* SourcesContract.swift */; };
 		9B56315A224B769E005B41A6 /* SourcesPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563159224B769E005B41A6 /* SourcesPresenterImpl.swift */; };
@@ -153,7 +153,7 @@
 		9B56314D224B7512005B41A6 /* EverythingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingViewController.swift; sourceTree = "<group>"; };
 		9B56314F224B7579005B41A6 /* EverythingPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingPresenterImpl.swift; sourceTree = "<group>"; };
 		9B563151224B75BB005B41A6 /* EverythingContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingContract.swift; sourceTree = "<group>"; };
-		9B563153224B75F5005B41A6 /* EverythingInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingInteractorImpl.swift; sourceTree = "<group>"; };
+		9B563153224B75F5005B41A6 /* EverythingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingInteractor.swift; sourceTree = "<group>"; };
 		9B563155224B764B005B41A6 /* SourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceViewController.swift; sourceTree = "<group>"; };
 		9B563157224B7672005B41A6 /* SourcesContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesContract.swift; sourceTree = "<group>"; };
 		9B563159224B769E005B41A6 /* SourcesPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesPresenterImpl.swift; sourceTree = "<group>"; };
@@ -362,7 +362,6 @@
 				9B563126224B62B4005B41A6 /* Creator */,
 				9B563127224B62B4005B41A6 /* Contract */,
 				9B563129224B62B4005B41A6 /* Presenter */,
-				9B563128224B62B4005B41A6 /* Interactor */,
 			);
 			path = Evertything;
 			sourceTree = "<group>";
@@ -374,7 +373,6 @@
 				9B56311A224B624D005B41A6 /* Creator */,
 				9B563116224B624D005B41A6 /* Contract */,
 				9B563117224B624D005B41A6 /* Presenter */,
-				9B563119224B624D005B41A6 /* Interactor */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -402,13 +400,6 @@
 				9B563155224B764B005B41A6 /* SourceViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		9B563119224B624D005B41A6 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Interactor;
 			sourceTree = "<group>";
 		};
 		9B56311A224B624D005B41A6 /* Creator */ = {
@@ -442,14 +433,6 @@
 				9B563151224B75BB005B41A6 /* EverythingContract.swift */,
 			);
 			path = Contract;
-			sourceTree = "<group>";
-		};
-		9B563128224B62B4005B41A6 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				9B563153224B75F5005B41A6 /* EverythingInteractorImpl.swift */,
-			);
-			path = Interactor;
 			sourceTree = "<group>";
 		};
 		9B563129224B62B4005B41A6 /* Presenter */ = {
@@ -550,7 +533,6 @@
 				9B966243221ED556008C512D /* BaseCreator.swift */,
 				1A3F1A10224D2B77008B1486 /* BaseArticleController.swift */,
 				1A3F1A18224D3827008B1486 /* BaseSourcesViewController.swift */,
-				1A3266D92254054D004F35A0 /* RequestKeysProtocol.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -685,6 +667,7 @@
 		ED67A349289C7EB0009AFA4C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9B563153224B75F5005B41A6 /* EverythingInteractor.swift */,
 				9B56315B224B76C4005B41A6 /* SourcesInteractor.swift */,
 				9B56314B224B74A3005B41A6 /* HeadersInteractor.swift */,
 			);
@@ -694,6 +677,7 @@
 		ED67A34A289C8816009AFA4C /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				1A3266D92254054D004F35A0 /* RequestKeysProtocol.swift */,
 				1A3F1A1A224D410D008B1486 /* emptyView */,
 				9B1C2AE4225F37DF002CEF80 /* BaseTableViewController.swift */,
 			);
@@ -962,7 +946,7 @@
 				ED67A33E289C6B37009AFA4C /* AnimatedController.swift in Sources */,
 				1AB264EA2265048F00D298F4 /* RepositoryImpl.swift in Sources */,
 				9B966247221ED5B7008C512D /* ApplicationNavigator.swift in Sources */,
-				9B563154224B75F5005B41A6 /* EverythingInteractorImpl.swift in Sources */,
+				9B563154224B75F5005B41A6 /* EverythingInteractor.swift in Sources */,
 				9B67F3A022672B2B004402FB /* Replacible.swift in Sources */,
 				1A69B9C4224F65EA00DD811C /* DateTimeUtil.swift in Sources */,
 				EDD2B194289B3F44004DAC2D /* DetailAuthorCell.swift in Sources */,

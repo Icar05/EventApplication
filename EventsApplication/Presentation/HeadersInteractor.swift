@@ -25,7 +25,6 @@ class HeadersInteractor {
             .map{ return self.transformHeaders(articles: $0, language: country, category: nil)}
     }
     
-    
     func transformHeaders(articles: [Articles], language: String?, category: String? ) -> [Articles]{
         var output: [Articles]  = []
         
