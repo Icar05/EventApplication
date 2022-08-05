@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +19,7 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T3t-Vc-DFj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="2"/>
-                        <color key="backgroundColor" name="Accent"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="2" id="YqU-0U-Hbe"/>
                         </constraints>
@@ -39,9 +38,4 @@
             <point key="canvasLocation" x="132" y="57"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <namedColor name="Accent">
-            <color red="0.078000001609325409" green="0.65200001001358032" blue="0.65700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-    </resources>
 </document>
