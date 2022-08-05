@@ -9,6 +9,14 @@
 import Foundation
 import RxSwift
 
+protocol HeadersInteractor: class {
+    
+    func getDefaultHeadlines() -> Observable<[Articles]>
+    
+    func getHeadlinesByCountry(country: String) -> Observable<[Articles]>
+    
+}
+
 class HeadersInteractorImpl: HeadersInteractor {
     
     func getDefaultHeadlines() -> Observable<[Articles]> {
