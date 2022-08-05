@@ -30,14 +30,9 @@
 		9B11D17A221EDB2500BFEBD4 /* UrlRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11D178221EDB2500BFEBD4 /* UrlRouter.swift */; };
 		9B1C2AE5225F37DF002CEF80 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C2AE4225F37DF002CEF80 /* BaseTableViewController.swift */; };
 		9B50C465225231F100C720E7 /* UISearchDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B50C464225231F100C720E7 /* UISearchDialog.swift */; };
-		9B56313D224B6D11005B41A6 /* Everything.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B56313C224B6D11005B41A6 /* Everything.storyboard */; };
 		9B56313F224B6D32005B41A6 /* Sources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B56313E224B6D32005B41A6 /* Sources.storyboard */; };
-		9B563146224B73BA005B41A6 /* EverythingCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563145224B73BA005B41A6 /* EverythingCreator.swift */; };
 		9B563148224B73EE005B41A6 /* SourcesCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563147224B73EE005B41A6 /* SourcesCreator.swift */; };
 		9B56314C224B74A3005B41A6 /* HeadersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56314B224B74A3005B41A6 /* HeadersInteractor.swift */; };
-		9B56314E224B7512005B41A6 /* EverythingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56314D224B7512005B41A6 /* EverythingViewController.swift */; };
-		9B563150224B7579005B41A6 /* EverythingPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56314F224B7579005B41A6 /* EverythingPresenterImpl.swift */; };
-		9B563152224B75BB005B41A6 /* EverythingContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563151224B75BB005B41A6 /* EverythingContract.swift */; };
 		9B563154224B75F5005B41A6 /* EverythingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563153224B75F5005B41A6 /* EverythingInteractor.swift */; };
 		9B563156224B764B005B41A6 /* SourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563155224B764B005B41A6 /* SourceViewController.swift */; };
 		9B563158224B7672005B41A6 /* SourcesContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563157224B7672005B41A6 /* SourcesContract.swift */; };
@@ -149,14 +144,9 @@
 		9B11D178221EDB2500BFEBD4 /* UrlRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlRouter.swift; sourceTree = "<group>"; };
 		9B1C2AE4225F37DF002CEF80 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		9B50C464225231F100C720E7 /* UISearchDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchDialog.swift; sourceTree = "<group>"; };
-		9B56313C224B6D11005B41A6 /* Everything.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Everything.storyboard; sourceTree = "<group>"; };
 		9B56313E224B6D32005B41A6 /* Sources.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sources.storyboard; sourceTree = "<group>"; };
-		9B563145224B73BA005B41A6 /* EverythingCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingCreator.swift; sourceTree = "<group>"; };
 		9B563147224B73EE005B41A6 /* SourcesCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesCreator.swift; sourceTree = "<group>"; };
 		9B56314B224B74A3005B41A6 /* HeadersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadersInteractor.swift; sourceTree = "<group>"; };
-		9B56314D224B7512005B41A6 /* EverythingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingViewController.swift; sourceTree = "<group>"; };
-		9B56314F224B7579005B41A6 /* EverythingPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingPresenterImpl.swift; sourceTree = "<group>"; };
-		9B563151224B75BB005B41A6 /* EverythingContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingContract.swift; sourceTree = "<group>"; };
 		9B563153224B75F5005B41A6 /* EverythingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingInteractor.swift; sourceTree = "<group>"; };
 		9B563155224B764B005B41A6 /* SourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceViewController.swift; sourceTree = "<group>"; };
 		9B563157224B7672005B41A6 /* SourcesContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesContract.swift; sourceTree = "<group>"; };
@@ -363,17 +353,6 @@
 			path = searchDialog;
 			sourceTree = "<group>";
 		};
-		9B56310F224B61BE005B41A6 /* Evertything */ = {
-			isa = PBXGroup;
-			children = (
-				9B563125224B62B4005B41A6 /* View */,
-				9B563126224B62B4005B41A6 /* Creator */,
-				9B563127224B62B4005B41A6 /* Contract */,
-				9B563129224B62B4005B41A6 /* Presenter */,
-			);
-			path = Evertything;
-			sourceTree = "<group>";
-		};
 		9B563110224B61CA005B41A6 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -418,39 +397,6 @@
 			path = Creator;
 			sourceTree = "<group>";
 		};
-		9B563125224B62B4005B41A6 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				9B56313C224B6D11005B41A6 /* Everything.storyboard */,
-				9B56314D224B7512005B41A6 /* EverythingViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		9B563126224B62B4005B41A6 /* Creator */ = {
-			isa = PBXGroup;
-			children = (
-				9B563145224B73BA005B41A6 /* EverythingCreator.swift */,
-			);
-			path = Creator;
-			sourceTree = "<group>";
-		};
-		9B563127224B62B4005B41A6 /* Contract */ = {
-			isa = PBXGroup;
-			children = (
-				9B563151224B75BB005B41A6 /* EverythingContract.swift */,
-			);
-			path = Contract;
-			sourceTree = "<group>";
-		};
-		9B563129224B62B4005B41A6 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				9B56314F224B7579005B41A6 /* EverythingPresenterImpl.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
 		9B67F39C2267010E004402FB /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,7 +421,6 @@
 			isa = PBXGroup;
 			children = (
 				9B563110224B61CA005B41A6 /* Sources */,
-				9B56310F224B61BE005B41A6 /* Evertything */,
 				9B966242221ED542008C512D /* Base */,
 			);
 			path = Modules;
@@ -905,7 +850,6 @@
 				9BB5C21E225F74440006A74E /* InfoPlist.strings in Resources */,
 				EDD2B195289B3F44004DAC2D /* DetailAuthorCell.xib in Resources */,
 				9BB5C200225F6D960006A74E /* SearchDialog.storyboard in Resources */,
-				9B56313D224B6D11005B41A6 /* Everything.storyboard in Resources */,
 				9BB5C217225F72CE0006A74E /* EmptyView.xib in Resources */,
 				EDD2B18E289B3A5C004DAC2D /* DetailUrlCell.xib in Resources */,
 				9B56313F224B6D32005B41A6 /* Sources.storyboard in Resources */,
@@ -955,19 +899,16 @@
 				ED67A351289CB3C1009AFA4C /* NewsCell.swift in Sources */,
 				9B966244221ED556008C512D /* BaseCreator.swift in Sources */,
 				EDD2B189289B379D004DAC2D /* DetailAccentCellModel.swift in Sources */,
-				9B563146224B73BA005B41A6 /* EverythingCreator.swift in Sources */,
 				9B9EB5A32251E94A00570C37 /* UISelectionDialog.swift in Sources */,
 				EDD2B197289B3F5F004DAC2D /* DetailAuthorCellModel.swift in Sources */,
 				1A3F1A1E224D413B008B1486 /* EmptyView.swift in Sources */,
 				9B56315A224B769E005B41A6 /* SourcesPresenterImpl.swift in Sources */,
 				1A611C0D224ADFCD008E9D14 /* Json4Swift_Base.swift in Sources */,
-				9B563150224B7579005B41A6 /* EverythingPresenterImpl.swift in Sources */,
 				9B563148224B73EE005B41A6 /* SourcesCreator.swift in Sources */,
 				9B563156224B764B005B41A6 /* SourceViewController.swift in Sources */,
 				9B78182F2266161A00C0E4ED /* NewsModel.xcdatamodeld in Sources */,
 				1A918BAC224971C400D34DCE /* ValueForSelector.swift in Sources */,
 				ED67A320289BCC3C009AFA4C /* DetailSourcePresenter.swift in Sources */,
-				9B563152224B75BB005B41A6 /* EverythingContract.swift in Sources */,
 				EDD2B18D289B3A5C004DAC2D /* DetailUrlCell.swift in Sources */,
 				ED67A345289C7CCF009AFA4C /* NewsViewController.swift in Sources */,
 				EDD2B17B289B0CE3004DAC2D /* DetailImageCellModel.swift in Sources */,
@@ -985,7 +926,6 @@
 				9B5E70F4225F260100363A35 /* Extension.swift in Sources */,
 				1A3266DA2254054D004F35A0 /* RequestKeysProtocol.swift in Sources */,
 				ED67A354289CB3D1009AFA4C /* NewsCellModel.swift in Sources */,
-				9B56314E224B7512005B41A6 /* EverythingViewController.swift in Sources */,
 				9B56314C224B74A3005B41A6 /* HeadersInteractor.swift in Sources */,
 				1A3F1A19224D3827008B1486 /* BaseSourcesViewController.swift in Sources */,
 				ED67A35B289CD1DA009AFA4C /* NewsSeparatorCellModel.swift in Sources */,
