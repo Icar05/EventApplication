@@ -71,9 +71,6 @@ public final class NewsViewController: BaseTableViewController {
     }
     
     func refreshCells(models: [CustomCellModel]){
-        
-        print("is Empty: \(models.isEmpty), count: \(models.count)")
-        
         if(models.count < 2){
             self.emptyView.showEmptyView()
             return
