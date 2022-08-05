@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ozB-oI-Etu" userLabel="Container">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="98"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UtF-cd-FRV" userLabel="TopSeparator">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
@@ -28,28 +28,22 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tld-gj-FfF" userLabel="ChildContainer">
-                                <rect key="frame" x="0.0" y="1" width="320" height="112"/>
+                                <rect key="frame" x="0.0" y="1" width="320" height="96"/>
                                 <subviews>
                                     <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ris-JD-Pej" userLabel="Background">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb" translatesAutoresizingMaskIntoConstraints="NO" id="45A-TB-dpP">
-                                        <rect key="frame" x="16" y="8" width="96" height="96"/>
+                                        <rect key="frame" x="16" y="8" width="80" height="80"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="96" id="1uD-ql-hrm"/>
-                                            <constraint firstAttribute="height" constant="96" id="ieF-Bq-YQQ"/>
+                                            <constraint firstAttribute="width" constant="80" id="1uD-ql-hrm"/>
+                                            <constraint firstAttribute="height" constant="80" id="ieF-Bq-YQQ"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="st4-h9-G8f" userLabel="Title">
-                                        <rect key="frame" x="128" y="8" width="176" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DO-1j-7uv" userLabel="Subtitle">
-                                        <rect key="frame" x="128" y="36.5" width="176" height="67.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <rect key="frame" x="112" y="8" width="192" height="80"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -60,12 +54,9 @@
                                     <constraint firstItem="45A-TB-dpP" firstAttribute="top" secondItem="Tld-gj-FfF" secondAttribute="top" constant="8" id="8Pc-sV-P73"/>
                                     <constraint firstItem="st4-h9-G8f" firstAttribute="trailing" secondItem="Tld-gj-FfF" secondAttribute="trailing" constant="-16" id="E2W-2E-Jbh"/>
                                     <constraint firstItem="Ris-JD-Pej" firstAttribute="bottom" secondItem="Tld-gj-FfF" secondAttribute="bottom" id="I4u-32-Qp1"/>
-                                    <constraint firstItem="5DO-1j-7uv" firstAttribute="leading" secondItem="45A-TB-dpP" secondAttribute="trailing" constant="16" id="NMR-ys-RXF"/>
                                     <constraint firstItem="st4-h9-G8f" firstAttribute="leading" secondItem="45A-TB-dpP" secondAttribute="trailing" constant="16" id="PKR-Xd-9Ad"/>
-                                    <constraint firstItem="5DO-1j-7uv" firstAttribute="bottom" secondItem="45A-TB-dpP" secondAttribute="bottom" id="PnG-lW-ahU"/>
-                                    <constraint firstItem="st4-h9-G8f" firstAttribute="bottom" secondItem="5DO-1j-7uv" secondAttribute="top" constant="-8" id="c39-nc-QNK"/>
+                                    <constraint firstItem="st4-h9-G8f" firstAttribute="bottom" secondItem="45A-TB-dpP" secondAttribute="bottom" id="Y6g-JL-0uL"/>
                                     <constraint firstItem="Ris-JD-Pej" firstAttribute="trailing" secondItem="Tld-gj-FfF" secondAttribute="trailing" id="eBJ-32-F06"/>
-                                    <constraint firstItem="5DO-1j-7uv" firstAttribute="trailing" secondItem="Tld-gj-FfF" secondAttribute="trailing" constant="-16" id="lZZ-T9-XgU"/>
                                     <constraint firstItem="Ris-JD-Pej" firstAttribute="leading" secondItem="Tld-gj-FfF" secondAttribute="leading" id="pQJ-6A-zw7"/>
                                     <constraint firstItem="st4-h9-G8f" firstAttribute="top" secondItem="45A-TB-dpP" secondAttribute="top" id="r6Q-qO-luI"/>
                                     <constraint firstItem="45A-TB-dpP" firstAttribute="bottom" secondItem="Tld-gj-FfF" secondAttribute="bottom" constant="-8" id="wd2-dY-RBa"/>
@@ -73,7 +64,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t12-HW-bXx" userLabel="BottomSeparator">
-                                <rect key="frame" x="0.0" y="113" width="320" height="1"/>
+                                <rect key="frame" x="0.0" y="97" width="320" height="1"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="cYh-P6-Nxf"/>
@@ -107,7 +98,6 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="newsImage" destination="45A-TB-dpP" id="R42-e1-iq0"/>
-                <outlet property="newsSubtitle" destination="5DO-1j-7uv" id="Uuf-qc-MvZ"/>
                 <outlet property="newsTitle" destination="st4-h9-G8f" id="aRC-E7-IO2"/>
             </connections>
             <point key="canvasLocation" x="132" y="55"/>

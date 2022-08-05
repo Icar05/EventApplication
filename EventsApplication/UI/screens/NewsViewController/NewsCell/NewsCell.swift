@@ -30,9 +30,7 @@ class NewsCell: UITableViewCell, CustomCell {
     @IBOutlet weak var newsImage: UIImageView!
     
     @IBOutlet weak var newsTitle: UILabel!
-    
-    @IBOutlet weak var newsSubtitle: UILabel!
-    
+        
     
     
     override func awakeFromNib() {
@@ -49,7 +47,6 @@ class NewsCell: UITableViewCell, CustomCell {
         }
         
         self.newsTitle.text = m.article.title
-        self.newsSubtitle.text = m.article.author
         
         guard let imgUrl = m.article.urlToImage else{
             self.newsImage.image = .defaultImage

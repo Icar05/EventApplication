@@ -40,7 +40,6 @@ public final class NewsPresenter{
     }
     
     func viewDidLoad(){
-        print("Test! -> onViewDidLoad!")
         self.loadContent(
             onEnd: { models in
                 self.view?.registerCells(models: models)
@@ -48,7 +47,6 @@ public final class NewsPresenter{
     }
     
     func getFreshContent(){
-        print("Test! -> getFreshContent!")
         self.loadContent(
             onEnd: { models in
                 self.view?.refreshCells(models: models)
@@ -56,7 +54,6 @@ public final class NewsPresenter{
     }
     
     func setCountry(country: String){
-        print("Test! -> setCountry!")
         self.country = country
         self.getFreshContent()
     }
@@ -83,7 +80,6 @@ public final class NewsPresenter{
             .subscribe(
                 onNext: { [weak self] (articles) in
                     
-                    print("Test! -> Finish!")
                     self?.printLog("Repository hide loading")
                     
                     if let view: NewsViewController = self?.view, let article = articles, let s = self{

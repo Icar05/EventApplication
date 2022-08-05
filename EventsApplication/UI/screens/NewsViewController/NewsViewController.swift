@@ -116,7 +116,6 @@ extension NewsViewController: TabItem{
     
     
     func getNavBarButton() -> UIBarButtonItem? {
-        print("test -> getItme!")
         return createNavItem(title: countryTabItemTitle, selector: "selectCountry")
     }
     

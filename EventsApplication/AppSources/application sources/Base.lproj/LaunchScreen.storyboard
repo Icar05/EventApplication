@@ -25,20 +25,20 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="API provided by " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iwo-8c-jGD">
-                                <rect key="frame" x="141" y="357.66666666666669" width="132" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <rect key="frame" x="147.66666666666666" y="359" width="118.99999999999997" height="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://newsapi.org" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhU-jj-Pf0">
-                                <rect key="frame" x="132.33333333333331" y="386.66666666666669" width="149.33333333333331" height="21"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                <rect key="frame" x="140" y="385" width="134.33333333333337" height="19"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" name="Accent"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big" translatesAutoresizingMaskIntoConstraints="NO" id="p0o-Ck-9tU">
-                                <rect key="frame" x="182" y="291.66666666666669" width="50" height="50"/>
+                                <rect key="frame" x="182" y="293" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="GLn-bi-4su"/>
                                     <constraint firstAttribute="width" constant="50" id="fzv-ML-Afd"/>
