@@ -18,19 +18,21 @@ public final class NewsViewController: BaseTableViewController {
     
     
     
-  
+    
     
     private let countryTabItemTitle = NSLocalizedString("Country", comment: "")
     
     private let countryTabItemSubtitle = NSLocalizedString("Select country", comment: "")
     
-    @IBOutlet weak var tableView: UITableView!
-    
     private let dataSource = NewsDataSource()
     
     private let presenter: NewsPresenter
     
+    @IBOutlet weak var emptyView: EmptyView!
     
+    @IBOutlet weak var tableView: UITableView!
+    
+   
     
     
     @available(iOS, unavailable)
@@ -75,20 +77,17 @@ public final class NewsViewController: BaseTableViewController {
     }
     
     public override func onRefresh() {
-        #warning("handle it")
-        print("TEMP -> onRefresh")
+        self.presenter.getFreshContent()
     }
    
     func showLoading() {
-        #warning("handle it")
-//        self.emptyView?.showLoading()
-        print("TEMP -> showLoading")
+        if(!self.refreshControl.isRefreshing){
+            self.emptyView.showLoading()
+        }
     }
     
     func hideLoading() {
-        #warning("handle it")
-//        self.emptyView?.hideLoading()
-        print("TEMP -> hideLoading")
+        self.emptyView?.hideLoading()
     }
     
 }
@@ -96,6 +95,7 @@ public final class NewsViewController: BaseTableViewController {
 extension NewsViewController: NewsDataSourceDelegate{
     
     func didItemSelected(item: CustomCellModel) {
+        #warning("handle it")
        let text =  (item as? DetailTransparentCellModel)?.text
         print("TEMP ->  text: \(String(describing: text))")
     }

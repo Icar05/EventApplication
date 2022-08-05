@@ -12,6 +12,8 @@ import UIKit
 @IBDesignable
 class EmptyView: UIView {
     
+    
+    
     @IBOutlet weak var label: UILabel!
     
     @IBOutlet var contentView: UIView!
@@ -30,6 +32,12 @@ class EmptyView: UIView {
         setup()
     }
     
+    
+    func showLoading(value: Bool){
+        if(!value){
+            showLoading()
+        }
+    }
     
     func showLoading(){
         self.isHidden = false
@@ -70,12 +78,5 @@ class EmptyView: UIView {
             [UIView.AutoresizingMask.flexibleWidth,
              UIView.AutoresizingMask.flexibleHeight]
     }
-    
-    
-   
-    
- 
-    
-   
 
 }

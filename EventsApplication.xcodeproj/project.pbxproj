@@ -308,7 +308,6 @@
 			isa = PBXGroup;
 			children = (
 				9B6FB7B4225B75BE00439F98 /* cell */,
-				1A3F1A1A224D410D008B1486 /* emptyView */,
 			);
 			path = custom;
 			sourceTree = "<group>";
@@ -758,6 +757,7 @@
 		ED67A34A289C8816009AFA4C /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				1A3F1A1A224D410D008B1486 /* emptyView */,
 				9B1C2AE4225F37DF002CEF80 /* BaseTableViewController.swift */,
 			);
 			path = Base;

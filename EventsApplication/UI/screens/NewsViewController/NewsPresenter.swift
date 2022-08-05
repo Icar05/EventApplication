@@ -50,8 +50,7 @@ public final class NewsPresenter{
             query: getQuery())
     }
     
-    func setCountry(country: String){
-        self.country = country
+    func getFreshContent(){
         self.handleObservable(
             onBegin: {
                 self.view?.showLoading()
@@ -63,7 +62,10 @@ public final class NewsPresenter{
             query: getQuery())
     }
     
-    
+    func setCountry(country: String){
+        self.country = country
+        self.getFreshContent()
+    }
     
     private func handleObservable(onBegin: () -> Void,  onEnd:  @escaping (_ models: [CustomCellModel]) -> Void, query: Observable<[Articles]>){
         onBegin()
