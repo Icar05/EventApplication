@@ -71,6 +71,12 @@ public final class NewsViewController: BaseTableViewController {
     }
     
     func refreshCells(models: [CustomCellModel]){
+        
+        if(models.isEmpty){
+            self.emptyView.showEmptyView()
+            return
+        }
+        
         self.dataSource.setData(data: models)
         self.tableView.reloadData()
     }

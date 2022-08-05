@@ -62,6 +62,11 @@ public final class SourcesViewController: BaseTableViewController {
     }
     
     func refreshCells(models: [CustomCellModel]){
+        if(models.isEmpty){
+            self.emptyView.showEmptyView()
+            return
+        }
+        
         self.dataSource.setData(data: models)
         self.tableView.reloadData()
     }
@@ -88,16 +93,16 @@ extension SourcesViewController: NewsDataSourceDelegate{
     
     func didItemSelected(item: CustomCellModel) {
         
-        guard let new: NewsCellModel = item as? NewsCellModel else{
+        guard let source: SourcesCellModel = item as? SourcesCellModel else{
             return
         }
         
-        self.navigateToArticleDetail(article: new.article)
+        self.navigateToSourceDetail(source: source.source)
     }
     
-    private func navigateToArticleDetail(article: Articles){
+    private func navigateToSourceDetail(source: Sources){
         let navigator = getApplication().getNavigator()
-        let destination = navigator.getArticleDetailScreen(article: article)
+        let destination = navigator.getSourceDetailScreen(sources: source)
         navigator.navigate(from: self, to: destination)
     }
     
