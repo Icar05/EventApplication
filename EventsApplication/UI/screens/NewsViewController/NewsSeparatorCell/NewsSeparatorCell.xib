@@ -19,14 +19,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T3t-Vc-DFj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
-                        <color key="backgroundColor" name="Accent"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="8"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="YqU-0U-Hbe"/>
+                            <constraint firstAttribute="height" constant="8" id="YqU-0U-Hbe"/>
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" name="Accent"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="T3t-Vc-DFj" secondAttribute="trailing" id="5ar-av-wP9"/>
                     <constraint firstItem="T3t-Vc-DFj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="WmV-AD-iHX"/>
