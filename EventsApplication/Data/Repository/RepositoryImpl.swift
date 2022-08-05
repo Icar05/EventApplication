@@ -11,9 +11,7 @@ import RxSwift
 
 class RepositoryImpl : Repository {
  
-    
-    static let shared = RepositoryImpl()
-    
+        
     let localStorage = LocalStorage()
     
     let networkProvider = NetworkServiceRx()

@@ -10,10 +10,15 @@ import Foundation
 import RxSwift
 
 class MockNetworkTester{
-  
-   let disposibleBag = DisposeBag()
     
-    let repository: Repository = RepositoryImpl.shared
+    
+    let repository: Repository
+  
+    let disposibleBag = DisposeBag()
+    
+    init(repository: Repository){
+        self.repository = repository
+    }
 
     // done
     func testGetDefaultHeadlines(){

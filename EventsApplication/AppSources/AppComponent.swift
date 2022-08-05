@@ -17,7 +17,7 @@ class AppComponent{
     
     init(){
         self.repository = RepositoryImpl()
-        self.headerInteractor = HeadersInteractorImpl()
+        self.headerInteractor = HeadersInteractor(repository: repository)
     }
     
     

@@ -16,7 +16,13 @@ class EverythingPresenterImpl {
     var view: EverythingView?
     var interactor: EverythingInteractor!
     var query: String = ValueForSelector.defaultQuery
-    var repository = RepositoryImpl.shared
+
+    
+    private let repository: Repository
+    
+    init(repository: Repository){
+        self.repository = repository
+    }
     
     
     

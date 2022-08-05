@@ -9,11 +9,17 @@
 import Foundation
 import RxSwift
 
-class SourcesInteractorImpl: SourcesInteractor {
+class SourcesInteractor {
     
+    
+    private let repository: Repository
+    
+    init(repository: Repository){
+        self.repository = repository
+    }
     
     func getSourcesByCategory(category: String) -> Observable<[Sources]> {
-        return RepositoryImpl.shared.loadSourcesByCategory(category:category)
+        return self.repository.loadSourcesByCategory(category:category)
     }
     
     

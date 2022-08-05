@@ -34,7 +34,7 @@
 		9B56313F224B6D32005B41A6 /* Sources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B56313E224B6D32005B41A6 /* Sources.storyboard */; };
 		9B563146224B73BA005B41A6 /* EverythingCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563145224B73BA005B41A6 /* EverythingCreator.swift */; };
 		9B563148224B73EE005B41A6 /* SourcesCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563147224B73EE005B41A6 /* SourcesCreator.swift */; };
-		9B56314C224B74A3005B41A6 /* HeadersInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56314B224B74A3005B41A6 /* HeadersInteractorImpl.swift */; };
+		9B56314C224B74A3005B41A6 /* HeadersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56314B224B74A3005B41A6 /* HeadersInteractor.swift */; };
 		9B56314E224B7512005B41A6 /* EverythingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56314D224B7512005B41A6 /* EverythingViewController.swift */; };
 		9B563150224B7579005B41A6 /* EverythingPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56314F224B7579005B41A6 /* EverythingPresenterImpl.swift */; };
 		9B563152224B75BB005B41A6 /* EverythingContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563151224B75BB005B41A6 /* EverythingContract.swift */; };
@@ -42,7 +42,7 @@
 		9B563156224B764B005B41A6 /* SourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563155224B764B005B41A6 /* SourceViewController.swift */; };
 		9B563158224B7672005B41A6 /* SourcesContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563157224B7672005B41A6 /* SourcesContract.swift */; };
 		9B56315A224B769E005B41A6 /* SourcesPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B563159224B769E005B41A6 /* SourcesPresenterImpl.swift */; };
-		9B56315C224B76C4005B41A6 /* SourcesInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56315B224B76C4005B41A6 /* SourcesInteractorImpl.swift */; };
+		9B56315C224B76C4005B41A6 /* SourcesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56315B224B76C4005B41A6 /* SourcesInteractor.swift */; };
 		9B5E70F4225F260100363A35 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E70F3225F260100363A35 /* Extension.swift */; };
 		9B67F39E2267012C004402FB /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B67F39D2267012C004402FB /* LocalStorage.swift */; };
 		9B67F3A022672B2B004402FB /* Replacible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B67F39F22672B2B004402FB /* Replacible.swift */; };
@@ -149,7 +149,7 @@
 		9B56313E224B6D32005B41A6 /* Sources.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sources.storyboard; sourceTree = "<group>"; };
 		9B563145224B73BA005B41A6 /* EverythingCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingCreator.swift; sourceTree = "<group>"; };
 		9B563147224B73EE005B41A6 /* SourcesCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesCreator.swift; sourceTree = "<group>"; };
-		9B56314B224B74A3005B41A6 /* HeadersInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadersInteractorImpl.swift; sourceTree = "<group>"; };
+		9B56314B224B74A3005B41A6 /* HeadersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadersInteractor.swift; sourceTree = "<group>"; };
 		9B56314D224B7512005B41A6 /* EverythingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingViewController.swift; sourceTree = "<group>"; };
 		9B56314F224B7579005B41A6 /* EverythingPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingPresenterImpl.swift; sourceTree = "<group>"; };
 		9B563151224B75BB005B41A6 /* EverythingContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingContract.swift; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 		9B563155224B764B005B41A6 /* SourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceViewController.swift; sourceTree = "<group>"; };
 		9B563157224B7672005B41A6 /* SourcesContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesContract.swift; sourceTree = "<group>"; };
 		9B563159224B769E005B41A6 /* SourcesPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesPresenterImpl.swift; sourceTree = "<group>"; };
-		9B56315B224B76C4005B41A6 /* SourcesInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesInteractorImpl.swift; sourceTree = "<group>"; };
+		9B56315B224B76C4005B41A6 /* SourcesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesInteractor.swift; sourceTree = "<group>"; };
 		9B5E70F3225F260100363A35 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		9B67F39D2267012C004402FB /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		9B67F39F22672B2B004402FB /* Replacible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Replacible.swift; sourceTree = "<group>"; };
@@ -407,7 +407,6 @@
 		9B563119224B624D005B41A6 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				9B56315B224B76C4005B41A6 /* SourcesInteractorImpl.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -686,7 +685,8 @@
 		ED67A349289C7EB0009AFA4C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				9B56314B224B74A3005B41A6 /* HeadersInteractorImpl.swift */,
+				9B56315B224B76C4005B41A6 /* SourcesInteractor.swift */,
+				9B56314B224B74A3005B41A6 /* HeadersInteractor.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -995,7 +995,7 @@
 				9B563158224B7672005B41A6 /* SourcesContract.swift in Sources */,
 				EDD2B190289B3A6F004DAC2D /* DetailUrlCellModel.swift in Sources */,
 				1A75A84D224C3BC70033C852 /* ArticleCell.swift in Sources */,
-				9B56315C224B76C4005B41A6 /* SourcesInteractorImpl.swift in Sources */,
+				9B56315C224B76C4005B41A6 /* SourcesInteractor.swift in Sources */,
 				ED67A342289C7CB0009AFA4C /* NewsPresenter.swift in Sources */,
 				1A3F1A17224D3690008B1486 /* SourcesCell.swift in Sources */,
 				1AB264E82265047700D298F4 /* Repository.swift in Sources */,
@@ -1003,7 +1003,7 @@
 				1A3266DA2254054D004F35A0 /* RequestKeysProtocol.swift in Sources */,
 				9B788094224A14C600F7231A /* RootContract.swift in Sources */,
 				9B56314E224B7512005B41A6 /* EverythingViewController.swift in Sources */,
-				9B56314C224B74A3005B41A6 /* HeadersInteractorImpl.swift in Sources */,
+				9B56314C224B74A3005B41A6 /* HeadersInteractor.swift in Sources */,
 				1A3F1A19224D3827008B1486 /* BaseSourcesViewController.swift in Sources */,
 				EDD2B178289B0CD2004DAC2D /* DetailImageCellTableViewCell.swift in Sources */,
 				9B67F39E2267012C004402FB /* LocalStorage.swift in Sources */,

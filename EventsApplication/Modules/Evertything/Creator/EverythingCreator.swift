@@ -24,8 +24,9 @@ class EverythingCreator: BaseCreator {
         let view = getSelfUIViewController() as! EverythingViewController
         
         
-        let presenter = EverythingPresenterImpl()
-        let interactor = EverythingInteractorImpl()
+        
+        let presenter = EverythingPresenterImpl(repository: view.getApplication().getAppComponent().getRepository())
+        let interactor = EverythingInteractor(repository: view.getApplication().getAppComponent().getRepository())
         
             presenter.view = view
             presenter.interactor = interactor

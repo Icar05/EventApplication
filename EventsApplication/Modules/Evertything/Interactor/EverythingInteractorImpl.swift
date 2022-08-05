@@ -9,12 +9,18 @@
 import Foundation
 import RxSwift
 
-class EverythingInteractorImpl: EverythingInteractor {
+class EverythingInteractor {
     
     
+    private let repository: Repository
+    
+    
+    init(repository: Repository){
+        self.repository = repository
+    }
     
     func getEverythingByQuery(query: String) -> Observable<[Articles]> {
-        return RepositoryImpl.shared.loadEverything(query:query)
+        return self.repository.loadEverything(query:query)
             .map{ return self.transformEverything(articles: $0, language: nil, category: nil)}
         
     }

@@ -19,10 +19,6 @@ protocol EverythingPresenter: class {
     
 }
 
-protocol EverythingInteractor: class {
-    
-    func getEverythingByQuery(query: String) -> Observable<[Articles]>
-}
 
 protocol EverythingView: class {
     var presenter: EverythingPresenter! { get set }

@@ -9,15 +9,19 @@
 import Foundation
 import RxSwift
 
-protocol HeadersInteractor: class {
-    func getHeadlinesByCountry(country: String) -> Observable<[Articles]>
-}
 
-class HeadersInteractorImpl: HeadersInteractor {
+
+class HeadersInteractor {
     
+    
+    private let repository: Repository
+    
+    init(repository: Repository){
+        self.repository = repository
+    }
     
     func getHeadlinesByCountry(country: String) -> Observable<[Articles]> {
-        return RepositoryImpl.shared.loadHeadlines(country:country)
+        return self.repository.loadHeadlines(country:country)
             .map{ return self.transformHeaders(articles: $0, language: country, category: nil)}
     }
     

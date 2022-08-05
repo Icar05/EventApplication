@@ -25,8 +25,8 @@ class SourcesCreator: BaseCreator {
         let view = getSelfUIViewController() as! SourcesViewController
         
         
-        let presenter = SourcesPresenterImpl()
-        let interactor = SourcesInteractorImpl()
+        let presenter = SourcesPresenterImpl(repository: view.getApplication().getAppComponent().getRepository())
+        let interactor = SourcesInteractor(repository: view.getApplication().getAppComponent().getRepository())
         
         presenter.view = view
         presenter.interactor = interactor

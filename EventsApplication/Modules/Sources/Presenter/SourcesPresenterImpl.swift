@@ -17,7 +17,12 @@ class SourcesPresenterImpl {
     var view: SourcesView?
     var category: String = ValueForSelector.categories[6]
     var interactor: SourcesInteractor!
-    let repository = RepositoryImpl.shared
+    
+    private let repository: Repository
+    
+    init(repository: Repository){
+        self.repository = repository
+    }
     
     func onViewDidLoad() {
         getSourcesByCategory(category: category)

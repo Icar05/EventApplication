@@ -17,10 +17,6 @@ protocol SourcesPresenter: class {
     func getSourcesByCategory(category: String)
 }
 
-protocol SourcesInteractor: class {
-     func getSourcesByCategory(category: String) -> Observable<[Sources]>
-}
-
 protocol SourcesView: class {
     var presenter: SourcesPresenter! { get set }
     
