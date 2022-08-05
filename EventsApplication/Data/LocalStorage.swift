@@ -13,6 +13,7 @@ import CoreData
 
 class LocalStorage {
     
+    private let showLog = false
     
     let articleTableName = "Article"
     let articleTitle = "title"
@@ -264,7 +265,7 @@ class LocalStorage {
         do {
             try managedContext!.save()
         } catch let error as NSError {
-            print("Repository: Could not save article. \(error), \(error.userInfo)")
+            print("LocalStorage: Could not save article. \(error), \(error.userInfo)")
         }
     }
 
@@ -285,7 +286,7 @@ class LocalStorage {
         do {
             try managedContext!.save()
         } catch let error as NSError {
-            print("Repository: Could not save source. \(error), \(error.userInfo)")
+            print("LocalStorage: Could not save source. \(error), \(error.userInfo)")
         }
     }
     
@@ -295,7 +296,10 @@ class LocalStorage {
      debug
      */
     fileprivate func debug(value: String){
-        print("Repository \(value)")
+        if(showLog){
+            print("LocalStorage \(value)")
+        }
+       
     }
 
 }

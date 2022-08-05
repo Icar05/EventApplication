@@ -71,7 +71,6 @@ public final class NewsViewController: BaseTableViewController {
     }
     
     func refreshCells(models: [CustomCellModel]){
-        print("TEMP -> refreshCells: \(models.count)")
         self.dataSource.setData(data: models)
         self.tableView.reloadData()
     }
@@ -99,7 +98,6 @@ extension NewsViewController: NewsDataSourceDelegate{
     func didItemSelected(item: CustomCellModel) {
         #warning("handle it")
        let text =  (item as? DetailTransparentCellModel)?.text
-        print("TEMP ->  text: \(String(describing: text))")
     }
     
     

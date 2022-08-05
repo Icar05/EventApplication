@@ -78,6 +78,9 @@
 		ED67A346289C7CCF009AFA4C /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED67A344289C7CCF009AFA4C /* NewsViewController.xib */; };
 		ED67A348289C7CE2009AFA4C /* NewsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67A347289C7CE2009AFA4C /* NewsDataSource.swift */; };
 		ED67A34C289C89F5009AFA4C /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67A34B289C89F5009AFA4C /* AppComponent.swift */; };
+		ED67A351289CB3C1009AFA4C /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67A34F289CB3C1009AFA4C /* NewsCell.swift */; };
+		ED67A352289CB3C1009AFA4C /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED67A350289CB3C1009AFA4C /* NewsCell.xib */; };
+		ED67A354289CB3D1009AFA4C /* NewsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67A353289CB3D1009AFA4C /* NewsCellModel.swift */; };
 		EDD2B16C289ADFDA004DAC2D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B16A289ADFDA004DAC2D /* DetailViewController.swift */; };
 		EDD2B16D289ADFDA004DAC2D /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD2B16B289ADFDA004DAC2D /* DetailViewController.xib */; };
 		EDD2B16F289ADFE8004DAC2D /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B16E289ADFE8004DAC2D /* DetailPresenter.swift */; };
@@ -197,6 +200,9 @@
 		ED67A344289C7CCF009AFA4C /* NewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
 		ED67A347289C7CE2009AFA4C /* NewsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataSource.swift; sourceTree = "<group>"; };
 		ED67A34B289C89F5009AFA4C /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
+		ED67A34F289CB3C1009AFA4C /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		ED67A350289CB3C1009AFA4C /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
+		ED67A353289CB3D1009AFA4C /* NewsCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellModel.swift; sourceTree = "<group>"; };
 		EDD2B16A289ADFDA004DAC2D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EDD2B16B289ADFDA004DAC2D /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		EDD2B16E289ADFE8004DAC2D /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
@@ -592,6 +598,7 @@
 		ED67A340289C7C97009AFA4C /* NewsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				ED67A34E289CB39F009AFA4C /* NewsCell */,
 				ED67A343289C7CCF009AFA4C /* NewsViewController.swift */,
 				ED67A344289C7CCF009AFA4C /* NewsViewController.xib */,
 				ED67A341289C7CB0009AFA4C /* NewsPresenter.swift */,
@@ -626,6 +633,16 @@
 				9B788096224A14F000F7231A /* RootViewController.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		ED67A34E289CB39F009AFA4C /* NewsCell */ = {
+			isa = PBXGroup;
+			children = (
+				ED67A34F289CB3C1009AFA4C /* NewsCell.swift */,
+				ED67A350289CB3C1009AFA4C /* NewsCell.xib */,
+				ED67A353289CB3D1009AFA4C /* NewsCellModel.swift */,
+			);
+			path = NewsCell;
 			sourceTree = "<group>";
 		};
 		EDD2B168289ADF39004DAC2D /* screens */ = {
@@ -846,6 +863,7 @@
 				9B6FB7B8225B830C00439F98 /* ColorTheme.xcassets in Resources */,
 				EDD2B16D289ADFDA004DAC2D /* DetailViewController.xib in Resources */,
 				1A3F1A15224D34F9008B1486 /* SourcesCell.xib in Resources */,
+				ED67A352289CB3C1009AFA4C /* NewsCell.xib in Resources */,
 				EDD2B187289B378A004DAC2D /* DetailAccentCell.xib in Resources */,
 				9BEB1802221C05CF003F8C9A /* LaunchScreen.storyboard in Resources */,
 				9BB5C205225F6E1A0006A74E /* SelectionDialog.storyboard in Resources */,
@@ -897,6 +915,7 @@
 				9B50C465225231F100C720E7 /* UISearchDialog.swift in Sources */,
 				EDD2B182289B2CF0004DAC2D /* DetailTransparentCellModel.swift in Sources */,
 				EDD2B171289ADFF7004DAC2D /* DetailDataSource.swift in Sources */,
+				ED67A351289CB3C1009AFA4C /* NewsCell.swift in Sources */,
 				9B966244221ED556008C512D /* BaseCreator.swift in Sources */,
 				EDD2B189289B379D004DAC2D /* DetailAccentCellModel.swift in Sources */,
 				9B563146224B73BA005B41A6 /* EverythingCreator.swift in Sources */,
@@ -927,6 +946,7 @@
 				1AB264E82265047700D298F4 /* Repository.swift in Sources */,
 				9B5E70F4225F260100363A35 /* Extension.swift in Sources */,
 				1A3266DA2254054D004F35A0 /* RequestKeysProtocol.swift in Sources */,
+				ED67A354289CB3D1009AFA4C /* NewsCellModel.swift in Sources */,
 				9B56314E224B7512005B41A6 /* EverythingViewController.swift in Sources */,
 				9B56314C224B74A3005B41A6 /* HeadersInteractor.swift in Sources */,
 				1A3F1A19224D3827008B1486 /* BaseSourcesViewController.swift in Sources */,

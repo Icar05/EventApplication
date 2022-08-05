@@ -86,7 +86,7 @@ public final class NewsPresenter{
     }
     
     private func prepareCells(article: [Articles]) -> [CustomCellModel]{
-        return article.map{ DetailTransparentCellModel(text: $0.title!)}
+        return article.map{ NewsCellModel(article: $0) }
     }
     
     private func printLog(_ value: String){
