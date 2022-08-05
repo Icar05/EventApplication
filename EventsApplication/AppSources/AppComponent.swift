@@ -16,11 +16,14 @@ class AppComponent{
     
     private let everythingInteractor: EverythingInteractor
     
+    private let sourceInteractor: SourcesInteractor
+    
     
     init(){
         self.repository = RepositoryImpl()
         self.headerInteractor = HeadersInteractor(repository: repository)
         self.everythingInteractor = EverythingInteractor(repository: repository)
+        self.sourceInteractor = SourcesInteractor(repository: repository)
     }
     
     
@@ -34,6 +37,10 @@ class AppComponent{
     
     func getEverythingInteractor() -> EverythingInteractor{
         return self.everythingInteractor
+    }
+    
+    func getSourcesInteractor() -> SourcesInteractor{
+        return self.sourceInteractor
     }
     
 }

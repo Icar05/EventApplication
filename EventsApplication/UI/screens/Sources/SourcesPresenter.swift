@@ -1,5 +1,5 @@
 //
-//  WorldNewsPresenter.swift
+//  SourcesPresenter.swift
 //  EventsApplication
 //
 //  Created by ICoon on 05.08.2022.
@@ -8,9 +8,9 @@
 
 import Foundation
 import RxSwift
-import UIKit
 
-public final class WorldNewsPresenter{
+
+public final class SourcesPresenter{
     
     
     
@@ -20,20 +20,20 @@ public final class WorldNewsPresenter{
     
     private let repository: Repository
     
-    private let interactor: EverythingInteractor
+    private let interactor: SourcesInteractor
     
-    private var query: String = ValueForSelector.defaultQuery
+    private var category: String = ValueForSelector.categories[6]
     
-    unowned var view: WorldNewsViewController!
+    unowned var view: SourcesViewController!
 
     
     
     
-    public func set(view: WorldNewsViewController) {
+    public func set(view: SourcesViewController) {
         self.view = view
     }
     
-    init(interactor: EverythingInteractor, resository: Repository){
+    init(interactor: SourcesInteractor, resository: Repository){
         self.interactor = interactor
         self.repository = resository
     }
@@ -52,21 +52,21 @@ public final class WorldNewsPresenter{
             })
     }
     
-    func setQuery(query: String = ValueForSelector.defaultQuery) {
-        self.query = query
+    func setCategory(category: String = ValueForSelector.categories[6]) {
+        self.category = category
         self.getFreshContent()
     }
     
     private func loadContent(onEnd:  @escaping (_ models: [CustomCellModel]) -> Void){
         
             self.view?.showLoading()
-            self.interactor.getEverythingByQuery(query: query).asObservable()
-            .map{ [weak self] articles  in
-                let result = self?.repository.saveArticles(articles: articles)
-                self?.printLog("Repository input count -> \(articles.count), result of save \(String(describing: result))")
+            self.interactor.getSourcesByCategory(category: category)
+            .map{ [weak self] sources  in
+                let result = self?.repository.saveSources(sources: sources)
+                self?.printLog("Repository input count -> \(sources.count), result of save \(String(describing: result))")
             }
             .map{ [weak self] result in
-                self?.getWorldNews()
+                self?.getSources()
             }
             .catchError{ [weak self] error in
                 
@@ -75,15 +75,15 @@ public final class WorldNewsPresenter{
                 }
                 
                 self?.printLog("Repository error ->  \(error.localizedDescription)")
-                return Observable.just(self?.getWorldNews())
+                return Observable.just(self?.getSources())
             }
             .subscribe(
-                onNext: { [weak self] (articles) in
+                onNext: { [weak self] (sources) in
                     
                     self?.printLog("Repository hide loading")
                     
-                    if let view: WorldNewsViewController = self?.view, let article = articles, let s = self{
-                        let content = s.prepareCells(article: article)
+                    if let view: SourcesViewController = self?.view, let sources = sources, let s = self{
+                        let content = s.prepareCells(sources: sources)
                         view.hideLoading()
                         onEnd(content)
                     }
@@ -91,19 +91,21 @@ public final class WorldNewsPresenter{
             }).disposed(by: disposeBag)
     }
     
-    private func getWorldNews() -> [Articles]{
-        return self.repository.getEverything(query: query)
+    private func getSources() -> [Sources]{
+        return self.repository.getSourcesByCategory(category: category)
     }
     
-    private func prepareCells(article: [Articles]) -> [CustomCellModel]{
+    private func prepareCells(sources: [Sources]) -> [CustomCellModel]{
         
-        var cells: [CustomCellModel] = [NewsSeparatorCellModel()]
-            article.forEach{
-                cells.append(NewsCellModel(article: $0))
-                cells.append(NewsSeparatorCellModel())
-            }
+//        var cells: [CustomCellModel] = [NewsSeparatorCellModel()]
+//            article.forEach{
+//                cells.append(NewsCellModel(article: $0))
+//                cells.append(NewsSeparatorCellModel())
+//            }
+//
+//       return cells
         
-       return cells
+        return []
     }
     
     private func printLog(_ value: String){

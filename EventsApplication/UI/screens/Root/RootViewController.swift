@@ -28,6 +28,7 @@ class RootViewController: UITabBarController {
         let component = getApplication().getAppComponent()
         let headerInteractor = component.getHeaderInteractor()
         let everythingInteractor = component.getEverythingInteractor()
+        let sourcesInteractor  = component.getSourcesInteractor()
         let repository = component.getRepository()
         
         let newsVC = navigator.getNewsViewController(
@@ -43,7 +44,8 @@ class RootViewController: UITabBarController {
             worldNewsVC.tabBarItem.title = NSLocalizedString("Everything", comment: "")
             worldNewsVC.tabBarItem.image = .tabIcon
         
-        let sourcesVC = SourcesCreator.assembleModule()
+        let sourcesVC = navigator.getSourcesViewController(
+            interactor: sourcesInteractor, repository: repository)
             sourcesVC.tabBarItem.title = NSLocalizedString("Sources", comment: "")
             sourcesVC.tabBarItem.image = .tabIcon
         
