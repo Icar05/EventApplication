@@ -23,7 +23,6 @@ public class BaseTableViewController: UIViewController {
     
     @objc private func refresh(_ sender: Any) {
         self.onRefresh()
-        self.refreshControl.endRefreshing()
     }
     
     internal func addRefresh(tableView: UITableView){

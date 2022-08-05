@@ -40,11 +40,7 @@ public final class NewsPresenter{
     func viewDidLoad(country: String = ""){
         self.country = country
         self.handleObservable(
-            onBegin: {
-                self.view?.showLoading()
-            },
-            onEnd: {models in
-                self.view?.hideLoading()
+            onEnd: { models in
                 self.view?.registerCells(models: models)
             },
             query: getQuery())
@@ -52,11 +48,7 @@ public final class NewsPresenter{
     
     func getFreshContent(){
         self.handleObservable(
-            onBegin: {
-                self.view?.showLoading()
-            },
-            onEnd: {models in
-                self.view?.hideLoading()
+            onEnd: { models in
                 self.view?.refreshCells(models: models)
             },
             query: getQuery())
@@ -67,8 +59,9 @@ public final class NewsPresenter{
         self.getFreshContent()
     }
     
-    private func handleObservable(onBegin: () -> Void,  onEnd:  @escaping (_ models: [CustomCellModel]) -> Void, query: Observable<[Articles]>){
-        onBegin()
+    private func handleObservable(onEnd:  @escaping (_ models: [CustomCellModel]) -> Void,
+                                  query: Observable<[Articles]>){
+            self.view?.showLoading()
             query
             .map{ [weak self] articles  in
                 let result = self?.repository.saveArticles(articles: articles)
@@ -76,7 +69,7 @@ public final class NewsPresenter{
             }
             .map{ [weak self] result in
                 self?.getContentFromRepository()
-            }
+            }        
             .catchError{ [weak self] error in
                 self?.view?.handleError(error: error)
                 self?.printLog("Repository error ->  \(error.localizedDescription)")
@@ -86,6 +79,7 @@ public final class NewsPresenter{
                 onNext: { [weak self] (articles) in
                     self?.printLog("Repository hide loading")
                     let cells = self?.prepareCells(article: articles ?? []) ?? []
+                    self?.view?.hideLoading()
                     onEnd(cells)
             }).disposed(by: disposeBag)
     }

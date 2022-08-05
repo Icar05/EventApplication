@@ -78,6 +78,7 @@ public final class NewsViewController: BaseTableViewController {
     
     public override func onRefresh() {
         self.presenter.getFreshContent()
+        self.refreshControl.beginRefreshing()
     }
    
     func showLoading() {
@@ -88,6 +89,7 @@ public final class NewsViewController: BaseTableViewController {
     
     func hideLoading() {
         self.emptyView?.hideLoading()
+        self.refreshControl.endRefreshing()
     }
     
 }
