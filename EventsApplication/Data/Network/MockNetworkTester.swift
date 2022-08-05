@@ -17,7 +17,7 @@ class MockNetworkTester{
 
     // done
     func testGetDefaultHeadlines(){
-            repository.loadHeadlines()
+            repository.loadHeadlines(country: CountryUtil.getDefaultCountry())
                 .observeOn(MainScheduler.instance)
                 .subscribe(
                    onNext: { (articles) in

@@ -35,23 +35,21 @@ public final class NewsPresenter{
     init(interactor: HeadersInteractor, resository: Repository){
         self.interactor = interactor
         self.repository = resository
+        self.country = CountryUtil.getDefaultCountry()
     }
     
-    func viewDidLoad(country: String = ""){
-        self.country = country
-        self.handleObservable(
+    func viewDidLoad(){
+        self.loadContent(
             onEnd: { models in
                 self.view?.registerCells(models: models)
-            },
-            query: getQuery())
+            })
     }
     
     func getFreshContent(){
-        self.handleObservable(
+        self.loadContent(
             onEnd: { models in
                 self.view?.refreshCells(models: models)
-            },
-            query: getQuery())
+            })
     }
     
     func setCountry(country: String){
@@ -59,21 +57,20 @@ public final class NewsPresenter{
         self.getFreshContent()
     }
     
-    private func handleObservable(onEnd:  @escaping (_ models: [CustomCellModel]) -> Void,
-                                  query: Observable<[Articles]>){
+    private func loadContent(onEnd:  @escaping (_ models: [CustomCellModel]) -> Void){
             self.view?.showLoading()
-            query
+            self.interactor.getHeadlinesByCountry(country: country).asObservable()
             .map{ [weak self] articles  in
                 let result = self?.repository.saveArticles(articles: articles)
                 self?.printLog("Repository input count -> \(articles.count), result of save \(String(describing: result))")
             }
             .map{ [weak self] result in
-                self?.getContentFromRepository()
+                self?.getHeaders()
             }        
             .catchError{ [weak self] error in
                 self?.view?.handleError(error: error)
                 self?.printLog("Repository error ->  \(error.localizedDescription)")
-                return Observable.just(self?.getContentFromRepository() ?? [])
+                return Observable.just(self?.getHeaders() ?? [])
             }
             .subscribe(
                 onNext: { [weak self] (articles) in
@@ -84,19 +81,7 @@ public final class NewsPresenter{
             }).disposed(by: disposeBag)
     }
     
-    private func getQuery() -> Observable<[Articles]>{
-        if(country.isEmpty){
-            return self.interactor.getDefaultHeadlines().asObservable()
-        }
-        
-        return self.interactor.getHeadlinesByCountry(country: country).asObservable()
-    }
-    
-    private func getContentFromRepository() -> [Articles]{
-        if(country.isEmpty){
-            return self.repository.getHeadlines()
-        }
-        
+    private func getHeaders() -> [Articles]{
         return self.repository.getHeadlines(country: country)
     }
     

@@ -44,10 +44,6 @@ class RepositoryImpl : Repository {
         return localStorage.getSourcesByCategory(category: category)
     }
     
-    func loadHeadlines() -> Observable<[Articles]> {
-        return networkProvider.getDefaultHeadlines()
-    }
-    
     func loadHeadlines(country: String) -> Observable<[Articles]> {
         return networkProvider.getHeadlinesByCountry(country: country)
     }

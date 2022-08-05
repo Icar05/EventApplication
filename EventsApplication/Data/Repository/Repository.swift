@@ -22,9 +22,7 @@ protocol Repository{
     func getEverything(query: String) -> [Articles]
 
     func getSourcesByCategory(category: String) -> [Sources]
-    
-    func loadHeadlines() -> Observable<[Articles]>
-    
+        
     func loadHeadlines(country: String) -> Observable<[Articles]>
     
     func loadEverything(query: String) -> Observable<[Articles]>

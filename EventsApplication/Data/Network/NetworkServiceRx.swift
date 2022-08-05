@@ -19,32 +19,6 @@ class NetworkServiceRx {
     }
 
 
-
-    //  all new headers
-    func getDefaultHeadlines() -> Observable<[Articles]>{
-        return Observable<[Articles]>.create({[weak self] (observer) -> Disposable in
-            let request = self?.sessionManager.request(UrlRouter.getDefaultHeadlines)
-                        .validate()
-                        .responseJSON { (response) in
-                            switch response.result {
-                            case .success( _):
-
-                                let responseModel  = try! self!.jsonDecoder.decode(Json4Swift_Base.self, from:response.data!)
-                                    observer.onNext(responseModel.articles!)
-                                    observer.onCompleted()
-
-                            case .failure(let error):
-                                    self?.debug(value: "getDefaultHeadlines: \(error.localizedDescription)")
-                                    observer.onError(error)
-                            }
-                    }
-                    return Disposables.create {
-                        request?.cancel()
-                    }
-                })
-    }
-
-
     //  headers by country. get values from selector
     func getHeadlinesByCountry(country: String) -> Observable<[Articles]>{
         return Observable<[Articles]>.create({[weak self] (observer) -> Disposable in

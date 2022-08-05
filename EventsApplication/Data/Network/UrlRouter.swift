@@ -10,8 +10,7 @@ enum UrlRouter: URLRequestConvertible {
     
     static let baseUrl = "https://newsapi.org/"
     
-    
-    case getDefaultHeadlines
+
     case getHeadlinesByCountry(String)
     case getEverythingByQuery(String)
     case getSourcesByCategory(String)
@@ -20,7 +19,6 @@ enum UrlRouter: URLRequestConvertible {
     
     var method: HTTPMethod {
         switch self {
-                case .getDefaultHeadlines: return .get
                 case .getHeadlinesByCountry: return .get
                 case .getEverythingByQuery: return .get
                 case .getSourcesByCategory: return .get
@@ -29,7 +27,6 @@ enum UrlRouter: URLRequestConvertible {
     
     var encoding: ParameterEncoding {
         switch self {
-            case .getDefaultHeadlines: return URLEncoding.default
             case .getHeadlinesByCountry: return URLEncoding.default
             case .getEverythingByQuery: return URLEncoding.default
             case .getSourcesByCategory: return URLEncoding.default
@@ -40,10 +37,6 @@ enum UrlRouter: URLRequestConvertible {
         
         let result: (path: String, parameters: Parameters?) = {
             switch self {
-                
-                case .getDefaultHeadlines:
-                    return ("v2/top-headlines", ["apiKey": UrlRouter.apiKey,
-                                                 "country": CountryUtil.getDefaultCountry()])
                 
                 case .getHeadlinesByCountry(let country):
                     return ("v2/top-headlines", ["apiKey": UrlRouter.apiKey,
