@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SourcesViewController" customModule="EventsApplication" customModuleProvider="target">
             <connections>
-                <outlet property="emptyView" destination="9Ev-KF-efb" id="O1e-M2-BkM"/>
                 <outlet property="tableView" destination="Ugu-iA-J8f" id="rGX-Aa-dEg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -31,22 +30,14 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </tableView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ev-KF-efb" customClass="EmptyView" customModule="EventsApplication" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="9Ev-KF-efb" secondAttribute="bottom" id="3rK-6M-SDK"/>
                         <constraint firstItem="e2j-bs-aHd" firstAttribute="leading" secondItem="cno-Mj-xiV" secondAttribute="leading" id="5tf-XK-ibd"/>
-                        <constraint firstAttribute="trailing" secondItem="9Ev-KF-efb" secondAttribute="trailing" id="6QT-Ue-cv5"/>
                         <constraint firstAttribute="trailing" secondItem="Ugu-iA-J8f" secondAttribute="trailing" id="d1R-Ps-Rcm"/>
                         <constraint firstItem="Ugu-iA-J8f" firstAttribute="top" secondItem="cno-Mj-xiV" secondAttribute="top" id="h57-ze-NFE"/>
                         <constraint firstItem="e2j-bs-aHd" firstAttribute="top" secondItem="cno-Mj-xiV" secondAttribute="top" id="iQh-vI-sVA"/>
-                        <constraint firstItem="9Ev-KF-efb" firstAttribute="leading" secondItem="cno-Mj-xiV" secondAttribute="leading" id="lls-5T-fxw"/>
                         <constraint firstAttribute="bottom" secondItem="Ugu-iA-J8f" secondAttribute="bottom" id="ojb-sj-9Bp"/>
-                        <constraint firstItem="9Ev-KF-efb" firstAttribute="top" secondItem="cno-Mj-xiV" secondAttribute="top" id="qah-ts-cl3"/>
                         <constraint firstAttribute="trailing" secondItem="e2j-bs-aHd" secondAttribute="trailing" id="r2d-8F-dJt"/>
                         <constraint firstItem="Ugu-iA-J8f" firstAttribute="leading" secondItem="cno-Mj-xiV" secondAttribute="leading" id="tHE-oh-9yL"/>
                         <constraint firstAttribute="bottom" secondItem="e2j-bs-aHd" secondAttribute="bottom" id="trL-W3-Bhz"/>

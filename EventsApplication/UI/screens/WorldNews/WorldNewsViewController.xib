@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WorldNewsViewController" customModule="EventsApplication" customModuleProvider="target">
             <connections>
-                <outlet property="emptyView" destination="Io7-Wx-wnF" id="xoH-wE-92P"/>
                 <outlet property="tableView" destination="JJM-UX-QGX" id="Jmr-D5-GPK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -31,24 +30,16 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </tableView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Io7-Wx-wnF" customClass="EmptyView" customModule="EventsApplication" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="Io7-Wx-wnF" firstAttribute="leading" secondItem="AU0-w7-deV" secondAttribute="leading" id="0u1-6g-WCU"/>
                         <constraint firstItem="JJM-UX-QGX" firstAttribute="top" secondItem="AU0-w7-deV" secondAttribute="top" id="Fda-d1-cbn"/>
                         <constraint firstAttribute="trailing" secondItem="FmU-Q8-4gR" secondAttribute="trailing" id="FhM-5B-0EK"/>
                         <constraint firstAttribute="bottom" secondItem="FmU-Q8-4gR" secondAttribute="bottom" id="GTD-QQ-Q4Z"/>
                         <constraint firstAttribute="bottom" secondItem="JJM-UX-QGX" secondAttribute="bottom" id="KjT-g4-ObU"/>
-                        <constraint firstItem="Io7-Wx-wnF" firstAttribute="top" secondItem="AU0-w7-deV" secondAttribute="top" id="Ntb-3O-VMh"/>
                         <constraint firstItem="JJM-UX-QGX" firstAttribute="leading" secondItem="AU0-w7-deV" secondAttribute="leading" id="aWq-oC-fAa"/>
                         <constraint firstItem="FmU-Q8-4gR" firstAttribute="top" secondItem="AU0-w7-deV" secondAttribute="top" id="hhh-FP-Ihs"/>
-                        <constraint firstAttribute="trailing" secondItem="Io7-Wx-wnF" secondAttribute="trailing" id="s8r-IY-ix5"/>
                         <constraint firstItem="FmU-Q8-4gR" firstAttribute="leading" secondItem="AU0-w7-deV" secondAttribute="leading" id="u8G-or-cKc"/>
-                        <constraint firstAttribute="bottom" secondItem="Io7-Wx-wnF" secondAttribute="bottom" id="wFh-qJ-hfu"/>
                         <constraint firstAttribute="trailing" secondItem="JJM-UX-QGX" secondAttribute="trailing" id="xdq-OP-Dsf"/>
                     </constraints>
                 </view>

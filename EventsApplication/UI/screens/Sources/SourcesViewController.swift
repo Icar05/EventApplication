@@ -9,6 +9,8 @@
 import UIKit
 
 public final class SourcesViewController: BaseTableViewController {
+   
+    
     
 
     private let categoryTabItemTitle = NSLocalizedString("Category", comment: "")
@@ -18,9 +20,7 @@ public final class SourcesViewController: BaseTableViewController {
     private let dataSource = NewsDataSource()
     
     private let presenter: SourcesPresenter
-    
-    @IBOutlet weak var emptyView: EmptyView!
-    
+        
     @IBOutlet weak var tableView: UITableView!
     
    
@@ -51,40 +51,39 @@ public final class SourcesViewController: BaseTableViewController {
         self.presenter.viewDidLoad()
     }
     
-    func registerCells(models: [CustomCellModel]){
-        
-        models.forEach{
-            let nib = UINib(nibName: $0.reuseIdentifier, bundle: nil)
-            self.tableView?.register(nib, forCellReuseIdentifier: $0.reuseIdentifier)
-        }
-        
-        self.refreshCells(models: models)
-    }
-    
-    func refreshCells(models: [CustomCellModel]){
-        if(models.count < 2){
-            self.emptyView.showEmptyView()
-            return
-        }
-        
-        self.dataSource.setData(data: models)
-        self.tableView.reloadData()
-    }
-    
     public override func onRefresh() {
         self.presenter.getFreshContent()
         self.refreshControl.beginRefreshing()
     }
    
-    func showLoading() {
-        if(!self.refreshControl.isRefreshing){
-            self.emptyView.showLoading()
-        }
+}
+
+extension SourcesViewController: NewsVC{
+    
+    public func handleError(error: Error) {
+        self.handleError(tableView: tableView, error: error)
     }
     
-    func hideLoading() {
-        self.emptyView?.hideLoading()
-        self.refreshControl.endRefreshing()
+    public func showLoading() {
+        self.showLoading(tableView: tableView)
+    }
+    
+    public func showEmptyView() {
+        self.showEmptyView(tableView: tableView)
+        self.dataSource.setData(data: [])
+        self.tableView.reloadData()
+    }
+    
+    public func updateContent(cells: [CustomCellModel]) {
+        self.hideEmptyView(tableView: tableView)
+        
+        cells.forEach{
+            let nib = UINib(nibName: $0.reuseIdentifier, bundle: nil)
+            self.tableView?.register(nib, forCellReuseIdentifier: $0.reuseIdentifier)
+        }
+        
+        self.dataSource.setData(data: cells)
+        self.tableView.reloadData()
     }
     
 }
@@ -98,12 +97,6 @@ extension SourcesViewController: NewsDataSourceDelegate{
         }
         
         self.navigateToSourceDetail(source: source.source)
-    }
-    
-    private func navigateToSourceDetail(source: Sources){
-        let navigator = getApplication().getNavigator()
-        let destination = navigator.getSourceDetailScreen(sources: source)
-        navigator.navigate(from: self, to: destination)
     }
     
 }
@@ -124,6 +117,5 @@ extension SourcesViewController : TabItem{
             }
         ))
     }
-    
 }
 

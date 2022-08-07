@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsViewController" customModule="EventsApplication" customModuleProvider="target">
             <connections>
-                <outlet property="emptyView" destination="kbw-5f-S2S" id="3C5-kt-uLB"/>
                 <outlet property="tableView" destination="YYa-vY-WRy" id="z9B-j2-kqp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -31,24 +30,16 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </tableView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kbw-5f-S2S" customClass="EmptyView" customModule="EventsApplication" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="kbw-5f-S2S" firstAttribute="leading" secondItem="cSZ-4w-GfE" secondAttribute="leading" id="73i-xj-8OH"/>
                         <constraint firstAttribute="trailing" secondItem="nfm-js-6iA" secondAttribute="trailing" id="FNk-fg-JKE"/>
                         <constraint firstAttribute="bottom" secondItem="YYa-vY-WRy" secondAttribute="bottom" id="LSn-ws-UWp"/>
                         <constraint firstAttribute="trailing" secondItem="YYa-vY-WRy" secondAttribute="trailing" id="Nck-ff-Wec"/>
-                        <constraint firstItem="kbw-5f-S2S" firstAttribute="top" secondItem="cSZ-4w-GfE" secondAttribute="top" id="PIA-a3-50l"/>
                         <constraint firstItem="YYa-vY-WRy" firstAttribute="leading" secondItem="cSZ-4w-GfE" secondAttribute="leading" id="Txv-Yl-S9P"/>
                         <constraint firstItem="nfm-js-6iA" firstAttribute="top" secondItem="cSZ-4w-GfE" secondAttribute="top" id="ZHo-R2-qx1"/>
                         <constraint firstItem="nfm-js-6iA" firstAttribute="leading" secondItem="cSZ-4w-GfE" secondAttribute="leading" id="jex-uf-6Ti"/>
-                        <constraint firstAttribute="bottom" secondItem="kbw-5f-S2S" secondAttribute="bottom" id="qVr-qw-7XN"/>
                         <constraint firstAttribute="bottom" secondItem="nfm-js-6iA" secondAttribute="bottom" id="rIb-wE-JqF"/>
-                        <constraint firstAttribute="trailing" secondItem="kbw-5f-S2S" secondAttribute="trailing" id="sVI-8X-7Ln"/>
                         <constraint firstItem="YYa-vY-WRy" firstAttribute="top" secondItem="cSZ-4w-GfE" secondAttribute="top" id="z1b-RW-thE"/>
                     </constraints>
                 </view>

@@ -15,9 +15,9 @@ import UIKit
  private let languageTabItemSubtitle = NSLocalizedString("Select language", comment: "")
  */
 public final class WorldNewsViewController: BaseTableViewController {
-    
-
    
+    
+    
     
     private let queryTabItemTitle = NSLocalizedString("Query", comment: "")
     
@@ -26,9 +26,7 @@ public final class WorldNewsViewController: BaseTableViewController {
     private let dataSource = NewsDataSource()
     
     private let presenter: WorldNewsPresenter
-    
-    @IBOutlet weak var emptyView: EmptyView!
-    
+        
     @IBOutlet weak var tableView: UITableView!
     
    
@@ -59,40 +57,39 @@ public final class WorldNewsViewController: BaseTableViewController {
         self.presenter.viewDidLoad()
     }
     
-    func registerCells(models: [CustomCellModel]){
-        
-        models.forEach{
-            let nib = UINib(nibName: $0.reuseIdentifier, bundle: nil)
-            self.tableView?.register(nib, forCellReuseIdentifier: $0.reuseIdentifier)
-        }
-        
-        self.refreshCells(models: models)
-    }
-    
-    func refreshCells(models: [CustomCellModel]){
-        if(models.count < 2){
-            self.emptyView.showEmptyView()
-            return
-        }
-        
-        self.dataSource.setData(data: models)
-        self.tableView.reloadData()
-    }
-    
     public override func onRefresh() {
         self.presenter.getFreshContent()
         self.refreshControl.beginRefreshing()
     }
-   
-    func showLoading() {
-        if(!self.refreshControl.isRefreshing){
-            self.emptyView.showLoading()
-        }
+    
+}
+
+extension WorldNewsViewController: NewsVC{
+    
+    public func handleError(error: Error) {
+        self.handleError(tableView: tableView, error: error)
     }
     
-    func hideLoading() {
-        self.emptyView?.hideLoading()
-        self.refreshControl.endRefreshing()
+    public func showLoading() {
+        self.showLoading(tableView: tableView)
+    }
+    
+    public func showEmptyView() {
+        self.showEmptyView(tableView: tableView)
+        self.dataSource.setData(data: [])
+        self.tableView.reloadData()
+    }
+    
+    public func updateContent(cells: [CustomCellModel]) {
+        self.hideEmptyView(tableView: tableView)
+        
+        cells.forEach{
+            let nib = UINib(nibName: $0.reuseIdentifier, bundle: nil)
+            self.tableView?.register(nib, forCellReuseIdentifier: $0.reuseIdentifier)
+        }
+        
+        self.dataSource.setData(data: cells)
+        self.tableView.reloadData()
     }
     
 }
@@ -106,12 +103,6 @@ extension WorldNewsViewController: NewsDataSourceDelegate{
         }
         
         self.navigateToArticleDetail(article: new.article)
-    }
-    
-    private func navigateToArticleDetail(article: Articles){
-        let navigator = getApplication().getNavigator()
-        let destination = navigator.getArticleDetailScreen(article: article)
-        navigator.navigate(from: self, to: destination)
     }
     
 }
