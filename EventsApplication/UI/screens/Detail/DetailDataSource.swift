@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol CustomCellModel{
+public protocol CustomCellModel{
     var reuseIdentifier: String { get }
 }
 
