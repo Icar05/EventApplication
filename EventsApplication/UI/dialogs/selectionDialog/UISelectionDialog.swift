@@ -69,7 +69,7 @@ class UISelectionDialog: BaseDialogViewController {
     
     private func setCurrentSelection(){
         
-        if let selection = model?.currentSelection.lowercased(),
+        if let selection = model?.currentSelection,
            let id = model?.dataSourse.firstIndex(of: selection){
             self.pickerView.selectRow(id, inComponent: 0, animated: true)
             self.value = selection

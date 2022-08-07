@@ -36,7 +36,7 @@ public final class NewsPresenter{
     init(interactor: HeadersInteractor, resository: Repository){
         self.interactor = interactor
         self.repository = resository
-        self.country = CountryUtil.getDefaultCountry()
+        self.country = CountryUtil.getDefaultCountry().lowercased()
     }
     
     
@@ -59,7 +59,6 @@ public final class NewsPresenter{
     
     private func loadContent(){
         self.view?.showLoading()
-        
         self.interactor.getHeadlinesByCountry(country: country).asObservable()
             .map{ [weak self] articles  in
                 self?.saveNews(articles: articles)
