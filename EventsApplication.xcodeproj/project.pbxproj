@@ -79,7 +79,6 @@
 		ED67A362289CE564009AFA4C /* WorldNewsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67A361289CE564009AFA4C /* WorldNewsPresenter.swift */; };
 		ED814D4D289F23FA005C82EE /* MockUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED814D4C289F23FA005C82EE /* MockUtil.swift */; };
 		ED814D4F289F42A0005C82EE /* BaseNewsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED814D4E289F42A0005C82EE /* BaseNewsContainer.swift */; };
-		EDC1FC77289DB96500908D0C /* MockHeadersInteractorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC1FC76289DB96500908D0C /* MockHeadersInteractorInteractor.swift */; };
 		EDD2B16C289ADFDA004DAC2D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B16A289ADFDA004DAC2D /* DetailViewController.swift */; };
 		EDD2B16D289ADFDA004DAC2D /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD2B16B289ADFDA004DAC2D /* DetailViewController.xib */; };
 		EDD2B16F289ADFE8004DAC2D /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B16E289ADFE8004DAC2D /* DetailPresenter.swift */; };
@@ -200,7 +199,6 @@
 		ED67A361289CE564009AFA4C /* WorldNewsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldNewsPresenter.swift; sourceTree = "<group>"; };
 		ED814D4C289F23FA005C82EE /* MockUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUtil.swift; sourceTree = "<group>"; };
 		ED814D4E289F42A0005C82EE /* BaseNewsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNewsContainer.swift; sourceTree = "<group>"; };
-		EDC1FC76289DB96500908D0C /* MockHeadersInteractorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHeadersInteractorInteractor.swift; sourceTree = "<group>"; };
 		EDD2B16A289ADFDA004DAC2D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EDD2B16B289ADFDA004DAC2D /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		EDD2B16E289ADFE8004DAC2D /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
@@ -489,7 +487,6 @@
 				9B563153224B75F5005B41A6 /* EverythingInteractor.swift */,
 				9B56315B224B76C4005B41A6 /* SourcesInteractor.swift */,
 				9B56314B224B74A3005B41A6 /* HeadersInteractor.swift */,
-				EDC1FC76289DB96500908D0C /* MockHeadersInteractorInteractor.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -871,7 +868,6 @@
 				ED67A34C289C89F5009AFA4C /* AppComponent.swift in Sources */,
 				9B9AB2A522648F2A00712530 /* BaseDialogViewController.swift in Sources */,
 				ED67A348289C7CE2009AFA4C /* NewsDataSource.swift in Sources */,
-				EDC1FC77289DB96500908D0C /* MockHeadersInteractorInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
