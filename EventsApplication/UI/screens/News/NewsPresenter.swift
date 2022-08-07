@@ -14,7 +14,7 @@ public final class NewsPresenter{
     
     
     
-    private let showLog = false
+    private let showLog = true
     
     private let disposeBag = DisposeBag()
     
@@ -24,12 +24,12 @@ public final class NewsPresenter{
     
     private var country: String = ""
     
-    unowned var view: NewsViewController!
+    unowned var view: NewsVC!
 
     
     
     
-    public func set(view: NewsViewController) {
+    public func set(view: NewsVC) {
         self.view = view
     }
     
@@ -39,18 +39,13 @@ public final class NewsPresenter{
         self.country = CountryUtil.getDefaultCountry()
     }
     
+    
     func viewDidLoad(){
-        self.loadContent(
-            onEnd: { models in
-                self.view?.registerCells(models: models)
-            })
+        self.loadContent()
     }
     
     func getFreshContent(){
-        self.loadContent(
-            onEnd: { models in
-                self.view?.refreshCells(models: models)
-            })
+        self.loadContent()
     }
     
     func setCountry(country: String){
@@ -58,37 +53,44 @@ public final class NewsPresenter{
         self.getFreshContent()
     }
     
-    private func loadContent(onEnd:  @escaping (_ models: [CustomCellModel]) -> Void){
-            self.view?.showLoading()
-            self.interactor.getHeadlinesByCountry(country: country).asObservable()
+    
+    
+    private func loadContent(){
+        self.view?.showLoading()
+        
+        self.interactor.getHeadlinesByCountry(country: country).asObservable()
             .map{ [weak self] articles  in
-                let result = self?.repository.saveArticles(articles: articles)
-                self?.printLog("Repository input count -> \(articles.count), result of save \(String(describing: result))")
+                self?.saveNews(articles: articles)
             }
             .map{ [weak self] result in
-                self?.getHeaders()
-            }        
+                self?.getHeaders() ?? []
+            }
             .catchError{ [weak self] error in
-                
-                if let view = self?.view{
-                    view.handleError(error: error)
-                }
-                
-                self?.printLog("Repository error ->  \(error.localizedDescription)")
-                return Observable.just(self?.getHeaders() ?? [])
+                return Observable.just(self?.handleError(error: error) ?? [])
             }
             .subscribe(
                 onNext: { [weak self] (articles) in
-                    
-                    self?.printLog("Repository hide loading")
-                    
-                    if let view: NewsViewController = self?.view, let article = articles, let s = self{
-                        let content = s.prepareCells(article: article)
-                        view.hideLoading()
-                        onEnd(content)
-                    }
-                    
-            }).disposed(by: disposeBag)
+                    self?.handleArticles(arcicles: articles)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    
+    private func handleError(error: Error) -> [Articles]{
+        self.view.handleError(error: error)
+        return getHeaders()
+    }
+    
+    private func handleArticles(arcicles: [Articles]){
+        if(arcicles.count > 0){
+            self.view.updateContent(cells: prepareCells(article: arcicles))
+        }else{
+            self.view.showEmptyView()
+        }
+    }
+    
+    private func saveNews(articles: [Articles]) -> Bool {
+        return repository.saveArticles(articles: articles)
     }
     
     private func getHeaders() -> [Articles]{
@@ -96,7 +98,6 @@ public final class NewsPresenter{
     }
     
     private func prepareCells(article: [Articles]) -> [CustomCellModel]{
-        
         var cells: [CustomCellModel] = [NewsSeparatorCellModel()]
             article.forEach{
                 cells.append(NewsCellModel(article: $0))

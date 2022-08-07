@@ -24,12 +24,12 @@ public final class SourcesPresenter{
     
     private var category: String = ValueForSelector.categories[6]
     
-    unowned var view: SourcesViewController!
+    unowned var view: NewsVC!
 
     
     
     
-    public func set(view: SourcesViewController) {
+    public func set(view: NewsVC) {
         self.view = view
     }
     
@@ -39,17 +39,11 @@ public final class SourcesPresenter{
     }
     
     func viewDidLoad(){
-        self.loadContent(
-            onEnd: { models in
-                self.view?.registerCells(models: models)
-            })
+        self.loadContent()
     }
     
     func getFreshContent(){
-        self.loadContent(
-            onEnd: { models in
-                self.view?.refreshCells(models: models)
-            })
+        self.loadContent()
     }
     
     func setCategory(category: String = ValueForSelector.categories[6]) {
@@ -57,38 +51,42 @@ public final class SourcesPresenter{
         self.getFreshContent()
     }
     
-    private func loadContent(onEnd:  @escaping (_ models: [CustomCellModel]) -> Void){
+    private func loadContent(){
+        self.view?.showLoading()
         
-            self.view?.showLoading()
-            self.interactor.getSourcesByCategory(category: category)
+        self.interactor.getSourcesByCategory(category: category).asObservable()
             .map{ [weak self] sources  in
-                let result = self?.repository.saveSources(sources: sources)
-                self?.printLog("Repository input count -> \(sources.count), result of save \(String(describing: result))")
+                self?.saveNews(sources: sources)
             }
             .map{ [weak self] result in
-                self?.getSources()
+                self?.getSources() ?? []
             }
             .catchError{ [weak self] error in
-                
-                if let view = self?.view{
-                    view.handleError(error: error)
-                }
-                
-                self?.printLog("Repository error ->  \(error.localizedDescription)")
-                return Observable.just(self?.getSources())
+                return Observable.just(self?.handleError(error: error) ?? [])
             }
             .subscribe(
-                onNext: { [weak self] (sources) in
-                    
-                    self?.printLog("Repository hide loading")
-                    
-                    if let view: SourcesViewController = self?.view, let sources = sources, let s = self{
-                        let content = s.prepareCells(sources: sources)
-                        view.hideLoading()
-                        onEnd(content)
-                    }
-                    
-            }).disposed(by: disposeBag)
+                onNext: { [weak self] (articles) in
+                    self?.handleArticles(sources: articles)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    
+    private func handleError(error: Error) -> [Sources]{
+        self.view.handleError(error: error)
+        return getSources()
+    }
+    
+    private func handleArticles(sources: [Sources]){
+        if(sources.count > 0){
+            self.view.updateContent(cells: prepareCells(sources: sources))
+        }else{
+            self.view.showEmptyView()
+        }
+    }
+    
+    private func saveNews(sources: [Sources]) ->Bool{
+        return self.repository.saveSources(sources: sources)
     }
     
     private func getSources() -> [Sources]{
