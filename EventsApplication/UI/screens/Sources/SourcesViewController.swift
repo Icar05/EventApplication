@@ -112,6 +112,7 @@ extension SourcesViewController : TabItem{
             title: categoryTabItemTitle,
             subtitle: categoryTabItemSubtitle,
             dataSourse:ValueForSelector.categories,
+            currentSelection: presenter.getCategory(),
             completion: { category in
                 self.presenter.setCategory(category: category)
             }

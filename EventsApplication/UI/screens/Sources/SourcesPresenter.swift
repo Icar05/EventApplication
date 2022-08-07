@@ -51,6 +51,10 @@ public final class SourcesPresenter{
         self.getFreshContent()
     }
     
+    func getCategory() -> String{
+        return self.category
+    }
+    
     private func loadContent(){
         self.view?.showLoading()
         

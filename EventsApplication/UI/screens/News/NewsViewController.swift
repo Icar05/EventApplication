@@ -119,6 +119,7 @@ extension NewsViewController: TabItem{
             title: countryTabItemTitle,
             subtitle: countryTabItemSubtitle,
             dataSourse: ValueForSelector.countries,
+            currentSelection: presenter.getCountry(),
             completion: { country in
                 self.presenter.setCountry(country: country)
             }))

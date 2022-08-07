@@ -51,6 +51,10 @@ public final class WorldNewsPresenter{
         self.getFreshContent()
     }
     
+    func getQuery() -> String{
+        return self.query
+    }
+    
     private func loadContent(){
         self.view?.showLoading()
         

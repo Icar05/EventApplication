@@ -13,6 +13,7 @@ struct UISelectionDialogModel{
     let title: String
     let subtitle: String
     let dataSourse: [String]
+    let currentSelection: String
     var completion: ((String)->Void)?
 }
 
@@ -63,6 +64,16 @@ class UISelectionDialog: BaseDialogViewController {
         self.pickerView.delegate = self
         self.dialogTitle.text = model?.title
         self.dialogSubtitle.text = model?.subtitle
+        self.setCurrentSelection()
+    }
+    
+    private func setCurrentSelection(){
+        
+        if let selection = model?.currentSelection.lowercased(),
+           let id = model?.dataSourse.firstIndex(of: selection){
+            self.pickerView.selectRow(id, inComponent: 0, animated: true)
+            self.value = selection
+        }
     }
     
     private func getResult() -> String{

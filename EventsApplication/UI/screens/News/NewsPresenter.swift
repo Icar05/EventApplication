@@ -53,7 +53,9 @@ public final class NewsPresenter{
         self.getFreshContent()
     }
     
-    
+    func getCountry() -> String{
+        return self.country
+    }
     
     private func loadContent(){
         self.view?.showLoading()

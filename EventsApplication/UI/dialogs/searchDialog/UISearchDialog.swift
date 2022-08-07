@@ -12,6 +12,7 @@ import UIKit
 struct UISearchDialogModel{
     let title: String
     let subtitle: String
+    let hint: String
     var completion: ((String)->Void)?
 }
 
@@ -37,9 +38,17 @@ class UISearchDialog: BaseDialogViewController{
     }
     
     @IBAction func okClick(_ sender: UIButton) {
-        self.model?.completion?(self.searchField.text ?? "")
+        self.model?.completion?(getResult())
         self.model?.completion = nil
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    private func getResult() -> String{
+        if let result = self.searchField.text, !result.isEmpty{
+            return result
+        }
+        
+        return self.model!.hint
     }
     
     func setModel(model: UISearchDialogModel){
@@ -65,6 +74,7 @@ class UISearchDialog: BaseDialogViewController{
         self.alertView.layer.cornerRadius = 10
         self.dialogTitle.text = model?.title
         self.dialogSubtitle.text = model?.subtitle
+        self.searchField.text = model?.hint
     }
     
     

@@ -117,6 +117,7 @@ extension WorldNewsViewController : TabItem{
         self.presentSearchDialog(model: UISearchDialogModel(
             title: queryTabItemTitle,
             subtitle: queryTabItemSubtitle,
+            hint: presenter.getQuery(),
             completion: { search in
                 self.presenter.setQuery(query: search)
             }))
