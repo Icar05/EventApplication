@@ -4,12 +4,17 @@
 import Foundation
 import Alamofire
 
+
+/**
+ 
+ */
 enum UrlRouter: URLRequestConvertible {
     
+    private static let newApiKey = "73f9eeca5fd44fb7b7b2c3a6249af890"
+    
     static let apiKey = "956a81e3ea184cb7b8f2a6b3a4ea0c33"
-    
     static let baseUrl = "https://newsapi.org/"
-    
+
 
     case getHeadlinesByCountry(String)
     case getEverythingByQuery(String)
