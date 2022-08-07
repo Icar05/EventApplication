@@ -18,6 +18,9 @@ public final class NewsViewController: BaseTableViewController {
     
     
     
+    
+    private let clearCurrentSelection = NSLocalizedString("Clear selection", comment: "")
+    
     private let countryTabItemTitle = NSLocalizedString("Country", comment: "")
     
     private let countryTabItemSubtitle = NSLocalizedString("Select country", comment: "")
@@ -108,11 +111,18 @@ extension NewsViewController: NewsDataSourceDelegate{
 }
 
 extension NewsViewController: TabItem{
-
-    func getNavBarButton() -> UIBarButtonItem? {
+    
+    func getRightNavBarButton() -> UIBarButtonItem? {
         return createNavItem(title: countryTabItemTitle, selector: "selectCountry")
     }
     
+    func getLeftNavBarButton() -> UIBarButtonItem? {
+        return createNavItem(title: clearCurrentSelection, selector: "clearAction")
+    }
+    
+    @objc func clearAction(){
+        self.presenter.clearCountry()
+    }
     
     @objc func selectCountry(){
         self.presentSelectionDialog(model: UISelectionDialogModel(

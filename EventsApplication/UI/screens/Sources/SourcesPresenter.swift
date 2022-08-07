@@ -55,6 +55,11 @@ public final class SourcesPresenter{
         return self.category
     }
     
+    func clearCategory(){
+        self.category = ValueForSelector.categories[6]
+        self.loadContent()
+    }
+    
     private func loadContent(){
         self.view?.showLoading()
         

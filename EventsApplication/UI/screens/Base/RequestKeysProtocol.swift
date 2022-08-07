@@ -11,7 +11,8 @@ import UIKit
 
 
 protocol TabItem {
-    func getNavBarButton() -> UIBarButtonItem?
+    func getRightNavBarButton() -> UIBarButtonItem?
+    func getLeftNavBarButton() -> UIBarButtonItem?
 }
 extension TabItem{
     func createNavItem(title: String, selector: String) -> UIBarButtonItem{

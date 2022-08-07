@@ -19,6 +19,8 @@ public final class WorldNewsViewController: BaseTableViewController {
     
     
     
+    private let clearCurrentSelection = NSLocalizedString("Clear selection", comment: "")
+    
     private let queryTabItemTitle = NSLocalizedString("Query", comment: "")
     
     private let queryTabItemSubtitle = NSLocalizedString("Select query", comment: "")
@@ -109,8 +111,16 @@ extension WorldNewsViewController: NewsDataSourceDelegate{
 
 extension WorldNewsViewController : TabItem{
     
-    func getNavBarButton() -> UIBarButtonItem? {
+    func getRightNavBarButton() -> UIBarButtonItem? {
         return createNavItem(title: queryTabItemTitle, selector: "selectQuery")
+    }
+    
+    func getLeftNavBarButton() -> UIBarButtonItem? {
+        return createNavItem(title: clearCurrentSelection, selector: "clearAction")
+    }
+    
+    @objc func clearAction(){
+        self.presenter.clearQuery()
     }
     
     @objc func selectQuery(){

@@ -55,6 +55,11 @@ public final class WorldNewsPresenter{
         return self.query
     }
     
+    func clearQuery(){
+        self.query = ValueForSelector.defaultQuery
+        self.loadContent()
+    }
+    
     private func loadContent(){
         self.view?.showLoading()
         

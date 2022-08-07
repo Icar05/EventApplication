@@ -57,6 +57,11 @@ public final class NewsPresenter{
         return self.country
     }
     
+    func clearCountry(){
+        self.country = CountryUtil.getDefaultCountry().lowercased()
+        self.loadContent()
+    }
+    
     private func loadContent(){
         self.view?.showLoading()
         self.interactor.getHeadlinesByCountry(country: country).asObservable()

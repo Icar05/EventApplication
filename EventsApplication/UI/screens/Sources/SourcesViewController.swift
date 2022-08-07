@@ -12,6 +12,8 @@ public final class SourcesViewController: BaseTableViewController {
    
     
     
+    
+    private let clearCurrentSelection = NSLocalizedString("Clear selection", comment: "")
 
     private let categoryTabItemTitle = NSLocalizedString("Category", comment: "")
     
@@ -103,8 +105,16 @@ extension SourcesViewController: NewsDataSourceDelegate{
 
 extension SourcesViewController : TabItem{
     
-    func getNavBarButton() -> UIBarButtonItem? {
+    func getRightNavBarButton() -> UIBarButtonItem? {
         return createNavItem(title: categoryTabItemTitle, selector: "selectCategory")
+    }
+    
+    func getLeftNavBarButton() -> UIBarButtonItem? {
+        return createNavItem(title: clearCurrentSelection, selector: "clearAction")
+    }
+    
+    @objc func clearAction(){
+        self.presenter.clearCategory()
     }
     
     @objc func selectCategory(){
