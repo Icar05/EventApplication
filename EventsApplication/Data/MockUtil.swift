@@ -13,7 +13,7 @@ class MockUtil{
     public static func getMockArticles(count: Int, country: String) -> [Articles]{
         var res: [Articles] = []
         
-        for i in 0...count{
+        for _ in 0...count{
             res.append(Articles(
                 nTitle: " title for \(country) ",
                 nDesc: "\(Date().timeIntervalSince1970)",

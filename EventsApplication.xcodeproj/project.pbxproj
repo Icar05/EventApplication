@@ -716,13 +716,16 @@
 				TargetAttributes = {
 					9BEB17F3221C05CE003F8C9A = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1320;
 					};
 					9BEB1807221C05D0003F8C9A = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1320;
 						TestTargetID = 9BEB17F3221C05CE003F8C9A;
 					};
 					9BEB1812221C05D0003F8C9A = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1320;
 						TestTargetID = 9BEB17F3221C05CE003F8C9A;
 					};
 				};
@@ -1092,7 +1095,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ipinguin-linuxoid.EventsApplication";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1110,7 +1113,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ipinguin-linuxoid.EventsApplication";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1130,7 +1133,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ipinguin-linuxoid.EventsApplicationTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EventsApplication.app/EventsApplication";
 			};
@@ -1151,7 +1154,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ipinguin-linuxoid.EventsApplicationTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EventsApplication.app/EventsApplication";
 			};
@@ -1171,7 +1174,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ipinguin-linuxoid.EventsApplicationUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = EventsApplication;
 			};
@@ -1191,7 +1194,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ipinguin-linuxoid.EventsApplicationUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = EventsApplication;
 			};
