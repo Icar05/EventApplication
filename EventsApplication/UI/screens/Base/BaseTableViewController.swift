@@ -8,11 +8,13 @@
 
 import UIKit
 
-public class BaseTableViewController: UIViewController {
+public class BaseTableViewController: BaseNewsContainer {
     
+    
+    
+    private var emptyView = EmptyView()
     
     internal let refreshControl = UIRefreshControl()
-    
     
     
     
@@ -20,14 +22,12 @@ public class BaseTableViewController: UIViewController {
         super.viewDidLoad()
         
         self.refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        self.setupEmptyView()
     }
-    
-    public func onRefresh(){}
-    
-    @objc private func refresh(_ sender: Any) {
-        self.onRefresh()
-    }
-    
+
+    /*
+        refresh controll
+     */
     internal func addRefresh(tableView: UITableView){
         if #available(iOS 10.0, *) {
             tableView.refreshControl = refreshControl
@@ -36,23 +36,83 @@ public class BaseTableViewController: UIViewController {
         }
     }
     
-    internal func handleError(error: Error) {
-        DispatchQueue.main.async {
-            DialogHelper.presentErrorDialog(error: error, viewController: self)
+    public func onRefresh(){}
+    
+    @objc private func refresh(_ sender: Any) {
+        self.onRefresh()
+        self.refreshControl.endRefreshing()
+    }
+    
+   
+    
+    /*
+     empty view
+     */
+    
+    internal func handleError(tableView: UITableView,error: Error) {
+        DialogHelper.presentErrorDialog(error: error, viewController: self)
+        
+        if(tableView.numberOfRows(inSection: 0) > 0){
+            removeEmptyView(tableView: tableView)
+        }else{
+            showEmptyView(tableView: tableView)
         }
+        self.changeVisibilityOfTVCells(tableView: tableView, needHide: false)
     }
     
-    internal func presentSelectionDialog(model: UISelectionDialogModel){
-        let navigator = getApplication().getNavigator()
-        let dialog = navigator.getSelectionDialog(model: model)
-        navigator.present(from: self, to: dialog)
+    internal func showLoading(tableView: UITableView) {
+        self.addEmpyView(tableView: tableView)
+        self.emptyView.showLoading()
+        self.changeVisibilityOfTVCells(tableView: tableView, needHide: true)
     }
     
-    internal func presentSearchDialog(model: UISearchDialogModel){
-        let navigator = getApplication().getNavigator()
-        let dialog = navigator.getSearchDialog(model: model)
-        navigator.present(from: self, to: dialog)
+    internal func showEmptyView(tableView: UITableView) {
+        self.addEmpyView(tableView: tableView)
+        self.emptyView.showEmptyView()
+        self.changeVisibilityOfTVCells(tableView: tableView, needHide: false)
     }
     
-  
+    internal func hideEmptyView(tableView: UITableView) {
+        self.emptyView.hideLoading()
+        self.removeEmptyView(tableView: tableView)
+        self.changeVisibilityOfTVCells(tableView: tableView, needHide: false)
+    }
+    
+    
+    /*
+     helper methods
+     */
+    private func changeVisibilityOfTVCells(tableView: UITableView, needHide: Bool){
+        let count = tableView.numberOfRows(inSection: 0)
+    
+        if(count > 0){
+            for row in 0...tableView.numberOfRows(inSection: 0) - 1{
+                let indexPath = IndexPath(row: row, section: 0)
+                tableView.cellForRow(at: indexPath)?.isHidden = needHide
+            }
+        }
+        
+    }
+    
+    private func addEmpyView(tableView: UITableView){
+        tableView.backgroundView = emptyView
+        tableView.separatorStyle = .none
+    }
+    
+    private func removeEmptyView(tableView: UITableView){
+        tableView.backgroundView = nil
+        tableView.separatorStyle = .singleLine
+    }
+    
+    private func setupEmptyView(){
+        let frame = CGRect(
+            x: 0,
+            y: 0,
+            width: self.view.bounds.size.width,
+            height: self.view.bounds.size.height)
+        self.emptyView = EmptyView(frame: frame)
+        self.emptyView.sizeToFit()
+    }
+    
+    
 }

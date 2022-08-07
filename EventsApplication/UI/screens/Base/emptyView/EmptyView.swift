@@ -32,13 +32,6 @@ class EmptyView: UIView {
         setup()
     }
     
-    
-    func showLoading(value: Bool){
-        if(!value){
-            showLoading()
-        }
-    }
-    
     func showLoading(){
         self.isHidden = false
         loading.isHidden = false
@@ -48,8 +41,10 @@ class EmptyView: UIView {
     
     func hideLoading(){
         self.isHidden = true
+        loading.stopAnimating()
+        loading.isHidden = true
+        label.isHidden = false
     }
-    
     
     func showEmptyView(){
         self.isHidden = false
