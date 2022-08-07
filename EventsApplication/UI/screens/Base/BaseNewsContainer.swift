@@ -11,6 +11,52 @@ import UIKit
 public class BaseNewsContainer: UIViewController {
     
     
+    internal let refreshControl = UIRefreshControl()
+    
+    
+    
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+    }
+   
+    /*
+        refresh controll
+     */
+    public func onRefresh(){}
+    
+    @objc private func refresh(_ sender: Any) {
+        self.onRefresh()
+        self.refreshControl.endRefreshing()
+    }
+    
+    
+    internal func needRefresh(need: Bool, tableView: UITableView){
+        if(need){
+            addRefresh(tableView: tableView)
+        }else{
+            removeRefresh(tableView: tableView)
+        }
+    }
+    
+    internal func addRefresh(tableView: UITableView){
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+    }
+    
+    internal func removeRefresh(tableView: UITableView){
+        tableView.refreshControl = nil
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = nil
+        } else {
+            self.refreshControl.removeFromSuperview()
+        }
+    }
+    
     /*
         dialogs
      */

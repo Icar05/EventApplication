@@ -14,42 +14,31 @@ public class BaseTableViewController: BaseNewsContainer {
     
     private var emptyView = EmptyView()
     
-    internal let refreshControl = UIRefreshControl()
-    
     
     
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
         self.setupEmptyView()
     }
 
-    /*
-        refresh controll
-     */
-    internal func addRefresh(tableView: UITableView){
-        if #available(iOS 10.0, *) {
-            tableView.refreshControl = refreshControl
-        } else {
-            tableView.addSubview(refreshControl)
-        }
-    }
-    
-    public func onRefresh(){}
-    
-    @objc private func refresh(_ sender: Any) {
-        self.onRefresh()
-        self.refreshControl.endRefreshing()
-    }
-    
-   
     
     /*
      empty view
      */
     
+    internal func showLoading(tableView: UITableView) {
+        self.needRefresh(need: false, tableView: tableView)
+        
+        self.addEmpyView(tableView: tableView)
+        self.emptyView.showLoading()
+        self.changeVisibilityOfTVCells(tableView: tableView, needHide: true)
+        
+    }
+    
     internal func handleError(tableView: UITableView,error: Error) {
+        self.needRefresh(need: true, tableView: tableView)
+        
         DialogHelper.presentErrorDialog(error: error, viewController: self)
         
         if(tableView.numberOfRows(inSection: 0) > 0){
@@ -58,24 +47,25 @@ public class BaseTableViewController: BaseNewsContainer {
             showEmptyView(tableView: tableView)
         }
         self.changeVisibilityOfTVCells(tableView: tableView, needHide: false)
-    }
-    
-    internal func showLoading(tableView: UITableView) {
-        self.addEmpyView(tableView: tableView)
-        self.emptyView.showLoading()
-        self.changeVisibilityOfTVCells(tableView: tableView, needHide: true)
+       
     }
     
     internal func showEmptyView(tableView: UITableView) {
+        self.needRefresh(need: true, tableView: tableView)
+        
         self.addEmpyView(tableView: tableView)
         self.emptyView.showEmptyView()
         self.changeVisibilityOfTVCells(tableView: tableView, needHide: false)
+       
     }
     
     internal func hideEmptyView(tableView: UITableView) {
+        self.needRefresh(need: true, tableView: tableView)
+        
         self.emptyView.hideLoading()
         self.removeEmptyView(tableView: tableView)
         self.changeVisibilityOfTVCells(tableView: tableView, needHide: false)
+        
     }
     
     
