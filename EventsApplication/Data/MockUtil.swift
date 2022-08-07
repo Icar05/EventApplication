@@ -10,28 +10,35 @@ import Foundation
 
 class MockUtil{
     
-    public static func getMockArticles(count: Int) -> [Articles]{
-            return [Articles].init(repeating: Articles(
-                nTitle: "title ",
-                nDesc: "desc ",
+    public static func getMockArticles(count: Int, country: String) -> [Articles]{
+        var res: [Articles] = []
+        
+        for i in 0...count{
+            res.append(Articles(
+                nTitle: " title for \(country) ",
+                nDesc: "\(Date().timeIntervalSince1970)",
                 nUrl: "http: url.com",
                 nUrlToImage: "https://www.trailsofindochina.com/wp-content/uploads/2019/12/Japan-cityscape-over-Odori-Park-Sapporo_shutterstock_1007773915.jpg",
-                nDate: "22.22.2022",
+                nDate: "11.01.2022",
                 nAuthor: "Author",
-                nLanguage: "UA",
-                nCategory: "category"), count: count)
+                nLanguage: country,
+                nCategory: "category"))
+        }
+        
+        return res
     }
     
-    public static func getMockArticles() -> [Articles]{
+    public static func getMockArticles(country: String) -> [Articles]{
             let number = Int.random(in: 1...10)
-            return getMockArticles(count: number)
+        print("def m Language: \(country)")
+            return getMockArticles(count: number, country: country)
     }
     
     public static func getMockSources() -> [Sources]{
             let number = Int.random(in: 0...10)
             return [Sources].init(repeating: Sources(
                 nName: "Test name",
-                nDesc: "Test description",
+                nDesc: "\(Date().timeIntervalSince1970)",
                 nLanguage: "UA",
                 nCategory: "technology",
                 nCountry: "test country",

@@ -21,8 +21,13 @@ class HeadersInteractor {
     }
     
     func getHeadlinesByCountry(country: String) -> Observable<[Articles]> {
-        return self.repository.loadHeadlines(country:country)
-            .map{ return self.transformHeaders(articles: $0, language: country, category: nil)}
+        
+        let res = transformHeaders(
+            articles: MockUtil.getMockArticles(country: country),
+            language: country, category: "unknown")
+        return Observable.just(res)
+//        return self.repository.loadHeadlines(country:country)
+//            .map{ return self.transformHeaders(articles: $0, language: country, category: nil)}
     }
     
     func transformHeaders(articles: [Articles], language: String?, category: String? ) -> [Articles]{
