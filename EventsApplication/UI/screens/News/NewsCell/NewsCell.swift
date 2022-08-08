@@ -39,6 +39,8 @@ class NewsCell: UITableViewCell, CustomCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        self.newsImage.layer.borderColor = UIColor.lightGray.cgColor
+        self.newsImage.layer.borderWidth = 2.0
     }
     
     func update(with model: CustomCellModel) {
