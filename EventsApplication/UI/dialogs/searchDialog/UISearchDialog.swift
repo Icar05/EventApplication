@@ -20,6 +20,8 @@ struct UISearchDialogModel{
 class UISearchDialog: BaseDialogViewController{
     
     
+    private var model: UISearchDialogModel? = nil
+    
     @IBOutlet weak var alertView: UIView!
     
     @IBOutlet weak var dialogTitle: UILabel!
@@ -27,10 +29,10 @@ class UISearchDialog: BaseDialogViewController{
     @IBOutlet weak var dialogSubtitle: UILabel!
     
     @IBOutlet weak var searchField: UITextField!
-    
-    private var model: UISearchDialogModel? = nil
 
+    @IBOutlet weak var cancelBtn: UIButton!
     
+    @IBOutlet weak var okBtn: UIButton!
     
     @IBAction func cancelClick(_ sender: UIButton) {
         self.model?.completion = nil
@@ -75,6 +77,8 @@ class UISearchDialog: BaseDialogViewController{
         self.dialogTitle.text = model?.title
         self.dialogSubtitle.text = model?.subtitle
         self.searchField.text = model?.hint
+        self.cancelBtn.setTitle(NSLocalizedString("cancel", comment: ""), for: .normal)
+        self.okBtn.setTitle(NSLocalizedString("ok", comment: ""), for: .normal)
     }
     
     

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -54,8 +52,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Enter query ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bpN-xl-erB">
-                                        <rect key="frame" x="25" y="99" width="332" height="30"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="25" y="99" width="332" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -66,7 +63,7 @@
                                             <constraint firstAttribute="width" constant="1" id="OFr-Et-Ti2"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axG-LQ-ZSb">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axG-LQ-ZSb">
                                         <rect key="frame" x="8" y="151" width="174.66666666666666" height="44"/>
                                         <state key="normal" title="Cancel">
                                             <color key="titleColor" name="Accent"/>
@@ -75,7 +72,7 @@
                                             <action selector="cancelClick:" destination="bJ3-Qq-QbC" eventType="touchUpInside" id="UzH-hb-41o"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WrU-Q0-a8I">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WrU-Q0-a8I">
                                         <rect key="frame" x="199.66666666666663" y="151" width="174.33333333333337" height="44"/>
                                         <state key="normal" title="Ok">
                                             <color key="titleColor" name="Accent"/>
@@ -121,6 +118,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="7Km-Cy-Df9"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="d3M-SO-HL5" firstAttribute="centerX" secondItem="dZg-MQ-6HN" secondAttribute="centerX" id="7cp-C6-Wnp"/>
@@ -128,12 +126,13 @@
                             <constraint firstItem="d3M-SO-HL5" firstAttribute="leading" secondItem="7Km-Cy-Df9" secondAttribute="leading" constant="16" id="u2n-0c-V77"/>
                             <constraint firstItem="d3M-SO-HL5" firstAttribute="trailing" secondItem="7Km-Cy-Df9" secondAttribute="trailing" constant="-16" id="xBm-zj-was"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="7Km-Cy-Df9"/>
                     </view>
                     <connections>
                         <outlet property="alertView" destination="d3M-SO-HL5" id="JzW-7R-vyJ"/>
+                        <outlet property="cancelBtn" destination="axG-LQ-ZSb" id="Yqt-PJ-EWI"/>
                         <outlet property="dialogSubtitle" destination="aco-LE-8if" id="rnC-E4-uqP"/>
                         <outlet property="dialogTitle" destination="xHr-gc-gJ7" id="QtN-Fj-q1l"/>
+                        <outlet property="okBtn" destination="WrU-Q0-a8I" id="m7p-rd-Gkr"/>
                         <outlet property="searchField" destination="bpN-xl-erB" id="8RZ-GS-l8Y"/>
                     </connections>
                 </viewController>
