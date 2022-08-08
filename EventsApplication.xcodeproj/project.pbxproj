@@ -194,6 +194,8 @@
 		ED67A35D289CE555009AFA4C /* WorldNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldNewsViewController.swift; sourceTree = "<group>"; };
 		ED67A35E289CE555009AFA4C /* WorldNewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorldNewsViewController.xib; sourceTree = "<group>"; };
 		ED67A361289CE564009AFA4C /* WorldNewsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldNewsPresenter.swift; sourceTree = "<group>"; };
+		ED807F3728A0B4D30014DBD4 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ED807F3828A0B4D30014DBD4 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ED814D4C289F23FA005C82EE /* MockUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUtil.swift; sourceTree = "<group>"; };
 		ED814D4E289F42A0005C82EE /* BaseNewsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNewsContainer.swift; sourceTree = "<group>"; };
 		EDD2B16A289ADFDA004DAC2D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -735,6 +737,7 @@
 				en,
 				Base,
 				ru,
+				uk,
 			);
 			mainGroup = 9BEB17EB221C05CE003F8C9A;
 			packageReferences = (
@@ -908,6 +911,7 @@
 			children = (
 				9BB5C1FD225F60AB0006A74E /* ru */,
 				9BB5C1FF225F60B70006A74E /* en */,
+				ED807F3728A0B4D30014DBD4 /* uk */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -941,6 +945,7 @@
 			children = (
 				9BB5C21F225F74440006A74E /* ru */,
 				9BB5C221225F744F0006A74E /* en */,
+				ED807F3828A0B4D30014DBD4 /* uk */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
