@@ -86,3 +86,11 @@
 "us" = "United States of America";
 "ve" = "Venezuela";
 "za" = "Zambia";
+
+// dialogs
+"ok" = "OK";
+"cancel" = "Cancel";
+"enter query" = "Enter the query ...";
+
+//empty viwe
+"no data" = "No data yet"

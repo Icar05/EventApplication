@@ -152,9 +152,7 @@
 		9BB5C1FF225F60B70006A74E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9BB5C201225F6D960006A74E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SearchDialog.storyboard; sourceTree = "<group>"; };
 		9BB5C206225F6E1A0006A74E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SelectionDialog.storyboard; sourceTree = "<group>"; };
-		9BB5C209225F6E1D0006A74E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SelectionDialog.strings; sourceTree = "<group>"; };
 		9BB5C218225F72CE0006A74E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EmptyView.xib; sourceTree = "<group>"; };
-		9BB5C21B225F72D20006A74E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/EmptyView.strings; sourceTree = "<group>"; };
 		9BB5C21F225F74440006A74E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9BB5C221225F744F0006A74E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9BC72DE6226E18C000538A0C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SearchDialog.strings; sourceTree = "<group>"; };
@@ -928,7 +926,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				9BB5C206225F6E1A0006A74E /* Base */,
-				9BB5C209225F6E1D0006A74E /* ru */,
 			);
 			name = SelectionDialog.storyboard;
 			sourceTree = "<group>";
@@ -937,7 +934,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				9BB5C218225F72CE0006A74E /* Base */,
-				9BB5C21B225F72D20006A74E /* ru */,
 			);
 			name = EmptyView.xib;
 			sourceTree = "<group>";

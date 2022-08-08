@@ -86,3 +86,13 @@
 "us" = "США";
 "ve" = "Венесуэла";
 "za" = "ЮАР";
+
+// dialogs
+"ok" = "Ок";
+"dialogDescription" = "Описание";
+"cancel" = "Отмена";
+"enter query" = "Введите запрос ...";
+"title" = "Название";
+
+//empty viwe
+"no data" = "Нет данных"

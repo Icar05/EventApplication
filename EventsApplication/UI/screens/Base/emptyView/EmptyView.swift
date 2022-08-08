@@ -72,6 +72,8 @@ class EmptyView: UIView {
         contentView.autoresizingMask =
             [UIView.AutoresizingMask.flexibleWidth,
              UIView.AutoresizingMask.flexibleHeight]
+        
+        self.label.text = NSLocalizedString("no data", comment: "")
     }
 
 }
