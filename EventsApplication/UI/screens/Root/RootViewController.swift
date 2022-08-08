@@ -34,19 +34,19 @@ class RootViewController: UITabBarController {
         let newsVC = navigator.getNewsViewController(
             interactor: headerInteractor,
             repository: repository)
-            newsVC.tabBarItem.title = NSLocalizedString("Headers", comment: "")
+            newsVC.tabBarItem.title = Translations.General.Headers
             newsVC.tabBarItem.image = .tabIcon
         
         
         let worldNewsVC = navigator.getWorldNewsViewController(
             interactor: everythingInteractor,
             repository: repository)
-            worldNewsVC.tabBarItem.title = NSLocalizedString("Everything", comment: "")
+            worldNewsVC.tabBarItem.title = Translations.General.Everything
             worldNewsVC.tabBarItem.image = .tabIcon
         
         let sourcesVC = navigator.getSourcesViewController(
             interactor: sourcesInteractor, repository: repository)
-            sourcesVC.tabBarItem.title = NSLocalizedString("Sources", comment: "")
+            sourcesVC.tabBarItem.title = Translations.General.Sources
             sourcesVC.tabBarItem.image = .tabIcon
         
 

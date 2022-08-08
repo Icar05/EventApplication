@@ -6,30 +6,41 @@
   Copyright © 2019 ipinguin_linuxoid. All rights reserved.
 */
 
+// general
+"Translations.General.Headers" = "Headers";
+"Translations.General.Everything" = "Everything";
+"Translations.General.Sources"  = "Sources";
+"Translations.General.Category"  = "Category";
+"Translations.General.SelectCategory" = "Select category";
+"Translations.General.Country" = "Country";
+"Translations.General.SelectCountry" = "Select country";
+"Translations.General.ClearSelection" = "Clear";
+"Translations.General.Language" = "Language";
+"Translations.General.SelectLanguage" = "Select language";
+"Translations.General.Query" = "Query";
+"Translations.General.SelectCuery" = "Select query";
+"Translations.General.Back" = "Back";
+"Translations.General.Error" = "Error";
 
-"Headers" = "Headers";
-"Everything" = "Everything";
-"Sources" = "Sources";
-"Category" = "Category";
-"Select category" = "Select category";
-"Country" = "Country";
-"Select country" = "Select country";
-"Clear selection" = "Clear";
-"Language" = "Language";
-"Select language" = "Select language";
-"Query" = "Query";
-"Select query" = "Select query";
-"Back" = "Back";
-"Error" = "Error";
 
 // categories
-"business" = "business";
-"entertainment" = "entertainment";
-"general" = "general";
-"health" = "health";
-"science" = "science";
-"sports" = "sports";
-"technology" = "technology";
+"Translations.Category.business" = "Business";
+"Translations.Category.entertainment" = "Entertainment";
+"Translations.Category.general" = "General";
+"Translations.Category.health" = "Health";
+"Translations.Category.science" = "Science";
+"Translations.Category.sports" = "Sports";
+"Translations.Category.technology" = "Technology";
+
+
+// dialogs
+"Translations.Dialog.ok" = "OK";
+"Translations.Dialog.cancel" = "Cancel";
+"Translations.Dialog.title" = "Title";
+"Translations.Dialog.description" = "Description";
+"Translations.Dialog.enterQuery" = "Enter the query ...";
+"Translations.Dialog.emptyData" = "No data yet";
+
 
 //country
 "ae" = "United Arab Emirates";
@@ -87,10 +98,3 @@
 "ve" = "Venezuela";
 "za" = "Zambia";
 
-// dialogs
-"ok" = "OK";
-"cancel" = "Cancel";
-"enter query" = "Enter the query ...";
-
-//empty viwe
-"no data" = "No data yet";

@@ -7,29 +7,40 @@
 */
 
 
-"Headers" = "Заголовки";
-"Everything" = "Все разом";
-"Sources" = "Джерела";
-"Category" = "Категорія";
-"Select category" = "Оберіть категорію";
-"Country" = "Країна";
-"Select country" = "Оберіть країну";
-"Clear selection" = "Скинути";
-"Language" = "Мова";
-"Select language" = "Оберіть мову";
-"Query" = "Запит";
-"Select query" = "Напишіть запит";
-"Back" = "Назад";
-"Error" = "Помилка";
+// general
+"Translations.General.Headers" = "Заголовки";
+"Translations.General.Everything" = "Все разом";
+"Translations.General.Sources"  = "Джерела";
+"Translations.General.Category"  = "Категорія";
+"Translations.General.SelectCategory" = "Оберіть категорію";
+"Translations.General.Country" = "Країна";
+"Translations.General.SelectCountry" = "Оберіть країну";
+"Translations.General.ClearSelection" = "Скинути";
+"Translations.General.Language" = "Мова";
+"Translations.General.SelectLanguage" = "Оберіть мову";
+"Translations.General.Query" = "Запит";
+"Translations.General.SelectCuery" = "Напишіть запит";
+"Translations.General.Back" = "Назад";
+"Translations.General.Error" = "Помилка";
+
 
 // categories
-"business" = "Бізнес";
-"entertainment" = "Розваги";
-"general" = "Загальне";
-"health" = "здоров'я";
-"science" = "Наука";
-"sports" = "Спорт";
-"technology" = "Технології";
+"Translations.Category.business" = "Бізнес";
+"Translations.Category.entertainment" = "Розваги";
+"Translations.Category.general" = "Загальне";
+"Translations.Category.health" = "Здоров'я";
+"Translations.Category.science" = "Наука";
+"Translations.Category.sports" = "Спорт";
+"Translations.Category.technology" = "Технології";
+
+// dialogs
+"Translations.Dialog.ok" = "Ок";
+"Translations.Dialog.cancel" = "Відміна";
+"Translations.Dialog.title" = "Назва";
+"Translations.Dialog.description" = "Опис";
+"Translations.Dialog.enterQuery" = "Напишіть запит ...";
+"Translations.Dialog.emptyData" = "Нема даних";
+
 
 //country
 "ae" = "ОАЕ";
@@ -88,12 +99,3 @@
 "ve" = "Венесуела";
 "za" = "ПАР";
 
-// dialogs
-"ok" = "Ок";
-"dialogDescription" = "Опис";
-"cancel" = "Відміна";
-"enter query" = "Напишіть запит ...";
-"title" = "Назва";
-
-//empty viwe
-"no data" = "Нема даних";

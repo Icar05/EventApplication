@@ -68,8 +68,8 @@ class UISelectionDialog: BaseDialogViewController {
         self.dialogTitle.text = model?.title
         self.dialogSubtitle.text = model?.subtitle
         self.setCurrentSelection()
-        self.cancelBtn.setTitle(NSLocalizedString("cancel", comment: ""), for: .normal)
-        self.okBtn.setTitle(NSLocalizedString("ok", comment: ""), for: .normal)
+        self.cancelBtn.setTitle(Translations.Dialog.cancel,  for: .normal)
+        self.okBtn.setTitle(Translations.Dialog.cancel,  for: .normal)
     }
     
     private func setCurrentSelection(){

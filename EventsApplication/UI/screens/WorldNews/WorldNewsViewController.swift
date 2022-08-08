@@ -9,21 +9,10 @@
 import UIKit
 
 
-/**
- private let languageTabItemTitle = NSLocalizedString("Language", comment: "")
- 
- private let languageTabItemSubtitle = NSLocalizedString("Select language", comment: "")
- */
+
 public final class WorldNewsViewController: BaseTableViewController {
    
     
-    
-    
-    private let clearCurrentSelection = NSLocalizedString("Clear selection", comment: "")
-    
-    private let queryTabItemTitle = NSLocalizedString("Query", comment: "")
-    
-    private let queryTabItemSubtitle = NSLocalizedString("Select query", comment: "")
     
     private let dataSource = NewsDataSource()
     
@@ -112,11 +101,11 @@ extension WorldNewsViewController: NewsDataSourceDelegate{
 extension WorldNewsViewController : TabItem{
     
     func getRightNavBarButton() -> UIBarButtonItem? {
-        return createNavItem(title: queryTabItemTitle, selector: "selectQuery")
+        return createNavItem(title: Translations.General.Query, selector: "selectQuery")
     }
     
     func getLeftNavBarButton() -> UIBarButtonItem? {
-        return createNavItem(title: clearCurrentSelection, selector: "clearAction")
+        return createNavItem(title: Translations.General.ClearSelection, selector: "clearAction")
     }
     
     @objc func clearAction(){
@@ -125,8 +114,8 @@ extension WorldNewsViewController : TabItem{
     
     @objc func selectQuery(){
         self.presentSearchDialog(model: UISearchDialogModel(
-            title: queryTabItemTitle,
-            subtitle: queryTabItemSubtitle,
+            title: Translations.General.Query,
+            subtitle: Translations.General.SelectQuery,
             hint: presenter.getQuery(),
             completion: { search in
                 self.presenter.setQuery(query: search)

@@ -7,29 +7,41 @@
 */
 
 
-"Headers" = "Заголовки";
-"Everything" = "Все вместе";
-"Sources" = "Источники";
-"Category" = "Категория";
-"Select category" = "Выберите категорию";
-"Country" = "Страна";
-"Select country" = "Выберите страну";
-"Clear selection" = "Сбросить";
-"Language" = "Язык";
-"Select language" = "Выберите язык";
-"Query" = "Запрос";
-"Select query" = "Напишите запрос";
-"Back" = "Назад";
-"Error" = "Ошибка";
+// general
+"Translations.General.Headers" = "Заголовки";
+"Translations.General.Everything" = "Все вместе";
+"Translations.General.Sources"  = "Источники";
+"Translations.General.Category"  = "Категория";
+"Translations.General.SelectCategory" = "Выберите категорию";
+"Translations.General.Country" = "Страна";
+"Translations.General.SelectCountry" = "Выберите страну";
+"Translations.General.ClearSelection" = "Сбросить";
+"Translations.General.Language" = "Язык";
+"Translations.General.SelectLanguage" = "Выберите язык";
+"Translations.General.Query" = "Запрос";
+"Translations.General.SelectCuery" = "Напишите запрос";
+"Translations.General.Back" = "Назад";
+"Translations.General.Error" = "Ошибка";
+
+
 
 // categories
-"business" = "Бизнес";
-"entertainment" = "Развлечения";
-"general" = "Общее";
-"health" = "Здоровье";
-"science" = "Наука";
-"sports" = "Спорт";
-"technology" = "Технологии";
+"Translations.Category.business" = "Бизнес";
+"Translations.Category.entertainment" = "Развлечения";
+"Translations.Category.general" = "Общее";
+"Translations.Category.health" = "Здоровье";
+"Translations.Category.science" = "Наука";
+"Translations.Category.sports" = "Спорт";
+"Translations.Category.technology" = "Технологии";
+
+
+// dialogs
+"Translations.Dialog.ok" = "Ок";
+"Translations.Dialog.cancel" = "Отмена";
+"Translations.Dialog.title" = "Название";
+"Translations.Dialog.description" = "Описание";
+"Translations.Dialog.enterQuery" = "Введите запрос ...";
+"Translations.Dialog.emptyData" = "Нет данных";
 
 //country
 "ae" = "ОАЭ";
@@ -87,12 +99,3 @@
 "ve" = "Венесуэла";
 "za" = "ЮАР";
 
-// dialogs
-"ok" = "Ок";
-"dialogDescription" = "Описание";
-"cancel" = "Отмена";
-"enter query" = "Введите запрос ...";
-"title" = "Название";
-
-//empty viwe
-"no data" = "Нет данных";

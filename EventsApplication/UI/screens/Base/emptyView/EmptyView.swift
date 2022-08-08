@@ -73,7 +73,7 @@ class EmptyView: UIView {
             [UIView.AutoresizingMask.flexibleWidth,
              UIView.AutoresizingMask.flexibleHeight]
         
-        self.label.text = NSLocalizedString("no data", comment: "")
+        self.label.text = Translations.Dialog.emptyData
     }
 
 }

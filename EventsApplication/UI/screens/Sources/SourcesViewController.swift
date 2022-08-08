@@ -11,13 +11,7 @@ import UIKit
 public final class SourcesViewController: BaseTableViewController {
    
     
-    
-    
-    private let clearCurrentSelection = NSLocalizedString("Clear selection", comment: "")
 
-    private let categoryTabItemTitle = NSLocalizedString("Category", comment: "")
-    
-    private let categoryTabItemSubtitle = NSLocalizedString("Select category", comment: "")
     
     private let dataSource = NewsDataSource()
     
@@ -106,11 +100,11 @@ extension SourcesViewController: NewsDataSourceDelegate{
 extension SourcesViewController : TabItem{
     
     func getRightNavBarButton() -> UIBarButtonItem? {
-        return createNavItem(title: categoryTabItemTitle, selector: "selectCategory")
+        return createNavItem(title: Translations.General.Category, selector: "selectCategory")
     }
     
     func getLeftNavBarButton() -> UIBarButtonItem? {
-        return createNavItem(title: clearCurrentSelection, selector: "clearAction")
+        return createNavItem(title: Translations.General.ClearSelection, selector: "clearAction")
     }
     
     @objc func clearAction(){
@@ -119,8 +113,8 @@ extension SourcesViewController : TabItem{
     
     @objc func selectCategory(){
         self.presentSelectionDialog(model: UISelectionDialogModel(
-            title: categoryTabItemTitle,
-            subtitle: categoryTabItemSubtitle,
+            title: Translations.General.Category,
+            subtitle: Translations.General.selectCategory,
             dataSourse:ValueForSelector.categories,
             currentSelection: presenter.getCategory(),
             completion: { category in
