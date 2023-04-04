@@ -20,7 +20,6 @@ class BaseDialogViewController: UIViewController {
     
 }
 
-
 extension BaseDialogViewController: UIViewControllerTransitioningDelegate{
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
